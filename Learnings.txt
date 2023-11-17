@@ -1,0 +1,1 @@
+Switch doesn't work in react-router-dom version above 6, instead used Routes
