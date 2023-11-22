@@ -5,6 +5,7 @@ import InternalLink from "../atoms/internalLink";
 import styled from "styled-components";
 import PrimaryButton from "../atoms/primaryButton";
 import { Link } from "react-router-dom";
+import { FaFacebookSquare, FaGoogle } from "react-icons/fa";
 
 const InternalLinkNode = styled(InternalLink)`
   div {
@@ -82,18 +83,19 @@ const Input = styled.input`
   padding: 8px;
   margin-bottom: 16px;
   box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
-const ExternalLinkSpan = styled(ExternalLink)``;
+const Logos = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+`;
 
 const SignUp = () => {
-  // return (
-  //   <Wrapper>
-  //     <ExternalLink link={"www.google.com"} text={"google"} />
-  //     <InternalLinkNode link={"/signin"} text={"Sign In"} />
-  //     <h2>Sign Up Page</h2>
-  //   </Wrapper>
-  // );
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -187,6 +189,19 @@ const SignUp = () => {
           <br />
           <PrimaryButton text={"Sign Up"} type={"submit"}></PrimaryButton>
         </Wrapper>
+        <Label
+          style={{
+            fontSize: "20px",
+            color: "rgba(0, 0, 0, 0.8)",
+            marginTop: "20px",
+          }}
+        >
+          {"Or Sign up with"}
+        </Label>
+        <Logos>
+          <FaFacebookSquare style={{ height: 30, width: 30 }} />
+          <FaGoogle style={{ height: 30, width: 30 }} />
+        </Logos>
       </LeftSection>
       <RightSection>
         {
