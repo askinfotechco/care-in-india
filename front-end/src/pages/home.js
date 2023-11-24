@@ -96,10 +96,10 @@ export default function Home() {
         </CompanyLogo>
         <Links>
           <LineSpan>
-            <StyledLink to={"/signin"}>{"Register"}</StyledLink>
+            <StyledLink to={"/signup"}>{"Register"}</StyledLink>
           </LineSpan>
           <LineSpan>
-            <StyledLink to={"/signup"}>{"Login"}</StyledLink>
+            <StyledLink to={"/signin"}>{"Login"}</StyledLink>
           </LineSpan>
         </Links>
       </TopSection>
