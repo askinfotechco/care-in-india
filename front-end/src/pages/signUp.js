@@ -199,8 +199,14 @@ const SignUp = () => {
           {"Or Sign up with"}
         </Label>
         <Logos>
-          <FaFacebookSquare style={{ height: 30, width: 30 }} />
-          <FaGoogle style={{ height: 30, width: 30 }} />
+          <FaFacebookSquare
+            style={{
+              height: 35,
+              width: 35,
+              cursor: "pointer",
+            }}
+          />
+          <FaGoogle style={{ height: 30, width: 30, cursor: "pointer" }} />
         </Logos>
       </LeftSection>
       <RightSection>
