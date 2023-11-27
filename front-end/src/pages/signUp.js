@@ -249,7 +249,7 @@ const SignUp = () => {
             onChange={handleChange}
           />
           <br />
-          <PrimaryButton text={"Sign Up"} type={"submit"}></PrimaryButton>
+          <PrimaryButton text={"Sign Up"} type={"submit"} onClick= {() => register()}></PrimaryButton>
         </Wrapper>
         <Label
           style={{
