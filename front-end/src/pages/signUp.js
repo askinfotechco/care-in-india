@@ -107,8 +107,6 @@ const SignUp = () => {
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
   const mail = useRef("null");
   const password = useRef("null");
-  const username = useRef("null");
-  const role = useRef("null");
   const [err, setErr] = useState("");
 
   useEffect(() => {
@@ -126,7 +124,7 @@ const SignUp = () => {
       .then(async (validData) => {
         try {
           const response = await axios.post(
-            `${URL}/auth/v1/register`,
+            `${URL}/auth/user/register`,
             userDetails
           );
           // console.log(response.data);
