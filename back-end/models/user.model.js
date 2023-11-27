@@ -11,15 +11,14 @@ Model:
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema(
-  {
+const UserSchema = new Schema({
     firstname: {
-      type: String,
-      required: [true, "First Name is required"],
+        type: String,
+        required: [true,'all fields are required'],
     },
     lastname: {
-      type: String,
-      required: [true, "Last Name is required"],
+        type: String,
+        required: [true,'all fields are required'],
     },
     password: {
       type: String,
