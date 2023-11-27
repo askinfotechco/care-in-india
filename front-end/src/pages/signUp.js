@@ -13,7 +13,6 @@ import "react-toastify/dist/ReactToastify.css";
 // components
 import { useCookies } from "react-cookie";
 import SignupvalidationSchema from "../components/validations/Signup";
-import { URL } from "../connection"
 
 const InternalLinkNode = styled(InternalLink)`
   div {
@@ -108,6 +107,8 @@ const SignUp = () => {
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
   const mail = useRef("null");
   const password = useRef("null");
+  const username = useRef("null");
+  const role = useRef("null");
   const [err, setErr] = useState("");
 
   useEffect(() => {
@@ -128,7 +129,7 @@ const SignUp = () => {
         try {
           console.log(userDetails);
           const response = await axios.post(
-            `${URL}/auth/user/register`,
+            `${URL}/auth/v1/register`,
             userDetails
           );
           console.log(response.data);
