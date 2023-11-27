@@ -1,11 +1,18 @@
 // SignUp.js
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ExternalLink from "../atoms/externalLink";
 import InternalLink from "../atoms/internalLink";
 import styled from "styled-components";
 import PrimaryButton from "../atoms/primaryButton";
 import { Link } from "react-router-dom";
 import { FaFacebookSquare, FaGoogle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// components
+import { useCookies } from "react-cookie";
+import SignupvalidationSchema from "../components/validations/Signup";
 
 const InternalLinkNode = styled(InternalLink)`
   div {
@@ -96,6 +103,56 @@ const Logos = styled.div`
 `;
 
 const SignUp = () => {
+  const navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies("jwt");
+  const mail = useRef("null");
+  const password = useRef("null");
+  const username = useRef("null");
+  const role = useRef("null");
+  const [err, setErr] = useState("");
+
+  useEffect(() => {
+    navigate("/", { replace: true });
+    sessionStorage.removeItem("jwt");
+    sessionStorage.removeItem("email");
+  }, [sessionStorage.getItem("jwt"), sessionStorage.getItem("email")]);
+
+  const register = async () => {
+    const userDetails = {
+      password: password.current.value,
+      email: mail.current.value,
+    };
+    SignupvalidationSchema.validate(userDetails)
+      .then(async (validData) => {
+        try {
+          const response = await axios.post(
+            `${URL}/auth/v1/register`,
+            userDetails
+          );
+          // console.log(response.data);
+          if (response.data.msg.includes("registerd successfully")) {
+            setTimeout(() => {
+              window.location.reload();
+            }, 3000);
+            toast.success("Registration successful! Login to Continue...", {
+              position: toast.POSITION.TOP_CENTER,
+              autoClose: 3000,
+            });
+          } else {
+            toast.error(response.data.msg, {
+              position: toast.POSITION.TOP_CENTER,
+              autoClose: 3000,
+            });
+          }
+          //navigate("/dashboard", { replace: true });
+        } catch (err) {
+          console.log("request not wokring", err);
+        }
+      })
+      .catch(({ errors }) => setErr(errors[0]));
+    // console.log(userDetails);
+  };
+
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -187,7 +244,7 @@ const SignUp = () => {
             onChange={handleChange}
           />
           <br />
-          <PrimaryButton text={"Sign Up"} type={"submit"}></PrimaryButton>
+          <PrimaryButton text={"Sign Up"} type={"submit"} onClick= {() => register()}></PrimaryButton>
         </Wrapper>
         <Label
           style={{
