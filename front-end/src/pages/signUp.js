@@ -130,7 +130,7 @@ const SignUp = () => {
         try {
           console.log(userDetails);
           const response = await axios.post(
-            `${URL}/auth/user/register`,
+            `${URL}/auth/v1/register`,
             userDetails
           );
           console.log(response.data);
