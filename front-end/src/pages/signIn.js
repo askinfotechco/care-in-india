@@ -12,8 +12,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // components
 import { useCookies } from "react-cookie";
-import LoginvalidationSchema from "../components/validations/LoginValidation";
-import { URL } from "../connection";
+import LoginvalidationSchema from "../components/validations/Login";
 
 const InternalLinkNode = styled(InternalLink)`
   div {
