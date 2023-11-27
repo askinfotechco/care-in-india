@@ -1,11 +1,18 @@
 // SignIn.js
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ExternalLink from "../atoms/externalLink";
 import InternalLink from "../atoms/internalLink";
 import styled from "styled-components";
 import PrimaryButton from "../atoms/primaryButton";
 import { Link } from "react-router-dom";
 import { FaFacebookSquare, FaGoogle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// components
+import { useCookies } from "react-cookie";
+import LoginvalidationSchema from "../components/validations/Login";
 
 const InternalLinkNode = styled(InternalLink)`
   div {
@@ -89,6 +96,53 @@ const Input = styled.input`
 `;
 
 const SignIn = () => {
+  const navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies("jwt");
+  const mail = useRef("null");
+  const password = useRef("null");
+  const username = useRef("null");
+  const role = useRef("null");
+  const [err, setErr] = useState("");
+
+  useEffect(() => {
+    navigate("/", { replace: true });
+    sessionStorage.removeItem("jwt");
+    sessionStorage.removeItem("email");
+  }, [sessionStorage.getItem("jwt"), sessionStorage.getItem("email")]);
+
+  const login = async () => {
+    const userDetails = {
+      email: mail.current.value,
+      password: password.current.value,
+    };
+    LoginvalidationSchema.validate(userDetails)
+      .then(async (validData) => {
+        try {
+          const response = await axios.post(
+            `${URL}/auth/v1/login`,
+            userDetails
+          );
+          // console.log(response.data);
+          if (response.data.message?.includes("logged in successfully")) {
+            console.log(response);
+            setCookie("jwt", response.data.token, { path: "/" });
+            sessionStorage.setItem("jwt", response.data.token);
+            sessionStorage.setItem("email", userDetails.email);
+            // onLogin();
+            navigate("/dashboard", { replace: true });
+          } else {
+            toast.error(response.data.message, {
+              position: toast.POSITION.TOP_CENTER,
+              autoClose: 3000,
+            });
+          }
+        } catch (err) {
+          console.log("request not wokring", err);
+        }
+      })
+      .catch(({ errors }) => setErr(errors[0]));
+  };
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -138,7 +192,7 @@ const SignIn = () => {
             onChange={handleChange}
           />
           <br />
-          <PrimaryButton text={"Sign In"} type={"submit"}></PrimaryButton>
+          <PrimaryButton text={"Sign In"} type={"submit"} onClick= {() => login()}></PrimaryButton>
         </Wrapper>
         <Label
           style={{

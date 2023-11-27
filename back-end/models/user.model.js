@@ -13,13 +13,6 @@ const  mongoose =require( 'mongoose');
 const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
-    username: {
-        type: String,
-        required: [true,'all fields are required'],
-        trim: true,
-        unique: true,
-        maxlength: [12, 'username cannot be more than 12 characters']
-    },
     password: {
         type: String,
         required: [true,'all fields are required'],
@@ -36,8 +29,8 @@ const UserSchema = new Schema({
     role : {
         type: String,
         required: [true,'role must be defined'],
-        enum: ['admin', 'receptionist', 'doctor', 'user']
-        //default: "receptionist"
+        enum: ['admin', 'receptionist', 'doctor', 'user'],
+        default: "user"
     },
     createdAt: {
         type: Date,
