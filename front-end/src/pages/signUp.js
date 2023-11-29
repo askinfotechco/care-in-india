@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 // components
 import { useCookies } from "react-cookie";
 import SignupvalidationSchema from "../components/validations/Signup";
+import { URL } from "../connection"
 
 const InternalLinkNode = styled(InternalLink)`
   div {
