@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 // components
 import { useCookies } from "react-cookie";
 import LoginvalidationSchema from "../components/validations/Login";
+import { URL } from "../connection"
 
 const InternalLinkNode = styled(InternalLink)`
   div {
@@ -103,15 +104,15 @@ const SignIn = () => {
   const [err, setErr] = useState("");
 
   useEffect(() => {
-    navigate("/", { replace: true });
+    // navigate("/", { replace: true });
     sessionStorage.removeItem("jwt");
     sessionStorage.removeItem("email");
   }, [sessionStorage.getItem("jwt"), sessionStorage.getItem("email")]);
 
   const login = async () => {
     const userDetails = {
-      email: mail.current.value,
-      password: password.current.value,
+      email: formData.email,
+      password: formData.password,
     };
     LoginvalidationSchema.validate(userDetails)
       .then(async (validData) => {
@@ -156,6 +157,7 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    login();
     console.log("Form submitted:", formData);
   };
 
@@ -190,7 +192,7 @@ const SignIn = () => {
             onChange={handleChange}
           />
           <br />
-          <PrimaryButton text={"Sign In"} type={"submit"} onClick= {() => login()}></PrimaryButton>
+          <PrimaryButton text={"Sign In"} type={"submit"}></PrimaryButton>
         </Wrapper>
         <Label
           style={{

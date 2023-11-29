@@ -1,7 +1,7 @@
 import React from "react";
 import InternalLink from "../atoms/internalLink";
 import styled from "styled-components";
-import companyLogoImage from "../static/images/company_logo.jpg";
+import companyLogoImage from "../static/images/careinindia.png";
 import { Link } from "react-router-dom";
 import { FaCalendarPlus } from "react-icons/fa";
 import { MdVideoCall } from "react-icons/md";
@@ -90,9 +90,9 @@ export default function Home() {
           <img
             src={companyLogoImage}
             alt="Healthcare Image"
-            style={{ width: "120px", height: "100px" }}
+            style={{ width: "260px", height: "100px", marginTop: "-10px", marginLeft: "-10px" }}
           />
-          <Label>{"We care for India"}</Label>
+          {/* <Label>{"We care for India"}</Label> */}
         </CompanyLogo>
         <Links>
           <LineSpan>

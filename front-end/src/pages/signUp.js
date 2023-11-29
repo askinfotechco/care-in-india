@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 // components
 import { useCookies } from "react-cookie";
 import SignupvalidationSchema from "../components/validations/Signup";
+import { URL } from "../connection"
 
 const InternalLinkNode = styled(InternalLink)`
   div {
@@ -110,24 +111,27 @@ const SignUp = () => {
   const [err, setErr] = useState("");
 
   useEffect(() => {
-    navigate("/", { replace: true });
+    // navigate("/", { replace: true });
     sessionStorage.removeItem("jwt");
     sessionStorage.removeItem("email");
   }, [sessionStorage.getItem("jwt"), sessionStorage.getItem("email")]);
 
   const register = async () => {
     const userDetails = {
-      password: password.current.value,
-      email: mail.current.value,
+      firstname: formData.firstname,
+      lastname: formData.lastname,
+      password: formData.password,
+      email: formData.email,
     };
     SignupvalidationSchema.validate(userDetails)
       .then(async (validData) => {
         try {
+          console.log(userDetails);
           const response = await axios.post(
             `${URL}/auth/user/register`,
             userDetails
           );
-          // console.log(response.data);
+          console.log(response.data);
           if (response.data.msg.includes("registerd successfully")) {
             setTimeout(() => {
               window.location.reload();
@@ -170,7 +174,8 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add your signup logic here, e.g., send data to a server
-    console.log("Form submitted:", formData);
+    register();
+    // console.log("Form submitted:", formData);
   };
 
   const onClickSignin = () => {};
@@ -205,7 +210,7 @@ const SignUp = () => {
             type="text"
             name="firstname"
             placeholder="First name"
-            value={formData.username}
+            value={formData.firstname}
             onChange={handleChange}
             style={{ width: "47%", marginRight: "3%" }}
           />
@@ -213,7 +218,7 @@ const SignUp = () => {
             type="text"
             name="lastname"
             placeholder="Last name"
-            value={formData.username}
+            value={formData.lastname}
             onChange={handleChange}
             style={{ width: "47%", marginLeft: "3%" }}
           />
@@ -242,7 +247,7 @@ const SignUp = () => {
             onChange={handleChange}
           />
           <br />
-          <PrimaryButton text={"Sign Up"} type={"submit"} onClick= {() => register()}></PrimaryButton>
+          <PrimaryButton text={"Sign Up"} type={"submit"}></PrimaryButton>
         </Wrapper>
         <Label
           style={{
