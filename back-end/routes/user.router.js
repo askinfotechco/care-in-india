@@ -16,9 +16,9 @@ const {
   getActiveUSersCount,
 } = require("../controllers/user.controller");
 
-userRouter.get("/", authorizationHeader, getAllUser);
-userRouter.post("/register", authorizationHeader, createUser);
-userRouter.post("/login", authorizationHeader, userLogin);
+userRouter.get("/", getAllUser);
+userRouter.post("/register", createUser);
+userRouter.post("/login", userLogin);
 userRouter.get("/byname/:name", authorizationHeader, getUserByName);
 userRouter.get("/byid/:id", authorizationHeader, getUserById);
 userRouter.get("/byrole/:role", authorizationHeader, getUserByRole);
