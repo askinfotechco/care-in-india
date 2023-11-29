@@ -90,7 +90,7 @@ export default function Home() {
           <img
             src={companyLogoImage}
             alt="Healthcare Image"
-            style={{ width: "270px", height: "100px", marginTop: "-10px", marginLeft: "-10px"}}
+            style={{ width: "260px", height: "100px", marginTop: "-10px", marginLeft: "-10px" }}
           />
           {/* <Label>{"We care for India"}</Label> */}
         </CompanyLogo>
