@@ -99,10 +99,10 @@ const Input = styled.input`
 const SignIn = () => {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
-  const mail = useRef("null");
+  const email = useRef("null");
   const password = useRef("null");
-  const username = useRef("null");
-  const role = useRef("null");
+  const firstname = useRef("null");
+  const lastname = useRef("null");
   const [err, setErr] = useState("");
 
   useEffect(() => {
@@ -120,7 +120,7 @@ const SignIn = () => {
       .then(async (validData) => {
         try {
           const response = await axios.post(
-            `${URL}/auth/v1/login`,
+            `${URL}/auth/user/login`,
             userDetails
           );
           // console.log(response.data);
