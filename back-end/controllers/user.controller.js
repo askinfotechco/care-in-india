@@ -84,18 +84,6 @@ const userLogin = async (req, res) => {
   }
 };
 
-// getSingleuser- by username/email
-const getUserByName = async (req, res) => {
-  const username = req.params.name;
-
-  try {
-    const user = await userModel.findOne({ username });
-    return res.status(200).json({ user });
-  } catch (error) {
-    return res.status(400).json({ msg: `${error}` });
-  }
-};
-
 const getUserById = async (req, res) => {
   const id = req.params.id;
 
@@ -225,7 +213,6 @@ module.exports = {
   createUser,
   getAllUser,
   userLogin,
-  getUserByName,
   getUserByRole,
   getUserById,
   resetPassword,

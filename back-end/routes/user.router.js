@@ -6,7 +6,6 @@ const {
   createUser,
   getAllUser,
   userLogin,
-  getUserByName,
   getUserByRole,
   getUserById,
   resetPassword,
@@ -19,7 +18,6 @@ const {
 userRouter.get("/", getAllUser);
 userRouter.post("/register", createUser);
 userRouter.post("/login", userLogin);
-userRouter.get("/byname/:name", authorizationHeader, getUserByName);
 userRouter.get("/byid/:id", authorizationHeader, getUserById);
 userRouter.get("/byrole/:role", authorizationHeader, getUserByRole);
 userRouter.post("/resetPassword", authorizationHeader, resetPassword);
