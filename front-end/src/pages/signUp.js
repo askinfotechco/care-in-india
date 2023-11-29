@@ -106,10 +106,10 @@ const Logos = styled.div`
 const SignUp = () => {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
-  const mail = useRef("null");
+  const email = useRef("null");
   const password = useRef("null");
-  const username = useRef("null");
-  const role = useRef("null");
+  const firstname = useRef("null");
+  const lastname = useRef("null");
   const [err, setErr] = useState("");
 
   useEffect(() => {
@@ -130,7 +130,7 @@ const SignUp = () => {
         try {
           console.log(userDetails);
           const response = await axios.post(
-            `${URL}/auth/v1/register`,
+            `${URL}/auth/user/register`,
             userDetails
           );
           console.log(response.data);
