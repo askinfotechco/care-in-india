@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const DoctorSchema = new Schema(
+const DoctorDetailsSchema = new Schema(
   {
     firstname: {
       type: String,
@@ -71,3 +71,6 @@ const DoctorSchema = new Schema(
     timestamps: true,
   }
 );
+
+const doctorModel = new mongoose.model("doctordetails", DoctorDetailsSchema);
+module.exports = doctorModel;
