@@ -1,5 +1,5 @@
-const Order = require("../models/Order");
-const {  sendEmail } = require("../lib/email-sender/templates");
+const Order = require("../models/order.model");
+const {  sendEmail } = require("../lib/email-sender/sender");
 
 const getAllOrders = async (req, res) => {
   const { customerName, status, page, limit, day, startDate, endDate } =

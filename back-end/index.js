@@ -4,6 +4,10 @@ const app = express();
 const morgan = require("morgan");
 const cors = require("cors");
 const userRoutes = require("./routes/user.router");
+const productRoutes = require("./routes/product.router");
+const sliderRoutes = require("./routes/slider.router");
+const orderRoutes = require("./routes/order.router");
+const categoryRoutes = require("./routes/category.routes");
 require("dotenv").config();
 
 // middleware
@@ -31,6 +35,10 @@ const configDb = async () => {
 
 configDb();
 app.use("/auth/user/", userRoutes);
+app.use("/api/products/", productRoutes);
+app.use("/api/category/", categoryRoutes);
+app.use("/api/order/", orderRoutes);
+app.use("/api/slider/", sliderRoutes);
 
 const port = process.env.PORT || 8000;
 

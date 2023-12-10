@@ -85,7 +85,7 @@ const OrderSchema = new mongoose.Schema(
 
 const Order = mongoose.model(
   "Order",
-  orderSchema.plugin(AutoIncrement, {
+  OrderSchema.plugin(AutoIncrement, {
     inc_field: "invoice",
     start_seq: 10000,
   })
