@@ -24,6 +24,12 @@ const DoctorSchema = new Schema(
       trim: true,
       unique: true,
     },
+    role: {
+      type: String,
+      required: [true, "role must be defined"],
+      enum: ["admin", "receptionist", "doctor", "user"],
+      default: "doctor",
+    },
     image: {
       type: String,
       required: false,
