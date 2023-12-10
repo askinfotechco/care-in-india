@@ -120,7 +120,7 @@ const SignIn = () => {
       .then(async (validData) => {
         try {
           const response = await axios.post(
-            `${URL}/auth/v1/login`,
+            `${URL}/auth/user/login`,
             userDetails
           );
           // console.log(response.data);
