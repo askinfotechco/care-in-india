@@ -194,7 +194,7 @@ const SignIn = () => {
             onChange={handleChange}
           />
           <br />
-          <PrimaryButton text={"Sign In"} type={"submit"}></PrimaryButton>
+          <PrimaryButton text={"Sign In"} type={"submit"} onClick= {() => login()}></PrimaryButton>
         </Wrapper>
         <Label
           style={{

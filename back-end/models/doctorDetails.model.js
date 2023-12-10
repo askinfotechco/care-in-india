@@ -1,24 +1,15 @@
-/*
-Model:
-
-- Username : string
-- password : string
-- role : admin/receptionist/doctor/user
-- timestamp
-
-*/
-
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const DoctorSchema = new Schema(
+  {
     firstname: {
-        type: String,
-        required: [true,'First Name is required'],
+      type: String,
+      required: [true, "First Name is required"],
     },
     lastname: {
-        type: String,
-        required: [true,'Last Name is required'],
+      type: String,
+      required: [true, "Last Name is required"],
     },
     password: {
       type: String,
@@ -32,12 +23,6 @@ const UserSchema = new Schema({
       required: [true, "Email is required"],
       trim: true,
       unique: true,
-    },
-    role: {
-      type: String,
-      required: [true, "role must be defined"],
-      enum: ["admin", "receptionist", "doctor", "user"],
-      default: "user",
     },
     image: {
       type: String,
@@ -59,6 +44,18 @@ const UserSchema = new Schema({
       type: String,
       required: false,
     },
+    language: {
+      type: String,
+      required: false,
+    },
+    location: {
+      type: String,
+      required: false,
+    },
+    specialization: {
+      type: String,
+      required: false,
+    },
     status: {
       type: Boolean,
       default: true,
@@ -68,6 +65,3 @@ const UserSchema = new Schema({
     timestamps: true,
   }
 );
-
-const userModel = new mongoose.model("user", UserSchema);
-module.exports = userModel;
