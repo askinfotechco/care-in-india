@@ -8,6 +8,7 @@ const productRoutes = require("./routes/product.router");
 const sliderRoutes = require("./routes/slider.router");
 const orderRoutes = require("./routes/order.router");
 const categoryRoutes = require("./routes/category.routes");
+const doctorDetailsRoutes = require("./routes/doctorDetails.routes");
 require("dotenv").config();
 
 // middleware
@@ -39,6 +40,7 @@ app.use("/api/products/", productRoutes);
 app.use("/api/category/", categoryRoutes);
 app.use("/api/order/", orderRoutes);
 app.use("/api/slider/", sliderRoutes);
+app.use("api/doctor", doctorDetailsRoutes)
 
 const port = process.env.PORT || 8000;
 
