@@ -160,7 +160,7 @@ const SignIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     login();
-    console.log("Form submitted:", formData);
+    // console.log("Form submitted:", formData);
   };
 
   const onClickSignin = () => {};

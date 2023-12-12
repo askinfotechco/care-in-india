@@ -52,14 +52,14 @@ export default function LoginPage(props) {
   return (
     <>
       <Helmet>
-        <title>Studybreak Exam Portal</title>
+        <title>Care In India - We care for you</title>
       </Helmet>
 
       <StyledRoot>
         {mdUp && (
           <StyledSection>
             <Box mb={5} ml={5}>
-              <img src={Logo} alt="logo" width={180} />
+              <img src={Logo} alt="logo" width={300} />
             </Box>
 
             <Typography variant="h3" sx={{ px: 5, mb: 5 }}>
@@ -76,7 +76,7 @@ export default function LoginPage(props) {
           <StyledContent>
             {authType === "signup" ? (
               <Typography variant="h4" gutterBottom>
-                Sign Up to Studybreak Exam Portal
+                Sign Up to Care In India Admin Portal
               </Typography>
             ) : authType === "reset" ? (
               <Typography variant="h4" gutterBottom>
@@ -84,7 +84,7 @@ export default function LoginPage(props) {
               </Typography>
             ) : (
               <Typography variant="h4" gutterBottom>
-                Sign In to Studybreak Exam Portal
+                Sign In to Care In India Admin Portal
               </Typography>
             )}
 

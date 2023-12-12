@@ -28,38 +28,40 @@ import SignupvalidationSchema from "../../../components/Validation/SignUp";
 export default function LoginForm({ authType, setType, onLogin }) {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
-  const mail = useRef("null");
+  const email = useRef("null");
   const password = useRef("null");
-  const username = useRef("null");
-  const role = useRef("null");
+  const firstname = useRef("null");
+  const lastname = useRef("null");
   const [err, setErr] = useState("");
   useEffect(() => {
     navigate("/", { replace: true });
     sessionStorage.removeItem("jwt");
-    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("firstname");
     sessionStorage.removeItem("email");
     sessionStorage.removeItem("role");
   }, [
     sessionStorage.getItem("jwt"),
-    sessionStorage.getItem("username"),
+    sessionStorage.getItem("firstname"),
     sessionStorage.getItem("email"),
     sessionStorage.getItem("role"),
   ]);
+
   const register = async () => {
     const userDetails = {
-      username: username.current.value,
-      password: password.current.value,
-      email: mail.current.value,
-      role: role.current.value,
+      firstname: formData.firstname,
+      lastname: formData.lastname,
+      password: formData.password,
+      email: formData.email,
     };
+
     SignupvalidationSchema.validate(userDetails)
       .then(async (validData) => {
         try {
           const response = await axios.post(
-            `${URL}/auth/v1/register`,
+            `${URL}/auth/user/register`,
             userDetails
           );
-          // console.log(response.data);
+          console.log(response.data);
           if (response.data.msg.includes("registerd successfully")) {
             setTimeout(() => {
               window.location.reload();
@@ -86,14 +88,15 @@ export default function LoginForm({ authType, setType, onLogin }) {
 
   const login = async () => {
     const userDetails = {
-      email: mail.current.value,
-      password: password.current.value,
+      email: formData.email,
+      password: formData.password,
     };
+    console.log(userDetails);
     LoginvalidationSchema.validate(userDetails)
       .then(async (validData) => {
         try {
           const response = await axios.post(
-            `${URL}/auth/v1/login`,
+            `${URL}/auth/user/login`,
             userDetails
           );
           // console.log(response.data);
@@ -101,7 +104,7 @@ export default function LoginForm({ authType, setType, onLogin }) {
             console.log(response);
             setCookie("jwt", response.data.token, { path: "/" });
             sessionStorage.setItem("jwt", response.data.token);
-            sessionStorage.setItem("username", response.data.username);
+            sessionStorage.setItem("firstname", response.data.firstname);
             sessionStorage.setItem("email", userDetails.email);
             sessionStorage.setItem("role", response.data.role);
             onLogin();
@@ -121,11 +124,11 @@ export default function LoginForm({ authType, setType, onLogin }) {
 
   const reset = async () => {
     const userDetails = {
-      email: mail.current.value,
-      newPassword: password.current.value,
+      email: formData.email,
+      newPassword: formData.password,
     };
     const response = await axios.post(
-      `${URL}/auth/v1/resetPassword`,
+      `${URL}/auth/user/resetPassword`,
       userDetails
     );
     // console.log(response.data);
@@ -137,7 +140,32 @@ export default function LoginForm({ authType, setType, onLogin }) {
     navigate("/dashboard", { replace: true });
   };
 
-  const roles = ["admin", "student", "examiner"];
+  const roles = ["admin", "doctor", "receptionist"];
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    password: "",
+    email: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (authType === "signup") {
+      register();
+    } else if (authType === "login") {
+      login();
+    } else if (authType === "reset") {
+      reset();
+    }
+  };
 
   return (
     <>
@@ -147,19 +175,33 @@ export default function LoginForm({ authType, setType, onLogin }) {
             name="email"
             label="Email address"
             type="text"
-            inputRef={mail}
+            inputRef={email}
+            value={setFormData.email}
+            onChange={handleChange}
           />
           <TextField
-            name="username"
-            label="Username"
+            name="firstname"
+            label="First Name"
             type="text"
-            inputRef={username}
+            inputRef={firstname}
+            value={setFormData.firstname}
+            onChange={handleChange}
+          />
+          <TextField
+            name="lastname"
+            label="Last Name"
+            type="text"
+            inputRef={lastname}
+            value={setFormData.lastname}
+            onChange={handleChange}
           />
           <TextField
             name="password"
             label="Password"
             type={showPassword ? "text" : "password"}
             inputRef={password}
+            value={setFormData.password}
+            onChange={handleChange}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -175,30 +217,25 @@ export default function LoginForm({ authType, setType, onLogin }) {
               ),
             }}
           />
-
-          <TextField
-            select
-            label="Role"
-            defaultValue="student"
-            helperText="Please select any role"
-            inputRef={role}
-          >
-            {roles.map((option) => (
-              <MenuItem key={option} value={option}>
-                {option}
-              </MenuItem>
-            ))}
-          </TextField>
         </Stack>
       ) : authType === "login" ? (
         <Stack spacing={3}>
-          <TextField name="email" label="Email address" inputRef={mail} />
+          <TextField
+            name="email"
+            label="Email address"
+            type="text"
+            inputRef={email}
+            value={setFormData.email}
+            onChange={handleChange}
+          />
 
           <TextField
             name="password"
             label="Password"
             type={showPassword ? "text" : "password"}
             inputRef={password}
+            value={setFormData.password}
+            onChange={handleChange}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -217,13 +254,22 @@ export default function LoginForm({ authType, setType, onLogin }) {
         </Stack>
       ) : (
         <Stack spacing={3}>
-          <TextField name="email" label="Email address" inputRef={mail} />
+          <TextField
+            name="email"
+            label="Email address"
+            type="text"
+            inputRef={email}
+            value={setFormData.email}
+            onChange={handleChange}
+          />
 
           <TextField
             name="password"
             label="Password"
             type={showPassword ? "text" : "password"}
             inputRef={password}
+            value={setFormData.password}
+            onChange={handleChange}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -290,7 +336,7 @@ export default function LoginForm({ authType, setType, onLogin }) {
           size="large"
           type="submit"
           variant="contained"
-          onClick={register}
+          onClick={handleSubmit}
         >
           Sign Up
         </LoadingButton>
@@ -300,7 +346,7 @@ export default function LoginForm({ authType, setType, onLogin }) {
           size="large"
           type="submit"
           variant="contained"
-          onClick={login}
+          onClick={handleSubmit}
         >
           Login
         </LoadingButton>
@@ -310,7 +356,7 @@ export default function LoginForm({ authType, setType, onLogin }) {
           size="large"
           type="submit"
           variant="contained"
-          onClick={reset}
+          onClick={handleSubmit}
         >
           Reset
         </LoadingButton>
