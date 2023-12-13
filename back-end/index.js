@@ -40,7 +40,7 @@ app.use("/api/products/", productRoutes);
 app.use("/api/category/", categoryRoutes);
 app.use("/api/order/", orderRoutes);
 app.use("/api/slider/", sliderRoutes);
-app.use("/api/doctor/", doctorDetailsRoutes)
+app.use("/api/doctor", doctorDetailsRoutes)
 
 const port = process.env.PORT || 8000;
 
