@@ -21,7 +21,7 @@ export default function DashboardAppPage() {
       // setIsLoading(true);
       try {
         await axios
-          .get(`${URL}/auth/v1/getusercount`)
+          .get(`${URL}/auth/user/getusercount`)
           .then((response) => {
             console.log(response.data);
             // setActiveUsers(response.data);
@@ -38,7 +38,7 @@ export default function DashboardAppPage() {
   return (
     <>
       <Helmet>
-        <title> Dashboard | Minimal UI </title>
+        <title> Care In India - We Care for India </title>
       </Helmet>
 
       <Container maxWidth="xl">

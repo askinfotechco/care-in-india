@@ -29,7 +29,7 @@ import Label from "../components/label";
 import Iconify from "../components/iconify";
 import Scrollbar from "../components/scrollbar";
 // sections
-import { UserListHead, UserListToolbar } from "../sections/@dashboard/user";
+import { DoctorListHead, DoctorListToolbar } from "../sections/@dashboard/doctordetails";
 import { URL } from "../connection";
 import AddUser from "../components/Forms/AddUser";
 import { toast, ToastContainer } from "react-toastify";
@@ -81,7 +81,7 @@ function applySortFilter(array, comparator, query) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function UserPage() {
+export default function DoctorDetailsPage() {
   const [open, setOpen] = useState(null);
   const [page, setPage] = useState(0);
   const [order, setOrder] = useState("asc");
@@ -99,7 +99,7 @@ export default function UserPage() {
       setIsLoading(true);
       try {
         await axios
-          .get(`${URL}/auth/user`)
+          .get(`${URL}/api/doctor`)
           .then((response) => {
             // console.log(response.data.allUser);
             setUsersList(response.data.allUser);
@@ -120,7 +120,7 @@ export default function UserPage() {
     // console.log(userID, checkedStatus);
     let userStatus = checkedStatus ? false : true;
     axios
-      .post(`${URL}/auth/user/updateuserstatus`, {
+      .post(`${URL}/auth/user/updatedoctorstatus`, {
         id: userID,
         status: userStatus,
       })
@@ -129,7 +129,7 @@ export default function UserPage() {
           setTimeout(() => {
             window.location.reload();
           }, 2000);
-          toast.success("User update successful!", {
+          toast.success("Doctor details updated successfully!", {
             position: toast.POSITION.TOP_CENTER,
             autoClose: 2000,
           });
@@ -141,7 +141,7 @@ export default function UserPage() {
         }
       })
       .catch((error) => {
-        console.error("Error updating user status:", error);
+        console.error("Error updating doctor status:", error);
       });
     return;
   };
@@ -221,7 +221,7 @@ export default function UserPage() {
   return (
     <>
       <Helmet>
-        <title> Care In India - User Details </title>
+        <title> Care In India - Doctor Details </title>
       </Helmet>
 
       <Container>
@@ -232,7 +232,7 @@ export default function UserPage() {
           mb={5}
         >
           <Typography variant="h4" gutterBottom>
-            User Details
+            Doctor Details
           </Typography>
           <Button
             variant="contained"
@@ -247,7 +247,7 @@ export default function UserPage() {
         </Stack>
 
         <Card>
-          <UserListToolbar
+          <DoctorListToolbar
             numSelected={selected.length}
             filterName={filterName}
             onFilterName={handleFilterByName}
@@ -256,7 +256,7 @@ export default function UserPage() {
           <Scrollbar>
             <TableContainer>
               <Table>
-                <UserListHead
+                <DoctorListHead
                   order={order}
                   orderBy={orderBy}
                   headLabel={TABLE_HEAD}
