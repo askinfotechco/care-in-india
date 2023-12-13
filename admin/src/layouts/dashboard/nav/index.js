@@ -66,14 +66,14 @@ export default function Nav({ openNav, onCloseNav }) {
         },
       }}
     >
-      <Box sx={{ px: 2.5, py: 3, display: "inline-flex" }}>
-        <Typography variant="h5"> Studybreak Exam Portal</Typography>
-      </Box>
+      {/* <Box sx={{ px: 2.5, py: 3, display: "inline-flex" }}>
+        <Typography variant="h5"> Admin Portal </Typography>
+      </Box> */}
 
       <Box sx={{ mb: 5, mx: 2.5 }}>
         <Link underline="none">
           {/* <StyledAccount sx={{maxWidth: 200}}> */}
-          <img src={logo} width="120px" alt="photoURL" />
+          <img src={logo} width="240px" alt="photoURL" />
 
           {/* <Box sx={{ ml: 2 }}>
               <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>

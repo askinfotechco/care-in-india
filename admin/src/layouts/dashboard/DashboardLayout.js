@@ -37,7 +37,7 @@ export default function DashboardLayout(props) {
 
   useEffect(() => {}, [
     sessionStorage.getItem("jwt"),
-    sessionStorage.getItem("username"),
+    sessionStorage.getItem("firstname"),
     sessionStorage.getItem("email"),
     sessionStorage.getItem("role"),
   ]);

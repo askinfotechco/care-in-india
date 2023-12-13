@@ -12,6 +12,7 @@ import TestFormationsPage from "./pages/TestFormationsPage";
 import DashboardAppPage from "./pages/DashboardAppPage";
 import StudentEnrollment from "./pages/StudentEnrollment";
 import Quiz from "./components/Student/TestPage/Quiz";
+import DoctorDetailsPage from "./pages/DoctorDetailsPage";
 
 // ----------------------------------------------------------------------
 
@@ -54,8 +55,8 @@ export default function Router() {
         { path: "app", element: <DashboardAppPage /> },
         { path: "user", element: isAdmin ? <UserPage /> : <Page404 /> },
         {
-          path: "questions",
-          element: isAdmin || isExaminer ? <QuestionsPage /> : <Page404 />,
+          path: "doctordetails",
+          element: isAdmin || isExaminer ? <DoctorDetailsPage /> : <Page404 />,
         },
         {
           path: "sections",
