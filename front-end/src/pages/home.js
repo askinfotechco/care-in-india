@@ -8,6 +8,7 @@ import { MdVideoCall } from "react-icons/md";
 import { BiFileFind } from "react-icons/bi";
 import { GiMedicines } from "react-icons/gi";
 import { LuFiles } from "react-icons/lu";
+import UserProfileDropdown from "../molecules/userInfo";
 
 const Wrapper = styled.div`
   margin: 16px;
@@ -90,7 +91,12 @@ export default function Home() {
           <img
             src={companyLogoImage}
             alt="Healthcare Image"
-            style={{ width: "270px", height: "100px", marginTop: "-10px", marginLeft: "-10px"}}
+            style={{
+              width: "270px",
+              height: "100px",
+              marginTop: "-10px",
+              marginLeft: "-10px",
+            }}
           />
           {/* <Label>{"We care for India"}</Label> */}
         </CompanyLogo>
@@ -101,6 +107,7 @@ export default function Home() {
           <LineSpan>
             <StyledLink to={"/signin"}>{"Login"}</StyledLink>
           </LineSpan>
+          <UserProfileDropdown />
         </Links>
       </TopSection>
       <Features>
