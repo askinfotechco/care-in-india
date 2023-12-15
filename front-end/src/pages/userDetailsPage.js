@@ -15,7 +15,7 @@ const UserDetailsPage = () => {
 
   const breadcrumbItems = [
     { text: "Home", link: "/" },
-    { text: "UserProfile" },
+    { text: "UserProfile", link: "/userProfile" },
   ];
 
   const data = [
