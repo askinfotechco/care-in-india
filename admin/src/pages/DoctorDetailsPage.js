@@ -279,9 +279,12 @@ export default function DoctorDetailsPage() {
                           _id,
                           firstname,
                           lastname,
-                          email,
-                          mobile,
-                          role,
+                          // email,
+                          country,
+                          city,
+                          phone,
+                          language,
+                          specalization,
                           createdAt,
                           status,
                         } = row;
@@ -326,15 +329,12 @@ export default function DoctorDetailsPage() {
                             <TableCell align="left" width={200}>
                               {phone}
                             </TableCell>
-                            <TableCell align="left" width={150}>
-                              {role === "admin"
-                                ? "Admin"
-                                : role === "user"
-                                ? "User"
-                                : role === "doctor"
-                                ? "Doctor"
-                                : "Representative"}
+                            <TableCell align="left" width={200}>
+                              {language}
                             </TableCell>
+                            <TableCell align="left" width={200}>
+                              {specalization}
+                            </TableCell>                            
                             <TableCell align="left" width={200}>
                               {createdAt}
                             </TableCell>
