@@ -9,6 +9,7 @@ import { BiFileFind } from "react-icons/bi";
 import { GiMedicines } from "react-icons/gi";
 import { LuFiles } from "react-icons/lu";
 import UserProfileDropdown from "../molecules/userInfo";
+import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
   margin: 16px;
@@ -77,10 +78,13 @@ const Features = styled.div`
   padding: 8px;
 `;
 
-const FeatureIcons = styled.div`
+const FeatureIcons = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 export default function Home() {
@@ -111,7 +115,7 @@ export default function Home() {
         </Links>
       </TopSection>
       <Features>
-        <FeatureIcons>
+        <FeatureIcons to={"/bookAppointment"}>
           <FaCalendarPlus
             style={{ height: 50, width: 50, cursor: "pointer" }}
           />
@@ -124,7 +128,7 @@ export default function Home() {
             {"Book an Appointment"}
           </Label>
         </FeatureIcons>
-        <FeatureIcons style={{ marginTop: "-10px" }}>
+        <FeatureIcons to={"/videoCall"} style={{ marginTop: "-10px" }}>
           <MdVideoCall style={{ height: 75, width: 75, cursor: "pointer" }} />
           <Label
             style={{
