@@ -52,6 +52,10 @@ const DoctorDetailsSchema = new Schema(
       type: String,
       required: false,
     },
+    pincode: {
+      type: String,
+      required: true,
+    },
     phone: {
       type: String,
       required: false,
