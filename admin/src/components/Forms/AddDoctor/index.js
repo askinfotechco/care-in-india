@@ -185,6 +185,64 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                 />
               </Box>
             </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>
+                <TextField
+                  sx={{ marginTop: "30px", width: "390px" }}
+                  label="Specialization"
+                  multiline
+                  maxRows={Infinity}
+                  name="specialization"
+                  variant="outlined"
+                  value={formData.specialization}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "30px", width: "240px" }}
+                  label="City"
+                  multiline
+                  maxRows={Infinity}
+                  name="city"
+                  variant="outlined"
+                  value={formData.city}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "30px", width: "240px" }}
+                  label="Country"
+                  multiline
+                  maxRows={Infinity}
+                  name="country"
+                  variant="outlined"
+                  value={formData.country}
+                  onChange={handleChange}
+                />
+              </Box>
+            </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>
+                <TextField
+                  sx={{ marginTop: "30px", width: "240px" }}
+                  label="Phone"
+                  multiline
+                  maxRows={Infinity}
+                  name="phone"
+                  variant="outlined"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "30px", width: "390px" }}
+                  label="Languages Known"
+                  multiline
+                  maxRows={Infinity}
+                  name="language"
+                  variant="outlined"
+                  value={formData.language}
+                  onChange={handleChange}
+                />
+              </Box>
+            </Stack>
           </Box>
         </DialogContent>
         <DialogActions>

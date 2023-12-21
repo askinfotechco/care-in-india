@@ -283,8 +283,7 @@ export default function DoctorDetailsPage() {
                           country,
                           city,
                           phone,
-                          language,
-                          specalization,
+                          specialization,
                           createdAt,
                           status,
                         } = row;
@@ -330,10 +329,7 @@ export default function DoctorDetailsPage() {
                               {phone}
                             </TableCell>
                             <TableCell align="left" width={200}>
-                              {language}
-                            </TableCell>
-                            <TableCell align="left" width={200}>
-                              {specalization}
+                              {specialization}
                             </TableCell>                            
                             <TableCell align="left" width={200}>
                               {createdAt}
