@@ -18,6 +18,9 @@ import {
   IconButton,
   FormLabel,
   Typography,
+  FormControlLabel,
+  RadioGroup,
+  Radio,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -37,7 +40,7 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
     city: "",
     phone: "",
     language: "",
-    specalization: "",
+    specialization: "",
     role: "doctor",
   });
 
@@ -57,6 +60,7 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
     e.preventDefault();
     try {
       const formDataToSend = await JSON.stringify(formData);
+      console.log(formDataToSend);
       await axios.post(`${URL}/api/doctor/add`, formDataToSend, {
         headers: {
           Authorization: "Bearer " + cookies.jwt,
@@ -87,14 +91,14 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
           </Toolbar>
         </AppBar>
         <DialogTitle>
-          <Typography variant="h4">Add Doctors</Typography>
+          <Typography variant="h4">Add Doctor</Typography>
         </DialogTitle>
         <DialogContent sx={{ width: "75vw" }}>
           <Box>
             <Stack>
               <Box display={"flex"} gap={5}>
                 <TextField
-                  sx={{ marginTop: "15px", width: "390px" }}
+                  sx={{ marginTop: "15px", width: "330px" }}
                   label="Firstname"
                   multiline
                   maxRows={Infinity}
@@ -104,7 +108,7 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                   onChange={handleChange}
                 />
                 <TextField
-                  sx={{ marginTop: "15px", width: "390px" }}
+                  sx={{ marginTop: "15px", width: "330px" }}
                   label="Lastname"
                   multiline
                   maxRows={Infinity}
@@ -114,6 +118,36 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                   onChange={handleChange}
                 />
                 <FormControl>
+                  <FormLabel id="demo-row-radio-buttons-group-label">
+                    Gender
+                  </FormLabel>
+                  <RadioGroup
+                    row
+                    aria-labelledby="demo-row-radio-buttons-group-label"
+                    name="row-radio-buttons-group"
+                  >
+                    <FormControlLabel
+                      value="female"
+                      control={<Radio />}
+                      label="Female"
+                    />
+                    <FormControlLabel
+                      value="male"
+                      control={<Radio />}
+                      label="Male"
+                    />
+                    <FormControlLabel
+                      value="other"
+                      control={<Radio />}
+                      label="Other"
+                    />
+                  </RadioGroup>
+                </FormControl>
+              </Box>
+            </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>
+                {/* <FormControl>
                   <FormLabel sx={{ fontSize: "12px" }}>Role</FormLabel>
                   <Select
                     variant="outlined"
@@ -122,16 +156,12 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                     label="Type Of Role"
                     onChange={handleChange}
                     name="role"
+                    defaultValue="doctor"
+                    disabled="true"
                   >
-                    <MenuItem value={"admin"}>Admin</MenuItem>
-                    <MenuItem value={"receptionist"}>Receptionist</MenuItem>
-                    <MenuItem value={"user"}>User</MenuItem>
+                    <MenuItem value={"doctor"}>Doctor</MenuItem>
                   </Select>
-                </FormControl>
-              </Box>
-            </Stack>
-            <Stack>
-              <Box display={"flex"} gap={5}>
+                </FormControl> */}
                 <TextField
                   sx={{ marginTop: "30px", width: "390px" }}
                   id="test"
@@ -153,23 +183,91 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                 />
               </Box>
             </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>
+                <TextField
+                  sx={{ marginTop: "30px", width: "390px" }}
+                  label="Specialization"
+                  multiline
+                  maxRows={Infinity}
+                  name="specialization"
+                  variant="outlined"
+                  value={formData.specialization}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "30px", width: "240px" }}
+                  label="City"
+                  multiline
+                  maxRows={Infinity}
+                  name="city"
+                  variant="outlined"
+                  value={formData.city}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "30px", width: "240px" }}
+                  label="Country"
+                  multiline
+                  maxRows={Infinity}
+                  name="country"
+                  variant="outlined"
+                  value={formData.country}
+                  onChange={handleChange}
+                />
+              </Box>
+            </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>
+                <TextField
+                  sx={{ marginTop: "30px", width: "240px" }}
+                  label="Phone"
+                  multiline
+                  maxRows={Infinity}
+                  name="phone"
+                  variant="outlined"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "30px", width: "390px" }}
+                  label="Languages Known"
+                  multiline
+                  maxRows={Infinity}
+                  name="language"
+                  variant="outlined"
+                  value={formData.language}
+                  onChange={handleChange}
+                />
+              </Box>
+            </Stack>
           </Box>
         </DialogContent>
         <DialogActions>
           <Button
             size="large"
-            sx={{ border: "2px solid #e2e2e2" }}
+            sx={{
+              border: "2px solid #e2e2e2",
+              marginBottom: "10px",
+              marginTop: "30px",
+              marginRight: "15px",
+            }}
             onClick={handleClose}
           >
             Cancel
           </Button>
           <Button
             size="large"
-            sx={{ border: "2px solid #e2e2e2" }}
+            sx={{
+              border: "2px solid #e2e2e2",
+              marginBottom: "10px",
+              marginTop: "30px",
+              marginRight: "15px",
+            }}
             onClick={handleSubmit}
             type="submit"
           >
-            Create Doctor
+            Add Doctor
           </Button>
         </DialogActions>
       </Dialog>

@@ -11,6 +11,12 @@ const DoctorDetailsSchema = new Schema(
       type: String,
       required: [true, "Last Name is required"],
     },
+    gender: {
+      type: String,
+      required: [true, "gender must be defined"],
+      enum: ["male", "female", "other"],
+      default: "male",
+    },
     password: {
       type: String,
       required: [true, "Password is required"],

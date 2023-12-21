@@ -43,8 +43,8 @@ const TABLE_HEAD = [
   // { id: "email", label: "Email Address", alignRight: false },
   { id: "country", label: "Location", alignRight: false },
   { id: "phone", label: "Phone", alignRight: false },
-  { id: "language", label: "Languages Known", alignRight: false },
   { id: "specialization", label: "Specialization", alignRight: false },
+  { id: "createdAt", label: "Created On", alignRight: false },
   { id: "status", label: "Status", alignRight: false },
   { id: "" },
 ];
@@ -122,7 +122,7 @@ export default function DoctorDetailsPage() {
     // console.log(userID, checkedStatus);
     let userStatus = checkedStatus ? false : true;
     axios
-      .post(`${URL}/auth/user/updatedoctorstatus`, {
+      .post(`${URL}/api/doctor/updatedoctorstatus`, {
         id: userID,
         status: userStatus,
       })
@@ -283,8 +283,7 @@ export default function DoctorDetailsPage() {
                           country,
                           city,
                           phone,
-                          language,
-                          specalization,
+                          specialization,
                           createdAt,
                           status,
                         } = row;
@@ -330,10 +329,7 @@ export default function DoctorDetailsPage() {
                               {phone}
                             </TableCell>
                             <TableCell align="left" width={200}>
-                              {language}
-                            </TableCell>
-                            <TableCell align="left" width={200}>
-                              {specalization}
+                              {specialization}
                             </TableCell>                            
                             <TableCell align="left" width={200}>
                               {createdAt}
