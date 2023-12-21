@@ -10,6 +10,7 @@ const addDoctor = async (req, res) => {
   const {
     firstname,
     lastname,
+    gender,
     email,
     password,
     image,
@@ -26,6 +27,7 @@ const addDoctor = async (req, res) => {
   const userObj = {
     firstname: firstname,
     lastname: lastname,
+    gender: gender,
     password: encodePass,
     email: email,
     image: image,
@@ -46,7 +48,7 @@ const addDoctor = async (req, res) => {
         msg: `${email} already exist`,
       });
     } else {
-      let data = await userModel(userObj).save();
+      let data = await doctorDetailsModel(userObj).save();
       // console.log(userObj);
       return res.status(200).json({
         msg: `${email} is registerd successfully`,

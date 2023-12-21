@@ -7,8 +7,8 @@ const userRoutes = require("./routes/user.router");
 const productRoutes = require("./routes/product.router");
 const sliderRoutes = require("./routes/slider.router");
 const orderRoutes = require("./routes/order.router");
-const categoryRoutes = require("./routes/category.routes");
-const doctorDetailsRoutes = require("./routes/doctorDetails.routes");
+const categoryRoutes = require("./routes/category.router");
+const doctorDetailsRoutes = require("./routes/doctorDetails.router");
 require("dotenv").config();
 
 // middleware
