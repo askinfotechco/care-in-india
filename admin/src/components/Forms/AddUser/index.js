@@ -29,7 +29,7 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
 
   const [formData, setFormData] = useState({
-    role: "examiner",
+    role: "",
     username: "",
     email: "",
     password: "",
@@ -51,7 +51,7 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
     e.preventDefault();
     try {
       const formDataToSend = await JSON.stringify(formData);
-      await axios.post(`${URL}/auth/v1/register`, formDataToSend, {
+      await axios.post(`${URL}/auth/user/register`, formDataToSend, {
         headers: {
           Authorization: "Bearer " + cookies.jwt,
           Accept: "application/json",
@@ -83,18 +83,28 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
         <DialogTitle>
           <Typography variant="h4">Add Users</Typography>
         </DialogTitle>
-        <DialogContent sx={{ width: "54vw" }}>
+        <DialogContent sx={{ width: "66vw" }}>
           <Box>
             <Stack>
               <Box display={"flex"} gap={5}>
                 <TextField
-                  sx={{ marginTop: "15px", width: "390px" }}
-                  label="username"
+                  sx={{ marginTop: "15px", width: "330px" }}
+                  label="First Name"
                   multiline
                   maxRows={Infinity}
-                  name="username"
+                  name="firstname"
                   variant="outlined"
-                  value={formData.username}
+                  value={formData.firstname}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "15px", width: "330px" }}
+                  label="Last Name"
+                  multiline
+                  maxRows={Infinity}
+                  name="lastname"
+                  variant="outlined"
+                  value={formData.lastname}
                   onChange={handleChange}
                 />
                 <FormControl>
@@ -106,10 +116,11 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
                     label="Type Of Role"
                     onChange={handleChange}
                     name="role"
+                    defaultValue="user"
                   >
+                    <MenuItem value={"user"}>User</MenuItem>
                     <MenuItem value={"admin"}>Admin</MenuItem>
-                    <MenuItem value={"examiner"}>Examiner</MenuItem>
-                    <MenuItem value={"student"}>Student</MenuItem>
+                    <MenuItem value={"receptionist"}>Receptionist</MenuItem>
                   </Select>
                 </FormControl>
               </Box>
@@ -117,7 +128,7 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
             <Stack>
               <Box display={"flex"} gap={5}>
                 <TextField
-                  sx={{ marginTop: "30px", width: "390px" }}
+                  sx={{ marginTop: "30px", width: "330px" }}
                   id="test"
                   label="email"
                   type="email"
@@ -127,7 +138,7 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
                   onChange={handleChange}
                 />
                 <TextField
-                  sx={{ marginTop: "30px", width: "360px" }}
+                  sx={{ marginTop: "30px", width: "330px" }}
                   label="password"
                   type="password"
                   name="password"
