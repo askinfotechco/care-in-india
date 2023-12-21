@@ -100,7 +100,7 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
               <Box display={"flex"} gap={5}>
                 <TextField
                   sx={{ marginTop: "15px", width: "330px" }}
-                  label="Firstname"
+                  label="First Name"
                   multiline
                   maxRows={Infinity}
                   name="firstname"
@@ -110,7 +110,7 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
                 />
                 <TextField
                   sx={{ marginTop: "15px", width: "330px" }}
-                  label="Lastname"
+                  label="Last Name"
                   multiline
                   maxRows={Infinity}
                   name="lastname"
@@ -167,7 +167,7 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
                   </Select>
                 </FormControl>
                 <TextField
-                  sx={{ marginTop: "30px", width: "390px" }}
+                  sx={{ marginTop: "30px", width: "330px" }}
                   id="test"
                   label="Email Address"
                   type="email"
