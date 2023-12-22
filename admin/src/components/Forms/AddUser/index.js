@@ -167,7 +167,7 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
                   </Select>
                 </FormControl>
                 <TextField
-                  sx={{ marginTop: "30px", width: "330px" }}
+                  sx={{ marginTop: "30px", width: "390px" }}
                   id="test"
                   label="Email Address"
                   type="email"
