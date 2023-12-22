@@ -7,7 +7,7 @@ const secret = process.env.JWT_TOKEN;
 // apis
 // registration
 const createUser = async (req, res) => {
-  const { firstname, lastname, email, password } = req.body;
+  const { firstname, lastname, gender, email, password } = req.body;
   const encodePass = await bcrypt.hash(password, 10);
   // console.log(encodePass)
   const userObj = {

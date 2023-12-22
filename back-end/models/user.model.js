@@ -61,6 +61,10 @@ const UserSchema = new Schema({
       type: String,
       required: false,
     },
+    pincode: {
+      type: String,
+      required: false,
+    },
     phone: {
       type: String,
       required: false,
