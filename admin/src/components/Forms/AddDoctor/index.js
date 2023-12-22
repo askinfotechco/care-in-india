@@ -198,6 +198,30 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                   onChange={handleChange}
                 />
                 <TextField
+                  sx={{ marginTop: "30px", width: "360px" }}
+                  label="Languages Known"
+                  multiline
+                  maxRows={Infinity}
+                  name="language"
+                  variant="outlined"
+                  value={formData.language}
+                  onChange={handleChange}
+                />
+              </Box>
+            </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>
+                <TextField
+                  sx={{ marginTop: "30px", width: "230px" }}
+                  label="Phone"
+                  multiline
+                  maxRows={Infinity}
+                  name="phone"
+                  variant="outlined"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+                <TextField
                   sx={{ marginTop: "30px", width: "240px" }}
                   label="City"
                   multiline
@@ -217,28 +241,14 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                   value={formData.country}
                   onChange={handleChange}
                 />
-              </Box>
-            </Stack>
-            <Stack>
-              <Box display={"flex"} gap={5}>
                 <TextField
-                  sx={{ marginTop: "30px", width: "240px" }}
-                  label="Phone"
+                  sx={{ marginTop: "30px", width: "150px" }}
+                  label="Pincode"
                   multiline
                   maxRows={Infinity}
-                  name="phone"
+                  name="pincode"
                   variant="outlined"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
-                <TextField
-                  sx={{ marginTop: "30px", width: "390px" }}
-                  label="Languages Known"
-                  multiline
-                  maxRows={Infinity}
-                  name="language"
-                  variant="outlined"
-                  value={formData.language}
+                  value={formData.pincode}
                   onChange={handleChange}
                 />
               </Box>
