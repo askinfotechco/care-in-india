@@ -18,6 +18,9 @@ import {
   IconButton,
   FormLabel,
   Typography,
+  Radio,
+  FormControlLabel,
+  RadioGroup,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -30,9 +33,16 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
 
   const [formData, setFormData] = useState({
     role: "",
-    username: "",
+    firstname: "",
+    lastname: "",
+    gender: "",
     email: "",
     password: "",
+    address: "",
+    city: "",
+    country: "",
+    pincode: "",
+    phone: "",
   });
 
   const handleChange = (e) => {
@@ -48,6 +58,7 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
   };
 
   const handleSubmit = async (e) => {
+    console.log(formData);
     e.preventDefault();
     try {
       const formDataToSend = await JSON.stringify(formData);
@@ -83,13 +94,13 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
         <DialogTitle>
           <Typography variant="h4">Add Users</Typography>
         </DialogTitle>
-        <DialogContent sx={{ width: "66vw" }}>
+        <DialogContent sx={{ width: "69vw" }}>
           <Box>
             <Stack>
               <Box display={"flex"} gap={5}>
                 <TextField
                   sx={{ marginTop: "15px", width: "330px" }}
-                  label="First Name"
+                  label="Firstname"
                   multiline
                   maxRows={Infinity}
                   name="firstname"
@@ -99,7 +110,7 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
                 />
                 <TextField
                   sx={{ marginTop: "15px", width: "330px" }}
-                  label="Last Name"
+                  label="Lastname"
                   multiline
                   maxRows={Infinity}
                   name="lastname"
@@ -108,7 +119,39 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
                   onChange={handleChange}
                 />
                 <FormControl>
-                  <FormLabel sx={{ fontSize: "12px" }}>Role</FormLabel>
+                  <FormLabel id="demo-row-radio-buttons-group-label">
+                    Gender
+                  </FormLabel>
+                  <RadioGroup
+                    row
+                    aria-labelledby="demo-row-radio-buttons-group-label"
+                    name="gender"
+                    value={formData.gender}
+                    onChange={handleChange}
+                  >
+                    <FormControlLabel
+                      value="female"
+                      control={<Radio />}
+                      label="Female"
+                    />
+                    <FormControlLabel
+                      value="male"
+                      control={<Radio />}
+                      label="Male"
+                    />
+                    <FormControlLabel
+                      value="other"
+                      control={<Radio />}
+                      label="Other"
+                    />
+                  </RadioGroup>
+                </FormControl>
+              </Box>
+            </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>
+                <FormControl>
+                  <FormLabel sx={{ fontSize: "12px", marginTop: "15px", width: "120px" }}>Role</FormLabel>
                   <Select
                     variant="outlined"
                     placeholder="Role"
@@ -123,14 +166,10 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
                     <MenuItem value={"receptionist"}>Receptionist</MenuItem>
                   </Select>
                 </FormControl>
-              </Box>
-            </Stack>
-            <Stack>
-              <Box display={"flex"} gap={5}>
                 <TextField
-                  sx={{ marginTop: "30px", width: "330px" }}
+                  sx={{ marginTop: "30px", width: "390px" }}
                   id="test"
-                  label="email"
+                  label="Email Address"
                   type="email"
                   name="email"
                   variant="outlined"
@@ -138,12 +177,71 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
                   onChange={handleChange}
                 />
                 <TextField
-                  sx={{ marginTop: "30px", width: "330px" }}
-                  label="password"
+                  sx={{ marginTop: "30px", width: "360px" }}
+                  label="Password"
                   type="password"
                   name="password"
                   variant="outlined"
-                  value={formData.subTopic}
+                  value={formData.password}
+                  onChange={handleChange}
+                />
+              </Box>
+            </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>
+                <TextField
+                  sx={{ marginTop: "30px", width: "390px" }}
+                  label="Address"
+                  multiline
+                  maxRows={Infinity}
+                  name="address"
+                  variant="outlined"
+                  value={formData.address}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "30px", width: "240px" }}
+                  label="City"
+                  multiline
+                  maxRows={Infinity}
+                  name="city"
+                  variant="outlined"
+                  value={formData.city}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "30px", width: "240px" }}
+                  label="Country"
+                  multiline
+                  maxRows={Infinity}
+                  name="country"
+                  variant="outlined"
+                  value={formData.country}
+                  onChange={handleChange}
+                />
+              </Box>
+            </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>
+                <TextField
+                  sx={{ marginTop: "30px", width: "230px" }}
+                  label="Phone"
+                  multiline
+                  maxRows={Infinity}
+                  name="phone"
+                  variant="outlined"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+                
+                <TextField
+                  sx={{ marginTop: "30px", width: "150px" }}
+                  label="Pincode"
+                  multiline
+                  maxRows={Infinity}
+                  name="pincode"
+                  variant="outlined"
+                  value={formData.pincode}
                   onChange={handleChange}
                 />
               </Box>
@@ -153,14 +251,24 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
         <DialogActions>
           <Button
             size="large"
-            sx={{ border: "2px solid #e2e2e2" }}
+            sx={{
+              border: "2px solid #e2e2e2",
+              marginBottom: "10px",
+              marginTop: "30px",
+              marginRight: "15px",
+            }}
             onClick={handleClose}
           >
             Cancel
           </Button>
           <Button
             size="large"
-            sx={{ border: "2px solid #e2e2e2" }}
+            sx={{
+              border: "2px solid #e2e2e2",
+              marginBottom: "10px",
+              marginTop: "30px",
+              marginRight: "15px",
+            }}
             onClick={handleSubmit}
             type="submit"
           >
