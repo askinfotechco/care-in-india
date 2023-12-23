@@ -18,31 +18,30 @@ import {
   IconButton,
   FormLabel,
   Typography,
-  Radio,
   FormControlLabel,
   RadioGroup,
+  Radio,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 //connection file
 import { URL } from "../../../connection";
 
-const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
+const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
   //cookies
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
 
   const [formData, setFormData] = useState({
-    role: "",
     firstname: "",
     lastname: "",
-    gender: "",
     email: "",
     password: "",
-    address: "",
-    city: "",
     country: "",
-    pincode: "",
+    city: "",
     phone: "",
+    language: "",
+    specialization: "",
+    role: "doctor",
   });
 
   const handleChange = (e) => {
@@ -58,11 +57,11 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
   };
 
   const handleSubmit = async (e) => {
-    console.log(formData);
     e.preventDefault();
     try {
       const formDataToSend = await JSON.stringify(formData);
-      await axios.post(`${URL}/auth/user/register`, formDataToSend, {
+      console.log(formDataToSend);
+      await axios.post(`${URL}/api/doctor/add`, formDataToSend, {
         headers: {
           Authorization: "Bearer " + cookies.jwt,
           Accept: "application/json",
@@ -92,9 +91,9 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
           </Toolbar>
         </AppBar>
         <DialogTitle>
-          <Typography variant="h4">Add Users</Typography>
+          <Typography variant="h4">Add Doctor</Typography>
         </DialogTitle>
-        <DialogContent sx={{ width: "69vw" }}>
+        <DialogContent sx={{ width: "75vw" }}>
           <Box>
             <Stack>
               <Box display={"flex"} gap={5}>
@@ -150,8 +149,8 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
             </Stack>
             <Stack>
               <Box display={"flex"} gap={5}>
-                <FormControl>
-                  <FormLabel sx={{ fontSize: "12px", marginTop: "15px", width: "120px" }}>Role</FormLabel>
+                {/* <FormControl>
+                  <FormLabel sx={{ fontSize: "12px" }}>Role</FormLabel>
                   <Select
                     variant="outlined"
                     placeholder="Role"
@@ -159,13 +158,12 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
                     label="Type Of Role"
                     onChange={handleChange}
                     name="role"
-                    defaultValue="user"
+                    defaultValue="doctor"
+                    disabled="true"
                   >
-                    <MenuItem value={"user"}>User</MenuItem>
-                    <MenuItem value={"admin"}>Admin</MenuItem>
-                    <MenuItem value={"receptionist"}>Receptionist</MenuItem>
+                    <MenuItem value={"doctor"}>Doctor</MenuItem>
                   </Select>
-                </FormControl>
+                </FormControl> */}
                 <TextField
                   sx={{ marginTop: "30px", width: "390px" }}
                   id="test"
@@ -191,12 +189,36 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
               <Box display={"flex"} gap={5}>
                 <TextField
                   sx={{ marginTop: "30px", width: "390px" }}
-                  label="Address"
+                  label="Specialization"
                   multiline
                   maxRows={Infinity}
-                  name="address"
+                  name="specialization"
                   variant="outlined"
-                  value={formData.address}
+                  value={formData.specialization}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "30px", width: "360px" }}
+                  label="Languages Known"
+                  multiline
+                  maxRows={Infinity}
+                  name="language"
+                  variant="outlined"
+                  value={formData.language}
+                  onChange={handleChange}
+                />
+              </Box>
+            </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>
+                <TextField
+                  sx={{ marginTop: "30px", width: "230px" }}
+                  label="Phone"
+                  multiline
+                  maxRows={Infinity}
+                  name="phone"
+                  variant="outlined"
+                  value={formData.phone}
                   onChange={handleChange}
                 />
                 <TextField
@@ -219,21 +241,6 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
                   value={formData.country}
                   onChange={handleChange}
                 />
-              </Box>
-            </Stack>
-            <Stack>
-              <Box display={"flex"} gap={5}>
-                <TextField
-                  sx={{ marginTop: "30px", width: "230px" }}
-                  label="Phone"
-                  multiline
-                  maxRows={Infinity}
-                  name="phone"
-                  variant="outlined"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
-                
                 <TextField
                   sx={{ marginTop: "30px", width: "150px" }}
                   label="Pincode"
@@ -272,7 +279,7 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
             onClick={handleSubmit}
             type="submit"
           >
-            Create User
+            Add Doctor
           </Button>
         </DialogActions>
       </Dialog>
@@ -280,4 +287,4 @@ const AddUser = (props, { handleQuestionAdd, fromTestFormation }) => {
   );
 };
 
-export default AddUser;
+export default AddDoctor;

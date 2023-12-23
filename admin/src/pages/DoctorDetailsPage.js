@@ -34,14 +34,16 @@ import { URL } from "../connection";
 import AddUser from "../components/Forms/AddUser";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AddDoctor from "../components/Forms/AddDoctor";
 
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
   { id: "firstname", label: "Name", alignRight: false },
-  { id: "email", label: "Email Address", alignRight: false },
-  { id: "phone", label: "Mobile", alignRight: false },
-  { id: "role", label: "Role", alignRight: false },
+  // { id: "email", label: "Email Address", alignRight: false },
+  { id: "country", label: "Location", alignRight: false },
+  { id: "phone", label: "Phone", alignRight: false },
+  { id: "specialization", label: "Specialization", alignRight: false },
   { id: "createdAt", label: "Created On", alignRight: false },
   { id: "status", label: "Status", alignRight: false },
   { id: "" },
@@ -120,7 +122,7 @@ export default function DoctorDetailsPage() {
     // console.log(userID, checkedStatus);
     let userStatus = checkedStatus ? false : true;
     axios
-      .post(`${URL}/auth/user/updatedoctorstatus`, {
+      .post(`${URL}/api/doctor/updatedoctorstatus`, {
         id: userID,
         status: userStatus,
       })
@@ -239,10 +241,10 @@ export default function DoctorDetailsPage() {
             startIcon={<Iconify icon="eva:plus-fill" />}
             onClick={handleClickOpen}
           >
-            New User
+            New Doctor
           </Button>
           {openDialog && (
-            <AddUser setOpenDialog={setOpenDialog} openDialog={openDialog} />
+            <AddDoctor setOpenDialog={setOpenDialog} openDialog={openDialog} />
           )}
         </Stack>
 
@@ -277,13 +279,15 @@ export default function DoctorDetailsPage() {
                           _id,
                           firstname,
                           lastname,
-                          email,
-                          mobile,
-                          role,
+                          // email,
+                          country,
+                          city,
+                          phone,
+                          specialization,
                           createdAt,
                           status,
                         } = row;
-                        const selectedUser = selected.indexOf(email) !== -1;
+                        const selectedUser = selected.indexOf(firstname) !== -1;
 
                         return (
                           <TableRow
@@ -297,7 +301,7 @@ export default function DoctorDetailsPage() {
                               <Checkbox
                                 checked={selectedUser}
                                 onChange={(event) =>
-                                  handleClick(event, email)
+                                  handleClick(event, firstname)
                                 }
                               />
                             </TableCell>
@@ -315,21 +319,18 @@ export default function DoctorDetailsPage() {
                               </Stack>
                             </TableCell>
 
-                            <TableCell align="left" width={240}>
+                            {/* <TableCell align="left" width={240}>
                               {email}
+                            </TableCell> */}
+                            <TableCell align="left" width={200}>
+                              {city}, {country}
                             </TableCell>
                             <TableCell align="left" width={200}>
-                              {mobile}
+                              {phone}
                             </TableCell>
-                            <TableCell align="left" width={150}>
-                              {role === "admin"
-                                ? "Admin"
-                                : role === "user"
-                                ? "User"
-                                : role === "doctor"
-                                ? "Doctor"
-                                : "Representative"}
-                            </TableCell>
+                            <TableCell align="left" width={200}>
+                              {specialization}
+                            </TableCell>                            
                             <TableCell align="left" width={200}>
                               {createdAt}
                             </TableCell>

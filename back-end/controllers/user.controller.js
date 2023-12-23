@@ -7,12 +7,13 @@ const secret = process.env.JWT_TOKEN;
 // apis
 // registration
 const createUser = async (req, res) => {
-  const { firstname, lastname, email, password } = req.body;
+  const { firstname, lastname, gender, email, password } = req.body;
   const encodePass = await bcrypt.hash(password, 10);
   // console.log(encodePass)
   const userObj = {
     firstname: firstname,
     lastname: lastname,
+    gender: gender,
     password: encodePass,
     email: email,
   };
@@ -65,9 +66,9 @@ const userLogin = async (req, res) => {
         // console.log(getUser(token))
 
         return res.json({
-          message: `${data.username} logged in successfully`,
+          message: `${data.email} logged in successfully`,
           token: token,
-          username: data.username,
+          username: data.email,
           role: data.role,
         });
       }
