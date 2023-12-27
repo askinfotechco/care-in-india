@@ -1,11 +1,27 @@
 // Dropdown.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Dropdown = (props) => {
+  const [dropDownOption, setDropdownOptions] = useState([]);
+
   const handleDropdownChange = (event) => {
     props.selectedOptionFun(event.target.value);
   };
 
+  useEffect(() => {
+    const handleOptions = () => {
+      const dropDownArray = [{ one: "All", two: "Locations" }];
+      props.option.forEach((ele) => {
+        dropDownArray.push({ one: ele.pincode, two: ele.location });
+      });
+      const uniqueData = dropDownArray.filter(
+        (obj, index, array) =>
+          index === array.findIndex((o) => o.one === obj.one)
+      );
+      setDropdownOptions(uniqueData);
+    };
+    handleOptions();
+  }, [props.option]);
   return (
     <div>
       <label htmlFor="dropdown">{"Choose location "}</label>
@@ -14,7 +30,7 @@ const Dropdown = (props) => {
         value={props.selectedOption}
         onChange={handleDropdownChange}
       >
-        {props.option.map((ele) => {
+        {dropDownOption.map((ele) => {
           return <option value={ele.one}>{`${ele.one} ${ele.two}`}</option>;
         })}
       </select>

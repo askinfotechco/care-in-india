@@ -46,9 +46,9 @@ export default function DoctorCard(props) {
     <Card>
       <img src={props.data.imgSource} alt="Card Image" />
       <CardContent>
-        <CardTitle>{props.data.tile}</CardTitle>
-        <Speciallity>{props.data.speciallity}</Speciallity>
-        <CardText>{props.data.description}</CardText>
+        <CardTitle>{`${props.data.firstname}, ${props.data.lastname}`}</CardTitle>
+        <Speciallity>{props.data.specialization}</Speciallity>
+        <CardText>{`${props.data.address}, ${props.data.location}, ${props.data.pincode}`}</CardText>
       </CardContent>
     </Card>
   );

@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useCookies } from "react-cookie";
 import LoginvalidationSchema from "../components/validations/LoginValidation";
 import { URL } from "../connection";
+import LoadingSpinner from "../molecules/loadingSpinner";
 
 const InternalLinkNode = styled(InternalLink)`
   div {
@@ -104,6 +105,7 @@ const SignIn = () => {
   const firstname = useRef("null");
   const lastname = useRef("null");
   const [err, setErr] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // navigate("/", { replace: true });
@@ -119,6 +121,7 @@ const SignIn = () => {
     LoginvalidationSchema.validate(userDetails)
       .then(async (validData) => {
         try {
+          setLoading(true);
           const response = await axios.post(
             `${URL}/auth/user/login`,
             userDetails
@@ -139,10 +142,15 @@ const SignIn = () => {
           }
         } catch (err) {
           console.log("request not wokring", err);
+        } finally {
+          // Set loading state to false when the request is completed (success or error)
+          setLoading(false);
         }
       })
       .catch(({ errors }) => setErr(errors[0]));
   };
+
+  console.log(loading);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -163,10 +171,11 @@ const SignIn = () => {
     // console.log("Form submitted:", formData);
   };
 
-  const onClickSignin = () => {};
+  //const onClickSignin = () => {};
 
   return (
     <>
+      {loading && <LoadingSpinner />}
       <MainSection>
         <LeftSection>
           <Heading className="MontserratItalic">
