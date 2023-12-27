@@ -86,6 +86,25 @@ const Label = styled.div`
   letter-spacing: -0.36px;
 `;
 
+const CheckBoxLabel = styled.div`
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+`;
+
+const CheckBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -18px;
+  padding: 0 20%;
+`;
+
 const Input = styled.input`
   width: 100%;
   padding: 8px;
@@ -101,6 +120,15 @@ const Logos = styled.div`
   justify-content: center;
   align-items: center;
   gap: 50px;
+`;
+
+const Error = styled.div`
+  display: block;
+  font-family: Montserrat;
+  font-size: 8px;
+  font-style: normal;
+  letter-spacing: -0.36px;
+  color: rgba(1000, 0, 0, 0.8);
 `;
 
 const SignUp = () => {
@@ -123,25 +151,26 @@ const SignUp = () => {
       firstname: formData.firstname,
       lastname: formData.lastname,
       password: formData.password,
+      confirmPassword: formData.confirmPassword,
       email: formData.email,
     };
     SignupvalidationSchema.validate(userDetails)
       .then(async (validData) => {
+        console.log(validData);
         try {
           console.log(userDetails);
           const response = await axios.post(
             `${URL}/auth/user/register`,
             userDetails
           );
-          console.log(response.data);
           if (response.data.msg.includes("registerd successfully")) {
-            setTimeout(() => {
-              window.location.reload();
-            }, 3000);
             toast.success("Registration successful! Login to Continue...", {
               position: toast.POSITION.TOP_CENTER,
               autoClose: 3000,
             });
+            setTimeout(() => {
+              navigate("/signin", { replace: true });
+            }, 3000);
           } else {
             toast.error(response.data.msg, {
               position: toast.POSITION.TOP_CENTER,
@@ -160,6 +189,7 @@ const SignUp = () => {
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
+    gender: "male",
     email: "",
     password: "",
     confirmPassword: "",
@@ -183,101 +213,141 @@ const SignUp = () => {
   const onClickSignin = () => {};
 
   return (
-    <MainSection>
-      <LeftSection>
-        <Label
-          style={{
-            textAlign: "left",
-            fontSize: "20px",
-            color: "rgba(0, 0, 0, 0.8)",
-          }}
-        >
-          {"click here to"}{" "}
-          <span>
-            <Link to={"/signin"}>{"sign in"}</Link>
-          </span>
-        </Label>
-
-        <Heading className="MontserratItalic">
-          {"Welcome to Care In India"}
-        </Heading>
-        <Label style={{ fontSize: "20px", color: "rgba(0, 0, 0, 0.8)" }}>
-          {
-            "Embark on your journey to wellness - Sign up today and prioritize your health with us"
-          }
-        </Label>
-        <Wrapper onSubmit={handleSubmit}>
-          <Label>Signup to book your first appointment</Label>
-          <Input
-            type="text"
-            name="firstname"
-            placeholder="First name"
-            value={formData.firstname}
-            onChange={handleChange}
-            style={{ width: "47%", marginRight: "3%" }}
-          />
-          <Input
-            type="text"
-            name="lastname"
-            placeholder="Last name"
-            value={formData.lastname}
-            onChange={handleChange}
-            style={{ width: "47%", marginLeft: "3%" }}
-          />
-          <br />
-          <Input
-            type="email"
-            name="email"
-            placeholder="Email address"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          <br />
-          <Input
-            type="password"
-            name="password"
-            placeholder="Create password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-          <br />
-          <Input
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-          />
-          <br />
-          <PrimaryButton text={"Sign Up"} type={"submit"} onClick= {() => register()}></PrimaryButton>
-        </Wrapper>
-        <Label
-          style={{
-            fontSize: "20px",
-            color: "rgba(0, 0, 0, 0.8)",
-            marginTop: "20px",
-          }}
-        >
-          {"Or Sign up with"}
-        </Label>
-        <Logos>
-          <FaFacebookSquare
+    <>
+      <MainSection>
+        <LeftSection>
+          <Label
             style={{
-              height: 35,
-              width: 35,
-              cursor: "pointer",
+              textAlign: "left",
+              fontSize: "20px",
+              color: "rgba(0, 0, 0, 0.8)",
             }}
-          />
-          <FaGoogle style={{ height: 30, width: 30, cursor: "pointer" }} />
-        </Logos>
-      </LeftSection>
-      <RightSection>
-        {
-          "“Health is a state of complete physical, mental, and social well-being, and not merely the absence of disease or infirmity.”"
-        }
-        {"- World Health Organization"}
-      </RightSection>
-    </MainSection>
+          >
+            {"click here to"}{" "}
+            <span>
+              <Link to={"/signin"}>{"sign in"}</Link>
+            </span>
+          </Label>
+
+          <Heading className="MontserratItalic">
+            {"Welcome to Care In India"}
+          </Heading>
+          <Label style={{ fontSize: "20px", color: "rgba(0, 0, 0, 0.8)" }}>
+            {
+              "Embark on your journey to wellness - Sign up today and prioritize your health with us"
+            }
+          </Label>
+          <Wrapper onSubmit={handleSubmit}>
+            <Label>Signup to book your first appointment</Label>
+            <Input
+              type="text"
+              name="firstname"
+              placeholder="First name"
+              value={formData.firstname}
+              onChange={handleChange}
+              style={{ width: "47%", marginRight: "3%" }}
+            />
+            <Input
+              type="text"
+              name="lastname"
+              placeholder="Last name"
+              value={formData.lastname}
+              onChange={handleChange}
+              style={{ width: "47%", marginLeft: "3%" }}
+            />
+            <CheckBox>
+              <CheckBoxLabel>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  checked={formData.gender === "male"}
+                  onChange={handleChange}
+                />
+                {"Male"}
+              </CheckBoxLabel>
+              <CheckBoxLabel>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  checked={formData.gender === "female"}
+                  onChange={handleChange}
+                />
+                {"Female"}
+              </CheckBoxLabel>
+              <CheckBoxLabel>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="other"
+                  checked={formData.gender === "other"}
+                  onChange={handleChange}
+                />
+                {"Other"}
+              </CheckBoxLabel>
+            </CheckBox>
+            <br />
+            <Input
+              type="email"
+              name="email"
+              placeholder="Email address"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <br />
+            <Input
+              type="password"
+              name="password"
+              placeholder="Create password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+            <br />
+            <Input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+            />
+            {err && <Error>{err}</Error>}
+            <br />
+            <PrimaryButton
+              text={"Sign Up"}
+              type={"submit"}
+              onClick={() => register()}
+            ></PrimaryButton>
+          </Wrapper>
+          <Label
+            style={{
+              fontSize: "20px",
+              color: "rgba(0, 0, 0, 0.8)",
+              marginTop: "20px",
+            }}
+          >
+            {"Or Sign up with"}
+          </Label>
+          <Logos>
+            <FaFacebookSquare
+              style={{
+                height: 35,
+                width: 35,
+                cursor: "pointer",
+              }}
+            />
+            <FaGoogle style={{ height: 30, width: 30, cursor: "pointer" }} />
+          </Logos>
+        </LeftSection>
+        <RightSection>
+          {
+            "“Health is a state of complete physical, mental, and social well-being, and not merely the absence of disease or infirmity.”"
+          }
+          {"- World Health Organization"}
+        </RightSection>
+      </MainSection>
+      <ToastContainer />
+    </>
   );
 };
 

@@ -130,7 +130,7 @@ const SignIn = () => {
             sessionStorage.setItem("jwt", response.data.token);
             sessionStorage.setItem("email", userDetails.email);
             // onLogin();
-            navigate("/dashboard", { replace: true });
+            navigate("/", { replace: true });
           } else {
             toast.error(response.data.message, {
               position: toast.POSITION.TOP_CENTER,
@@ -166,64 +166,71 @@ const SignIn = () => {
   const onClickSignin = () => {};
 
   return (
-    <MainSection>
-      <LeftSection>
-        <Heading className="MontserratItalic">
-          {"Welcome to Care In India"}
-        </Heading>
-        <Label style={{ fontSize: "20px", color: "rgba(0, 0, 0, 0.8)" }}>
+    <>
+      <MainSection>
+        <LeftSection>
+          <Heading className="MontserratItalic">
+            {"Welcome to Care In India"}
+          </Heading>
+          <Label style={{ fontSize: "20px", color: "rgba(0, 0, 0, 0.8)" }}>
+            {
+              "We're here to support you on the path to a healthier, happier life."
+            }
+          </Label>
+          <Wrapper onSubmit={handleSubmit}>
+            <Label>{"Sign in to your health portal"}</Label>
+            <Input
+              type="email"
+              name="email"
+              placeholder="Email address"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <br />
+            <Input
+              type="password"
+              name="password"
+              placeholder="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+            <br />
+            <PrimaryButton
+              text={"Sign In"}
+              type={"submit"}
+              onClick={() => login()}
+            ></PrimaryButton>
+          </Wrapper>
+          <Label
+            style={{
+              fontSize: "20px",
+              color: "rgba(0, 0, 0, 0.8)",
+              marginTop: "20px",
+            }}
+          >
+            {"Doesn't have an account?"}
+          </Label>
+          <Label
+            style={{
+              fontSize: "20px",
+              color: "rgba(0, 0, 0, 0.8)",
+            }}
+          >
+            {"click here to"}{" "}
+            <span>
+              <Link to={"/signup"}>{"sign up"}</Link>
+            </span>
+          </Label>
+        </LeftSection>
+        <RightSection>
           {
-            "We're here to support you on the path to a healthier, happier life."
+            "“Health is a state of complete physical, mental, and social well-being, and not merely the absence of disease or infirmity.”"
           }
-        </Label>
-        <Wrapper onSubmit={handleSubmit}>
-          <Label>{"Sign in to your health portal"}</Label>
-          <Input
-            type="email"
-            name="email"
-            placeholder="Email address"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          <br />
-          <Input
-            type="password"
-            name="password"
-            placeholder="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-          <br />
-          <PrimaryButton text={"Sign In"} type={"submit"} onClick= {() => login()}></PrimaryButton>
-        </Wrapper>
-        <Label
-          style={{
-            fontSize: "20px",
-            color: "rgba(0, 0, 0, 0.8)",
-            marginTop: "20px",
-          }}
-        >
-          {"Doesn't have an account?"}
-        </Label>
-        <Label
-          style={{
-            fontSize: "20px",
-            color: "rgba(0, 0, 0, 0.8)",
-          }}
-        >
-          {"click here to"}{" "}
-          <span>
-            <Link to={"/signup"}>{"sign up"}</Link>
-          </span>
-        </Label>
-      </LeftSection>
-      <RightSection>
-        {
-          "“Health is a state of complete physical, mental, and social well-being, and not merely the absence of disease or infirmity.”"
-        }
-        {"- World Health Organization"}
-      </RightSection>
-    </MainSection>
+          {"- World Health Organization"}
+        </RightSection>
+      </MainSection>
+      <ToastContainer />
+    </>
   );
 };
 

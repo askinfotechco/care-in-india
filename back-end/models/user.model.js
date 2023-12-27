@@ -11,14 +11,15 @@ Model:
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const UserSchema = new Schema(
+  {
     firstname: {
-        type: String,
-        required: [true,'First Name is required'],
+      type: String,
+      required: [true, "First Name is required"],
     },
     lastname: {
-        type: String,
-        required: [true,'Last Name is required'],
+      type: String,
+      required: [true, "Last Name is required"],
     },
     gender: {
       type: String,
@@ -26,18 +27,18 @@ const UserSchema = new Schema({
       enum: ["male", "female", "other"],
       default: "male",
     },
+    email: {
+      type: String,
+      required: [true, "Email is required"],
+      trim: true,
+      unique: true,
+    },
     password: {
       type: String,
       required: [true, "Password is required"],
       trim: true,
       minlength: [8, "password ahould be atleast 8 characters"],
       // match: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
-    },
-    email: {
-      type: String,
-      required: [true, "Email is required"],
-      trim: true,
-      unique: true,
     },
     role: {
       type: String,
