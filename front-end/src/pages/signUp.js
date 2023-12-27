@@ -156,9 +156,7 @@ const SignUp = () => {
     };
     SignupvalidationSchema.validate(userDetails)
       .then(async (validData) => {
-        console.log(validData);
         try {
-          console.log(userDetails);
           const response = await axios.post(
             `${URL}/auth/user/register`,
             userDetails
@@ -183,7 +181,6 @@ const SignUp = () => {
         }
       })
       .catch(({ errors }) => setErr(errors[0]));
-    // console.log(userDetails);
   };
 
   const [formData, setFormData] = useState({
