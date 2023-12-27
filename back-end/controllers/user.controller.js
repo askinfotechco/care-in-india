@@ -17,7 +17,7 @@ const createUser = async (req, res) => {
     password: encodePass,
     email: email,
   };
-  
+
   try {
     const emailChecking = await userModel.find({ email });
     //console.log(emailChecking[0].email, email);

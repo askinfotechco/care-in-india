@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import DoctorCard from "../molecules/doctorCard";
 import Breadcrumb from "../molecules/breadcrumb";
+import Dropdown from "../molecules/selectOptions";
 
 const AppointmentPage = styled.div`
   margin: 16px;
@@ -23,6 +24,12 @@ const AppointmentSection = styled.div`
   //   color: #ffffff; /* Set text color to contrast with the background */
   display: flex;
 `;
+
+const dropdownOptions = [
+  { one: "110002", two: "Ajmeri Gate" },
+  { one: "110003", two: "Aliganj" },
+  { one: "110005", two: "Anand Parbat" },
+];
 
 const doctorDetails = [
   {
@@ -61,11 +68,18 @@ const breadcrumbItems = [
 ];
 
 export default function BookAppointment() {
+  const [selectedOption, setSelectedOption] = useState("");
+
   return (
     <AppointmentPage>
       <BreadCrumbs>
         <Breadcrumb items={breadcrumbItems} />
       </BreadCrumbs>
+      <Dropdown
+        option={dropdownOptions}
+        selectedOption={selectedOption}
+        selectedOptionFun={setSelectedOption}
+      />
       <AppointmentSection>
         {doctorDetails.map((ele) => {
           return <DoctorCard data={ele} />;
