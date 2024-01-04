@@ -86,10 +86,11 @@ const userLogin = async (req, res) => {
 };
 
 const getUserById = async (req, res) => {
-  const id = req.params.id;
-
+  const email = req.body.email;
+  console.log(email);
   try {
-    const user = await userModel.findOne({ _id: id });
+    const user = await userModel.findOne({ email: email });
+    console.log(email);
     return res.status(200).json({ user });
   } catch (error) {
     return res.status(400).json({ msg: `${error}` });
