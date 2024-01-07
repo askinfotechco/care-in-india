@@ -7,7 +7,18 @@ const secret = process.env.JWT_TOKEN;
 // apis
 // registration
 const createUser = async (req, res) => {
-  const { firstname, lastname, gender, email, password } = req.body;
+  const {
+    firstname,
+    lastname,
+    gender,
+    email,
+    password,
+    address,
+    country,
+    city,
+    pincode,
+    phone,
+  } = req.body;
   const encodePass = await bcrypt.hash(password, 10);
   // console.log(encodePass)
   const userObj = {
@@ -16,6 +27,11 @@ const createUser = async (req, res) => {
     gender: gender,
     password: encodePass,
     email: email,
+    address: address,
+    country: country,
+    city: city,
+    pincode: pincode,
+    phone: phone,
   };
 
   try {
@@ -211,6 +227,56 @@ const getActiveUSersCount = async (req, res) => {
   }
 };
 
+const updateUserDetails = async (req, res) => {
+  const session = await mongoose.startSession();
+
+  const {
+    firstname,
+    lastname,
+    gender,
+    email,
+    password,
+    address,
+    country,
+    city,
+    pincode,
+    phone,
+  } = req.body;
+  // const encodePass = await bcrypt.hash(password, 10);
+
+  session.withTransaction(async () => {
+    try {
+      const userProfile = await userModel.find({email: req.body.email});
+      if (userProfile) {
+        userProfile.firstname = firstname;
+        userProfile.lastname = lastname;
+        userProfile.gender = gender;
+        userProfile.email = email;
+        userProfile.password = password;
+        userProfile.address = address;
+        userProfile.country = country;
+        userProfile.city = city;
+        userProfile.pincode = pincode;
+        userProfile.phone = phone;
+
+        var userDetails = new userModel(userProfile);
+        await userDetails.save();
+        res
+          .status(201)
+          .json({ message: "User details updated successfully" });
+      } else {
+        res.status(404).send({
+          message: "User details Not Found!",
+        });
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+  session.endSession();
+};
+
 module.exports = {
   createUser,
   getAllUser,
@@ -222,4 +288,5 @@ module.exports = {
   deleteUser,
   updateUserStatus,
   getActiveUSersCount,
+  updateUserDetails,
 };

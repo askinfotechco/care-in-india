@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import PrimaryButton from "../atoms/primaryButton";
+import axios from "axios";
+import { useCookies } from "react-cookie"; 
+import { URL } from "../connection";
 
 const ModalComponent = (props) => {
   //   const openModal = () => {
@@ -104,12 +107,13 @@ const ModalComponent = (props) => {
   //   const closeModal = () => {
   //     setModalOpen(false);
   //   };
-
+  const [cookies, setCookie, removeCookie] = useCookies("jwt");
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
     gender: "",
     email: "",
+    password: "",
     address: "",
     country: "",
     city: "",
@@ -123,6 +127,7 @@ const ModalComponent = (props) => {
       lastname: props.user?.lastname,
       gender: props.user?.gender,
       email: props.user?.email,
+      password: props.user?.password,
       address: props.user?.address,
       country: props.user?.country,
       city: props.user?.city,
@@ -137,6 +142,24 @@ const ModalComponent = (props) => {
       ...prevData,
       [name]: value,
     }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // setFormData({
+    //   ...formData,
+    // });
+    try {
+      const formDataToSend = JSON.stringify(formData);
+      await axios
+        .post(`${URL}/auth/user/updateUser`, formDataToSend)
+        .then((response) => {
+          alert("User details updated successfully");
+        });
+    } catch (error) {
+      console.error("Error saving User details:", error);
+    }
+
   };
 
   return (
@@ -208,6 +231,15 @@ const ModalComponent = (props) => {
               </CheckBox>
               <br />
               <Input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={formData.password}
+                onChange={handleChange}
+                disabled={true}
+              />
+              <br />
+              <Input
                 type="address"
                 name="address"
                 placeholder="Address"
@@ -241,8 +273,8 @@ const ModalComponent = (props) => {
               <br />
               <PrimaryButton
                 text={"Save"}
-                type={"submit"}
-                //onClick={() => register()}
+                onClick={handleSubmit}
+                type={"submit"}                
               ></PrimaryButton>
             </Wrapper>
           </Modal>
