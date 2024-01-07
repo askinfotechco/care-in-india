@@ -33,12 +33,6 @@ const UserSchema = new Schema(
       trim: true,
       unique: true,
     },
-    gender: {
-      type: String,
-      required: [true, "gender must be defined"],
-      enum: ["male", "female", "other"],
-      default: "male",
-    },
     password: {
       type: String,
       required: [true, "Password is required"],
