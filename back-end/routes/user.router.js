@@ -13,6 +13,7 @@ const {
   deleteUser,
   updateUserStatus,
   getActiveUSersCount,
+  updateUserDetails,
 } = require("../controllers/user.controller");
 
 userRouter.get("/", getAllUser);
@@ -25,5 +26,6 @@ userRouter.post("/resetMail/:id", authorizationHeader, resetEmail);
 userRouter.delete("/:id", authorizationHeader, deleteUser);
 userRouter.post("/updateuserstatus", updateUserStatus);
 userRouter.get("/getusercount", getActiveUSersCount);
+userRouter.post("/updateUser", updateUserDetails);
 
 module.exports = userRouter;

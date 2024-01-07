@@ -172,12 +172,11 @@ const UserDetailsPage = () => {
           <Address>
             <TableSection>
               <Table>
-                <tbody>
+                <tbody>                  
                   {data.map((item) => (
                     <tr key={item.id}>
                       <td>{item.id}</td>
                       <td>{item.name}</td>
-                      <td>{item.age}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -194,7 +193,6 @@ const UserDetailsPage = () => {
                 <tr key={item.id}>
                   <td>{item.id}</td>
                   <td>{item.name}</td>
-                  <td>{item.age}</td>
                 </tr>
               ))}
             </tbody>
