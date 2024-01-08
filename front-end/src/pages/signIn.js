@@ -132,7 +132,9 @@ const SignIn = () => {
             setCookie("jwt", response.data.token, { path: "/" });
             sessionStorage.setItem("jwt", response.data.token);
             sessionStorage.setItem("email", userDetails.email);
+            sessionStorage.setItem("name", response.data.username);
             // onLogin();
+            console.log(response.data);
             navigate("/", { replace: true });
           } else {
             toast.error(response.data.message, {

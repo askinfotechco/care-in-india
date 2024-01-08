@@ -1,5 +1,15 @@
 // Dropdown.js
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+
+const Select = styled.select`
+  width: 22%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+`;
 
 const Dropdown = (props) => {
   const [dropDownOption, setDropdownOptions] = useState([]);
@@ -25,7 +35,7 @@ const Dropdown = (props) => {
   return (
     <div>
       <label htmlFor="dropdown">{"Choose location "}</label>
-      <select
+      <Select
         id="dropdown"
         value={props.selectedOption}
         onChange={handleDropdownChange}
@@ -33,9 +43,10 @@ const Dropdown = (props) => {
         {dropDownOption.map((ele) => {
           return <option value={ele.one}>{`${ele.one} ${ele.two}`}</option>;
         })}
-      </select>
+      </Select>
 
-      <p>Selected option: {props.selectedOption}</p>
+      <p>{"or"}</p>
+      {/* <p>Selected option: {props.selectedOption}</p> */}
     </div>
   );
 };

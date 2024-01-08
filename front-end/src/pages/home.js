@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import InternalLink from "../atoms/internalLink";
 import styled from "styled-components";
 import companyLogoImage from "../static/images/careinindia.png";
@@ -10,6 +10,9 @@ import { GiMedicines } from "react-icons/gi";
 import { LuFiles } from "react-icons/lu";
 import UserProfileDropdown from "../molecules/userInfo";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
+import StickyFooter from "../molecules/StickyFooter";
+import Album from "../molecules/Album";
 
 const Wrapper = styled.div`
   margin: 16px;
@@ -76,6 +79,7 @@ const Features = styled.div`
   align-items: center;
   background-color: #f2f2f2;
   padding: 8px;
+  margin-bottom: 40px;
 `;
 
 const FeatureIcons = styled(Link)`
@@ -88,6 +92,24 @@ const FeatureIcons = styled(Link)`
 `;
 
 export default function Home() {
+  const [userEmail, setUserEmail] = useState();
+  const [cookies, setCookie, removeCookie] = useCookies("jwt");
+
+  useEffect(() => {
+    setUserEmail(sessionStorage.getItem("email"));
+  }, [sessionStorage]);
+
+  const handleLogout = () => {
+    // Add logout logic here
+    removeCookie("jwt", { path: "/" });
+    sessionStorage.removeItem("jwt");
+    sessionStorage.removeItem("email");
+    sessionStorage.removeItem("name");
+    setUserEmail(sessionStorage.getItem("email"));
+    console.log("Logging out...");
+  };
+
+  console.log(userEmail);
   return (
     <Wrapper>
       <TopSection>
@@ -105,13 +127,19 @@ export default function Home() {
           {/* <Label>{"We care for India"}</Label> */}
         </CompanyLogo>
         <Links>
-          <LineSpan>
-            <StyledLink to={"/signup"}>{"Register"}</StyledLink>
-          </LineSpan>
-          <LineSpan>
-            <StyledLink to={"/signin"}>{"Login"}</StyledLink>
-          </LineSpan>
-          <UserProfileDropdown />
+          {userEmail === null && (
+            <>
+              <LineSpan>
+                <StyledLink to={"/signup"}>{"Register"}</StyledLink>
+              </LineSpan>
+              <LineSpan>
+                <StyledLink to={"/signin"}>{"Login"}</StyledLink>
+              </LineSpan>
+            </>
+          )}
+          {userEmail !== null && (
+            <UserProfileDropdown handleLogout={handleLogout} />
+          )}
         </Links>
       </TopSection>
       <Features>
@@ -177,6 +205,8 @@ export default function Home() {
           </Label>
         </FeatureIcons>
       </Features>
+      {/* <Album /> */}
+      <StickyFooter />
     </Wrapper>
   );
 }

@@ -6,6 +6,7 @@ import Dropdown from "../molecules/selectOptions";
 import axios from "axios";
 import { URL } from "../connection";
 import LoadingSpinner from "../molecules/loadingSpinner";
+import SearchComponent from "../molecules/search";
 
 const AppointmentPage = styled.div`
   margin: 16px;
@@ -13,6 +14,11 @@ const AppointmentPage = styled.div`
 
 const BreadCrumbs = styled.div`
   text-align: left;
+`;
+
+const MainSection = styled.div`
+  background: #fff;
+  margin: 0 16px;
 `;
 
 const AppointmentSection = styled.div`
@@ -76,6 +82,7 @@ export default function BookAppointment() {
   const [loading, setLoading] = useState(false);
   const [doctorDetails, setDoctorDetails] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -105,8 +112,32 @@ export default function BookAppointment() {
     setFilteredData(filteredData);
   }, [doctorDetails, selectedOption]);
 
+  const onSearchClick = () => {
+    let filteredData = [];
+    // filteredData = doctorDetails.filter(
+    //   (item) =>
+    //     item.pincode.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    //     item.name.toLowerCase().includes(searchQuery.toLowerCase())
+    // );
+    filteredData = doctorDetails.filter((item) => {
+      for (const prop in item) {
+        if (Object.prototype.hasOwnProperty.call(item, prop)) {
+          const value = item[prop];
+          if (
+            typeof value === "string" &&
+            value.toLowerCase().includes(searchQuery.toLowerCase())
+          ) {
+            return true; // If keyword found in any string property
+          }
+        }
+      }
+      return false; // If keyword not found in any property
+    });
+    setFilteredData(filteredData);
+  };
+
   return (
-    <>
+    <MainSection>
       {loading && <LoadingSpinner />}
       <AppointmentPage>
         <BreadCrumbs>
@@ -117,12 +148,17 @@ export default function BookAppointment() {
           selectedOption={selectedOption}
           selectedOptionFun={setSelectedOption}
         />
+        <SearchComponent
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          handleSearch={onSearchClick}
+        />
         <AppointmentSection>
           {filteredData.map((ele) => {
             return <DoctorCard data={ele} />;
           })}
         </AppointmentSection>
       </AppointmentPage>
-    </>
+    </MainSection>
   );
 }
