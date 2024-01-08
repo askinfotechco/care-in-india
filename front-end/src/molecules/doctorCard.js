@@ -8,6 +8,8 @@ const Card = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px;
   width: 300px;
+  background-color: #fff;
+  padding: 6px;
   img {
     width: 100%;
     height: auto;
@@ -15,7 +17,6 @@ const Card = styled.div`
   &:hover {
     transform: scale(1.1);
     cursor: pointer;
-    background-color: #f2f2f2;
   }
 `;
 const CardContent = styled.div`
