@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import userInfo from "../static/images/userInfo.png";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 const UserProfileSection = styled.div``;
 
@@ -38,8 +39,9 @@ const Options = styled(Link)`
   }
 `;
 
-const UserProfileDropdown = () => {
+const UserProfileDropdown = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [cookies, setCookie, removeCookie] = useCookies("jwt");
 
   //   useEffect(() => {
   //     const handleClickOutside = (event) => {
@@ -71,9 +73,10 @@ const UserProfileDropdown = () => {
   const handleLogout = () => {
     // Add logout logic here
     toggleDropdown();
-    console.log("Logging out...");
+    props.handleLogout();
   };
 
+  console.log(sessionStorage);
   return (
     <UserProfileSection>
       {!isOpen && (
@@ -88,7 +91,7 @@ const UserProfileDropdown = () => {
       )}
       {isOpen && (
         <UserProfile>
-          <UserName>{"John Doe"}</UserName>
+          <UserName>{sessionStorage.getItem("name")}</UserName>
           <UserOptionSection>
             <Options to={"/userProfile"} onClick={handleUserInfo}>
               User Profile

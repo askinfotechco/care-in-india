@@ -15,6 +15,7 @@ const Card = styled.div`
   &:hover {
     transform: scale(1.1);
     cursor: pointer;
+    background-color: #f2f2f2;
   }
 `;
 const CardContent = styled.div`
