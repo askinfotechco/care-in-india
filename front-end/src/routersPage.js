@@ -6,6 +6,8 @@ import Home from "./pages/home";
 import UserDetailsPage from "./pages/userDetailsPage";
 import BookAppointment from "./pages/bookAppointment";
 import VideoCall from "./pages/videoCall";
+import Album from "./pages/Album";
+import Checkout from "./molecules/Checkout/Checkout";
 
 function RoutersPage() {
   return (
@@ -17,6 +19,8 @@ function RoutersPage() {
         <Route path="/userProfile" element={<UserDetailsPage />} />
         <Route path="/bookAppointment" element={<BookAppointment />} />
         <Route path="/videoCall" element={<VideoCall />} />
+        <Route path="/healthPackage" element={<Album />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </Router>
   );
