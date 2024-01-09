@@ -28,7 +28,6 @@ const MainSection = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  //padding: 32px;
 `;
 
 const LeftSection = styled.div`
@@ -56,16 +55,15 @@ const RightSection = styled.div`
 
 const Wrapper = styled.form`
   margin: auto;
-  padding: 8% 8%;
+  padding: 5% 8%;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-size: 24px;
+  font-size: 12px;
 `;
 
 const Heading = styled.div`
   margin: auto;
-  margin-bottom: 32px;
   color: #000;
   text-align: center;
   font-size: 36px;
@@ -90,7 +88,6 @@ const CheckBoxLabel = styled.div`
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
-  letter-spacing: -0.36px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +98,6 @@ const CheckBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: -18px;
   padding: 0 20%;
 `;
 
@@ -119,7 +115,7 @@ const Logos = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
 `;
 
 const Error = styled.div`
@@ -213,23 +209,10 @@ const SignUp = () => {
     <>
       <MainSection>
         <LeftSection>
-          <Label
-            style={{
-              textAlign: "left",
-              fontSize: "24px",
-              color: "rgba(0, 0, 0, 0.8)",
-            }}
-          >
-            {"click here to"}{" "}
-            <span>
-              <Link to={"/signin"}>{"sign in"}</Link>
-            </span>
-          </Label>
-
           <Heading className="MontserratItalic">
             {"Welcome to Care In India"}
           </Heading>
-          <Label style={{ fontSize: "20px", color: "rgba(0, 0, 0, 0.8)" }}>
+          <Label style={{ fontSize: "15px", color: "rgba(0, 0, 0, 0.8)" }}>
             {
               "Embark on your journey to wellness - Sign up today and prioritize your health with us"
             }
@@ -315,10 +298,23 @@ const SignUp = () => {
               type={"submit"}
               onClick={() => register()}
             ></PrimaryButton>
+            <Label
+              style={{
+                textAlign: "center",
+                fontSize: "15px",
+                color: "rgba(0, 0, 0, 0.8)",
+                marginTop: "20px"
+              }}
+            >
+              {"Already have an account? "}{" "}
+              <span>
+                <Link to={"/signin"}>{"sign in"}</Link>
+              </span>
+            </Label>
           </Wrapper>
           <Label
             style={{
-              fontSize: "20px",
+              fontSize: "15px",
               color: "rgba(0, 0, 0, 0.8)",
               marginTop: "20px",
             }}
@@ -328,12 +324,12 @@ const SignUp = () => {
           <Logos>
             <FaFacebookSquare
               style={{
-                height: 35,
-                width: 35,
+                height: 24,
+                width: 24,
                 cursor: "pointer",
               }}
             />
-            <FaGoogle style={{ height: 30, width: 30, cursor: "pointer" }} />
+            <FaGoogle style={{ height: 24, width: 24, cursor: "pointer" }} />
           </Logos>
         </LeftSection>
         <RightSection>
