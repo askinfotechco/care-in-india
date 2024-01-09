@@ -153,7 +153,7 @@ export default function Home() {
           />
           <Label
             style={{
-              fontSize: "14px"
+              fontSize: "14px",
               // color: "rgba(0, 0, 0, 0.6)",
             }}
           >
@@ -167,7 +167,6 @@ export default function Home() {
               fontSize: "14px",
               // color: "rgba(0, 0, 0, 0.6)",
               marginTop: "-15px",
-              
             }}
           >
             {"Video call with Dr."}
