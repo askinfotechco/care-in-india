@@ -216,7 +216,7 @@ const SignUp = () => {
           <Label
             style={{
               textAlign: "left",
-              fontSize: "20px",
+              fontSize: "24px",
               color: "rgba(0, 0, 0, 0.8)",
             }}
           >
