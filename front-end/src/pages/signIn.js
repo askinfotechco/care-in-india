@@ -29,7 +29,7 @@ const MainSection = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  //padding: 32px;
+  margin-top: 30px;
 `;
 
 const LeftSection = styled.div`
@@ -40,7 +40,7 @@ const LeftSection = styled.div`
 `;
 
 const RightSection = styled.div`
-  padding: 20px;
+  padding: 10px;
   width: 40%;
   height: 100%;
   background: #f0f6ff;
@@ -57,16 +57,15 @@ const RightSection = styled.div`
 
 const Wrapper = styled.form`
   margin: auto;
-  padding: 8% 8%;
+  padding: 5% 5%;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-size: 24px;
+  font-size: 12px;
 `;
 
 const Heading = styled.div`
   margin: auto;
-  margin-bottom: 32px;
   color: #000;
   text-align: center;
   font-size: 36px;
@@ -80,7 +79,7 @@ const Label = styled.div`
   display: block;
   margin-bottom: 24px;
   font-family: Montserrat;
-  font-size: 24px;
+  font-size: 21px;
   font-style: normal;
   font-weight: 700;
   line-height: 36px; /* 150% */
@@ -183,7 +182,13 @@ const SignIn = () => {
           <Heading className="MontserratItalic">
             {"Welcome to Care In India"}
           </Heading>
-          <Label style={{ fontSize: "20px", color: "rgba(0, 0, 0, 0.8)" }}>
+          <Label
+            style={{
+              fontSize: "15px",
+              marginBottom: "50px",
+              color: "rgba(0, 0, 0, 0.8)",
+            }}
+          >
             {
               "We're here to support you on the path to a healthier, happier life."
             }
@@ -211,19 +216,23 @@ const SignIn = () => {
               type={"submit"}
               onClick={() => login()}
             ></PrimaryButton>
+            <Label
+              style={{
+                fontSize: "15px",
+                color: "rgba(0, 0, 0, 0.8)",
+                marginTop: "20px",
+              }}
+            >
+              {"New to Care In India?"}{" "}
+              <span>
+                <Link to={"/signup"}>{"sign up"}</Link>
+              </span>
+            </Label>
           </Wrapper>
-          <Label
+
+          {/* <Label
             style={{
-              fontSize: "20px",
-              color: "rgba(0, 0, 0, 0.8)",
-              marginTop: "20px",
-            }}
-          >
-            {"Doesn't have an account?"}
-          </Label>
-          <Label
-            style={{
-              fontSize: "20px",
+              fontSize: "15px",
               color: "rgba(0, 0, 0, 0.8)",
             }}
           >
@@ -231,7 +240,7 @@ const SignIn = () => {
             <span>
               <Link to={"/signup"}>{"sign up"}</Link>
             </span>
-          </Label>
+          </Label> */}
         </LeftSection>
         <RightSection>
           {
