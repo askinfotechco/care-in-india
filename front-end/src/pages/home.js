@@ -12,12 +12,12 @@ import UserProfileDropdown from "../molecules/userInfo";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import StickyFooter from "../molecules/StickyFooter";
+import { Promotion } from "../components/carousel/Promotion";
 import Carousel from "../molecules/coro";
 
 const Wrapper = styled.div`
   margin: 16px;
   padding: 8px;
-  background-color: white;
 `;
 
 const TopSection = styled.div`
@@ -27,7 +27,6 @@ const TopSection = styled.div`
 `;
 
 const CompanyLogo = styled.div`
-  background-color: white;
   flex: 70%;
   text-align: left;
 `;
@@ -64,30 +63,35 @@ const LineSpan = styled.span`
 `;
 
 const Label = styled.div`
-  display: block;
-  font-family: Montserrat;
-  font-size: 16px;
+  // font-family: Montserrat;
+  font-size: 14px;
   font-weight: 700;
   line-height: 36px; /* 150% */
-  letter-spacing: -0.36px;
+  letter-spacing: -0.2px;
   color: rgba(0, 0, 0, 0.8);
 `;
 
 const Features = styled.div`
+  margin-top: 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  background-color: #f2f2f2;
   padding: 8px;
   margin-bottom: 40px;
 `;
 
 const FeatureIcons = styled(Link)`
+  width: 100px
   display: flex;
   flex-direction: column;
+  margin: 0 50px;
   align-items: center;
+  border: 1px solid #e2e2e2;
+  padding: 15px;
+  border-radius: 25%;
   &:hover {
     transform: scale(1.1);
+    background-color: #E4F1FF;
   }
 `;
 
@@ -111,106 +115,104 @@ export default function Home() {
 
   console.log(userEmail);
   return (
-    <>
-      <Wrapper>
-        <TopSection>
-          <CompanyLogo>
-            <img
-              src={companyLogoImage}
-              alt="Healthcare Image"
-              style={{
-                width: "270px",
-                height: "100px",
-                marginTop: "-10px",
-                marginLeft: "-10px",
-              }}
-            />
-            {/* <Label>{"We care for India"}</Label> */}
-          </CompanyLogo>
-          <Links>
-            {userEmail === null && (
-              <>
-                <LineSpan>
-                  <StyledLink to={"/signup"}>{"Register"}</StyledLink>
-                </LineSpan>
-                <LineSpan>
-                  <StyledLink to={"/signin"}>{"Login"}</StyledLink>
-                </LineSpan>
-              </>
-            )}
-            {userEmail !== null && (
-              <UserProfileDropdown handleLogout={handleLogout} />
-            )}
-          </Links>
-        </TopSection>
-        <Features>
-          <FeatureIcons to={"/bookAppointment"}>
-            <FaCalendarPlus
-              style={{ height: 50, width: 50, cursor: "pointer" }}
-            />
-            <Label
-              style={{
-                fontSize: "12px",
-                color: "rgba(0, 0, 0, 0.6)",
-              }}
-            >
-              {"Book an Appointment"}
-            </Label>
-          </FeatureIcons>
-          <FeatureIcons to={"/videoCall"} style={{ marginTop: "-10px" }}>
-            <MdVideoCall style={{ height: 75, width: 75, cursor: "pointer" }} />
-            <Label
-              style={{
-                fontSize: "12px",
-                color: "rgba(0, 0, 0, 0.6)",
-                marginTop: "-16px",
-              }}
-            >
-              {"Schedule a video call"}
-            </Label>
-          </FeatureIcons>
-          <FeatureIcons>
-            <BiFileFind style={{ height: 55, width: 55, cursor: "pointer" }} />
-            <Label
-              style={{
-                fontSize: "12px",
-                color: "rgba(0, 0, 0, 0.6)",
-                marginTop: "-5px",
-              }}
-            >
-              {"Find Nearest Doctor"}
-            </Label>
-          </FeatureIcons>
-          <FeatureIcons>
-            <GiMedicines style={{ height: 55, width: 55, cursor: "pointer" }} />
-            <Label
-              style={{
-                fontSize: "12px",
-                color: "rgba(0, 0, 0, 0.6)",
-                marginTop: "-5px",
-              }}
-            >
-              {"Order Medicines"}
-            </Label>
-          </FeatureIcons>
-          <FeatureIcons>
-            <LuFiles style={{ height: 55, width: 55, cursor: "pointer" }} />
-            <Label
-              style={{
-                fontSize: "12px",
-                color: "rgba(0, 0, 0, 0.6)",
-                marginTop: "-5px",
-              }}
-            >
-              {"Medical Records"}
-            </Label>
-          </FeatureIcons>
-        </Features>
-        <Carousel />
-        {/* <Album /> */}
-        {/* <Checkout /> */}
-      </Wrapper>
-      <StickyFooter />
-    </>
+    <Wrapper>
+      <TopSection>
+        <CompanyLogo>
+          <img
+            src={companyLogoImage}
+            alt="Healthcare Image"
+            style={{
+              width: "270px",
+              height: "100px",
+              marginTop: "-10px",
+              marginLeft: "-10px",
+            }}
+          />
+          {/* <Label>{"We care for India"}</Label> */}
+        </CompanyLogo>
+        <Links>
+          {userEmail === null && (
+            <>
+              <LineSpan>
+                <StyledLink to={"/signup"}>{"Register"}</StyledLink>
+              </LineSpan>
+              <LineSpan>
+                <StyledLink to={"/signin"}>{"Login"}</StyledLink>
+              </LineSpan>
+            </>
+          )}
+          {userEmail !== null && (
+            <UserProfileDropdown handleLogout={handleLogout} />
+          )}
+        </Links>
+      </TopSection>
+      <Features>
+        <FeatureIcons to={"/bookAppointment"}>
+          <FaCalendarPlus
+            style={{ height: 45, width: 45, cursor: "pointer" }}
+          />
+          <Label
+            style={{
+              fontSize: "14px"
+              // color: "rgba(0, 0, 0, 0.6)",
+            }}
+          >
+            {"Dr. Appointment"}
+          </Label>
+        </FeatureIcons>
+        <FeatureIcons to={"/videoCall"}>
+          <MdVideoCall style={{ height: 60, width: 60, cursor: "pointer" }} />
+          <Label
+            style={{
+              fontSize: "14px",
+              // color: "rgba(0, 0, 0, 0.6)",
+              marginTop: "-15px",
+              
+            }}
+          >
+            {"Video call with Dr."}
+          </Label>
+        </FeatureIcons>
+        {/* <FeatureIcons>
+          <BiFileFind style={{ height: 55, width: 55, cursor: "pointer" }} />
+          <Label
+            style={{
+              fontSize: "12px",
+              color: "rgba(0, 0, 0, 0.6)",
+              marginTop: "-5px",
+            }}
+          >
+            {"Find Nearest Doctor"}
+          </Label>
+        </FeatureIcons> */}
+        <FeatureIcons>
+          <GiMedicines style={{ height: 45, width: 50, cursor: "pointer" }} />
+          <Label
+            style={{
+              fontSize: "14px",
+              // color: "rgba(0, 0, 0, 0.6)",
+              marginTop: "-5px",
+            }}
+          >
+            {"Order Medicines"}
+          </Label>
+        </FeatureIcons>
+        <FeatureIcons>
+          <LuFiles style={{ height: 45, width: 50, cursor: "pointer" }} />
+          <Label
+            style={{
+              fontSize: "14px",
+              // color: "rgba(0, 0, 0, 0.6)",
+              marginTop: "-5px",
+            }}
+          >
+            {"Medical Records"}
+          </Label>
+        </FeatureIcons>
+      </Features>
+      <Promotion />
+      <Carousel />
+      {/* <StickyFooter /> */}
+    </Wrapper>
   );
 }
