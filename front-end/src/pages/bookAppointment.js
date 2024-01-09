@@ -10,6 +10,8 @@ import SearchComponent from "../molecules/search";
 
 const AppointmentPage = styled.div`
   margin: 16px;
+  background-color: #f2f2f2;
+  padding: 8px;
 `;
 
 const BreadCrumbs = styled.div`

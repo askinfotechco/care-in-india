@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Select = styled.select`
   width: 22%;
   padding: 8px;
+  margin-left: 8px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 5px;

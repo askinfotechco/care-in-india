@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import StickyFooter from "../molecules/StickyFooter";
 import { Promotion } from "../components/carousel/Promotion";
+import Carousel from "../molecules/coro";
 
 const Wrapper = styled.div`
   margin: 16px;
@@ -210,6 +211,7 @@ export default function Home() {
         </FeatureIcons>
       </Features>
       <Promotion />
+      <Carousel />
       {/* <StickyFooter /> */}
     </Wrapper>
   );

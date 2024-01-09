@@ -76,7 +76,6 @@ const UserProfileDropdown = (props) => {
     props.handleLogout();
   };
 
-  console.log(sessionStorage);
   return (
     <UserProfileSection>
       {!isOpen && (
