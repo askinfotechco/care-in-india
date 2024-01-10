@@ -1,10 +1,30 @@
 import React from "react";
 import NavBar from "../molecules/navBar";
+import professionalBoxImg1 from "../assets/image/professional-box-img1.png";
+import professionalBoxImg2 from "../assets/image/professional-box-img2.png";
+import professionalBoxImg3 from "../assets/image/professional-box-img3.png";
+import professionalBoxImg4 from "../assets/image/professional-box-img4.png";
+import professionalBoxImg5 from "../assets/image/professional-box-img5.png";
+import professionalBoxImg6 from "../assets/image/professional-box-img6.png";
+import smallLeftCurveImg from "../assets/image/small-left-curve-img.png";
+import smallRightCurveImg from "../assets/image/small-right-curve-img.png";
+import formLeftImg from "../assets/image/form-left-img.png";
+import clientLogoImg1 from "../assets/image/client-logo-img1.png";
+import clientLogoImg2 from "../assets/image/client-logo-img2.png";
+import clientLogoImg3 from "../assets/image/client-logo-img3.png";
+import clientLogoImg4 from "../assets/image/client-logo-img4.png";
+import clientLogoImg5 from "../assets/image/client-logo-img5.png";
+import clientLogoImg6 from "../assets/image/client-logo-img6.png";
+import footerLogo from "../assets/image/footer-logo.png";
+import paymentImg1 from "../assets/image/payment-img1.png";
+import paymentImg2 from "../assets/image/payment-img2.png";
+import paymentImg3 from "../assets/image/payment-img3.png";
+import paymentImg4 from "../assets/image/payment-img4.png";
 
 export default function Team() {
   return (
     <div>
-      <div class="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
+      {/* <div class="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
         <div class="container">
           <div class="row">
             <div class="col-lg-6 col-md-6 col-12">
@@ -42,7 +62,7 @@ export default function Team() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- top-bar-section-->
       <!-- header-and-banner-section --> */}
       <div class="w-100 float-left header-and-banner-con banner-overlay-img">
@@ -92,7 +112,7 @@ export default function Team() {
                     <div class="professional-box-item text-center">
                       <figure class="mb-0">
                         <img
-                          src="assets/image/professional-box-img1.png"
+                          src={professionalBoxImg1}
                           alt="professional-box-img"
                           class="img-fluid"
                         />
@@ -135,7 +155,7 @@ export default function Team() {
                     <div class="professional-box-item text-center">
                       <figure class="mb-0">
                         <img
-                          src="assets/image/professional-box-img2.png"
+                          src={professionalBoxImg2}
                           alt="professional-box-img"
                           class="img-fluid"
                         />
@@ -178,7 +198,7 @@ export default function Team() {
                     <div class="professional-box-item text-center">
                       <figure class="mb-0">
                         <img
-                          src="assets/image/professional-box-img3.png"
+                          src={professionalBoxImg3}
                           alt="professional-box-img"
                           class="img-fluid"
                         />
@@ -223,7 +243,7 @@ export default function Team() {
                     <div class="professional-box-item text-center">
                       <figure class="mb-0">
                         <img
-                          src="assets/image/professional-box-img4.png"
+                          src={professionalBoxImg4}
                           alt="professional-box-img"
                           class="img-fluid"
                         />
@@ -266,7 +286,7 @@ export default function Team() {
                     <div class="professional-box-item text-center">
                       <figure class="mb-0">
                         <img
-                          src="assets/image/professional-box-img5.png"
+                          src={professionalBoxImg5}
                           alt="professional-box-img"
                           class="img-fluid"
                         />
@@ -309,7 +329,7 @@ export default function Team() {
                     <div class="professional-box-item text-center mb-0">
                       <figure class="mb-0">
                         <img
-                          src="assets/image/professional-box-img6.png"
+                          src={professionalBoxImg6}
                           alt="professional-box-img"
                           class="img-fluid"
                         />
@@ -371,21 +391,21 @@ export default function Team() {
                 <div class="form-left-con position-relative text-center">
                   <figure class="mb-0 left-curve-img wow slideInLeft">
                     <img
-                      src="assets/image/small-left-curve-img.png"
+                      src={smallLeftCurveImg}
                       alt=""
                       class="img-fluid"
                     />
                   </figure>
                   <figure class="mb-0">
                     <img
-                      src="assets/image/form-left-img.png"
+                      src={formLeftImg}
                       alt="form-left-img"
                       class="mb-0 img-fluid human-img"
                     />
                   </figure>
                   <figure class="mb-0 right-curve-img wow slideInRight">
                     <img
-                      src="assets/image/small-right-curve-img.png"
+                      src={smallRightCurveImg}
                       alt=""
                       class="img-fluid"
                     />
@@ -515,7 +535,7 @@ export default function Team() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img1.png"
+                    src={clientLogoImg1}
                     alt="client-logo-img"
                     class="img-fluid"
                   />
@@ -524,7 +544,7 @@ export default function Team() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img2.png"
+                    src={clientLogoImg2}
                     alt="client-logo-img"
                     class="img-fluid"
                   />
@@ -533,7 +553,7 @@ export default function Team() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img3.png"
+                    src={clientLogoImg3}
                     alt="client-logo-img"
                     class="img-fluid"
                   />
@@ -542,7 +562,7 @@ export default function Team() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img4.png"
+                    src={clientLogoImg4}
                     alt="client-logo-img"
                     class="img-fluid mb-0"
                   />
@@ -551,7 +571,7 @@ export default function Team() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img5.png"
+                    src={clientLogoImg5}
                     alt="client-logo-img"
                     class="img-fluid mb-0"
                   />
@@ -560,7 +580,7 @@ export default function Team() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img6.png"
+                    src={clientLogoImg6}
                     alt="client-logo-img"
                     class="img-fluid mb-0"
                   />
@@ -581,7 +601,7 @@ export default function Team() {
                   <div class="weight-footer-content ">
                     <figure>
                       <img
-                        src="assets/image/footer-logo.png"
+                        src={footerLogo}
                         alt="footer-logo"
                         class="img-fluid"
                       />
@@ -705,28 +725,28 @@ export default function Team() {
             <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-center">
               <figure class="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img1.png"
+                  src={paymentImg1}
                   alt="payment-img"
                   class="img-fluid"
                 />
               </figure>
               <figure class="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img2.png"
+                  src={paymentImg2}
                   alt="payment-img"
                   class="img-fluid"
                 />
               </figure>
               <figure class="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img3.png"
+                  src={paymentImg3}
                   alt="payment-img"
                   class="img-fluid"
                 />
               </figure>
               <figure class="mb-0 d-inline-block mr-0">
                 <img
-                  src="assets/image/payment-img4.png"
+                  src={paymentImg4}
                   alt="payment-img"
                   class="img-fluid"
                 />

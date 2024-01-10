@@ -1,10 +1,37 @@
 import React from "react";
 import NavBar from "../molecules/navBar";
+import serviceBoxIcon1 from "../assets/image/service-box-icon1.png";
+import serviceBoxIcon2 from "../assets/image/service-box-icon2.png";
+import serviceBoxIcon3 from "../assets/image/service-box-icon3.png";
+import serviceBoxIcon4 from "../assets/image/service-box-icon4.png";
+import serviceBoxIcon5 from "../assets/image/service-box-icon5.png";
+import serviceBoxIcon6 from "../assets/image/service-box-icon6.png";
+import serviceBoxIcon7 from "../assets/image/service-box-icon7.png";
+import serviceBoxIcon8 from "../assets/image/service-box-icon8.png";
+import serviceBoxBannerImg from "../assets/image/.service-box-banner-img.jpg";
+
+import smallLeftCurveImg from "../assets/image/small-left-curve-img.png";
+import smallRightCurveImg from "../assets/image/small-right-curve-img.png";
+import coreValueLeftImg from "../assets/image/core-value-left-img.png";
+import coreValueBoxIcon1 from "../assets/image/core-vaule-box-icon1.png";
+import coreValueBoxIcon2 from "../assets/image/core-vaule-box-icon2.png";
+import coreValueBoxIcon3 from "../assets/image/core-vaule-box-icon3.png";
+import clientLogoImg1 from "../assets/image/client-logo-img1.png";
+import clientLogoImg2 from "../assets/image/client-logo-img2.png";
+import clientLogoImg3 from "../assets/image/client-logo-img3.png";
+import clientLogoImg4 from "../assets/image/client-logo-img4.png";
+import clientLogoImg5 from "../assets/image/client-logo-img5.png";
+import clientLogoImg6 from "../assets/image/client-logo-img6.png";
+import footerLogo from "../assets/image/footer-logo.png";
+import paymentImg1 from "../assets/image/payment-img1.png";
+import paymentImg2 from "../assets/image/payment-img2.png";
+import paymentImg3 from "../assets/image/payment-img3.png";
+import paymentImg4 from "../assets/image/payment-img4.png";
 
 export default function Services() {
   return (
     <div>
-      <div class="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
+      {/* <div class="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
         <div class="container">
           <div class="row">
             <div class="col-lg-6 col-md-6 col-12">
@@ -42,7 +69,7 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- top-bar-section-->
       <!-- header-and-banner-section --> */}
       <div class="w-100 float-left header-and-banner-con banner-overlay-img">
@@ -82,7 +109,7 @@ export default function Services() {
                   <div class="service-box-item text-center">
                     <figure>
                       <img
-                        src="assets/image/service-box-icon1.png"
+                        src={serviceBoxIcon1}
                         alt="service-box-icon"
                         class="img-fluid"
                       />
@@ -97,7 +124,7 @@ export default function Services() {
                   <div class="service-box-item text-center">
                     <figure>
                       <img
-                        src="assets/image/service-box-icon2.png"
+                        src={serviceBoxIcon2}
                         alt="service-box-icon"
                         class="img-fluid"
                       />
@@ -112,7 +139,7 @@ export default function Services() {
                   <div class="service-box-item text-center">
                     <figure>
                       <img
-                        src="assets/image/service-box-icon3.png"
+                        src={serviceBoxIcon3}
                         alt="service-box-icon"
                         class="img-fluid"
                       />
@@ -127,7 +154,7 @@ export default function Services() {
                   <div class="service-box-item text-center">
                     <figure>
                       <img
-                        src="assets/image/service-box-icon4.png"
+                        src={serviceBoxIcon4}
                         alt="service-box-icon"
                         class="img-fluid"
                       />
@@ -143,7 +170,7 @@ export default function Services() {
             <div class="service-box-img">
               <figure class="mb-0">
                 <img
-                  src="assets/image/.service-box-banner-img.jpg"
+                  src={serviceBoxBannerImg}
                   alt=""
                   class="img-fluid"
                 />
@@ -155,7 +182,7 @@ export default function Services() {
                   <div class="service-box-item text-center">
                     <figure>
                       <img
-                        src="assets/image/service-box-icon5.png"
+                        src={serviceBoxIcon5}
                         alt="service-box-icon"
                         class="img-fluid"
                       />
@@ -170,7 +197,7 @@ export default function Services() {
                   <div class="service-box-item text-center">
                     <figure>
                       <img
-                        src="assets/image/service-box-icon6.png"
+                        src={serviceBoxIcon6}
                         alt="service-box-icon"
                         class="img-fluid"
                       />
@@ -185,7 +212,7 @@ export default function Services() {
                   <div class="service-box-item text-center">
                     <figure>
                       <img
-                        src="assets/image/service-box-icon7.png"
+                        src={serviceBoxIcon7}
                         alt="service-box-icon"
                         class="img-fluid"
                       />
@@ -200,7 +227,7 @@ export default function Services() {
                   <div class="service-box-item text-center">
                     <figure>
                       <img
-                        src="assets/image/service-box-icon8.png"
+                        src={serviceBoxIcon8}
                         alt="service-box-icon"
                         class="img-fluid"
                       />
@@ -232,14 +259,14 @@ export default function Services() {
                     }}
                   >
                     <img
-                      src="assets/image/small-left-curve-img.png"
+                      src={smallLeftCurveImg}
                       alt=""
                       class="img-fluid"
                     />
                   </figure>
                   <figure class="mb-0">
                     <img
-                      src="assets/image/core-value-left-img.png"
+                      src={coreValueLeftImg}
                       alt="form-left-img"
                       class="mb-0 img-fluid human-img"
                     />
@@ -252,7 +279,7 @@ export default function Services() {
                     }}
                   >
                     <img
-                      src="assets/image/small-right-curve-img.png"
+                      src={smallRightCurveImg}
                       alt=""
                       class="img-fluid"
                     />
@@ -272,7 +299,7 @@ export default function Services() {
                     <div class="core-vaule-box-item position-relative">
                       <figure class="mb-0">
                         <img
-                          src="assets/image/core-vaule-box-icon1.png"
+                          src={coreValueBoxIcon1}
                           alt="core-vaule-box-icon"
                           class="img-fluid"
                         />
@@ -288,7 +315,7 @@ export default function Services() {
                     <div class="core-vaule-box-item position-relative">
                       <figure class="mb-0">
                         <img
-                          src="assets/image/core-vaule-box-icon2.png"
+                          src={coreValueBoxIcon2}
                           alt="core-vaule-box-icon"
                           class="img-fluid"
                         />
@@ -304,7 +331,7 @@ export default function Services() {
                     <div class="core-vaule-box-item position-relative mb-0">
                       <figure class="mb-0">
                         <img
-                          src="assets/image/core-vaule-box-icon3.png"
+                          src={coreValueBoxIcon3}
                           alt="core-vaule-box-icon"
                           class="img-fluid"
                         />
@@ -365,7 +392,7 @@ export default function Services() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img1.png"
+                    src={clientLogoImg1}
                     alt="client-logo-img"
                     class="img-fluid"
                   />
@@ -374,7 +401,7 @@ export default function Services() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img2.png"
+                    src={clientLogoImg2}
                     alt="client-logo-img"
                     class="img-fluid"
                   />
@@ -383,7 +410,7 @@ export default function Services() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img3.png"
+                    src={clientLogoImg3}
                     alt="client-logo-img"
                     class="img-fluid"
                   />
@@ -392,7 +419,7 @@ export default function Services() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img4.png"
+                    src={clientLogoImg4}
                     alt="client-logo-img"
                     class="img-fluid mb-0"
                   />
@@ -401,7 +428,7 @@ export default function Services() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img5.png"
+                    src={clientLogoImg5}
                     alt="client-logo-img"
                     class="img-fluid mb-0"
                   />
@@ -410,7 +437,7 @@ export default function Services() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img6.png"
+                    src={clientLogoImg6}
                     alt="client-logo-img"
                     class="img-fluid mb-0"
                   />
@@ -431,7 +458,7 @@ export default function Services() {
                   <div class="weight-footer-content ">
                     <figure>
                       <img
-                        src="assets/image/footer-logo.png"
+                        src={footerLogo}
                         alt="footer-logo"
                         class="img-fluid"
                       />
@@ -555,28 +582,28 @@ export default function Services() {
             <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-center">
               <figure class="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img1.png"
+                  src={paymentImg1}
                   alt="payment-img"
                   class="img-fluid"
                 />
               </figure>
               <figure class="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img2.png"
+                  src={paymentImg2}
                   alt="payment-img"
                   class="img-fluid"
                 />
               </figure>
               <figure class="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img3.png"
+                  src={paymentImg3}
                   alt="payment-img"
                   class="img-fluid"
                 />
               </figure>
               <figure class="mb-0 d-inline-block mr-0">
                 <img
-                  src="assets/image/payment-img4.png"
+                  src={paymentImg4}
                   alt="payment-img"
                   class="img-fluid"
                 />
