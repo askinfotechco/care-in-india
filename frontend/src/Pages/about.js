@@ -1,40 +1,67 @@
 import React from "react";
 import NavBar from "../molecules/navBar";
+import smallLeftCurveImg from "../assets/image/small-left-curve-img.png";
+import smallRightCurveImg from "../assets/image/small-right-curve-img.png";
+import funFactsIcon1 from "../assets/image/fun-facts-icon1.png";
+import funFactsIcon2 from "../assets/image/fun-facts-icon2.png";
+import funFactsIcon3 from "../assets/image/fun-facts-icon3.png";
+import funFactsIcon4 from "../assets/image/fun-facts-icon4.png";
+import formLeftImg from "../assets/image/form-left-img.png";
+import clientLogoImg1 from "../assets/image/client-logo-img1.png";
+import clientLogoImg2 from "../assets/image/client-logo-img2.png";
+import clientLogoImg3 from "../assets/image/client-logo-img3.png";
+import clientLogoImg4 from "../assets/image/client-logo-img4.png";
+import clientLogoImg5 from "../assets/image/client-logo-img5.png";
+import clientLogoImg6 from "../assets/image/client-logo-img6.png";
+import footerLogo from "../assets/image/footer-logo.png";
+import paymentImg1 from "../assets/image/payment-img1.png";
+import paymentImg2 from "../assets/image/payment-img2.png";
+import paymentImg3 from "../assets/image/payment-img3.png";
+import paymentImg4 from "../assets/image/payment-img4.png";
+
+import professionalDoctorImg from "../assets/image/professional-doctor-img.png";
+import coreValueLeftImg from "../assets/image/core-value-left-img.png";
+import coreValueBoxIcon1 from "../assets/image/core-vaule-box-icon1.png";
+import coreValueBoxIcon2 from "../assets/image/core-vaule-box-icon2.png";
+import coreValueBoxIcon3 from "../assets/image/core-vaule-box-icon3.png";
+import professionalBoxImg1 from "../assets/image/professional-box-img1.png";
+import professionalBoxImg2 from "../assets/image/professional-box-img2.png";
+import professionalBoxImg3 from "../assets/image/professional-box-img3.png";
 
 export default function About() {
   return (
     <div>
-      <div class="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-12">
-              <div class="top-bar-left-con ">
-                <i class="fas fa-map-marker-alt"></i>
+      <div className="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 col-md-6 col-12">
+              <div className="top-bar-left-con ">
+                <i className="fas fa-map-marker-alt"></i>
                 <span>King Street Melbourne, 3000, Australia</span>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-center">
-              <div class="top-bar-right-con d-flex">
+            <div className="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-center">
+              <div className="top-bar-right-con d-flex">
                 <span>Get Social:</span>
-                <ul class="list-unstyled mb-0">
-                  <li class="float-left">
-                    <a href="https://www.facebook.com/" class="text-white">
-                      <i class="fab fa-facebook-square"></i>
+                <ul className="list-unstyled mb-0">
+                  <li className="float-left">
+                    <a href="https://www.facebook.com/" className="text-white">
+                      <i className="fab fa-facebook-square"></i>
                     </a>
                   </li>
-                  <li class="float-left">
-                    <a href="https://twitter.com/?lang=en" class="text-white">
-                      <i class="fab fa-twitter-square"></i>
+                  <li className="float-left">
+                    <a href="https://twitter.com/?lang=en" className="text-white">
+                      <i className="fab fa-twitter-square"></i>
                     </a>
                   </li>
-                  <li class="float-left">
-                    <a href="https://www.pinterest.com/" class="text-white">
-                      <i class="fab fa-pinterest-square"></i>
+                  <li className="float-left">
+                    <a href="https://www.pinterest.com/" className="text-white">
+                      <i className="fab fa-pinterest-square"></i>
                     </a>
                   </li>
-                  <li class="float-left">
-                    <a href="https://www.youtube.com/" class="text-white">
-                      <i class="fab fa-youtube-square"></i>
+                  <li className="float-left">
+                    <a href="https://www.youtube.com/" className="text-white">
+                      <i className="fab fa-youtube-square"></i>
                     </a>
                   </li>
                 </ul>
@@ -45,19 +72,19 @@ export default function About() {
       </div>
       {/* <!-- top-bar-section-->
       <!-- header-and-banner-section --> */}
-      <div class="w-100 float-left header-and-banner-con banner-overlay-img">
-        <div class="container">
-          <div class="overlay-img">
+      <div className="w-100 float-left header-and-banner-con banner-overlay-img">
+        <div className="container">
+          <div className="overlay-img">
             {/* <!-- navbar-start --> */}
             <NavBar />
             {/* <!-- navbar-end -->
                <!-- banner-start --> */}
             <section>
-              <div class="w-100 float-left generic-banner-con text-xl-left text-lg-left text-center">
-                <div class="container">
-                  <div class="generic-banner-content text-white text-center">
+              <div className="w-100 float-left generic-banner-con text-xl-left text-lg-left text-center">
+                <div className="container">
+                  <div className="generic-banner-content text-white text-center">
                     <h1>About Us</h1>
-                    <p class="text-white mb-0">
+                    <p className="text-white mb-0">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor
                       <br /> incididunt ut labore et dolore magna aliqua.
@@ -73,11 +100,11 @@ export default function About() {
       {/* <!-- header-and-banner-section -->
       <!-- quality-system-section --> */}
       <section>
-        <div class="w-100 float-left quality-system-con Experince-section">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 d-flex align-items-center">
-                <div class="quality-system-left-con">
+        <div className="w-100 float-left quality-system-con Experince-section">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-6 col-md-6 d-flex align-items-center">
+                <div className="quality-system-left-con">
                   <h2>Professional Doctor With Years Of Experince</h2>
                   <p>
                     Seram ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -88,58 +115,58 @@ export default function About() {
                     enim aliqu am lorem ante dapibus in viverra quis feugiata
                     tellus.
                   </p>
-                  <div class="quality-system-list">
-                    <ul class="list-unstyled">
-                      <li class="position-relative">
-                        <i class="fas fa-circle"></i>24 Hour Service
+                  <div className="quality-system-list">
+                    <ul className="list-unstyled">
+                      <li className="position-relative">
+                        <i className="fas fa-circle"></i>24 Hour Service
                       </li>
-                      <li class="position-relative">
-                        <i class="fas fa-circle"></i>Emergency Cases
+                      <li className="position-relative">
+                        <i className="fas fa-circle"></i>Emergency Cases
                       </li>
-                      <li class="position-relative">
-                        <i class="fas fa-circle"></i>Expert Doctors
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="quality-system-list">
-                    <ul class="list-unstyled">
-                      <li class="position-relative">
-                        <i class="fas fa-circle"></i>Update Covid-19
-                      </li>
-                      <li class="position-relative">
-                        <i class="fas fa-circle"></i>24/7 Help Center
-                      </li>
-                      <li class="position-relative">
-                        <i class="fas fa-circle"></i>Modern Clinic
+                      <li className="position-relative">
+                        <i className="fas fa-circle"></i>Expert Doctors
                       </li>
                     </ul>
                   </div>
-                  <a href="faq.html" class="appointment-btn">
+                  <div className="quality-system-list">
+                    <ul className="list-unstyled">
+                      <li className="position-relative">
+                        <i className="fas fa-circle"></i>Update Covid-19
+                      </li>
+                      <li className="position-relative">
+                        <i className="fas fa-circle"></i>24/7 Help Center
+                      </li>
+                      <li className="position-relative">
+                        <i className="fas fa-circle"></i>Modern Clinic
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="faq.html" className="appointment-btn">
                     Learn More
                   </a>
                 </div>
               </div>
-              <div class="col-lg-6 col-md-6 d-md-flex align-items-md-end">
-                <div class="quality-system-right-con position-relative text-center overlay-img">
-                  <figure class="mb-0 left-curve-img wow slideInLeft">
+              <div className="col-lg-6 col-md-6 d-md-flex align-items-md-end">
+                <div className="quality-system-right-con position-relative text-center overlay-img">
+                  <figure className="mb-0 left-curve-img wow slideInLeft">
                     <img
-                      src="assets/image/small-left-curve-img.png"
+                      src={smallLeftCurveImg}
                       alt=""
-                      class="img-fluid"
+                      className="img-fluid"
                     />
                   </figure>
-                  <figure class="mb-0">
+                  <figure className="mb-0">
                     <img
-                      src="assets/image/professional-doctor-img.png"
+                      src={professionalDoctorImg}
                       alt="professional-doctor-img"
-                      class="img-fluid human-img"
+                      className="img-fluid human-img"
                     />
                   </figure>
-                  <figure class="mb-0 right-curve-img wow slideInRight">
+                  <figure className="mb-0 right-curve-img wow slideInRight">
                     <img
-                      src="assets/image/small-right-curve-img.png"
+                      src={smallRightCurveImg}
                       alt=""
-                      class="img-fluid"
+                      className="img-fluid"
                     />
                   </figure>
                 </div>
@@ -151,99 +178,99 @@ export default function About() {
       {/* <!-- quality-system-section -->
       <!-- core-vaule-section --> */}
       <section>
-        <div class="w-100 float-left core-vaule-con">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 d-md-flex align-items-md-end order-xl-0 order-lg-0 order-md-0 order-2">
-                <div class="form-left-con core-vaule-left-con position-relative text-center">
+        <div className="w-100 float-left core-vaule-con">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-6 col-md-6 d-md-flex align-items-md-end order-xl-0 order-lg-0 order-md-0 order-2">
+                <div className="form-left-con core-vaule-left-con position-relative text-center">
                   <figure
-                    class="mb-0 left-curve-img wow slideInLeft"
+                    className="mb-0 left-curve-img wow slideInLeft"
                     style={{
                       visibility: "visible",
                       animationName: "slideInLeft",
                     }}
                   >
                     <img
-                      src="assets/image/small-left-curve-img.png"
+                      src={smallLeftCurveImg}
                       alt=""
-                      class="img-fluid"
+                      className="img-fluid"
                     />
                   </figure>
-                  <figure class="mb-0">
+                  <figure className="mb-0">
                     <img
-                      src="assets/image/core-value-left-img.png"
+                      src={coreValueLeftImg}
                       alt="form-left-img"
-                      class="mb-0 img-fluid human-img"
+                      className="mb-0 img-fluid human-img"
                     />
                   </figure>
                   <figure
-                    class="mb-0 right-curve-img wow slideInRight"
+                    className="mb-0 right-curve-img wow slideInRight"
                     style={{
                       visibility: "visible",
                       animationName: "slideInRight",
                     }}
                   >
                     <img
-                      src="assets/image/small-right-curve-img.png"
+                      src={smallRightCurveImg}
                       alt=""
-                      class="img-fluid"
+                      className="img-fluid"
                     />
                   </figure>
                 </div>
               </div>
-              <div class="col-lg-6 col-md-6">
-                <div class="core-vaule-right-con text-xl-left text-lg-left text-md-left text-center">
-                  <div class="core-vaule-title">
+              <div className="col-lg-6 col-md-6">
+                <div className="core-vaule-right-con text-xl-left text-lg-left text-md-left text-center">
+                  <div className="core-vaule-title">
                     <h2>Our Core Values And Principle</h2>
                     <p>
                       Seram ipsum dolor sit amet, consectetur adipiscing elit,
                       sed doeius mod tempor incididunt aenean leo.
                     </p>
                   </div>
-                  <div class="core-vaule-box-con">
-                    <div class="core-vaule-box-item position-relative">
-                      <figure class="mb-0">
+                  <div className="core-vaule-box-con">
+                    <div className="core-vaule-box-item position-relative">
+                      <figure className="mb-0">
                         <img
-                          src="assets/image/core-vaule-box-icon1.png"
+                          src={coreValueBoxIcon1}
                           alt="core-vaule-box-icon"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </figure>
-                      <div class="core-vaule-box-title">
+                      <div className="core-vaule-box-title">
                         <h5>Qualified Doctors</h5>
-                        <span class="d-block">
+                        <span className="d-block">
                           Nullam dictum felis eu pede mollis pretium. Integer
                           <br /> tinciduntras dapibus vivamus elementum.
                         </span>
                       </div>
                     </div>
-                    <div class="core-vaule-box-item position-relative">
-                      <figure class="mb-0">
+                    <div className="core-vaule-box-item position-relative">
+                      <figure className="mb-0">
                         <img
-                          src="assets/image/core-vaule-box-icon2.png"
+                          src={coreValueBoxIcon2}
                           alt="core-vaule-box-icon"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </figure>
-                      <div class="core-vaule-box-title">
+                      <div className="core-vaule-box-title">
                         <h5>24/7 Helpdesk</h5>
-                        <span class="d-block">
+                        <span className="d-block">
                           Cras dapibus vivamus elementum semper nisi enean
                           <br /> vulputate eleifend am eget duieget dui.
                         </span>
                       </div>
                     </div>
-                    <div class="core-vaule-box-item position-relative mb-0">
-                      <figure class="mb-0">
+                    <div className="core-vaule-box-item position-relative mb-0">
+                      <figure className="mb-0">
                         <img
-                          src="assets/image/core-vaule-box-icon3.png"
+                          src={coreValueBoxIcon3}
                           alt="core-vaule-box-icon"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </figure>
-                      <div class="core-vaule-box-title">
+                      <div className="core-vaule-box-title">
                         <h5>Latest Drugs</h5>
-                        <span class="d-block">
+                        <span className="d-block">
                           Quisque rutrum aenean imperdiet etiam ultricies nisi{" "}
                           <br />
                           vel augue curabitur ullamcorper ultricies nisi.
@@ -260,86 +287,86 @@ export default function About() {
       {/* <!-- core-vaule-section -->
       <!-- fun-facts-section--> */}
       <section>
-        <div class="w-100 float-left fun-facts-con  pt-0 pb-0">
-          <div class="container">
-            <div class="about-fun-facts-con banner-overlay-img">
-              <div class="text-center overlay-img about-fun-facts-title">
-                <h2 class="text-white">
+        <div className="w-100 float-left fun-facts-con  pt-0 pb-0">
+          <div className="container">
+            <div className="about-fun-facts-con banner-overlay-img">
+              <div className="text-center overlay-img about-fun-facts-title">
+                <h2 className="text-white">
                   Our Doctors are Specialist
                   <br />& Experienced
                 </h2>
               </div>
-              <div class="fun-facts-box-con text-sm-left text-center pt-0 overlay-img">
-                <div class="row bg-white">
-                  <div class="col-lg-3 col-md-6 col-6 pl-0 pr-0 border-right-0">
-                    <div class="fun-facts-box-item d-sm-flex align-items-sm-center">
-                      <figure class="mb-0 d-inline-block">
+              <div className="fun-facts-box-con text-sm-left text-center pt-0 overlay-img">
+                <div className="row bg-white">
+                  <div className="col-lg-3 col-md-6 col-6 pl-0 pr-0 border-right-0">
+                    <div className="fun-facts-box-item d-sm-flex align-items-sm-center">
+                      <figure className="mb-0 d-inline-block">
                         <img
-                          src="assets/image/fun-facts-icon1.png"
+                          src={funFactsIcon1}
                           alt="fun-facts-icon1"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </figure>
-                      <div class="fun-facts-item-content d-inline-block">
-                        <div class="position-relative fun-facts-item-title d-inline-block">
-                          <h2 class="count">814</h2>
+                      <div className="fun-facts-item-content d-inline-block">
+                        <div className="position-relative fun-facts-item-title d-inline-block">
+                          <h2 className="count">814</h2>
                           <span>+</span>
                         </div>
-                        <p class="mb-0">Happy Patients</p>
+                        <p className="mb-0">Happy Patients</p>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 col-6 pl-0 pr-0 border-right-0">
-                    <div class="fun-facts-box-item d-sm-flex align-items-sm-center">
-                      <figure class="mb-0 d-inline-block">
+                  <div className="col-lg-3 col-md-6 col-6 pl-0 pr-0 border-right-0">
+                    <div className="fun-facts-box-item d-sm-flex align-items-sm-center">
+                      <figure className="mb-0 d-inline-block">
                         <img
-                          src="assets/image/fun-facts-icon2.png"
+                          src={funFactsIcon2}
                           alt="fun-facts-icon1"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </figure>
-                      <div class="fun-facts-item-content d-inline-block">
-                        <div class="position-relative fun-facts-item-title d-inline-block">
-                          <h2 class="count">522</h2>
+                      <div className="fun-facts-item-content d-inline-block">
+                        <div className="position-relative fun-facts-item-title d-inline-block">
+                          <h2 className="count">522</h2>
                           <span>+</span>
                         </div>
-                        <p class="mb-0">Hospital Room</p>
+                        <p className="mb-0">Hospital Room</p>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 col-6 pl-0 pr-0 border-right-0">
-                    <div class="fun-facts-box-item d-sm-flex align-items-sm-center">
-                      <figure class="mb-0 d-inline-block">
+                  <div className="col-lg-3 col-md-6 col-6 pl-0 pr-0 border-right-0">
+                    <div className="fun-facts-box-item d-sm-flex align-items-sm-center">
+                      <figure className="mb-0 d-inline-block">
                         <img
-                          src="assets/image/fun-facts-icon3.png"
+                          src={funFactsIcon3}
                           alt="fun-facts-icon1"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </figure>
-                      <div class="fun-facts-item-content d-inline-block">
-                        <div class="position-relative fun-facts-item-title d-inline-block">
-                          <h2 class="count">99</h2>
+                      <div className="fun-facts-item-content d-inline-block">
+                        <div className="position-relative fun-facts-item-title d-inline-block">
+                          <h2 className="count">99</h2>
                           <span>+</span>
                         </div>
-                        <p class="mb-0">Qualified Doctor</p>
+                        <p className="mb-0">Qualified Doctor</p>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 col-6 pl-0 pr-0">
-                    <div class="fun-facts-box-item d-sm-flex align-items-sm-center">
-                      <figure class="mb-0 d-inline-block">
+                  <div className="col-lg-3 col-md-6 col-6 pl-0 pr-0">
+                    <div className="fun-facts-box-item d-sm-flex align-items-sm-center">
+                      <figure className="mb-0 d-inline-block">
                         <img
-                          src="assets/image/fun-facts-icon4.png"
+                          src={funFactsIcon4}
                           alt="fun-facts-icon1"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </figure>
-                      <div class="fun-facts-item-content d-inline-block">
-                        <div class="position-relative fun-facts-item-title d-inline-block">
-                          <h2 class="count">96</h2>
+                      <div className="fun-facts-item-content d-inline-block">
+                        <div className="position-relative fun-facts-item-title d-inline-block">
+                          <h2 className="count">96</h2>
                           <span>%</span>
                         </div>
-                        <p class="mb-0">Positive Feedback</p>
+                        <p className="mb-0">Positive Feedback</p>
                       </div>
                     </div>
                   </div>
@@ -352,9 +379,9 @@ export default function About() {
       {/* <!-- fun-facts-section-->
       <!-- professional-section--> */}
       <section>
-        <div class="w-100 float-left professional-con">
-          <div class="container">
-            <div class="professional-title text-center">
+        <div className="w-100 float-left professional-con">
+          <div className="container">
+            <div className="professional-title text-center">
               <h2>Meet Our Professionals</h2>
               <p>
                 Seram ipsum dolor sit amet, consectetur adipiscing elit sed
@@ -364,44 +391,44 @@ export default function About() {
                 pulvinar dapibus leo.
               </p>
             </div>
-            <div class="professional-box">
-              <div class="row">
-                <div class="col-lg-4 col-md-4">
+            <div className="professional-box">
+              <div className="row">
+                <div className="col-lg-4 col-md-4">
                   <a href="team-detail.html">
-                    <div class="professional-box-item text-center">
-                      <figure class="mb-0">
+                    <div className="professional-box-item text-center">
+                      <figure className="mb-0">
                         <img
-                          src="assets/image/professional-box-img1.png"
+                          src={professionalBoxImg1}
                           alt="professional-box-img"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </figure>
                       <h5>Dr. Richard Muldoon</h5>
-                      <small class="d-block">Doctor of Medicine</small>
-                      <span class="d-block">
+                      <small className="d-block">Doctor of Medicine</small>
+                      <span className="d-block">
                         Lorem ipsum dolor sit ametc onsectetur adipiscing
                         elitsed do eiusmod
                       </span>
-                      <div class="professional-box-social-list">
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-inline-block">
+                      <div className="professional-box-social-list">
+                        <ul className="list-unstyled mb-0">
+                          <li className="d-inline-block">
                             <a href="https://www.facebook.com/">
-                              <i class="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
+                              <i className="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
                             </a>
                           </li>
-                          <li class="d-inline-block">
+                          <li className="d-inline-block">
                             <a href="https://twitter.com/?lang=en">
-                              <i class="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
+                              <i className="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
                             </a>
                           </li>
-                          <li class="d-inline-block">
+                          <li className="d-inline-block">
                             <a href="https://www.linkedin.com/signup">
-                              <i class="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
+                              <i className="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
                             </a>
                           </li>
-                          <li class="d-inline-block">
+                          <li className="d-inline-block">
                             <a href="https://www.pinterest.com/">
-                              <i class="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
+                              <i className="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
                             </a>
                           </li>
                         </ul>
@@ -409,42 +436,42 @@ export default function About() {
                     </div>
                   </a>
                 </div>
-                <div class="col-lg-4 col-lg-4 col-md-4">
+                <div className="col-lg-4 col-lg-4 col-md-4">
                   <a href="team-detail.html">
-                    <div class="professional-box-item text-center">
-                      <figure class="mb-0">
+                    <div className="professional-box-item text-center">
+                      <figure className="mb-0">
                         <img
-                          src="assets/image/professional-box-img2.png"
+                          src={professionalBoxImg2}
                           alt="professional-box-img"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </figure>
                       <h5>Dr. Maria Andaloro</h5>
-                      <small class="d-block">Dental Medicine</small>
-                      <span class="d-block">
+                      <small className="d-block">Dental Medicine</small>
+                      <span className="d-block">
                         Lorem ipsum dolor sit ametc onsectetur adipiscing
                         elitsed do eiusmod
                       </span>
-                      <div class="professional-box-social-list">
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-inline-block">
+                      <div className="professional-box-social-list">
+                        <ul className="list-unstyled mb-0">
+                          <li className="d-inline-block">
                             <a href="https://www.facebook.com/">
-                              <i class="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
+                              <i className="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
                             </a>
                           </li>
-                          <li class="d-inline-block">
+                          <li className="d-inline-block">
                             <a href="https://twitter.com/?lang=en">
-                              <i class="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
+                              <i className="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
                             </a>
                           </li>
-                          <li class="d-inline-block">
+                          <li className="d-inline-block">
                             <a href="https://www.linkedin.com/signup">
-                              <i class="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
+                              <i className="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
                             </a>
                           </li>
-                          <li class="d-inline-block">
+                          <li className="d-inline-block">
                             <a href="https://www.pinterest.com/">
-                              <i class="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
+                              <i className="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
                             </a>
                           </li>
                         </ul>
@@ -452,42 +479,42 @@ export default function About() {
                     </div>
                   </a>
                 </div>
-                <div class="col-lg-4 col-lg-4 col-md-4">
+                <div className="col-lg-4 col-lg-4 col-md-4">
                   <a href="team-detail.html">
-                    <div class="professional-box-item text-center mb-0">
-                      <figure class="mb-0">
+                    <div className="professional-box-item text-center mb-0">
+                      <figure className="mb-0">
                         <img
-                          src="assets/image/professional-box-img3.png"
+                          src={professionalBoxImg3}
                           alt="professional-box-img"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </figure>
                       <h5>Dr. Michael Brian</h5>
-                      <small class="d-block">Family Physician</small>
-                      <span class="d-block">
+                      <small className="d-block">Family Physician</small>
+                      <span className="d-block">
                         Lorem ipsum dolor sit ametc onsectetur adipiscing
                         elitsed do eiusmod
                       </span>
-                      <div class="professional-box-social-list">
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-inline-block">
+                      <div className="professional-box-social-list">
+                        <ul className="list-unstyled mb-0">
+                          <li className="d-inline-block">
                             <a href="https://www.facebook.com/">
-                              <i class="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
+                              <i className="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
                             </a>
                           </li>
-                          <li class="d-inline-block">
+                          <li className="d-inline-block">
                             <a href="https://twitter.com/?lang=en">
-                              <i class="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
+                              <i className="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
                             </a>
                           </li>
-                          <li class="d-inline-block">
+                          <li className="d-inline-block">
                             <a href="https://www.linkedin.com/signup">
-                              <i class="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
+                              <i className="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
                             </a>
                           </li>
-                          <li class="d-inline-block">
+                          <li className="d-inline-block">
                             <a href="https://www.pinterest.com/">
-                              <i class="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
+                              <i className="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
                             </a>
                           </li>
                         </ul>
@@ -503,9 +530,9 @@ export default function About() {
       {/* <!-- professional-section-->
       <!-- form-section --> */}
       <section>
-        <div class="w-100 float-left form-main-con">
-          <div class="container">
-            <div class="text-center">
+        <div className="w-100 float-left form-main-con">
+          <div className="container">
+            <div className="text-center">
               <h2>Book An Appointment</h2>
               <p>
                 Seram ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -514,40 +541,40 @@ export default function About() {
                 leo ligula porttitor eu consequat vitae eleifend tac.
               </p>
             </div>
-            <div class="row">
-              <div class="col-lg-6 order-xl-0 order-lg-0 order-2">
-                <div class="form-left-con position-relative text-center">
-                  <figure class="mb-0 left-curve-img wow slideInLeft">
+            <div className="row">
+              <div className="col-lg-6 order-xl-0 order-lg-0 order-2">
+                <div className="form-left-con position-relative text-center">
+                  <figure className="mb-0 left-curve-img wow slideInLeft">
                     <img
-                      src="assets/image/small-left-curve-img.png"
+                      src={smallLeftCurveImg}
                       alt=""
-                      class="img-fluid"
+                      className="img-fluid"
                     />
                   </figure>
-                  <figure class="mb-0">
+                  <figure className="mb-0">
                     <img
-                      src="assets/image/form-left-img.png"
+                      src={formLeftImg}
                       alt="form-left-img"
-                      class="mb-0 img-fluid human-img"
+                      className="mb-0 img-fluid human-img"
                     />
                   </figure>
-                  <figure class="mb-0 right-curve-img wow slideInRight">
+                  <figure className="mb-0 right-curve-img wow slideInRight">
                     <img
-                      src="assets/image/small-right-curve-img.png"
+                      src={smallRightCurveImg}
                       alt=""
-                      class="img-fluid"
+                      className="img-fluid"
                     />
                   </figure>
                 </div>
               </div>
-              <div class="col-lg-6">
-                <form class="contact-form">
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1" class="text-white">
+              <div className="col-lg-6">
+                <form className="contact-form">
+                  <div className="form-group">
+                    <label for="exampleFormControlSelect1" className="text-white">
                       Department
                     </label>
                     <select
-                      class="form-control position-relative"
+                      className="form-control position-relative"
                       id="exampleFormControlSelect1"
                     >
                       <option>General Health Checkup</option>
@@ -556,56 +583,56 @@ export default function About() {
                       <option>General Health Checkup</option>
                       <option>General Health Checkup</option>
                     </select>
-                    <i class="fas fa-angle-down"></i>
+                    <i className="fas fa-angle-down"></i>
                   </div>
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                      <div class="form-group">
+                  <div className="row">
+                    <div className="col-lg-6 col-md-6">
+                      <div className="form-group">
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           placeholder="Name:"
                           name="name"
                           id="name"
                         />
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                      <div class="form-group">
+                    <div className="col-lg-6 col-md-6">
+                      <div className="form-group">
                         <input
                           type="email"
-                          class="form-control"
+                          className="form-control"
                           placeholder="Email:"
                         />
                         <small
                           id="emailHelp"
-                          class="form-text text-muted"
+                          className="form-text text-muted"
                         ></small>
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                      <div class="form-group">
-                        <input type="time" class="form-control" />
+                    <div className="col-lg-6 col-md-6">
+                      <div className="form-group">
+                        <input type="time" className="form-control" />
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                      <div class="form-group">
-                        <select class="form-control position-relative">
+                    <div className="col-lg-6 col-md-6">
+                      <div className="form-group">
+                        <select className="form-control position-relative">
                           <option>Choose Doctor </option>
                           <option>2</option>
                           <option>3</option>
                           <option>4</option>
                           <option>5</option>
                         </select>
-                        <i class="fas fa-angle-down down-icon"></i>
+                        <i className="fas fa-angle-down down-icon"></i>
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="textarea form-group W-100">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <div className="textarea form-group W-100">
                         <textarea
-                          class="form-control "
+                          className="form-control "
                           placeholder="Message:"
                           rows="3"
                           name="comments"
@@ -614,7 +641,7 @@ export default function About() {
                       </div>
                     </div>
                   </div>
-                  <button type="submit" class="btn  appointment-btn">
+                  <button type="submit" className="btn  appointment-btn">
                     Make Appointment
                   </button>
                 </form>
@@ -626,26 +653,26 @@ export default function About() {
       {/* <!-- form-section -->
       <!-- news-letter-section --> */}
       <section>
-        <div class="w-100 float-left news-letter-con">
-          <div class="container">
-            <div class="news-letter-inner-con banner-overlay-img">
-              <div class="row overlay-img align-items-center">
-                <div class="col-lg-6 col-md-5">
-                  <div class="news-letter-title">
-                    <h2 class="text-white mb-0">Subscribe to our Newsletter</h2>
+        <div className="w-100 float-left news-letter-con">
+          <div className="container">
+            <div className="news-letter-inner-con banner-overlay-img">
+              <div className="row overlay-img align-items-center">
+                <div className="col-lg-6 col-md-5">
+                  <div className="news-letter-title">
+                    <h2 className="text-white mb-0">Subscribe to our Newsletter</h2>
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-7">
-                  <div class="news-letter-input-con position-relative">
-                    <div class="news-letter-input-feild">
+                <div className="col-lg-6 col-md-7">
+                  <div className="news-letter-input-con position-relative">
+                    <div className="news-letter-input-feild">
                       <input
                         type="email"
                         placeholder="Enter Your Email:"
-                        class="w-100"
+                        className="w-100"
                       />
                     </div>
                     <button>
-                      <i class="far fa-envelope"></i>
+                      <i className="far fa-envelope"></i>
                     </button>
                   </div>
                 </div>
@@ -656,61 +683,61 @@ export default function About() {
       </section>
       {/* <!-- news-letter-section -->
       <!-- logo-section --> */}
-      <div class="w-100 float-left logo-con">
-        <div class="container">
-          <div class="logo-inner-con">
-            <div class="row">
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+      <div className="w-100 float-left logo-con">
+        <div className="container">
+          <div className="logo-inner-con">
+            <div className="row">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
-                    src="assets/image/client-logo-img1.png"
+                    src={clientLogoImg1}
                     alt="client-logo-img"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
-                    src="assets/image/client-logo-img2.png"
+                    src={clientLogoImg2}
                     alt="client-logo-img"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
-                    src="assets/image/client-logo-img3.png"
+                    src={clientLogoImg3}
                     alt="client-logo-img"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
-                    src="assets/image/client-logo-img4.png"
+                    src={clientLogoImg4}
                     alt="client-logo-img"
-                    class="img-fluid mb-0"
+                    className="img-fluid mb-0"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
-                    src="assets/image/client-logo-img5.png"
+                    src={clientLogoImg5}
                     alt="client-logo-img"
-                    class="img-fluid mb-0"
+                    className="img-fluid mb-0"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
-                    src="assets/image/client-logo-img6.png"
+                    src={clientLogoImg6}
                     alt="client-logo-img"
-                    class="img-fluid mb-0"
+                    className="img-fluid mb-0"
                   />
                 </figure>
               </div>
@@ -721,104 +748,104 @@ export default function About() {
       {/* <!-- logo-section -->
       <!-- weight-footer-section --> */}
       <section>
-        <div class="w-100 float-left weight-footer-con">
-          <div class="container">
-            <div class="weight-footer-inner-con">
-              <div class="row">
-                <div class="col-lg-5 col-12 text-xl-left text-lg-left text-center">
-                  <div class="weight-footer-content ">
+        <div className="w-100 float-left weight-footer-con">
+          <div className="container">
+            <div className="weight-footer-inner-con">
+              <div className="row">
+                <div className="col-lg-5 col-12 text-xl-left text-lg-left text-center">
+                  <div className="weight-footer-content ">
                     <figure>
                       <img
-                        src="assets/image/footer-logo.png"
+                        src={footerLogo}
                         alt="footer-logo"
-                        class="img-fluid"
+                        className="img-fluid"
                       />
                     </figure>
-                    <p class="col-lg-11 col-md-7 pl-0 pr-0 ml-lg-0 mr-lg-0 ml-md-auto mr-md-auto">
+                    <p className="col-lg-11 col-md-7 pl-0 pr-0 ml-lg-0 mr-lg-0 ml-md-auto mr-md-auto">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elitsed
                       do eiusmod tempororem ipsum dolor sit am econsect
                       ametconsectetetur adipiscing.
                     </p>
-                    <div class="weight-social-list">
-                      <ul class="list-unstyled mb-0">
-                        <li class="d-inline-block">
+                    <div className="weight-social-list">
+                      <ul className="list-unstyled mb-0">
+                        <li className="d-inline-block">
                           <a href="https://www.facebook.com/">
-                            <i class="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
+                            <i className="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
                           </a>
                         </li>
-                        <li class="d-inline-block">
+                        <li className="d-inline-block">
                           <a href="https://twitter.com/?lang=en">
-                            <i class="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
+                            <i className="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
                           </a>
                         </li>
-                        <li class="d-inline-block">
+                        <li className="d-inline-block">
                           <a href="https://www.linkedin.com/signup">
-                            <i class="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
+                            <i className="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
                           </a>
                         </li>
-                        <li class="d-inline-block">
+                        <li className="d-inline-block">
                           <a href="https://www.pinterest.com/">
-                            <i class="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
+                            <i className="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
                           </a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                  <div class="weight-footer-content">
+                <div className="col-lg-2 col-md-4 col-sm-4 col-6">
+                  <div className="weight-footer-content">
                     <h5>Important Link</h5>
-                    <ul class="list-unstyled mb-0">
+                    <ul className="list-unstyled mb-0">
                       <li>
-                        <i class="fas fa-caret-right"></i>Appointment
+                        <i className="fas fa-caret-right"></i>Appointment
                       </li>
                       <li>
-                        <i class="fas fa-caret-right"></i>Doctors
+                        <i className="fas fa-caret-right"></i>Doctors
                       </li>
                       <li>
-                        <i class="fas fa-caret-right"></i>Services
+                        <i className="fas fa-caret-right"></i>Services
                       </li>
                       <li>
-                        <i class="fas fa-caret-right"></i>Specialties
+                        <i className="fas fa-caret-right"></i>Specialties
                       </li>
                       <li>
-                        <i class="fas fa-caret-right"></i>Neurology
+                        <i className="fas fa-caret-right"></i>Neurology
                       </li>
-                      <li class="mb-0">
-                        <i class="fas fa-caret-right"></i>Oncology
+                      <li className="mb-0">
+                        <i className="fas fa-caret-right"></i>Oncology
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-3 col-6">
-                  <div class="weight-footer-content">
+                <div className="col-lg-2 col-md-3 col-sm-3 col-6">
+                  <div className="weight-footer-content">
                     <h5>Support</h5>
-                    <ul class="list-unstyled mb-0">
+                    <ul className="list-unstyled mb-0">
                       <li>
-                        <i class="fas fa-caret-right"></i>Support
+                        <i className="fas fa-caret-right"></i>Support
                       </li>
                       <li>
-                        <i class="fas fa-caret-right"></i>Contact Us
+                        <i className="fas fa-caret-right"></i>Contact Us
                       </li>
                       <li>
-                        <i class="fas fa-caret-right"></i>Knowledge Base
+                        <i className="fas fa-caret-right"></i>Knowledge Base
                       </li>
                       <li>
-                        <i class="fas fa-caret-right"></i>About Us
+                        <i className="fas fa-caret-right"></i>About Us
                       </li>
                       <li>
-                        <i class="fas fa-caret-right"></i>Faq
+                        <i className="fas fa-caret-right"></i>Faq
                       </li>
-                      <li class="mb-0">
-                        <i class="fas fa-caret-right"></i>Partnerships
+                      <li className="mb-0">
+                        <i className="fas fa-caret-right"></i>Partnerships
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-5 col-sm-5 col-12">
-                  <div class="weight-footer-content">
+                <div className="col-lg-3 col-md-5 col-sm-5 col-12">
+                  <div className="weight-footer-content">
                     <h5>Get in Touch</h5>
-                    <ul class="list-unstyled mb-0">
+                    <ul className="list-unstyled mb-0">
                       <li>
                         <span>Email: </span>info@medtexh.com
                       </li>
@@ -828,8 +855,8 @@ export default function About() {
                       <li>
                         <span>Fax: </span>+1 ( 987 ) 654 321 9 9
                       </li>
-                      <li class="mb-0">
-                        <span class="pr-2">Address:</span>King Street Melbourne,
+                      <li className="mb-0">
+                        <span className="pr-2">Address:</span>King Street Melbourne,
                         3000, Australia
                       </li>
                     </ul>
@@ -842,41 +869,41 @@ export default function About() {
       </section>
       {/* <!-- weight-footer-section -->
       <!-- footer-section --> */}
-      <div class="w-100 float-left footer-con text-xl-left text-lg-left text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-12">
-              <p class="mb-0">
+      <div className="w-100 float-left footer-con text-xl-left text-lg-left text-center">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 col-md-6 col-12">
+              <p className="mb-0">
                 Copyright ©2022 medtexh.com All Rights Reserved
               </p>
             </div>
-            <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-center">
-              <figure class="mb-0 d-inline-block">
+            <div className="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-center">
+              <figure className="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img1.png"
+                  src={paymentImg1}
                   alt="payment-img"
-                  class="img-fluid"
+                  className="img-fluid"
                 />
               </figure>
-              <figure class="mb-0 d-inline-block">
+              <figure className="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img2.png"
+                  src={paymentImg2}
                   alt="payment-img"
-                  class="img-fluid"
+                  className="img-fluid"
                 />
               </figure>
-              <figure class="mb-0 d-inline-block">
+              <figure className="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img3.png"
+                  src={paymentImg3}
                   alt="payment-img"
-                  class="img-fluid"
+                  className="img-fluid"
                 />
               </figure>
-              <figure class="mb-0 d-inline-block mr-0">
+              <figure className="mb-0 d-inline-block mr-0">
                 <img
-                  src="assets/image/payment-img4.png"
+                  src={paymentImg4}
                   alt="payment-img"
-                  class="img-fluid"
+                  className="img-fluid"
                 />
               </figure>
             </div>

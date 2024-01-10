@@ -1,6 +1,41 @@
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import banner from "../assets/image/banner-left-img.png";
+import smallLeftCurveImg from "../assets/image/small-left-curve-img.png";
+import smallRightCurveImg from "../assets/image/small-right-curve-img.png";
+import funFactsIcon1 from "../assets/image/fun-facts-icon1.png";
+import funFactsIcon2 from "../assets/image/fun-facts-icon2.png";
+import funFactsIcon3 from "../assets/image/fun-facts-icon3.png";
+import funFactsIcon4 from "../assets/image/fun-facts-icon4.png";
+import formLeftImg from "../assets/image/form-left-img.png";
+import clientLogoImg1 from "../assets/image/client-logo-img1.png";
+import clientLogoImg2 from "../assets/image/client-logo-img2.png";
+import clientLogoImg3 from "../assets/image/client-logo-img3.png";
+import clientLogoImg4 from "../assets/image/client-logo-img4.png";
+import clientLogoImg5 from "../assets/image/client-logo-img5.png";
+import clientLogoImg6 from "../assets/image/client-logo-img6.png";
+import footerLogo from "../assets/image/footer-logo.png";
+import paymentImg1 from "../assets/image/payment-img1.png";
+import paymentImg2 from "../assets/image/payment-img2.png";
+import paymentImg3 from "../assets/image/payment-img3.png";
+import paymentImg4 from "../assets/image/payment-img4.png";
+
+import featureBoxIcon1 from "../assets/image/feature-box-icon1.png";
+import featureBoxIcon2 from "../assets/image/feature-box-icon2.png";
+import featureBoxIcon3 from "../assets/image/feature-box-icon3.png";
+import featureBoxIcon4 from "../assets/image/feature-box-icon4.png";
+import featureBoxIcon5 from "../assets/image/feature-box-icon5.png";
+import featureBoxIcon6 from "../assets/image/feature-box-icon6.png";
+import featureBoxIcon7 from "../assets/image/feature-box-icon7.png";
+import featureBoxIcon8 from "../assets/image/feature-box-icon8.png";
+import qualitySystemImg from "../assets/image/quality-system-img.png";
+import offerSectionImg from "../assets/image/offer-section-img.png";
+import autherImg from "../assets/image/auther-img.png";
+import blogImg1 from "../assets/image/blog-img1.jpg";
+import blogImg2 from "../assets/image/blog-img2.jpg";
+import blogImg3 from "../assets/image/blog-img3.jpg";
+import mobileImg from "../assets/image/mobile-img.png";
+
 import "../assets/css/animate.css";
 import "../assets/css/custom-style.css";
 import "../assets/css/mobile.css";
@@ -12,7 +47,7 @@ import NavBar from "../molecules/navBar";
 function Home() {
   return (
     <div classNameName="App">
-      <div className="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
+      {/* <div className="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 col-md-6 col-12">
@@ -53,120 +88,10 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="w-100 float-left header-and-banner-con banner-overlay-img">
         <div className="container">
           <div className="overlay-img">
-            {/* <nav className="navbar navbar-expand-lg navbar-light">
-              <a className="navbar-brand" href="index.html">
-                <img
-                  src="assets/image/logo-img.png"
-                  alt="logo-img"
-                  className="img-fluid"
-                />
-              </a>
-              <button
-                className="navbar-toggler p-0 collapsed"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-                <span className="navbar-toggler-icon"></span>
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div
-                className="collapse navbar-collapse"
-                id="navbarSupportedContent"
-              >
-                <ul className="navbar-nav ml-auto mr-auto">
-                  <li className="nav-item active ">
-                    <a className="nav-link p-0 text-white" href="index.html">
-                      Home<span className="sr-only">(current)</span>
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link p-0 text-white" href="">
-                      <Link to="/aboutUs">About</Link>
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link p-0 text-white" href="services.html">
-                      Services
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link p-0 text-white" href="team.html">
-                      Team{" "}
-                    </a>
-                  </li>
-                  <li className="nav-item dropdown pr-lg-0">
-                    <a
-                      className="nav-link dropdown-toggle p-0 text-white"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Blog
-                    </a>
-                    <div
-                      className="dropdown-menu p-0"
-                      aria-labelledby="navbarDropdown"
-                    >
-                      <a className="dropdown-item" href="faq.html">
-                        Faq
-                      </a>
-                      <a className="dropdown-item" href="four-column.html">
-                        four-column
-                      </a>
-                      <a className="dropdown-item" href="infinite-scroll.html">
-                        infinite-scroll
-                      </a>
-                      <a className="dropdown-item" href="load-more.html">
-                        load-more
-                      </a>
-                      <a className="dropdown-item" href="one-column.html">
-                        one-column
-                      </a>
-                      <a
-                        className="dropdown-item"
-                        href="six-colum-full-wide.html"
-                      >
-                        six-colum-full-wide
-                      </a>
-                      <a className="dropdown-item" href="three-column.html">
-                        three-colum-sidbar
-                      </a>
-                      <a
-                        className="dropdown-item"
-                        href="three-colum-sidbar.html"
-                      >
-                        three-column
-                      </a>
-                      <a className="dropdown-item" href="two-column.html">
-                        two-column
-                      </a>
-                    </div>
-                  </li>
-                  <li className="nav-item pr-0">
-                    <a className="nav-link p-0 text-white" href="/contact">
-                      {" "}
-                      Contact{" "}
-                    </a>
-                  </li>
-                </ul>
-                <a href="tel:+12345678" className="navbar-btn text-white">
-                  <i className="fas fa-phone-volume"></i>
-                  +1 234 56 78
-                </a>
-              </div>
-            </nav> */}
             <NavBar />
             <section>
               <div className="w-100 float-left banner-con text-xl-left text-lg-left text-center">
@@ -176,8 +101,8 @@ function Home() {
                       <div className="banner-left-con">
                         <figure className="mb-0 left-curve-img wow slideInLeft">
                           <img
-                            src="assets/image/small-left-curve-img.png"
-                            alt=""
+                            src={smallLeftCurveImg}
+                            alt="smallLeftCurveImg"
                             className="img-fluid"
                           />
                         </figure>
@@ -190,8 +115,8 @@ function Home() {
                         </figure>
                         <figure className="mb-0 right-curve-img wow slideInRight">
                           <img
-                            src="assets/image/small-right-curve-img.png"
-                            alt=""
+                            src={smallRightCurveImg}
+                            alt="smallRightCurveImg"
                             className="img-fluid"
                           />
                         </figure>
@@ -229,7 +154,7 @@ function Home() {
                 <div className="feature-box-item ">
                   <figure>
                     <img
-                      src="assets/image/feature-box-icon1.png"
+                      src={featureBoxIcon1}
                       alt="feature-box-icon"
                       className="img-fluid"
                     />
@@ -244,7 +169,7 @@ function Home() {
                 <div className="feature-box-item ">
                   <figure>
                     <img
-                      src="assets/image/feature-box-icon2.png"
+                      src={featureBoxIcon2}
                       alt="feature-box-icon"
                       className="img-fluid"
                     />
@@ -259,7 +184,7 @@ function Home() {
                 <div className="feature-box-item ">
                   <figure>
                     <img
-                      src="assets/image/feature-box-icon3.png"
+                      src={featureBoxIcon3}
                       alt="feature-box-icon"
                       className="img-fluid"
                     />
@@ -274,7 +199,7 @@ function Home() {
                 <div className="feature-box-item ">
                   <figure>
                     <img
-                      src="assets/image/feature-box-icon4.png"
+                      src={featureBoxIcon4}
                       alt="feature-box-icon"
                       className="img-fluid"
                     />
@@ -291,7 +216,7 @@ function Home() {
                 <div className="feature-box-item">
                   <figure>
                     <img
-                      src="assets/image/feature-box-icon5.png"
+                      src={featureBoxIcon5}
                       alt="feature-box-icon"
                       className="img-fluid"
                     />
@@ -306,7 +231,7 @@ function Home() {
                 <div className="feature-box-item">
                   <figure>
                     <img
-                      src="assets/image/feature-box-icon6.png"
+                      src={featureBoxIcon6}
                       alt="feature-box-icon"
                       className="img-fluid"
                     />
@@ -321,7 +246,7 @@ function Home() {
                 <div className="feature-box-item">
                   <figure>
                     <img
-                      src="assets/image/feature-box-icon7.png"
+                      src={featureBoxIcon7}
                       alt="feature-box-icon"
                       className="img-fluid"
                     />
@@ -336,7 +261,7 @@ function Home() {
                 <div className="feature-box-item">
                   <figure>
                     <img
-                      src="assets/image/feature-box-icon8.png"
+                      src={featureBoxIcon8}
                       alt="feature-box-icon"
                       className="img-fluid"
                     />
@@ -404,21 +329,21 @@ function Home() {
                 <div className="quality-system-right-con position-relative text-center">
                   <figure className="mb-0 left-curve-img wow slideInLeft">
                     <img
-                      src="assets/image/small-left-curve-img.png"
+                      src={smallLeftCurveImg}
                       alt=""
                       className="img-fluid"
                     />
                   </figure>
                   <figure className="mb-0">
                     <img
-                      src="assets/image/quality-system-img.png"
+                      src={qualitySystemImg}
                       alt="quality-system-img"
                       className="img-fluid human-img"
                     />
                   </figure>
                   <figure className="mb-0 right-curve-img wow slideInRight">
                     <img
-                      src="assets/image/small-right-curve-img.png"
+                      src={smallRightCurveImg}
                       alt=""
                       className="img-fluid"
                     />
@@ -438,7 +363,7 @@ function Home() {
                   <div className="offer-left-con position-relative overlay-img">
                     <figure className="mb-0">
                       <img
-                        src="assets/image/offer-section-img.png"
+                        src={offerSectionImg}
                         alt="offer-section-img"
                         className="img-fluid"
                       />
@@ -493,7 +418,7 @@ function Home() {
                   <div className="fun-facts-box-item d-sm-flex align-items-sm-center">
                     <figure className="mb-0 d-inline-block">
                       <img
-                        src="assets/image/fun-facts-icon1.png"
+                        src={funFactsIcon1}
                         alt="fun-facts-icon1"
                         className="img-fluid"
                       />
@@ -511,8 +436,8 @@ function Home() {
                   <div className="fun-facts-box-item d-sm-flex align-items-sm-center">
                     <figure className="mb-0 d-inline-block">
                       <img
-                        src="assets/image/fun-facts-icon2.png"
-                        alt="fun-facts-icon1"
+                        src={funFactsIcon2}
+                        alt="fun-facts-icon2"
                         className="img-fluid"
                       />
                     </figure>
@@ -529,8 +454,8 @@ function Home() {
                   <div className="fun-facts-box-item d-sm-flex align-items-sm-center">
                     <figure className="mb-0 d-inline-block">
                       <img
-                        src="assets/image/fun-facts-icon3.png"
-                        alt="fun-facts-icon1"
+                        src={funFactsIcon3}
+                        alt="fun-facts-icon3"
                         className="img-fluid"
                       />
                     </figure>
@@ -547,8 +472,8 @@ function Home() {
                   <div className="fun-facts-box-item d-sm-flex align-items-sm-center">
                     <figure className="mb-0 d-inline-block">
                       <img
-                        src="assets/image/fun-facts-icon4.png"
-                        alt="fun-facts-icon1"
+                        src={funFactsIcon4}
+                        alt="fun-facts-icon4"
                         className="img-fluid"
                       />
                     </figure>
@@ -585,21 +510,21 @@ function Home() {
                 <div className="form-left-con position-relative text-center">
                   <figure className="mb-0 left-curve-img wow slideInLeft">
                     <img
-                      src="assets/image/small-left-curve-img.png"
+                      src={smallLeftCurveImg}
                       alt=""
                       className="img-fluid"
                     />
                   </figure>
                   <figure className="mb-0">
                     <img
-                      src="assets/image/form-left-img.png"
+                      src={formLeftImg}
                       alt="form-left-img"
                       className="img-fluid human-img form-left-img"
                     />
                   </figure>
                   <figure className="mb-0 right-curve-img wow slideInRight">
                     <img
-                      src="assets/image/small-right-curve-img.png"
+                      src={smallRightCurveImg}
                       alt=""
                       className="img-fluid"
                     />
@@ -723,7 +648,7 @@ function Home() {
                         <div className="auther-con w-100 d-inline-block">
                           <figure className="mb-0 d-inline-block">
                             <img
-                              src="assets/image/auther-img.png"
+                              src={autherImg}
                               alt="auther-img"
                               className="img-fluid"
                             />
@@ -746,7 +671,7 @@ function Home() {
                         <div className="auther-con w-100 d-inline-block">
                           <figure className="mb-0 d-inline-block">
                             <img
-                              src="assets/image/auther-img.png"
+                              src={autherImg}
                               alt="auther-img"
                               className="img-fluid"
                             />
@@ -769,7 +694,7 @@ function Home() {
                         <div className="auther-con w-100 d-inline-block">
                           <figure className="mb-0 d-inline-block">
                             <img
-                              src="assets/image/auther-img.png"
+                              src={autherImg}
                               alt="auther-img"
                               className="img-fluid"
                             />
@@ -842,7 +767,7 @@ function Home() {
                   <div className="blog-item">
                     <figure className="mb-0">
                       <img
-                        src="assets/image/blog-img1.jpg"
+                        src={blogImg1}
                         alt="blog-img"
                         className="img-fluid"
                       />
@@ -866,7 +791,7 @@ function Home() {
                   <div className="blog-item">
                     <figure className="mb-0">
                       <img
-                        src="assets/image/blog-img2.jpg"
+                        src={blogImg2}
                         alt="blog-img"
                         className="img-fluid"
                       />
@@ -890,7 +815,7 @@ function Home() {
                   <div className="blog-item mb-0">
                     <figure className="mb-0">
                       <img
-                        src="assets/image/blog-img3.jpg"
+                        src={blogImg3}
                         alt="blog-img"
                         className="img-fluid"
                       />
@@ -923,7 +848,7 @@ function Home() {
                 <div className="mobile-app-left-con position-relative text-center">
                   <figure className="mb-0">
                     <img
-                      src="assets/image/mobile-img.png"
+                      src={mobileImg}
                       alt="mobile-img"
                       className="img-fluid human-img"
                     />
@@ -1004,7 +929,7 @@ function Home() {
               <div className="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure className="mb-0">
                   <img
-                    src="assets/image/client-logo-img1.png"
+                    src={clientLogoImg1}
                     alt="client-logo-img"
                     className="img-fluid"
                   />
@@ -1013,7 +938,7 @@ function Home() {
               <div className="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure className="mb-0">
                   <img
-                    src="assets/image/client-logo-img2.png"
+                    src={clientLogoImg2}
                     alt="client-logo-img"
                     className="img-fluid"
                   />
@@ -1022,7 +947,7 @@ function Home() {
               <div className="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure className="mb-0">
                   <img
-                    src="assets/image/client-logo-img3.png"
+                    src={clientLogoImg3}
                     alt="client-logo-img"
                     className="img-fluid"
                   />
@@ -1031,7 +956,7 @@ function Home() {
               <div className="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure className="mb-0">
                   <img
-                    src="assets/image/client-logo-img4.png"
+                    src={clientLogoImg4}
                     alt="client-logo-img"
                     className="img-fluid mb-0"
                   />
@@ -1040,7 +965,7 @@ function Home() {
               <div className="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure className="mb-0">
                   <img
-                    src="assets/image/client-logo-img5.png"
+                    src={clientLogoImg5}
                     alt="client-logo-img"
                     className="img-fluid mb-0"
                   />
@@ -1049,7 +974,7 @@ function Home() {
               <div className="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure className="mb-0">
                   <img
-                    src="assets/image/client-logo-img6.png"
+                    src={clientLogoImg6}
                     alt="client-logo-img"
                     className="img-fluid mb-0"
                   />
@@ -1070,7 +995,7 @@ function Home() {
                   <div className="weight-footer-content ">
                     <figure>
                       <img
-                        src="assets/image/footer-logo.png"
+                        src={footerLogo}
                         alt="footer-logo"
                         className="img-fluid"
                       />
@@ -1188,34 +1113,34 @@ function Home() {
           <div className="row">
             <div className="col-lg-6 col-md-6 col-12">
               <p className="mb-0">
-                Copyright ©2022 medtexh.com All Rights Reserved
+                Copyright ©2024 careinindia.co.in All Rights Reserved
               </p>
             </div>
             <div className="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-center">
               <figure className="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img1.png"
+                  src={paymentImg1}
                   alt="payment-img"
                   className="img-fluid"
                 />
               </figure>
               <figure className="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img2.png"
+                  src={paymentImg2}
                   alt="payment-img"
                   className="img-fluid"
                 />
               </figure>
               <figure className="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img3.png"
+                  src={paymentImg3}
                   alt="payment-img"
                   className="img-fluid"
                 />
               </figure>
               <figure className="mb-0 d-inline-block mr-0">
                 <img
-                  src="assets/image/payment-img4.png"
+                  src={paymentImg4}
                   alt="payment-img"
                   className="img-fluid"
                 />
