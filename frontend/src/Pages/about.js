@@ -31,7 +31,7 @@ import professionalBoxImg3 from "../assets/image/professional-box-img3.png";
 export default function About() {
   return (
     <div>
-      <div className="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
+      {/* <div className="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 col-md-6 col-12">
@@ -69,7 +69,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- top-bar-section-->
       <!-- header-and-banner-section --> */}
       <div className="w-100 float-left header-and-banner-con banner-overlay-img">

@@ -1,10 +1,25 @@
 import React from "react";
 import NavBar from "../molecules/navBar";
+import footerLogo from "../assets/image/footer-logo.png";
+import paymentImg1 from "../assets/image/payment-img1.png";
+import paymentImg2 from "../assets/image/payment-img2.png";
+import paymentImg3 from "../assets/image/payment-img3.png";
+import paymentImg4 from "../assets/image/payment-img4.png";
+import clientLogoImg1 from "../assets/image/client-logo-img1.png";
+import clientLogoImg2 from "../assets/image/client-logo-img2.png";
+import clientLogoImg3 from "../assets/image/client-logo-img3.png";
+import clientLogoImg4 from "../assets/image/client-logo-img4.png";
+import clientLogoImg5 from "../assets/image/client-logo-img5.png";
+import clientLogoImg6 from "../assets/image/client-logo-img6.png";
+import scheduleIcon1 from "../assets/image/Schedule-icon1.png";
+import scheduleIcon2 from "../assets/image/Schedule-icon2.png";
+import scheduleIcon3 from "../assets/image/Schedule-icon3.png";
+import scheduleIcon4 from "../assets/image/Schedule-icon4.png";
 
 export default function Contact() {
   return (
     <div>
-      <div class="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
+      {/* <div class="w-100 h-10 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
         <div class="container">
           <div class="row">
             <div class="col-lg-6 col-md-6 col-12">
@@ -42,7 +57,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- top-bar-section-->
 <!-- header-and-banner-section --> */}
       <div class="w-100 float-left header-and-banner-con banner-overlay-img">
@@ -87,7 +102,7 @@ export default function Contact() {
                   <div class="Schedule-box-item position-relative w-100 float-left">
                     <figure class="mb-0 float-md-left overlay-img">
                       <img
-                        src="assets/image/Schedule-icon1.png"
+                        src={scheduleIcon1}
                         alt="Schedule-icon"
                         class="img-fluid"
                       />
@@ -103,7 +118,7 @@ export default function Contact() {
                   <div class="Schedule-box-item position-relative w-100 float-left">
                     <figure class="mb-0 float-md-left overlay-img">
                       <img
-                        src="assets/image/Schedule-icon2.png"
+                        src={scheduleIcon2}
                         alt="Schedule-icon"
                         class="img-fluid"
                       />
@@ -121,7 +136,7 @@ export default function Contact() {
                   <div class="Schedule-box-item position-relative w-100 float-left mb-md-0">
                     <figure class="mb-0 float-md-left overlay-img">
                       <img
-                        src="assets/image/Schedule-icon3.png"
+                        src={scheduleIcon3}
                         alt="Schedule-icon"
                         class="img-fluid"
                       />
@@ -137,7 +152,7 @@ export default function Contact() {
                   <div class="Schedule-box-item position-relative w-100 float-left mb-0">
                     <figure class="mb-0 float-md-left overlay-img">
                       <img
-                        src="assets/image/Schedule-icon4.png"
+                        src={scheduleIcon4}
                         alt="Schedule-icon"
                         class="img-fluid"
                       />
@@ -291,7 +306,7 @@ export default function Contact() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img1.png"
+                    src={clientLogoImg1}
                     alt="client-logo-img"
                     class="img-fluid"
                   />
@@ -300,7 +315,7 @@ export default function Contact() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img2.png"
+                    src={clientLogoImg2}
                     alt="client-logo-img"
                     class="img-fluid"
                   />
@@ -309,7 +324,7 @@ export default function Contact() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img3.png"
+                    src={clientLogoImg3}
                     alt="client-logo-img"
                     class="img-fluid"
                   />
@@ -318,7 +333,7 @@ export default function Contact() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img4.png"
+                    src={clientLogoImg4}
                     alt="client-logo-img"
                     class="img-fluid mb-0"
                   />
@@ -327,7 +342,7 @@ export default function Contact() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img5.png"
+                    src={clientLogoImg5}
                     alt="client-logo-img"
                     class="img-fluid mb-0"
                   />
@@ -336,7 +351,7 @@ export default function Contact() {
               <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                 <figure class="mb-0">
                   <img
-                    src="assets/image/client-logo-img6.png"
+                    src={clientLogoImg6}
                     alt="client-logo-img"
                     class="img-fluid mb-0"
                   />
@@ -357,7 +372,7 @@ export default function Contact() {
                   <div class="weight-footer-content ">
                     <figure>
                       <img
-                        src="assets/image/footer-logo.png"
+                        src={footerLogo}
                         alt="footer-logo"
                         class="img-fluid"
                       />
@@ -365,7 +380,7 @@ export default function Contact() {
                     <p class="col-lg-11 col-md-7 pl-0 pr-0 ml-lg-0 mr-lg-0 ml-md-auto mr-md-auto">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elitsed
                       do eiusmod tempororem ipsum dolor sit am econsect
-                      ametconsectetetur adipiscing.
+                      a metconsectetetur adipiscing.
                     </p>
                     <div class="weight-social-list">
                       <ul class="list-unstyled mb-0">
@@ -481,28 +496,28 @@ export default function Contact() {
             <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-center">
               <figure class="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img1.png"
+                  src={paymentImg1}
                   alt="payment-img"
                   class="img-fluid"
                 />
               </figure>
               <figure class="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img2.png"
+                  src={paymentImg2}
                   alt="payment-img"
                   class="img-fluid"
                 />
               </figure>
               <figure class="mb-0 d-inline-block">
                 <img
-                  src="assets/image/payment-img3.png"
+                  src={paymentImg3}
                   alt="payment-img"
                   class="img-fluid"
                 />
               </figure>
               <figure class="mb-0 d-inline-block mr-0">
                 <img
-                  src="assets/image/payment-img4.png"
+                  src={paymentImg4}
                   alt="payment-img"
                   class="img-fluid"
                 />
