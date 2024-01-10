@@ -1,4 +1,5 @@
 import React from "react";
+import companyLogo from "../assets/image/logo-img.png"
 
 export default function NavBar() {
   return (
@@ -7,7 +8,7 @@ export default function NavBar() {
       <nav className="navbar navbar-expand-lg navbar-light">
         <a className="navbar-brand" href="index.html">
           <img
-            src="assets/image/logo-img.png"
+            src={companyLogo}
             alt="logo-img"
             className="img-fluid"
           />
