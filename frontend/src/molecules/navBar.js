@@ -6,7 +6,7 @@ export default function NavBar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light">
         <a className="navbar-brand" href="index.html">
-          <img src={companyLogo} alt="logo-img" className="img-fluid" />
+          <img src={companyLogo} width={270} alt="logo-img" className="img-fluid" />
         </a>
         <button
           className="navbar-toggler p-0 collapsed"
