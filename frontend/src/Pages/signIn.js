@@ -1,0 +1,257 @@
+// SignIn.js
+import React, { useState, useRef, useEffect } from "react";
+import ExternalLink from "../atoms/externalLink";
+import InternalLink from "../atoms/internalLink";
+import styled from "styled-components";
+import PrimaryButton from "../atoms/primaryButton";
+import { Link } from "react-router-dom";
+import { FaFacebookSquare, FaGoogle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// components
+import { useCookies } from "react-cookie";
+import LoginvalidationSchema from "../components/validations/LoginValidation";
+import { URL } from "../connection";
+import LoadingSpinner from "../molecules/loadingSpinner";
+
+const InternalLinkNode = styled(InternalLink)`
+  div {
+    color: red;
+    font-size: 30px;
+    border: 1px solid black;
+  }
+`;
+
+const MainSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 30px;
+`;
+
+const LeftSection = styled.div`
+  width: 40%;
+  background: white;
+  align-self: center;
+  padding: 2% 5%;
+`;
+
+const RightSection = styled.div`
+  padding: 10px;
+  width: 40%;
+  height: 100%;
+  background: #f0f6ff;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px; /* 120% */
+  letter-spacing: -0.45px;
+`;
+
+const Wrapper = styled.form`
+  margin: auto;
+  padding: 5% 5%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+`;
+
+const Heading = styled.div`
+  margin: auto;
+  color: #000;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 72px; /* 200% */
+  letter-spacing: -0.54px;
+`;
+
+const Label = styled.div`
+  display: block;
+  margin-bottom: 24px;
+  font-family: Montserrat;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 150% */
+  letter-spacing: -0.36px;
+`;
+
+const Input = styled.input`
+  width: 75%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+`;
+
+const SignIn = () => {
+  const navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies("jwt");
+  const email = useRef("null");
+  const password = useRef("null");
+  const firstname = useRef("null");
+  const lastname = useRef("null");
+  const [err, setErr] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    // navigate("/", { replace: true });
+    sessionStorage.removeItem("jwt");
+    sessionStorage.removeItem("email");
+  }, [sessionStorage.getItem("jwt"), sessionStorage.getItem("email")]);
+
+  const login = async () => {
+    const userDetails = {
+      email: formData.email,
+      password: formData.password,
+    };
+    LoginvalidationSchema.validate(userDetails)
+      .then(async (validData) => {
+        try {
+          setLoading(true);
+          const response = await axios.post(
+            `${URL}/auth/user/login`,
+            userDetails
+          );
+          // console.log(response.data);
+          if (response.data.message?.includes("logged in successfully")) {
+            console.log(response);
+            setCookie("jwt", response.data.token, { path: "/" });
+            sessionStorage.setItem("jwt", response.data.token);
+            sessionStorage.setItem("email", userDetails.email);
+            sessionStorage.setItem("name", response.data.username);
+            // onLogin();
+            console.log(response.data);
+            navigate("/", { replace: true });
+          } else {
+            toast.error(response.data.message, {
+              position: toast.POSITION.TOP_CENTER,
+              autoClose: 3000,
+            });
+          }
+        } catch (err) {
+          console.log("request not wokring", err);
+        } finally {
+          // Set loading state to false when the request is completed (success or error)
+          setLoading(false);
+        }
+      })
+      .catch(({ errors }) => setErr(errors[0]));
+  };
+
+  console.log(loading);
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    login();
+    // console.log("Form submitted:", formData);
+  };
+
+  //const onClickSignin = () => {};
+
+  return (
+    <>
+      {loading && <LoadingSpinner />}
+      <MainSection>
+        <LeftSection>
+          <Heading className="MontserratItalic">
+            {"Welcome to Care In India"}
+          </Heading>
+          <Label
+            style={{
+              fontSize: "15px",
+              marginBottom: "50px",
+              color: "rgba(0, 0, 0, 0.8)",
+            }}
+          >
+            {
+              "We're here to support you on the path to a healthier, happier life."
+            }
+          </Label>
+          <Wrapper onSubmit={handleSubmit}>
+            <Label>{"Sign in to your health portal"}</Label>
+            <Input
+              type="email"
+              name="email"
+              placeholder="Email address"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <br />
+            <Input
+              type="password"
+              name="password"
+              placeholder="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+            <br />
+            <PrimaryButton
+              text={"Sign In"}
+              type={"submit"}
+              onClick={() => login()}
+            ></PrimaryButton>
+            <Label
+              style={{
+                fontSize: "15px",
+                color: "rgba(0, 0, 0, 0.8)",
+                marginTop: "20px",
+              }}
+            >
+              {"New to Care In India?"}{" "}
+              <span>
+                <Link to={"/signup"}>{"sign up"}</Link>
+              </span>
+            </Label>
+          </Wrapper>
+
+          {/* <Label
+            style={{
+              fontSize: "15px",
+              color: "rgba(0, 0, 0, 0.8)",
+            }}
+          >
+            {"click here to"}{" "}
+            <span>
+              <Link to={"/signup"}>{"sign up"}</Link>
+            </span>
+          </Label> */}
+        </LeftSection>
+        <RightSection>
+          {
+            "“Health is a state of complete physical, mental, and social well-being, and not merely the absence of disease or infirmity.”"
+          }
+          {"- World Health Organization"}
+        </RightSection>
+      </MainSection>
+      <ToastContainer />
+    </>
+  );
+};
+
+export default SignIn;

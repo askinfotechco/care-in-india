@@ -1,4 +1,5 @@
-import "../App.css";
+import React from "react";
+// import "../App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import banner from "../assets/image/banner-left-img.png";
 import smallLeftCurveImg from "../assets/image/small-left-curve-img.png";
@@ -47,48 +48,6 @@ import NavBar from "../molecules/navBar";
 function Home() {
   return (
     <div classNameName="App">
-      {/* <div className="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 col-md-6 col-12">
-              <div className="top-bar-left-con ">
-                <i className="fas fa-map-marker-alt"></i>
-                <span>King Street Melbourne, 3000, Australia</span>
-              </div>
-            </div>
-            <div className="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-center">
-              <div className="top-bar-right-con d-flex">
-                <span>Get Social:</span>
-                <ul className="list-unstyled mb-0">
-                  <li className="float-left">
-                    <a href="https://www.facebook.com/" className="text-white">
-                      <i className="fab fa-facebook-square"></i>
-                    </a>
-                  </li>
-                  <li className="float-left">
-                    <a
-                      href="https://twitter.com/?lang=en"
-                      className="text-white"
-                    >
-                      <i className="fab fa-twitter-square"></i>
-                    </a>
-                  </li>
-                  <li className="float-left">
-                    <a href="https://www.pinterest.com/" className="text-white">
-                      <i className="fab fa-pinterest-square"></i>
-                    </a>
-                  </li>
-                  <li className="float-left">
-                    <a href="https://www.youtube.com/" className="text-white">
-                      <i className="fab fa-youtube-square"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div className="w-100 float-left header-and-banner-con banner-overlay-img">
         <div className="container">
           <div className="overlay-img">
