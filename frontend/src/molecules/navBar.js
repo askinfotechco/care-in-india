@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import companyLogo from "../assets/image/CIILogo.png";
 import { Link } from "react-router-dom";
+import UserProfile from "./userProfile";
 
 export default function NavBar() {
   const [userEmail, setUserEmail] = useState();
@@ -76,7 +77,7 @@ export default function NavBar() {
           </ul>
         </div>
         <div>
-          {userEmail === null && (
+          {userEmail === null ? (
             <>
               <span>
                 <Link className="navbar-btn text-white" to={"/signin"}>
@@ -93,7 +94,12 @@ export default function NavBar() {
                 </Link>
               </span>
             </>
+          ) : (
+            <span>
+              <UserProfile handleLogout={handleLogout} />
+            </span>
           )}
+
           {/* <a href="." className="navbar-btn text-white">
             Login
           </a>

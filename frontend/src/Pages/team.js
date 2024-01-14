@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../molecules/navBar";
 import professionalBoxImg1 from "../assets/image/professional-box-img1.png";
 import professionalBoxImg2 from "../assets/image/professional-box-img2.png";
@@ -20,49 +20,37 @@ import paymentImg1 from "../assets/image/payment-img1.png";
 import paymentImg2 from "../assets/image/payment-img2.png";
 import paymentImg3 from "../assets/image/payment-img3.png";
 import paymentImg4 from "../assets/image/payment-img4.png";
+import axios from "axios";
+import { URL } from "../connection";
+import DoctorsCard from "../molecules/doctorsCard";
 
 export default function Team() {
+  const [selectedOption, setSelectedOption] = useState("All");
+  const [loading, setLoading] = useState(false);
+  const [doctorDetails, setDoctorDetails] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(`${URL}/api/doctor/`);
+        console.log(response.data);
+        setDoctorDetails(response.data.allUser);
+      } catch (err) {
+        console.log("request not wokring", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  console.log(doctorDetails);
+
   return (
     <div>
-      {/* <div class="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-12">
-              <div class="top-bar-left-con ">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>King Street Melbourne, 3000, Australia</span>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-center">
-              <div class="top-bar-right-con d-flex">
-                <span>Get Social:</span>
-                <ul class="list-unstyled mb-0">
-                  <li class="float-left">
-                    <a href="https://www.facebook.com/" class="text-white">
-                      <i class="fab fa-facebook-square"></i>
-                    </a>
-                  </li>
-                  <li class="float-left">
-                    <a href="https://twitter.com/?lang=en" class="text-white">
-                      <i class="fab fa-twitter-square"></i>
-                    </a>
-                  </li>
-                  <li class="float-left">
-                    <a href="https://www.pinterest.com/" class="text-white">
-                      <i class="fab fa-pinterest-square"></i>
-                    </a>
-                  </li>
-                  <li class="float-left">
-                    <a href="https://www.youtube.com/" class="text-white">
-                      <i class="fab fa-youtube-square"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
       {/* <!-- top-bar-section-->
       <!-- header-and-banner-section --> */}
       <div class="w-100 float-left header-and-banner-con banner-overlay-img">
@@ -107,266 +95,9 @@ export default function Team() {
             </div>
             <div class="professional-box">
               <div class="row">
-                <div class="col-lg-4 col-md-4">
-                  <a href="team-detail.html">
-                    <div class="professional-box-item text-center">
-                      <figure class="mb-0">
-                        <img
-                          src={professionalBoxImg1}
-                          alt="professional-box-img"
-                          class="img-fluid"
-                        />
-                      </figure>
-                      <h5>Dr. Richard Muldoon</h5>
-                      <small class="d-block">Doctor of Medicine</small>
-                      <span class="d-block">
-                        Lorem ipsum dolor sit ametc onsectetur adipiscing
-                        elitsed do eiusmod
-                      </span>
-                      <div class="professional-box-social-list">
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-inline-block">
-                            <a href="https://www.facebook.com/">
-                              <i class="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://twitter.com/?lang=en">
-                              <i class="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://www.linkedin.com/signup">
-                              <i class="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://www.pinterest.com/">
-                              <i class="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-lg-4 col-lg-4 col-md-4">
-                  <a href="team-detail.html">
-                    <div class="professional-box-item text-center">
-                      <figure class="mb-0">
-                        <img
-                          src={professionalBoxImg2}
-                          alt="professional-box-img"
-                          class="img-fluid"
-                        />
-                      </figure>
-                      <h5>Dr. Maria Andaloro</h5>
-                      <small class="d-block">Dental Medicine</small>
-                      <span class="d-block">
-                        Lorem ipsum dolor sit ametc onsectetur adipiscing
-                        elitsed do eiusmod
-                      </span>
-                      <div class="professional-box-social-list">
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-inline-block">
-                            <a href="https://www.facebook.com/">
-                              <i class="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://twitter.com/?lang=en">
-                              <i class="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://www.linkedin.com/signup">
-                              <i class="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://www.pinterest.com/">
-                              <i class="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-lg-4 col-lg-4 col-md-4">
-                  <a href="team-detail.html">
-                    <div class="professional-box-item text-center">
-                      <figure class="mb-0">
-                        <img
-                          src={professionalBoxImg3}
-                          alt="professional-box-img"
-                          class="img-fluid"
-                        />
-                      </figure>
-                      <h5>Dr. Michael Brian</h5>
-                      <small class="d-block">Family Physician</small>
-                      <span class="d-block">
-                        Lorem ipsum dolor sit ametc onsectetur adipiscing
-                        elitsed do eiusmod
-                      </span>
-                      <div class="professional-box-social-list">
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-inline-block">
-                            <a href="https://www.facebook.com/">
-                              <i class="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://twitter.com/?lang=en">
-                              <i class="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://www.linkedin.com/signup">
-                              <i class="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://www.pinterest.com/">
-                              <i class="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-4 col-md-4">
-                  <a href="team-detail.html">
-                    <div class="professional-box-item text-center">
-                      <figure class="mb-0">
-                        <img
-                          src={professionalBoxImg4}
-                          alt="professional-box-img"
-                          class="img-fluid"
-                        />
-                      </figure>
-                      <h5>Dr. Tomas Albrektsson</h5>
-                      <small class="d-block">Cardiologist</small>
-                      <span class="d-block">
-                        Lorem ipsum dolor sit ametc onsectetur adipiscing
-                        elitsed do eiusmod
-                      </span>
-                      <div class="professional-box-social-list">
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-inline-block">
-                            <a href="https://www.facebook.com/">
-                              <i class="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://twitter.com/?lang=en">
-                              <i class="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://www.linkedin.com/signup">
-                              <i class="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://www.pinterest.com/">
-                              <i class="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-lg-4 col-lg-4 col-md-4">
-                  <a href="team-detail.html">
-                    <div class="professional-box-item text-center">
-                      <figure class="mb-0">
-                        <img
-                          src={professionalBoxImg5}
-                          alt="professional-box-img"
-                          class="img-fluid"
-                        />
-                      </figure>
-                      <h5>Dr. Edward Angle</h5>
-                      <small class="d-block">Gynecologist</small>
-                      <span class="d-block">
-                        Lorem ipsum dolor sit ametc onsectetur adipiscing
-                        elitsed do eiusmod
-                      </span>
-                      <div class="professional-box-social-list">
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-inline-block">
-                            <a href="https://www.facebook.com/">
-                              <i class="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://twitter.com/?lang=en">
-                              <i class="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://www.linkedin.com/signup">
-                              <i class="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://www.pinterest.com/">
-                              <i class="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-lg-4 col-lg-4 col-md-4">
-                  <a href="team-detail.html">
-                    <div class="professional-box-item text-center mb-0">
-                      <figure class="mb-0">
-                        <img
-                          src={professionalBoxImg6}
-                          alt="professional-box-img"
-                          class="img-fluid"
-                        />
-                      </figure>
-                      <h5>Dr. Amalia Assur</h5>
-                      <small class="d-block">Physician Assistant</small>
-                      <span class="d-block">
-                        Lorem ipsum dolor sit ametc onsectetur adipiscing
-                        elitsed do eiusmod
-                      </span>
-                      <div class="professional-box-social-list">
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-inline-block">
-                            <a href="https://www.facebook.com/">
-                              <i class="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://twitter.com/?lang=en">
-                              <i class="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://www.linkedin.com/signup">
-                              <i class="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li class="d-inline-block">
-                            <a href="https://www.pinterest.com/">
-                              <i class="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </div>
+                {doctorDetails.map((ele) => {
+                  return <DoctorsCard data={ele} />;
+                })}
               </div>
             </div>
           </div>
@@ -390,11 +121,7 @@ export default function Team() {
               <div class="col-lg-6 order-xl-0 order-lg-0 order-2">
                 <div class="form-left-con position-relative text-center">
                   <figure class="mb-0 left-curve-img wow slideInLeft">
-                    <img
-                      src={smallLeftCurveImg}
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src={smallLeftCurveImg} alt="" class="img-fluid" />
                   </figure>
                   <figure class="mb-0">
                     <img
@@ -404,11 +131,7 @@ export default function Team() {
                     />
                   </figure>
                   <figure class="mb-0 right-curve-img wow slideInRight">
-                    <img
-                      src={smallRightCurveImg}
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src={smallRightCurveImg} alt="" class="img-fluid" />
                   </figure>
                 </div>
               </div>
@@ -724,32 +447,16 @@ export default function Team() {
             </div>
             <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-center">
               <figure class="mb-0 d-inline-block">
-                <img
-                  src={paymentImg1}
-                  alt="payment-img"
-                  class="img-fluid"
-                />
+                <img src={paymentImg1} alt="payment-img" class="img-fluid" />
               </figure>
               <figure class="mb-0 d-inline-block">
-                <img
-                  src={paymentImg2}
-                  alt="payment-img"
-                  class="img-fluid"
-                />
+                <img src={paymentImg2} alt="payment-img" class="img-fluid" />
               </figure>
               <figure class="mb-0 d-inline-block">
-                <img
-                  src={paymentImg3}
-                  alt="payment-img"
-                  class="img-fluid"
-                />
+                <img src={paymentImg3} alt="payment-img" class="img-fluid" />
               </figure>
               <figure class="mb-0 d-inline-block mr-0">
-                <img
-                  src={paymentImg4}
-                  alt="payment-img"
-                  class="img-fluid"
-                />
+                <img src={paymentImg4} alt="payment-img" class="img-fluid" />
               </figure>
             </div>
           </div>
