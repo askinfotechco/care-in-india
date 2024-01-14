@@ -287,11 +287,7 @@ function Home() {
               <div className="col-lg-6 col-md-6">
                 <div className="quality-system-right-con position-relative text-center">
                   <figure className="mb-0 left-curve-img wow slideInLeft">
-                    <img
-                      src={smallLeftCurveImg}
-                      alt=""
-                      className="img-fluid"
-                    />
+                    <img src={smallLeftCurveImg} alt="" className="img-fluid" />
                   </figure>
                   <figure className="mb-0">
                     <img
@@ -468,11 +464,7 @@ function Home() {
               <div className="col-lg-6 order-xl-0 order-lg-0 order-2">
                 <div className="form-left-con position-relative text-center">
                   <figure className="mb-0 left-curve-img wow slideInLeft">
-                    <img
-                      src={smallLeftCurveImg}
-                      alt=""
-                      className="img-fluid"
-                    />
+                    <img src={smallLeftCurveImg} alt="" className="img-fluid" />
                   </figure>
                   <figure className="mb-0">
                     <img
