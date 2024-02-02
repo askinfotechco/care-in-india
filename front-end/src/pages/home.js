@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import InternalLink from "../atoms/internalLink";
 import styled from "styled-components";
 import companyLogoImage from "../static/images/careinindia.png";
@@ -10,11 +10,14 @@ import { GiMedicines } from "react-icons/gi";
 import { LuFiles } from "react-icons/lu";
 import UserProfileDropdown from "../molecules/userInfo";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
+import StickyFooter from "../molecules/StickyFooter";
+import { Promotion } from "../components/carousel/Promotion";
+import Carousel from "../molecules/coro";
 
 const Wrapper = styled.div`
   margin: 16px;
   padding: 8px;
-  background-color: white;
 `;
 
 const TopSection = styled.div`
@@ -24,7 +27,6 @@ const TopSection = styled.div`
 `;
 
 const CompanyLogo = styled.div`
-  background-color: white;
   flex: 70%;
   text-align: left;
 `;
@@ -61,33 +63,57 @@ const LineSpan = styled.span`
 `;
 
 const Label = styled.div`
-  display: block;
-  font-family: Montserrat;
-  font-size: 16px;
+  // font-family: Montserrat;
+  font-size: 14px;
   font-weight: 700;
   line-height: 36px; /* 150% */
-  letter-spacing: -0.36px;
+  letter-spacing: -0.2px;
   color: rgba(0, 0, 0, 0.8);
 `;
 
 const Features = styled.div`
+  margin-top: 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  background-color: #f2f2f2;
   padding: 8px;
+  margin-bottom: 40px;
 `;
 
 const FeatureIcons = styled(Link)`
+  width: 100px
   display: flex;
   flex-direction: column;
+  margin: 0 50px;
   align-items: center;
+  border: 1px solid #e2e2e2;
+  padding: 15px;
+  border-radius: 25%;
   &:hover {
     transform: scale(1.1);
+    background-color: #E4F1FF;
   }
 `;
 
 export default function Home() {
+  const [userEmail, setUserEmail] = useState();
+  const [cookies, setCookie, removeCookie] = useCookies("jwt");
+
+  useEffect(() => {
+    setUserEmail(sessionStorage.getItem("email"));
+  }, [sessionStorage]);
+
+  const handleLogout = () => {
+    // Add logout logic here
+    removeCookie("jwt", { path: "/" });
+    sessionStorage.removeItem("jwt");
+    sessionStorage.removeItem("email");
+    sessionStorage.removeItem("name");
+    setUserEmail(sessionStorage.getItem("email"));
+    console.log("Logging out...");
+  };
+
+  console.log(userEmail);
   return (
     <Wrapper>
       <TopSection>
@@ -105,42 +131,48 @@ export default function Home() {
           {/* <Label>{"We care for India"}</Label> */}
         </CompanyLogo>
         <Links>
-          <LineSpan>
-            <StyledLink to={"/signup"}>{"Register"}</StyledLink>
-          </LineSpan>
-          <LineSpan>
-            <StyledLink to={"/signin"}>{"Login"}</StyledLink>
-          </LineSpan>
-          <UserProfileDropdown />
+          {userEmail === null && (
+            <>
+              <LineSpan>
+                <StyledLink to={"/signup"}>{"Register"}</StyledLink>
+              </LineSpan>
+              <LineSpan>
+                <StyledLink to={"/signin"}>{"Login"}</StyledLink>
+              </LineSpan>
+            </>
+          )}
+          {userEmail !== null && (
+            <UserProfileDropdown handleLogout={handleLogout} />
+          )}
         </Links>
       </TopSection>
       <Features>
         <FeatureIcons to={"/bookAppointment"}>
           <FaCalendarPlus
-            style={{ height: 50, width: 50, cursor: "pointer" }}
+            style={{ height: 45, width: 45, cursor: "pointer" }}
           />
           <Label
             style={{
-              fontSize: "12px",
-              color: "rgba(0, 0, 0, 0.6)",
+              fontSize: "14px",
+              // color: "rgba(0, 0, 0, 0.6)",
             }}
           >
-            {"Book an Appointment"}
+            {"Dr. Appointment"}
           </Label>
         </FeatureIcons>
-        <FeatureIcons to={"/videoCall"} style={{ marginTop: "-10px" }}>
-          <MdVideoCall style={{ height: 75, width: 75, cursor: "pointer" }} />
+        <FeatureIcons to={"/videoCall"}>
+          <MdVideoCall style={{ height: 60, width: 60, cursor: "pointer" }} />
           <Label
             style={{
-              fontSize: "12px",
-              color: "rgba(0, 0, 0, 0.6)",
-              marginTop: "-16px",
+              fontSize: "14px",
+              // color: "rgba(0, 0, 0, 0.6)",
+              marginTop: "-15px",
             }}
           >
-            {"Schedule a video call"}
+            {"Video call with Dr."}
           </Label>
         </FeatureIcons>
-        <FeatureIcons>
+        {/* <FeatureIcons>
           <BiFileFind style={{ height: 55, width: 55, cursor: "pointer" }} />
           <Label
             style={{
@@ -151,13 +183,13 @@ export default function Home() {
           >
             {"Find Nearest Doctor"}
           </Label>
-        </FeatureIcons>
+        </FeatureIcons> */}
         <FeatureIcons>
-          <GiMedicines style={{ height: 55, width: 55, cursor: "pointer" }} />
+          <GiMedicines style={{ height: 45, width: 50, cursor: "pointer" }} />
           <Label
             style={{
-              fontSize: "12px",
-              color: "rgba(0, 0, 0, 0.6)",
+              fontSize: "14px",
+              // color: "rgba(0, 0, 0, 0.6)",
               marginTop: "-5px",
             }}
           >
@@ -165,11 +197,11 @@ export default function Home() {
           </Label>
         </FeatureIcons>
         <FeatureIcons>
-          <LuFiles style={{ height: 55, width: 55, cursor: "pointer" }} />
+          <LuFiles style={{ height: 45, width: 50, cursor: "pointer" }} />
           <Label
             style={{
-              fontSize: "12px",
-              color: "rgba(0, 0, 0, 0.6)",
+              fontSize: "14px",
+              // color: "rgba(0, 0, 0, 0.6)",
               marginTop: "-5px",
             }}
           >
@@ -177,6 +209,9 @@ export default function Home() {
           </Label>
         </FeatureIcons>
       </Features>
+      <Promotion />
+      <Carousel />
+      {/* <StickyFooter /> */}
     </Wrapper>
   );
 }

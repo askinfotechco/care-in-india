@@ -8,6 +8,8 @@ const Card = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px;
   width: 300px;
+  background-color: #fff;
+  padding: 6px;
   img {
     width: 100%;
     height: auto;
@@ -46,9 +48,9 @@ export default function DoctorCard(props) {
     <Card>
       <img src={props.data.imgSource} alt="Card Image" />
       <CardContent>
-        <CardTitle>{props.data.tile}</CardTitle>
-        <Speciallity>{props.data.speciallity}</Speciallity>
-        <CardText>{props.data.description}</CardText>
+        <CardTitle>{`${props.data.firstname}, ${props.data.lastname}`}</CardTitle>
+        <Speciallity>{props.data.specialization}</Speciallity>
+        <CardText>{`${props.data.address}, ${props.data.location}, ${props.data.pincode}`}</CardText>
       </CardContent>
     </Card>
   );

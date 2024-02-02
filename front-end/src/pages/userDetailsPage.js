@@ -1,16 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import MultilevelMenu from "../molecules/multilevelItems";
 import Breadcrumb from "../molecules/breadcrumb";
 import userInfo from "../static/images/userInfo.png";
 import { FaEdit } from "react-icons/fa";
+import axios from "axios";
+import { useCookies } from "react-cookie";
+import { URL } from "../connection";
+import ModalComponent from "../molecules/modal";
 
 const UserDetailsPage = () => {
-  const user = {
-    name: "John Doe",
-    email: "john.doe@example.com",
-    avatar: "https://example.com/user-avatar.jpg",
-    // Add more user details as needed
+  const [cookies, setCookie, removeCookie] = useCookies("jwt");
+  const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState();
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const dataToSend = { email: sessionStorage.getItem("email") };
+        const response = await axios.post(`${URL}/auth/user/byid`, dataToSend, {
+          headers: {
+            Authorization: "Bearer " + cookies.jwt,
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        });
+        setUser(response.data.user);
+      } catch (err) {
+        console.log("request not wokring", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  // const user = {
+  //   name: "John Doe",
+  //   email: "john.doe@example.com",
+  //   avatar: "https://example.com/user-avatar.jpg",
+  //   // Add more user details as needed
+  // };
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
   };
 
   const breadcrumbItems = [
@@ -19,11 +59,10 @@ const UserDetailsPage = () => {
   ];
 
   const data = [
-    { id: "Full Name", name: "John Doe" },
-    { id: "Email", name: "Jane.Smith@example.com" },
-    { id: "Phone", name: "123456789" },
-    { id: "Mobile", name: "987654321" },
-    { id: "Address", name: "San Frasico" },
+    { id: "Full Name", name: `${user?.firstname} ${user?.lastname}` },
+    { id: "Email", name: user?.email },
+    { id: "Phone", name: user?.phone ? user.phone : " - " },
+    { id: "Address", name: user?.address ? user.address : " - " },
     // Add more data as needed
   ];
 
@@ -98,64 +137,69 @@ const UserDetailsPage = () => {
   `;
 
   return (
-    <UserSection>
-      <BreadCrumbs>
-        <Breadcrumb items={breadcrumbItems} />
-      </BreadCrumbs>
-      <MidSection>
-        <TopDetails>
-          <div>
-            <img
-              src={userInfo}
-              className="avatar"
-              style={{
-                width: "50px",
-                height: "50px",
-                border: "1px black solid",
-                borderRadius: "50%",
-                padding: "5px",
-              }}
-              alt={`${user.name}'s Avatar`}
-            />
-          </div>
-          <div>
-            <h2>{user.name}</h2>
-            <p>Email: {user.email}</p>
-            {/* Add more user details as needed */}
-          </div>
-        </TopDetails>
-        <Address>
-          <TableSection>
-            <Table>
-              <tbody>
-                {data.map((item) => (
-                  <tr key={item.id}>
-                    <td>{item.id}</td>
-                    <td>{item.name}</td>
-                    <td>{item.age}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
-          </TableSection>
-          <FaEdit />
-        </Address>
-      </MidSection>
-      {/* <MultilevelMenu data={menuData} /> */}
-      <BottomData>
-        <Records>
-          <tbody>
-            {records.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{item.age}</td>
-              </tr>
-            ))}
-          </tbody>
-        </Records>
-      </BottomData>
-    </UserSection>
+    <>
+      <ModalComponent
+        closeModal={closeModal}
+        isModalOpen={isModalOpen}
+        user={user}
+      />
+      <UserSection>
+        <BreadCrumbs>
+          <Breadcrumb items={breadcrumbItems} />
+        </BreadCrumbs>
+        <MidSection>
+          <TopDetails>
+            <div>
+              <img
+                src={userInfo}
+                className="avatar"
+                style={{
+                  width: "50px",
+                  height: "50px",
+                  border: "1px black solid",
+                  borderRadius: "50%",
+                  padding: "5px",
+                }}
+                alt={`${user?.firstname} ${user?.lastname}'s Avatar`}
+              />
+            </div>
+            <div>
+              <h2>{`${user?.firstname}`}</h2>
+              <p>Email: {user?.email}</p>
+              {/* Add more user details as needed */}
+            </div>
+          </TopDetails>
+          <Address>
+            <TableSection>
+              <Table>
+                <tbody>                  
+                  {data.map((item) => (
+                    <tr key={item.id}>
+                      <td>{item.id}</td>
+                      <td>{item.name}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </TableSection>
+            <FaEdit style={{ cursor: "pointer" }} onClick={openModal} />
+          </Address>
+        </MidSection>
+        {/* <MultilevelMenu data={menuData} /> */}
+        <BottomData>
+          <Records>
+            <tbody>
+              {records.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Records>
+        </BottomData>
+      </UserSection>
+    </>
   );
 };
 
