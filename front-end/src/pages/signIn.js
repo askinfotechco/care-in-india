@@ -151,8 +151,6 @@ const SignIn = () => {
       .catch(({ errors }) => setErr(errors[0]));
   };
 
-  console.log(loading);
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",
