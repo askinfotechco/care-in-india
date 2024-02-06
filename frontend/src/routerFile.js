@@ -7,6 +7,9 @@ import Services from "./Pages/services";
 import Team from "./Pages/team";
 import SignIn from "./Pages/signIn";
 import SignUp from "./Pages/signUp";
+import Radiology from "./Pages/secondaryLanding/radiology";
+import Surgery from "./Pages/secondaryLanding/surgery";
+import Dental from "./Pages/secondaryLanding/dental";
 
 function RouterFile() {
   return (
@@ -18,6 +21,9 @@ function RouterFile() {
         <Route path="/aboutUs" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services/radiology" element={<Radiology />} />
+        <Route path="/services/surgery" element={<Surgery />} />
+        <Route path="/services/dental" element={<Dental />} />
         <Route path="/team" element={<Team />} />
       </Routes>
     </Router>
