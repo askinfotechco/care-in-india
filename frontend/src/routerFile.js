@@ -10,6 +10,7 @@ import SignUp from "./Pages/signUp";
 import Radiology from "./Pages/secondaryLanding/radiology";
 import Surgery from "./Pages/secondaryLanding/surgery";
 import Dental from "./Pages/secondaryLanding/dental";
+import TeamDetails from "./Pages/secondaryLanding/teamDetails";
 
 function RouterFile() {
   return (
@@ -25,6 +26,7 @@ function RouterFile() {
         <Route path="/services/surgery" element={<Surgery />} />
         <Route path="/services/dental" element={<Dental />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/team/teamDetails" element={<TeamDetails />} />
       </Routes>
     </Router>
   );
