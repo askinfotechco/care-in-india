@@ -26,7 +26,7 @@ function RouterFile() {
         <Route path="/services/surgery" element={<Surgery />} />
         <Route path="/services/dental" element={<Dental />} />
         <Route path="/team" element={<Team />} />
-        <Route path="/team/teamDetails" element={<TeamDetails />} />
+        <Route path="/team/teamDetails/:regId" element={<TeamDetails />} />
       </Routes>
     </Router>
   );
