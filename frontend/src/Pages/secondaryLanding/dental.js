@@ -29,6 +29,7 @@ import paymentImg1 from "../../assets/image/payment-img1.png";
 import paymentImg2 from "../../assets/image/payment-img2.png";
 import paymentImg3 from "../../assets/image/payment-img3.png";
 import paymentImg4 from "../../assets/image/payment-img4.png";
+import { Link } from "react-router-dom";
 
 export default function Dental() {
   return (
@@ -361,9 +362,11 @@ export default function Dental() {
                         class="w-100"
                       />
                     </div> */}
-            <button>
-              <i class="far fa-envelope">{"Schedule a Visit"}</i>
-            </button>
+            <Link to={"/team"}>
+              <button>
+                <i class="far fa-envelope">{"Schedule a Visit"}</i>
+              </button>
+            </Link>
           </div>
         </div>
         <div class="col-lg-3 col-md-4">
@@ -375,9 +378,11 @@ export default function Dental() {
                         class="w-100"
                       />
                     </div> */}
-            <button>
-              <i class="far fa-envelope">{"Book Online"}</i>
-            </button>
+            <Link to={"/team"}>
+              <button>
+                <i class="far fa-envelope">{"Book Online Consulting"}</i>
+              </button>
+            </Link>
           </div>
         </div>
         {/* </div>
