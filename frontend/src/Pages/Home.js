@@ -792,7 +792,7 @@ function Home() {
       </section>
       {/* <!-- blog section -->
       <!-- mobile-app-section --> */}
-      <section>
+      {/* <section>
         <div className="w-100 float-left mobile-app-con">
           <div className="container">
             <div className="row">
@@ -838,10 +838,10 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!-- mobile-app-section -->
       <!-- news-letter-section --> */}
-      <section>
+      {/* <section>
         <div className="w-100 float-left news-letter-con">
           <div className="container">
             <div className="news-letter-inner-con banner-overlay-img">
@@ -871,7 +871,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!-- news-letter-section -->
       <!-- logo-section --> */}
       <div className="w-100 float-left logo-con">
