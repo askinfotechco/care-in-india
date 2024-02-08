@@ -13,6 +13,7 @@ const {
   deleteDoctor,
   updateDoctorStatus,
   getActiveDoctorsCount,
+  getUserByRegId,
 } = require("../controllers/doctorDetails.controller");
 
 doctorDetailsRouter.get("/", getAllDoctors);
@@ -20,6 +21,7 @@ doctorDetailsRouter.post("/add", addDoctor);
 doctorDetailsRouter.post("/login", DoctorLogin);
 doctorDetailsRouter.get("/byid/:id", authorizationHeader, getDoctorById);
 doctorDetailsRouter.get("/byrole/:role", authorizationHeader, getUserByRole);
+doctorDetailsRouter.post("/byregid", authorizationHeader, getUserByRegId);
 doctorDetailsRouter.post("/resetPassword", authorizationHeader, resetPassword);
 doctorDetailsRouter.post("/resetMail/:id", authorizationHeader, resetEmail);
 doctorDetailsRouter.delete("/:id", authorizationHeader, deleteDoctor);
