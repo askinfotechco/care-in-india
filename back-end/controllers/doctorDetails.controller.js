@@ -22,6 +22,8 @@ const addDoctor = async (req, res) => {
     language,
     location,
     specialization,
+    regId,
+    about,
   } = req.body;
   const encodePass = await bcrypt.hash(password, 10);
   // console.log(encodePass)
@@ -40,6 +42,8 @@ const addDoctor = async (req, res) => {
     language: language,
     location: location,
     specialization: specialization,
+    regId: regId,
+    about: about,
   };
 
   try {
@@ -114,6 +118,17 @@ const getDoctorById = async (req, res) => {
 
   try {
     const user = await doctorDetailsModel.findOne({ _id: id });
+    return res.status(200).json({ user });
+  } catch (error) {
+    return res.status(400).json({ msg: `${error}` });
+  }
+};
+
+const getUserByRegId = async (req, res) => {
+  const { regId } = req.body;
+
+  try {
+    const user = await doctorDetailsModel.findOne({ regId: regId });
     return res.status(200).json({ user });
   } catch (error) {
     return res.status(400).json({ msg: `${error}` });
@@ -209,7 +224,10 @@ const updateDoctorStatus = async (req, res) => {
   try {
     const session = await mongoose.startSession();
     await session.withTransaction(async () => {
-      await doctorDetailsModel.updateOne({ _id: id }, { $set: { status: userStatus } });
+      await doctorDetailsModel.updateOne(
+        { _id: id },
+        { $set: { status: userStatus } }
+      );
     });
     session.endSession();
 
@@ -245,4 +263,5 @@ module.exports = {
   deleteDoctor,
   updateDoctorStatus,
   getActiveDoctorsCount,
+  getUserByRegId,
 };
