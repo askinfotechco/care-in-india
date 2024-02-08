@@ -76,6 +76,14 @@ const DoctorDetailsSchema = new Schema(
       type: Boolean,
       default: true,
     },
+    regId: {
+      type: Number,
+      required: true,
+    },
+    about: {
+      type: String,
+      required: false,
+    },
   },
   {
     timestamps: true,
