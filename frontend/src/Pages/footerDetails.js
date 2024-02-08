@@ -1,5 +1,6 @@
-import { React } from 'react';
+import { React } from "react";
 import footerLogo from "../assets/image/footer-logo.png";
+import companyLogo from "../assets/image/CIILogo.png";
 import paymentImg1 from "../assets/image/payment-img1.png";
 import paymentImg2 from "../assets/image/payment-img2.png";
 import paymentImg3 from "../assets/image/payment-img3.png";
@@ -17,9 +18,10 @@ export default function FooterDetails() {
                   <div className="weight-footer-content ">
                     <figure>
                       <img
-                        src={footerLogo}
+                        src={companyLogo}
                         alt="footer-logo"
                         className="img-fluid"
+                        width={150}
                       />
                     </figure>
                     <p className="col-lg-11 col-md-7 pl-0 pr-0 ml-lg-0 mr-lg-0 ml-md-auto mr-md-auto">
@@ -58,22 +60,24 @@ export default function FooterDetails() {
                     <h5>Important Link</h5>
                     <ul className="list-unstyled mb-0">
                       <li>
-                        <i className="fas fa-caret-right"></i>Appointment
+                        <i className="fas fa-caret-right"></i>Talk to Doctor/
+                        Doctor Slots
                       </li>
                       <li>
-                        <i className="fas fa-caret-right"></i>Doctors
+                        <i className="fas fa-caret-right"></i>Radiology Service
                       </li>
                       <li>
-                        <i className="fas fa-caret-right"></i>Services
+                        <i className="fas fa-caret-right"></i>Health Packages
                       </li>
                       <li>
-                        <i className="fas fa-caret-right"></i>Specialties
+                        <i className="fas fa-caret-right"></i>CII Health Buddy
+                        Plan
                       </li>
                       <li>
-                        <i className="fas fa-caret-right"></i>Neurology
+                        <i className="fas fa-caret-right"></i>Home Care Services
                       </li>
                       <li className="mb-0">
-                        <i className="fas fa-caret-right"></i>Oncology
+                        <i className="fas fa-caret-right"></i>Medical Records
                       </li>
                     </ul>
                   </div>
@@ -82,9 +86,6 @@ export default function FooterDetails() {
                   <div className="weight-footer-content">
                     <h5>Support</h5>
                     <ul className="list-unstyled mb-0">
-                      <li>
-                        <i className="fas fa-caret-right"></i>Support
-                      </li>
                       <li>
                         <i className="fas fa-caret-right"></i>Contact Us
                       </li>
@@ -108,17 +109,14 @@ export default function FooterDetails() {
                     <h5>Get in Touch</h5>
                     <ul className="list-unstyled mb-0">
                       <li>
-                        <span>Email: </span>info@medtexh.com
+                        <span>Email: </span>pawan@careinindia.co.in
                       </li>
                       <li>
-                        <span>Phone: </span>+1 234 567 89 0 0
-                      </li>
-                      <li>
-                        <span>Fax: </span>+1 ( 987 ) 654 321 9 9
+                        <span>Phone: </span>+91-9971007292
                       </li>
                       <li className="mb-0">
-                        <span className="pr-2">Address:</span>King Street
-                        Melbourne, 3000, Australia
+                        <span className="pr-2">Address: </span>FCA 3165, Street
+                        4, Block A, SGM Nagar Faridabad, New Delhi - 121001
                       </li>
                     </ul>
                   </div>
@@ -134,7 +132,7 @@ export default function FooterDetails() {
           <div className="row">
             <div className="col-lg-6 col-md-6 col-12">
               <p className="mb-0">
-                Copyright ©2022 medtexh.com All Rights Reserved
+                Copyright ©2024 careinindia.co.in All Rights Reserved
               </p>
             </div>
             <div className="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-center">
@@ -172,5 +170,4 @@ export default function FooterDetails() {
       </div>
     </div>
   );
-
 }
