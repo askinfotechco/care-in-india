@@ -77,7 +77,7 @@ const DoctorDetailsSchema = new Schema(
       default: true,
     },
     regId: {
-      type: Number,
+      type: String,
       required: true,
     },
     about: {
