@@ -47,8 +47,8 @@ export default function TeamDetails() {
   return (
     <div>
       {" "}
-      <div class="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
-        <div class="container">
+      <div className="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
+        <div className="container">
           <NavBar />
         </div>
       </div>
@@ -57,12 +57,12 @@ export default function TeamDetails() {
       {/* <!-- header-and-banner-section -->
 <!-- team detail section --> */}
       <section>
-        <div class="team-detail-con text-lg-left text-center w-100 float-left">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-7 order-lg-0 order-2">
+        <div className="team-detail-con text-lg-left text-center w-100 float-left">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-7 order-lg-0 order-2">
                 <div
-                  class="team-member-detail wow slideInLeft"
+                  className="team-member-detail wow slideInLeft"
                   style={{ visibility: "visible", animation: "slideInLeft" }}
                 >
                   <h5>{doctorDetails.specialization}</h5>
@@ -73,48 +73,48 @@ export default function TeamDetails() {
                     debitis aut rerum necessitatibus saepe eveniet ut et voluta
                     repudi.
                   </p> */}
-                  <div class="team-contanct">
+                  <div className="team-contanct">
                     <span>{doctorDetails.location}</span>
                     <span>{doctorDetails.pincode}</span>
                     {/* <br />
                     <span>Phone: </span>
                     <span>+1 234 684 786 09</span> */}
                   </div>
-                  <div class="weight-social-list">
-                    <ul class="list-unstyled mb-0">
-                      <li class="d-inline-block">
+                  <div className="weight-social-list">
+                    <ul className="list-unstyled mb-0">
+                      <li className="d-inline-block">
                         <a href="https://www.facebook.com/">
-                          <i class="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
+                          <i className="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
                         </a>
                       </li>
-                      <li class="d-inline-block">
+                      <li className="d-inline-block">
                         <a href="https://twitter.com/?lang=en">
-                          <i class="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
+                          <i className="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
                         </a>
                       </li>
-                      <li class="d-inline-block">
+                      <li className="d-inline-block">
                         <a href="https://www.linkedin.com/signup">
-                          <i class="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
+                          <i className="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
                         </a>
                       </li>
-                      <li class="d-inline-block">
+                      <li className="d-inline-block">
                         <a href="https://www.pinterest.com/">
-                          <i class="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
+                          <i className="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
                         </a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-5 d-flex align-items-center justify-content-center">
+              <div className="col-lg-5 d-flex align-items-center justify-content-center">
                 <figure
-                  class="mb-0 float-lg-right wow slideInRight"
+                  className="mb-0 float-lg-right wow slideInRight"
                   style={{ visibility: "visible", animation: "slideInRight" }}
                 >
                   <img
                     src="assets/image/team-member-img.png"
                     alt="team-member-img"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </figure>
               </div>
@@ -127,13 +127,13 @@ export default function TeamDetails() {
       {/* <!-- professional skils section -->
      <!-- news-letter-section --> */}
       <section>
-        {/* <div class="w-100 float-left news-letter-con"> */}
-        <div class="container">
-          <div class="news-letter-inner-con banner-overlay-img">
-            {/* <div class="row overlay-img align-items-center"> */}
-            <div class="col-lg-6 col-md-5">
-              <div class="news-letter-title">
-                <h2 class="text-white mb-0">
+        {/* <div className="w-100 float-left news-letter-con"> */}
+        <div className="container">
+          <div className="news-letter-inner-con banner-overlay-img">
+            {/* <div className="row overlay-img align-items-center"> */}
+            <div className="col-lg-6 col-md-5">
+              <div className="news-letter-title">
+                <h2 className="text-white mb-0">
                   <button>Book Now</button>
                 </h2>
               </div>
@@ -145,61 +145,61 @@ export default function TeamDetails() {
       </section>
       {/* <!-- news-letter-section -->
      <!-- logo-section --> */}
-      <div class="w-100 float-left logo-con">
-        <div class="container">
-          <div class="logo-inner-con">
-            <div class="row">
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+      <div className="w-100 float-left logo-con">
+        <div className="container">
+          <div className="logo-inner-con">
+            <div className="row">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
                     src="assets/image/client-logo-img1.png"
                     alt="client-logo-img"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
                     src="assets/image/client-logo-img2.png"
                     alt="client-logo-img"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
                     src="assets/image/client-logo-img3.png"
                     alt="client-logo-img"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
                     src="assets/image/client-logo-img4.png"
                     alt="client-logo-img"
-                    class="img-fluid mb-0"
+                    className="img-fluid mb-0"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
                     src="assets/image/client-logo-img5.png"
                     alt="client-logo-img"
-                    class="img-fluid mb-0"
+                    className="img-fluid mb-0"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
                     src="assets/image/client-logo-img6.png"
                     alt="client-logo-img"
-                    class="img-fluid mb-0"
+                    className="img-fluid mb-0"
                   />
                 </figure>
               </div>

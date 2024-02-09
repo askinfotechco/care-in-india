@@ -54,19 +54,19 @@ export default function Team() {
     <div>
       {/* <!-- top-bar-section-->
       <!-- header-and-banner-section --> */}
-      <div class="w-100 float-left header-and-banner-con banner-overlay-img">
-        <div class="container">
-          <div class="overlay-img">
+      <div className="w-100 float-left header-and-banner-con banner-overlay-img">
+        <div className="container">
+          <div className="overlay-img">
             {/* <!-- navbar-start --> */}
             <NavBar />
             {/* <!-- navbar-end -->
                <!-- banner-start --> */}
             <section>
-              <div class="w-100 float-left generic-banner-con text-xl-left text-lg-left text-center">
-                <div class="container">
-                  <div class="generic-banner-content text-white text-center">
+              <div className="w-100 float-left generic-banner-con text-xl-left text-lg-left text-center">
+                <div className="container">
+                  <div className="generic-banner-content text-white text-center">
                     <h1>Our Team</h1>
-                    <p class="text-white mb-0">
+                    <p className="text-white mb-0">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor
                       <br /> incididunt ut labore et dolore magna aliqua.
@@ -82,9 +82,9 @@ export default function Team() {
       {/* <!-- header-and-banner-section -->
       <!-- professional-section--> */}
       <section>
-        <div class="w-100 float-left professional-con">
-          <div class="container">
-            <div class="professional-title text-center">
+        <div className="w-100 float-left professional-con">
+          <div className="container">
+            <div className="professional-title text-center">
               <h2>Meet Our Professionals</h2>
               <p>
                 Seram ipsum dolor sit amet, consectetur adipiscing elit sed
@@ -94,8 +94,8 @@ export default function Team() {
                 pulvinar dapibus leo.
               </p>
             </div>
-            <div class="professional-box">
-              <div class="row">
+            <div className="professional-box">
+              <div className="row">
                 {doctorDetails.map((ele) => {
                   return <DoctorsCard data={ele} />;
                 })}
@@ -107,9 +107,9 @@ export default function Team() {
       {/* <!-- professional-section-->
       <!-- form-section --> */}
       <section>
-        <div class="w-100 float-left form-main-con">
-          <div class="container">
-            <div class="text-center">
+        <div className="w-100 float-left form-main-con">
+          <div className="container">
+            <div className="text-center">
               <h2>Book An Appointment</h2>
               <p>
                 Seram ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -118,32 +118,32 @@ export default function Team() {
                 leo ligula porttitor eu consequat vitae eleifend tac.
               </p>
             </div>
-            <div class="row">
-              <div class="col-lg-6 order-xl-0 order-lg-0 order-2">
-                <div class="form-left-con position-relative text-center">
-                  <figure class="mb-0 left-curve-img wow slideInLeft">
-                    <img src={smallLeftCurveImg} alt="" class="img-fluid" />
+            <div className="row">
+              <div className="col-lg-6 order-xl-0 order-lg-0 order-2">
+                <div className="form-left-con position-relative text-center">
+                  <figure className="mb-0 left-curve-img wow slideInLeft">
+                    <img src={smallLeftCurveImg} alt="" className="img-fluid" />
                   </figure>
-                  <figure class="mb-0">
+                  <figure className="mb-0">
                     <img
                       src={formLeftImg}
                       alt="form-left-img"
-                      class="mb-0 img-fluid human-img"
+                      className="mb-0 img-fluid human-img"
                     />
                   </figure>
-                  <figure class="mb-0 right-curve-img wow slideInRight">
-                    <img src={smallRightCurveImg} alt="" class="img-fluid" />
+                  <figure className="mb-0 right-curve-img wow slideInRight">
+                    <img src={smallRightCurveImg} alt="" className="img-fluid" />
                   </figure>
                 </div>
               </div>
-              <div class="col-lg-6">
-                <form class="contact-form">
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1" class="text-white">
+              <div className="col-lg-6">
+                <form className="contact-form">
+                  <div className="form-group">
+                    <label for="exampleFormControlSelect1" className="text-white">
                       Department
                     </label>
                     <select
-                      class="form-control position-relative"
+                      className="form-control position-relative"
                       id="exampleFormControlSelect1"
                     >
                       <option>General Health Checkup</option>
@@ -152,56 +152,56 @@ export default function Team() {
                       <option>General Health Checkup</option>
                       <option>General Health Checkup</option>
                     </select>
-                    <i class="fas fa-angle-down"></i>
+                    <i className="fas fa-angle-down"></i>
                   </div>
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                      <div class="form-group">
+                  <div className="row">
+                    <div className="col-lg-6 col-md-6">
+                      <div className="form-group">
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           placeholder="Name:"
                           name="name"
                           id="name"
                         />
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                      <div class="form-group">
+                    <div className="col-lg-6 col-md-6">
+                      <div className="form-group">
                         <input
                           type="email"
-                          class="form-control"
+                          className="form-control"
                           placeholder="Email:"
                         />
                         <small
                           id="emailHelp"
-                          class="form-text text-muted"
+                          className="form-text text-muted"
                         ></small>
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                      <div class="form-group">
-                        <input type="time" class="form-control" />
+                    <div className="col-lg-6 col-md-6">
+                      <div className="form-group">
+                        <input type="time" className="form-control" />
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                      <div class="form-group">
-                        <select class="form-control position-relative">
+                    <div className="col-lg-6 col-md-6">
+                      <div className="form-group">
+                        <select className="form-control position-relative">
                           <option>Choose Doctor </option>
                           <option>2</option>
                           <option>3</option>
                           <option>4</option>
                           <option>5</option>
                         </select>
-                        <i class="fas fa-angle-down down-icon"></i>
+                        <i className="fas fa-angle-down down-icon"></i>
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="textarea form-group W-100">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <div className="textarea form-group W-100">
                         <textarea
-                          class="form-control "
+                          className="form-control "
                           placeholder="Message:"
                           rows="3"
                           name="comments"
@@ -210,7 +210,7 @@ export default function Team() {
                       </div>
                     </div>
                   </div>
-                  <button type="submit" class="btn  appointment-btn">
+                  <button type="submit" className="btn  appointment-btn">
                     Make Appointment
                   </button>
                 </form>
@@ -222,26 +222,26 @@ export default function Team() {
       {/* <!-- form-section -->
       <!-- news-letter-section --> */}
       <section>
-        <div class="w-100 float-left news-letter-con">
-          <div class="container">
-            <div class="news-letter-inner-con banner-overlay-img">
-              <div class="row overlay-img align-items-center">
-                <div class="col-lg-6 col-md-5">
-                  <div class="news-letter-title">
-                    <h2 class="text-white mb-0">Subscribe to our Newsletter</h2>
+        <div className="w-100 float-left news-letter-con">
+          <div className="container">
+            <div className="news-letter-inner-con banner-overlay-img">
+              <div className="row overlay-img align-items-center">
+                <div className="col-lg-6 col-md-5">
+                  <div className="news-letter-title">
+                    <h2 className="text-white mb-0">Subscribe to our Newsletter</h2>
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-7">
-                  <div class="news-letter-input-con position-relative">
-                    <div class="news-letter-input-feild">
+                <div className="col-lg-6 col-md-7">
+                  <div className="news-letter-input-con position-relative">
+                    <div className="news-letter-input-feild">
                       <input
                         type="email"
                         placeholder="Enter Your Email:"
-                        class="w-100"
+                        className="w-100"
                       />
                     </div>
                     <button>
-                      <i class="far fa-envelope"></i>
+                      <i className="far fa-envelope"></i>
                     </button>
                   </div>
                 </div>
@@ -252,61 +252,61 @@ export default function Team() {
       </section>
       {/* <!-- news-letter-section -->
       <!-- logo-section --> */}
-      <div class="w-100 float-left logo-con">
-        <div class="container">
-          <div class="logo-inner-con">
-            <div class="row">
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+      <div className="w-100 float-left logo-con">
+        <div className="container">
+          <div className="logo-inner-con">
+            <div className="row">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
                     src={clientLogoImg1}
                     alt="client-logo-img"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
                     src={clientLogoImg2}
                     alt="client-logo-img"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
                     src={clientLogoImg3}
                     alt="client-logo-img"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
                     src={clientLogoImg4}
                     alt="client-logo-img"
-                    class="img-fluid mb-0"
+                    className="img-fluid mb-0"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
                     src={clientLogoImg5}
                     alt="client-logo-img"
-                    class="img-fluid mb-0"
+                    className="img-fluid mb-0"
                   />
                 </figure>
               </div>
-              <div class="col-lg-2 col-md-2 col-sm-4 col-4">
-                <figure class="mb-0">
+              <div className="col-lg-2 col-md-2 col-sm-4 col-4">
+                <figure className="mb-0">
                   <img
                     src={clientLogoImg6}
                     alt="client-logo-img"
-                    class="img-fluid mb-0"
+                    className="img-fluid mb-0"
                   />
                 </figure>
               </div>
