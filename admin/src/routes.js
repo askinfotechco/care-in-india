@@ -5,13 +5,7 @@ import DashboardLayout from "./layouts/dashboard";
 import UserPage from "./pages/UserPage";
 import LoginPage from "./pages/LoginPage";
 import Page404 from "./pages/Page404";
-import QuestionsPage from "./pages/QuestionsPage";
-import Enrollment from "./pages/enrollment";
-import SectionsPage from "./pages/SectionsPage";
-import TestFormationsPage from "./pages/TestFormationsPage";
 import DashboardAppPage from "./pages/DashboardAppPage";
-import StudentEnrollment from "./pages/StudentEnrollment";
-import Quiz from "./components/Student/TestPage/Quiz";
 import DoctorDetailsPage from "./pages/DoctorDetailsPage";
 
 // ----------------------------------------------------------------------
@@ -58,20 +52,6 @@ export default function Router() {
           path: "doctordetails",
           element: isAdmin || isExaminer ? <DoctorDetailsPage /> : <Page404 />,
         },
-        {
-          path: "sections",
-          element: isAdmin || isExaminer ? <SectionsPage /> : <Page404 />,
-        },
-        {
-          path: "testFormations",
-          element: isAdmin || isExaminer ? <TestFormationsPage /> : <Page404 />,
-        },
-        { path: "quiz", element: <Quiz /> },
-        {
-          path: "enrollment",
-          element: isAdmin || isExaminer ? <Enrollment /> : <Page404 />,
-        },
-        { path: "studentEnrollment", element: <StudentEnrollment /> },
       ],
     },
   ]);
