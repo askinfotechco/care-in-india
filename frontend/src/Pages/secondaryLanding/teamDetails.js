@@ -5,6 +5,7 @@ import { URL } from "../../connection";
 import { useParams } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import FooterDetails from "../footerDetails";
+import BookingModal from "../../molecules/bookingModal";
 
 export default function TeamDetails() {
   const [selectedOption, setSelectedOption] = useState("All");
@@ -74,7 +75,7 @@ export default function TeamDetails() {
                     repudi.
                   </p> */}
                   <div className="team-contanct">
-                    <span>{doctorDetails.location}</span>
+                    <span>{`${doctorDetails.location}, `}</span>
                     <span>{doctorDetails.pincode}</span>
                     {/* <br />
                     <span>Phone: </span>
@@ -118,6 +119,7 @@ export default function TeamDetails() {
                   />
                 </figure>
               </div>
+              <BookingModal doctorDetails={doctorDetails} />
             </div>
           </div>
         </div>
@@ -128,24 +130,21 @@ export default function TeamDetails() {
      <!-- news-letter-section --> */}
       <section>
         {/* <div className="w-100 float-left news-letter-con"> */}
+
         <div className="container">
-          <div className="news-letter-inner-con banner-overlay-img">
-            {/* <div className="row overlay-img align-items-center"> */}
-            <div className="col-lg-6 col-md-5">
-              <div className="news-letter-title">
-                <h2 className="text-white mb-0">
-                  <button>Book Now</button>
-                </h2>
-              </div>
+          {/* <div className="row overlay-img align-items-center"> */}
+          <div className="col-lg-6 col-md-5">
+            <div className="news-letter-title">
+              <h2 className="text-white mb-0"></h2>
             </div>
           </div>
-          {/* </div> */}
         </div>
+        {/* </div> */}
         {/* </div> */}
       </section>
       {/* <!-- news-letter-section -->
      <!-- logo-section --> */}
-      <div className="w-100 float-left logo-con">
+      {/* <div className="w-100 float-left logo-con">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">
@@ -206,10 +205,10 @@ export default function TeamDetails() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- logo-section -->
       <!-- weight-footer-section --> */}
-      <FooterDetails />
+      {/* <FooterDetails style={{ marginTop: "50px" }} /> */}
     </div>
   );
 }

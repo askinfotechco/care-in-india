@@ -21,7 +21,7 @@ doctorDetailsRouter.post("/add", addDoctor);
 doctorDetailsRouter.post("/login", DoctorLogin);
 doctorDetailsRouter.get("/byid/:id", authorizationHeader, getDoctorById);
 doctorDetailsRouter.get("/byrole/:role", authorizationHeader, getUserByRole);
-doctorDetailsRouter.post("/byregid", authorizationHeader, getUserByRegId);
+doctorDetailsRouter.post("/byregid", getUserByRegId);
 doctorDetailsRouter.post("/resetPassword", authorizationHeader, resetPassword);
 doctorDetailsRouter.post("/resetMail/:id", authorizationHeader, resetEmail);
 doctorDetailsRouter.delete("/:id", authorizationHeader, deleteDoctor);
