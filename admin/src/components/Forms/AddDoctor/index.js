@@ -42,6 +42,8 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
     language: "",
     specialization: "",
     role: "doctor",
+    regid:"",
+    about:"",
   });
 
   const handleChange = (e) => {
@@ -165,17 +167,26 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                   </Select>
                 </FormControl> */}
                 <TextField
-                  sx={{ marginTop: "30px", width: "390px" }}
+                  sx={{ marginTop: "30px", width: "330px" }}
                   id="test"
-                  label="Email Address"
+                  label="Registration ID"
                   type="email"
                   name="email"
+                  variant="outlined"
+                  value={formData.regid}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "30px", width: "330px" }}
+                  id="test"
+                  label="Email Address"
+                  name="regid"
                   variant="outlined"
                   value={formData.email}
                   onChange={handleChange}
                 />
                 <TextField
-                  sx={{ marginTop: "30px", width: "360px" }}
+                  sx={{ marginTop: "30px", width: "300px" }}
                   label="Password"
                   type="password"
                   name="password"
@@ -188,7 +199,22 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
             <Stack>
               <Box display={"flex"} gap={5}>
                 <TextField
-                  sx={{ marginTop: "30px", width: "390px" }}
+                  sx={{ marginTop: "30px", width: "690px" }}
+                  label="About Me"
+                  multiline
+                  rows={6}
+                  maxRows={Infinity}
+                  name="about"
+                  variant="outlined"
+                  value={formData.about}
+                  onChange={handleChange}
+                />
+              </Box>
+            </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>
+                <TextField
+                  sx={{ marginTop: "30px", width: "330px" }}
                   label="Specialization"
                   multiline
                   maxRows={Infinity}
@@ -198,7 +224,7 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                   onChange={handleChange}
                 />
                 <TextField
-                  sx={{ marginTop: "30px", width: "360px" }}
+                  sx={{ marginTop: "30px", width: "330px" }}
                   label="Languages Known"
                   multiline
                   maxRows={Infinity}
@@ -207,12 +233,8 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                   value={formData.language}
                   onChange={handleChange}
                 />
-              </Box>
-            </Stack>
-            <Stack>
-              <Box display={"flex"} gap={5}>
                 <TextField
-                  sx={{ marginTop: "30px", width: "230px" }}
+                  sx={{ marginTop: "30px", width: "300px" }}
                   label="Phone"
                   multiline
                   maxRows={Infinity}
@@ -221,8 +243,12 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                   value={formData.phone}
                   onChange={handleChange}
                 />
+              </Box>
+            </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>                
                 <TextField
-                  sx={{ marginTop: "30px", width: "240px" }}
+                  sx={{ marginTop: "30px", width: "330px" }}
                   label="City"
                   multiline
                   maxRows={Infinity}
@@ -232,7 +258,7 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                   onChange={handleChange}
                 />
                 <TextField
-                  sx={{ marginTop: "30px", width: "240px" }}
+                  sx={{ marginTop: "30px", width: "330px" }}
                   label="Country"
                   multiline
                   maxRows={Infinity}
@@ -242,7 +268,7 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                   onChange={handleChange}
                 />
                 <TextField
-                  sx={{ marginTop: "30px", width: "150px" }}
+                  sx={{ marginTop: "30px", width: "300px" }}
                   label="Pincode"
                   multiline
                   maxRows={Infinity}

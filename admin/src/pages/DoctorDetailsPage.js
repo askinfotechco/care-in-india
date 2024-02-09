@@ -31,7 +31,6 @@ import Scrollbar from "../components/scrollbar";
 // sections
 import { DoctorListHead, DoctorListToolbar } from "../sections/@dashboard/doctordetails";
 import { URL } from "../connection";
-import AddUser from "../components/Forms/AddUser";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AddDoctor from "../components/Forms/AddDoctor";
@@ -39,12 +38,14 @@ import AddDoctor from "../components/Forms/AddDoctor";
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
+  { id: "regid", label: "Registration ID", alignRight: false },
   { id: "firstname", label: "Name", alignRight: false },
   // { id: "email", label: "Email Address", alignRight: false },
+  { id: "specialization", label: "Specialization", alignRight: false },
   { id: "country", label: "Location", alignRight: false },
   { id: "phone", label: "Phone", alignRight: false },
-  { id: "specialization", label: "Specialization", alignRight: false },
-  { id: "createdAt", label: "Created On", alignRight: false },
+  
+  // { id: "createdAt", label: "Created On", alignRight: false },
   { id: "status", label: "Status", alignRight: false },
   { id: "" },
 ];
@@ -277,6 +278,7 @@ export default function DoctorDetailsPage() {
                       .map((row) => {
                         const {
                           _id,
+                          regid,
                           firstname,
                           lastname,
                           // email,
@@ -314,9 +316,26 @@ export default function DoctorDetailsPage() {
                               >
                                 {/* <Avatar alt={name} src={avatarUrl} /> */}
                                 <Typography variant="subtitle2">
+                                  {regid}
+                                </Typography>
+                              </Stack>
+                            </TableCell>
+
+                            <TableCell width={200}>
+                              <Stack
+                                direction="row"
+                                alignItems="center"
+                                spacing={2}
+                              >
+                                {/* <Avatar alt={name} src={avatarUrl} /> */}
+                                <Typography variant="subtitle2">
                                   {firstname} {lastname}
                                 </Typography>
                               </Stack>
+                            </TableCell>
+
+                            <TableCell align="left" width={200}>
+                              {specialization}
                             </TableCell>
 
                             {/* <TableCell align="left" width={240}>
@@ -328,12 +347,10 @@ export default function DoctorDetailsPage() {
                             <TableCell align="left" width={200}>
                               {phone}
                             </TableCell>
-                            <TableCell align="left" width={200}>
-                              {specialization}
-                            </TableCell>                            
-                            <TableCell align="left" width={200}>
+                                                        
+                            {/* <TableCell align="left" width={200}>
                               {createdAt}
-                            </TableCell>
+                            </TableCell> */}
 
                             {/* <TableCell align="left">
                             {status ? "Active" : "Inactive"}
