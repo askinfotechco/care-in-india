@@ -38,7 +38,7 @@ import AddDoctor from "../components/Forms/AddDoctor";
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: "regid", label: "Registration ID", alignRight: false },
+  { id: "regId", label: "Registration ID", alignRight: false },
   { id: "firstname", label: "Name", alignRight: false },
   // { id: "email", label: "Email Address", alignRight: false },
   { id: "specialization", label: "Specialization", alignRight: false },
@@ -278,7 +278,7 @@ export default function DoctorDetailsPage() {
                       .map((row) => {
                         const {
                           _id,
-                          regid,
+                          regId,
                           firstname,
                           lastname,
                           // email,
@@ -316,7 +316,7 @@ export default function DoctorDetailsPage() {
                               >
                                 {/* <Avatar alt={name} src={avatarUrl} /> */}
                                 <Typography variant="subtitle2">
-                                  {regid}
+                                  {regId}
                                 </Typography>
                               </Stack>
                             </TableCell>

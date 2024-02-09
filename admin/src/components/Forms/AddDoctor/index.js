@@ -42,7 +42,7 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
     language: "",
     specialization: "",
     role: "doctor",
-    regid:"",
+    regId:"",
     about:"",
   });
 
@@ -168,19 +168,16 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                 </FormControl> */}
                 <TextField
                   sx={{ marginTop: "30px", width: "330px" }}
-                  id="test"
                   label="Registration ID"
-                  type="email"
-                  name="email"
+                  name="regId"
                   variant="outlined"
-                  value={formData.regid}
+                  value={formData.regId}
                   onChange={handleChange}
                 />
                 <TextField
                   sx={{ marginTop: "30px", width: "330px" }}
-                  id="test"
                   label="Email Address"
-                  name="regid"
+                  name="email"
                   variant="outlined"
                   value={formData.email}
                   onChange={handleChange}
@@ -203,7 +200,6 @@ const AddDoctor = (props, { handleQuestionAdd, fromTestFormation }) => {
                   label="About Me"
                   multiline
                   rows={6}
-                  maxRows={Infinity}
                   name="about"
                   variant="outlined"
                   value={formData.about}
