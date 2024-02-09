@@ -20,7 +20,7 @@ import useResponsive from "../../../hooks/useResponsive";
 import logo from "../../../components/images/logo.png";
 import Scrollbar from "../../../components/scrollbar";
 import NavSection from "../../../components/nav-section";
-import { navConfig, studentConfig, examinerConfig } from "./config";
+import { navConfig } from "./config";
 
 // ----------------------------------------------------------------------
 
@@ -44,8 +44,9 @@ Nav.propTypes = {
 export default function Nav({ openNav, onCloseNav }) {
   const { pathname } = useLocation();
   const isAdmin = sessionStorage.getItem("role") === "admin";
-  const isExaminer = sessionStorage.getItem("role") === "examiner";
-  const isStudent = sessionStorage.getItem("role") === "student";
+  const isDoctor = sessionStorage.getItem("role") === "doctor";
+  const isReceptionist = sessionStorage.getItem("role") === "receptionist";
+  const isUser = sessionStorage.getItem("role") === "user";
   const isDesktop = useResponsive("up", "lg");
 
   useEffect(() => {
@@ -88,7 +89,7 @@ export default function Nav({ openNav, onCloseNav }) {
         </Link>
       </Box>
       <NavSection
-        data={isAdmin ? navConfig : isExaminer ? examinerConfig : studentConfig}
+        data={navConfig}
       />
       <Box sx={{ flexGrow: 1 }} />
     </Scrollbar>
