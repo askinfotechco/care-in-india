@@ -1,4 +1,5 @@
 const doctorDetailsModel = require("../models/doctorDetails.model");
+const appointment = require("../models/appointment.model");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -24,6 +25,7 @@ const addDoctor = async (req, res) => {
     specialization,
     regId,
     about,
+    doctorSlotArray,
   } = req.body;
   const encodePass = await bcrypt.hash(password, 10);
   // console.log(encodePass)
@@ -44,6 +46,7 @@ const addDoctor = async (req, res) => {
     specialization: specialization,
     regId: regId,
     about: about,
+    doctorSlotArray: doctorSlotArray,
   };
 
   try {
@@ -252,6 +255,37 @@ const getActiveDoctorsCount = async (req, res) => {
   }
 };
 
+const bookAppointment = async (req, res) => {
+  const { patientEmail, doctorEmail, day, date } = req.body;
+  // console.log(encodePass)
+  const appointmentDetails = {
+    patientEmail: patientEmail,
+    doctorEmail: doctorEmail,
+    day: day,
+    date: date,
+  };
+
+  try {
+    // const emailChecking = await doctorDetailsModel.find({ email });
+    // //console.log(emailChecking[0].email, email);
+    // if (emailChecking[0]?.email === email) {
+    //   return res.status(200).json({
+    //     msg: `${email} already exist`,
+    //   });
+    // } else {
+    let data = await appointment(appointmentDetails).save();
+    // console.log(userObj);
+    return res.status(200).json({
+      msg: `Appointment Booked successfully`,
+    });
+    //}
+  } catch (error) {
+    return res.status(400).json({
+      msg: `${error}`,
+    });
+  }
+};
+
 module.exports = {
   addDoctor,
   getAllDoctors,
@@ -264,4 +298,5 @@ module.exports = {
   updateDoctorStatus,
   getActiveDoctorsCount,
   getUserByRegId,
+  bookAppointment,
 };
