@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import TimeSelector from "./timeSelector";
+import { useCookies } from "react-cookie";
+import axios from "axios";
+import { URL } from "../connection";
 
 function BookingModal(props) {
   const [show, setShow] = useState(false);
   const [step, setStep] = useState(1);
+  const [selectedDate, setSelectedDate] = useState("");
+  const [loading, setLoading] = useState();
+  const [cookies, setCookie, removeCookie] = useCookies("jwt");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
     timeSlot: "",
+    selectedDate: "",
   });
 
   const handleClose = () => {
@@ -26,17 +34,104 @@ function BookingModal(props) {
     });
   };
 
+  const bookAppointment = async () => {
+    const dataToSend = {
+      patientEmail: sessionStorage.getItem("email"),
+      doctorEmail: props.doctorDetails.email,
+      day: getDayName(new Date(formData.selectedDate)),
+      date: formData.selectedDate,
+    };
+    const formDataToSend = await JSON.stringify(dataToSend);
+    console.log(formDataToSend);
+    try {
+      setLoading(true);
+      const response = await axios.post(
+        `${URL}/api/doctor/bookAppointment`,
+        formDataToSend,
+        {
+          headers: {
+            Authorization: "Bearer " + cookies.jwt,
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (err) {
+      console.log("request not wokring", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here
     console.log(formData);
     if (step === 3) {
+      bookAppointment();
       handleClose();
     } else {
       setStep(step + 1);
     }
   };
 
+  // Function to disable past days for a week
+  const disablePastDays = () => {
+    const today = new Date();
+    const timezones = { timeZone: "Asia/Kolkata" }; // Indian time zone
+    today.toLocaleString("en-US", timezones);
+    today.setHours(0, 0, 0, 0); // Set hours to 0 to compare dates accurately
+    const dayOfWeek = today.getDay(); // 0 (Sunday) to 6 (Saturday)
+    const startDate = new Date(today); // Clone today's date
+    startDate.setDate(today.getDate() - dayOfWeek); // Set to first day of the week (Sunday)
+
+    const options = [
+      <option key="default" value="">
+        Select a date
+      </option>,
+    ];
+
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(startDate);
+      date.setDate(startDate.getDate() + i);
+      const dateString = date.toISOString().split("T")[0];
+      console.log(props);
+
+      options.push(
+        <option key={dateString} value={dateString} disabled={date <= today}>
+          {dateString}
+        </option>
+      );
+    }
+
+    return options;
+  };
+
+  const getDayName = (date = new Date(), locale = "en-US") => {
+    return date.toLocaleDateString(locale, { weekday: "long" });
+  };
+
+  const getSlotArray = (date) => {
+    const slotArray =
+      props.doctorDetails.doctorSlotArray[
+        findIndexByProperty(
+          props.doctorDetails.doctorSlotArray,
+          "day",
+          getDayName(new Date(formData.selectedDate))
+        )
+      ]?.availableTiming;
+    const fromHour = slotArray?.fromHour;
+    const fromMinute = slotArray?.fromMinute;
+    const toHour = slotArray?.toHour;
+    const toMinute = slotArray?.toMinute;
+    return `${fromHour}hrs : ${fromMinute}min - ${toHour}hrs : ${toMinute}min`;
+  };
+
+  const findIndexByProperty = (array, propertyName, searchValue) => {
+    return array.findIndex((item) => item[propertyName] === searchValue);
+  };
   const renderModalBody = () => {
     switch (step) {
       case 1:
@@ -60,21 +155,36 @@ function BookingModal(props) {
       case 2:
         return (
           <>
-            <Form.Group controlId="formTimeSlot">
-              <Form.Label>Select a Time Slot</Form.Label>
+            <Form.Group controlId="date">
+              <Form.Label>When to book?</Form.Label>
               <Form.Control
                 as="select"
-                name="timeSlot"
-                value={formData.timeSlot}
+                name="selectedDate"
+                value={formData.selectedDate}
                 onChange={handleChange}
               >
-                <option value="">Select a time slot</option>
-                <option value="9:00 AM - 10:00 AM">9:00 AM - 10:00 AM</option>
-                <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
-                <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
-                {/* Add more options as needed */}
+                {disablePastDays()}
               </Form.Control>
             </Form.Group>
+            <div>{`${formData.selectedDate} - ${getDayName(
+              new Date(formData.selectedDate)
+            )}`}</div>
+            <div>{`Available Timing - ${getSlotArray(
+              formData.selectedDate
+            )}`}</div>
+            {/* <Form.Group>
+              <div>
+                <label htmlFor="date">Select a date:</label>
+                <select
+                  id="date"
+                  value={selectedDate}
+                  onChange={(e) => setSelectedDate(e.target.value)}
+                >
+                  {disablePastDays()}
+                </select>
+              </div>
+              <div>{selectedDate}</div>
+            </Form.Group> */}
           </>
         );
       case 3:
