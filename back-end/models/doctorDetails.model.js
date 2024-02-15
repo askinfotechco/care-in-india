@@ -1,6 +1,31 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//Define schema for the objects inside the array
+const doctorSlot = new mongoose.Schema({
+  day: {
+    type: String,
+  },
+  status: {
+    type: Boolean,
+    default: false,
+  },
+  availableTiming: {
+    fromHour: {
+      type: Number,
+    },
+    fromMinute: {
+      type: Number,
+    },
+    toHour: {
+      type: Number,
+    },
+    toMinute: {
+      type: Number,
+    },
+  },
+});
+
 const DoctorDetailsSchema = new Schema(
   {
     firstname: {
@@ -84,6 +109,7 @@ const DoctorDetailsSchema = new Schema(
       type: String,
       required: false,
     },
+    doctorSlotArray: [doctorSlot],
   },
   {
     timestamps: true,
