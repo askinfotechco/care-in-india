@@ -14,6 +14,7 @@ const {
   updateDoctorStatus,
   getActiveDoctorsCount,
   getUserByRegId,
+  bookAppointment,
 } = require("../controllers/doctorDetails.controller");
 
 doctorDetailsRouter.get("/", getAllDoctors);
@@ -27,5 +28,10 @@ doctorDetailsRouter.post("/resetMail/:id", authorizationHeader, resetEmail);
 doctorDetailsRouter.delete("/:id", authorizationHeader, deleteDoctor);
 doctorDetailsRouter.post("/updateuserstatus", updateDoctorStatus);
 doctorDetailsRouter.get("/getusercount", getActiveDoctorsCount);
+doctorDetailsRouter.post(
+  "/bookAppointment",
+  authorizationHeader,
+  bookAppointment
+);
 
 module.exports = doctorDetailsRouter;
