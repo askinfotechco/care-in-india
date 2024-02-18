@@ -11,6 +11,7 @@ import Radiology from "./Pages/secondaryLanding/radiology";
 import Surgery from "./Pages/secondaryLanding/surgery";
 import Dental from "./Pages/secondaryLanding/dental";
 import TeamDetails from "./Pages/secondaryLanding/teamDetails";
+import VideoCall from "./Pages/videoCall";
 
 function RouterFile() {
   return (
@@ -27,6 +28,7 @@ function RouterFile() {
         <Route path="/services/dental" element={<Dental />} />
         <Route path="/team" element={<Team />} />
         <Route path="/team/teamDetails/:regId" element={<TeamDetails />} />
+        <Route path="/videoCall" element={<VideoCall />} />
       </Routes>
     </Router>
   );

@@ -4,7 +4,7 @@ import companyLogo from "../assets/image/CIILogo.png";
 import { Link } from "react-router-dom";
 import UserProfile from "./userProfile";
 
-export default function NavBar() {
+export default function NavBarTop() {
   const [userEmail, setUserEmail] = useState();
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
 
