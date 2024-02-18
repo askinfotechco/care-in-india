@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../../molecules/navBar";
+import NavBarTop from "../../molecules/navBar";
 import ServiceCards from "../../molecules/serviceCards";
 import serviceBoxIcon1 from "../../assets/image/service-box-icon9.png";
 import serviceBoxIcon2 from "../../assets/image/service-box-icon10.png";
@@ -40,7 +40,7 @@ export default function Surgery() {
         <div className="container">
           <div className="overlay-img">
             {/* <!-- navbar-start --> */}
-            <NavBar />
+            <NavBarTop />
             {/* <!-- navbar-end -->
                <!-- banner-start --> */}
             <section>
