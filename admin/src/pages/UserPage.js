@@ -31,7 +31,7 @@ import Scrollbar from "../components/scrollbar";
 // sections
 import { UserListHead, UserListToolbar } from "../sections/@dashboard/user";
 import { URL } from "../connection";
-import AddUser from "../components/Forms/AddUser";
+import AddUser from "../components/Forms/AddUser/AddUser";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
