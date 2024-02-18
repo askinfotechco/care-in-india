@@ -85,7 +85,8 @@ function BookingModal(props) {
     today.setHours(0, 0, 0, 0); // Set hours to 0 to compare dates accurately
     const dayOfWeek = today.getDay(); // 0 (Sunday) to 6 (Saturday)
     const startDate = new Date(today); // Clone today's date
-    startDate.setDate(today.getDate() - dayOfWeek); // Set to first day of the week (Sunday)
+    startDate.setDate(today.getDate()); // Set to first day of the week (Sunday)
+    // startDate.setDate(today.getDate() - dayOfWeek); // Set to first day of the week (Sunday)
 
     const options = [
       <option key="default" value="">
@@ -95,7 +96,7 @@ function BookingModal(props) {
 
     for (let i = 0; i < 7; i++) {
       const date = new Date(startDate);
-      date.setDate(startDate.getDate() + i);
+      date.setDate(startDate.getDate() + i + 1);
       const dateString = date.toISOString().split("T")[0];
       console.log(props);
 
