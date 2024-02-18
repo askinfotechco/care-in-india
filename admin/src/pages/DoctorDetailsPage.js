@@ -33,7 +33,7 @@ import { DoctorListHead, DoctorListToolbar } from "../sections/@dashboard/doctor
 import { URL } from "../connection";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import AddDoctor from "../components/Forms/AddDoctor";
+import AddDoctor from "../components/Forms/AddDoctor/AddDoctor";
 
 // ----------------------------------------------------------------------
 
