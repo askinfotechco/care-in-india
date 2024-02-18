@@ -42,7 +42,7 @@ import "../assets/css/custom-style.css";
 import "../assets/css/mobile.css";
 import "../assets/css/style.css";
 import "../assets/css/super-classes.css";
-import NavBar from "../molecules/navBar";
+import NavBarTop from "../molecules/navBar";
 import FooterDetails from "./footerDetails";
 //import { Link } from "react-router-dom";
 
@@ -52,7 +52,7 @@ function Home() {
       <div className="w-100 float-left header-and-banner-con banner-overlay-img">
         <div className="container">
           <div className="overlay-img">
-            <NavBar />
+            <NavBarTop />
             <section>
               <div className="w-100 float-left banner-con text-xl-left text-lg-left text-center">
                 <div className="container">

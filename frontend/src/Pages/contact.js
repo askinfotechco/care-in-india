@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../molecules/navBar";
+import NavBarTop from "../molecules/navBar";
 import clientLogoImg1 from "../assets/image/client-logo-img1.png";
 import clientLogoImg2 from "../assets/image/client-logo-img2.png";
 import clientLogoImg3 from "../assets/image/client-logo-img3.png";
@@ -60,7 +60,7 @@ export default function Contact() {
         <div className="container">
           <div className="overlay-img">
             {/* <!-- navbar-start --> */}
-            <NavBar />
+            <NavBarTop />
             {/* <!-- navbar-end -->
         <!-- banner-start --> */}
             <section>
@@ -122,8 +122,9 @@ export default function Contact() {
                     <div className="Schedule-box-title float-md-left overlay-img">
                       <h5>Location</h5>
                       <span className="d-block">
-                      FCA 3165, Street 4, Block A, SGM Nagar
-                        <br />Faridabad, New Delhi - 121001
+                        FCA 3165, Street 4, Block A, SGM Nagar
+                        <br />
+                        Faridabad, New Delhi - 121001
                       </span>
                     </div>
                   </div>
@@ -155,7 +156,9 @@ export default function Contact() {
                     </figure>
                     <div className="Schedule-box-title float-md-left overlay-img">
                       <h5>Working Hours</h5>
-                      <span className="d-block">Monday - Friday: 8AM - 9PM</span>
+                      <span className="d-block">
+                        Monday - Friday: 8AM - 9PM
+                      </span>
                       <span className="d-block"> Weekends: 8AM - 5PM</span>
                     </div>
                   </div>
@@ -178,7 +181,11 @@ export default function Contact() {
               </h2>
             </div>
             <div id="form_result"></div>
-            <form className="contact-form-plan-box" id="contactpage" method="POST">
+            <form
+              className="contact-form-plan-box"
+              id="contactpage"
+              method="POST"
+            >
               <div className="form-row">
                 <div className="col-lg-6 col-md-6">
                   <div className="form-group">
@@ -271,7 +278,9 @@ export default function Contact() {
               <div className="row overlay-img align-items-center">
                 <div className="col-lg-6 col-md-5">
                   <div className="news-letter-title">
-                    <h2 className="text-white mb-0">Subscribe to our Newsletter</h2>
+                    <h2 className="text-white mb-0">
+                      Subscribe to our Newsletter
+                    </h2>
                   </div>
                 </div>
                 <div className="col-lg-6 col-md-7">
@@ -359,7 +368,7 @@ export default function Contact() {
       </div>
       {/* <!-- logo-section -->
       <!-- weight-footer-section --> */}
-      <FooterDetails />      
+      <FooterDetails />
     </div>
   );
 }

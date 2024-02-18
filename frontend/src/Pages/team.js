@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "../molecules/navBar";
+import NavBarTop from "../molecules/navBar";
 import professionalBoxImg1 from "../assets/image/professional-box-img1.png";
 import professionalBoxImg2 from "../assets/image/professional-box-img2.png";
 import professionalBoxImg3 from "../assets/image/professional-box-img3.png";
@@ -58,7 +58,7 @@ export default function Team() {
         <div className="container">
           <div className="overlay-img">
             {/* <!-- navbar-start --> */}
-            <NavBar />
+            <NavBarTop />
             {/* <!-- navbar-end -->
                <!-- banner-start --> */}
             <section>
@@ -132,14 +132,21 @@ export default function Team() {
                     />
                   </figure>
                   <figure className="mb-0 right-curve-img wow slideInRight">
-                    <img src={smallRightCurveImg} alt="" className="img-fluid" />
+                    <img
+                      src={smallRightCurveImg}
+                      alt=""
+                      className="img-fluid"
+                    />
                   </figure>
                 </div>
               </div>
               <div className="col-lg-6">
                 <form className="contact-form">
                   <div className="form-group">
-                    <label for="exampleFormControlSelect1" className="text-white">
+                    <label
+                      for="exampleFormControlSelect1"
+                      className="text-white"
+                    >
                       Department
                     </label>
                     <select
@@ -228,7 +235,9 @@ export default function Team() {
               <div className="row overlay-img align-items-center">
                 <div className="col-lg-6 col-md-5">
                   <div className="news-letter-title">
-                    <h2 className="text-white mb-0">Subscribe to our Newsletter</h2>
+                    <h2 className="text-white mb-0">
+                      Subscribe to our Newsletter
+                    </h2>
                   </div>
                 </div>
                 <div className="col-lg-6 col-md-7">

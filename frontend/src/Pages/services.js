@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../molecules/navBar";
+import NavBarTop from "../molecules/navBar";
 import ServiceCards from "../molecules/serviceCards";
 import serviceBoxIcon1 from "../assets/image/service-box-icon9.png";
 import serviceBoxIcon2 from "../assets/image/service-box-icon10.png";
@@ -80,7 +80,7 @@ export default function Services() {
         <div className="container">
           <div className="overlay-img">
             {/* <!-- navbar-start --> */}
-            <NavBar />
+            <NavBarTop />
             {/* <!-- navbar-end -->
                <!-- banner-start --> */}
             <section>
@@ -107,108 +107,108 @@ export default function Services() {
         <div className="w-100 float-left service-box-con text-center">
           <div className="container">
             {/* <div className="row"> */}
-              {/* <div className="col-lg-6 order-xl-0 order-lg-0 order-2"> */}
-                <div className="service-box-inner-con">
-                  <div className="row ml-0 mr-0">
-                    <ServiceCards
-                      img={serviceBoxIcon1}
-                      alt={"service-box-icon"}
-                      className={"img-fluid"}
-                      name={"Radiology Services"}
-                      description={
-                        "We provide advanced imaging techniques to diagnose and treat medical conditions through non-invasive visualization of internal structures."
-                      }
-                      navigate={"radiology"}
-                    />
-                    <ServiceCards
-                      img={serviceBoxIcon2}
-                      alt={"service-box-icon"}
-                      className={"img-fluid"}
-                      name={"Surgery"}
-                      description={
-                        "Discover expert surgical care tailored to your unique needs, ensuring precise and compassionate interventions for optimal health outcomes."
-                      }
-                      navigate={"surgery"}
-                    />
-                    <ServiceCards
-                      img={serviceBoxIcon3}
-                      alt={"service-box-icon"}
-                      className={"img-fluid"}
-                      name={"Dental Care"}
-                      description={
-                        "Elevate your oral health with our comprehensive dental services, delivering personalized care for a confident and radiant smile."
-                      }
-                      navigate={"dental"}
-                    />
-                    <ServiceCards
-                      img={serviceBoxIcon4}
-                      alt={"service-box-icon"}
-                      className={"img-fluid"}
-                      name={"Physiotherapy"}
-                      description={
-                        "Experience transformative physiotherapy services focused on restoring mobility, alleviating pain, and enhancing overall well-being for a healthier, active life."
-                      }
-                    />
-                  </div>
-                </div>
-                {/* <div class="service-box-img">
+            {/* <div className="col-lg-6 order-xl-0 order-lg-0 order-2"> */}
+            <div className="service-box-inner-con">
+              <div className="row ml-0 mr-0">
+                <ServiceCards
+                  img={serviceBoxIcon1}
+                  alt={"service-box-icon"}
+                  className={"img-fluid"}
+                  name={"Radiology Services"}
+                  description={
+                    "We provide advanced imaging techniques to diagnose and treat medical conditions through non-invasive visualization of internal structures."
+                  }
+                  navigate={"radiology"}
+                />
+                <ServiceCards
+                  img={serviceBoxIcon2}
+                  alt={"service-box-icon"}
+                  className={"img-fluid"}
+                  name={"Surgery"}
+                  description={
+                    "Discover expert surgical care tailored to your unique needs, ensuring precise and compassionate interventions for optimal health outcomes."
+                  }
+                  navigate={"surgery"}
+                />
+                <ServiceCards
+                  img={serviceBoxIcon3}
+                  alt={"service-box-icon"}
+                  className={"img-fluid"}
+                  name={"Dental Care"}
+                  description={
+                    "Elevate your oral health with our comprehensive dental services, delivering personalized care for a confident and radiant smile."
+                  }
+                  navigate={"dental"}
+                />
+                <ServiceCards
+                  img={serviceBoxIcon4}
+                  alt={"service-box-icon"}
+                  className={"img-fluid"}
+                  name={"Physiotherapy"}
+                  description={
+                    "Experience transformative physiotherapy services focused on restoring mobility, alleviating pain, and enhancing overall well-being for a healthier, active life."
+                  }
+                />
+              </div>
+            </div>
+            {/* <div class="service-box-img">
               <figure class="mb-0">
                 <img src={serviceBoxBannerImg} alt="" class="img-fluid" />
               </figure>
             </div> */}
-                <div className="service-box-inner-con">
-                  <div className="row ml-0 mr-0">
-                    <ServiceCards
-                      img={serviceBoxIcon5}
-                      alt={"service-box-icon"}
-                      className={"img-fluid"}
-                      name={"Dermatology"}
-                      description={
-                        "Rejuvenate your skin, hairs and confidence with our dermatology services, offering expert care for a radiant complexion and the treatment of various skin and hair conditions."
-                      }
-                    />
-                    <ServiceCards
-                      img={serviceBoxIcon6}
-                      alt={"service-box-icon"}
-                      className={"img-fluid"}
-                      name={"Health Packages in Same Day"}
-                      description={
-                        "Explore comprehensive health packages designed for proactive wellness, offering thorough assessments and screenings to optimize your overall health and prevent potential issues."
-                      }
-                    />
-                    <ServiceCards
-                      img={serviceBoxIcon7}
-                      alt={"service-box-icon"}
-                      className={"img-fluid"}
-                      name={"Sexual Wellness / IVF"}
-                      description={
-                        "Nurture your reproductive health with our comprehensive Sexual Wellness and IVF services, providing compassionate care and advanced solutions on your journey to parenthood."
-                      }
-                    />
-                    <ServiceCards
-                      img={serviceBoxIcon8}
-                      alt={"service-box-icon"}
-                      className={"img-fluid"}
-                      name={"Mediclaim"}
-                      description={
-                        "Secure your peace of mind with our mediclaim services, offering tailored insurance solutions to safeguard your health and financial well-being."
-                      }
-                    />
-                  </div>
-                </div>
-                <div className="service-box-inner-con">
-                  <div className="row ml-0 mr-0">
-                    <ServiceCards
-                      img={serviceBoxIcon9}
-                      alt={"service-box-icon"}
-                      className={"img-fluid"}
-                      name={"CII Health Buddy Plan"}
-                      rowClass={"col-6 mx-auto"}
-                      description={
-                        "Embrace a healthier future with our comprehensive Health Plans, designed to provide personalized coverage and support for your well-being journey."
-                      }
-                    />
-                    {/* <ServiceCards
+            <div className="service-box-inner-con">
+              <div className="row ml-0 mr-0">
+                <ServiceCards
+                  img={serviceBoxIcon5}
+                  alt={"service-box-icon"}
+                  className={"img-fluid"}
+                  name={"Dermatology"}
+                  description={
+                    "Rejuvenate your skin, hairs and confidence with our dermatology services, offering expert care for a radiant complexion and the treatment of various skin and hair conditions."
+                  }
+                />
+                <ServiceCards
+                  img={serviceBoxIcon6}
+                  alt={"service-box-icon"}
+                  className={"img-fluid"}
+                  name={"Health Packages in Same Day"}
+                  description={
+                    "Explore comprehensive health packages designed for proactive wellness, offering thorough assessments and screenings to optimize your overall health and prevent potential issues."
+                  }
+                />
+                <ServiceCards
+                  img={serviceBoxIcon7}
+                  alt={"service-box-icon"}
+                  className={"img-fluid"}
+                  name={"Sexual Wellness / IVF"}
+                  description={
+                    "Nurture your reproductive health with our comprehensive Sexual Wellness and IVF services, providing compassionate care and advanced solutions on your journey to parenthood."
+                  }
+                />
+                <ServiceCards
+                  img={serviceBoxIcon8}
+                  alt={"service-box-icon"}
+                  className={"img-fluid"}
+                  name={"Mediclaim"}
+                  description={
+                    "Secure your peace of mind with our mediclaim services, offering tailored insurance solutions to safeguard your health and financial well-being."
+                  }
+                />
+              </div>
+            </div>
+            <div className="service-box-inner-con">
+              <div className="row ml-0 mr-0">
+                <ServiceCards
+                  img={serviceBoxIcon9}
+                  alt={"service-box-icon"}
+                  className={"img-fluid"}
+                  name={"CII Health Buddy Plan"}
+                  rowClass={"col-6 mx-auto"}
+                  description={
+                    "Embrace a healthier future with our comprehensive Health Plans, designed to provide personalized coverage and support for your well-being journey."
+                  }
+                />
+                {/* <ServiceCards
                   img={serviceBoxIcon2}
                   alt={"service-box-icon"}
                   class={"img-fluid"}
@@ -235,10 +235,10 @@ export default function Services() {
                     "Experience transformative physiotherapy services focused on restoring mobility, alleviating pain, and enhancing overall well-being for a healthier, active life."
                   }
                 /> */}
-                  </div>
-                </div>
               </div>
-            {/* </div> */}
+            </div>
+          </div>
+          {/* </div> */}
           {/* </div> */}
         </div>
       </section>
@@ -273,7 +273,11 @@ export default function Services() {
                       animationName: "slideInRight",
                     }}
                   >
-                    <img src={smallRightCurveImg} alt="" className="img-fluid" />
+                    <img
+                      src={smallRightCurveImg}
+                      alt=""
+                      className="img-fluid"
+                    />
                   </figure>
                 </div>
               </div>
@@ -352,7 +356,9 @@ export default function Services() {
               <div className="row overlay-img align-items-center">
                 <div className="col-lg-6 col-md-5">
                   <div className="news-letter-title">
-                    <h2 className="text-white mb-0">Subscribe to our Newsletter</h2>
+                    <h2 className="text-white mb-0">
+                      Subscribe to our Newsletter
+                    </h2>
                   </div>
                 </div>
                 <div className="col-lg-6 col-md-7">

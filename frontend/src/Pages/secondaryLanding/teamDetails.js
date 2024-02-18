@@ -1,12 +1,13 @@
 import FooterDetails from "../footerDetails";
 import React, { useState, useEffect } from "react";
-import NavBar from "../../molecules/navBar";
+import NavBarTop from "../../molecules/navBar";
 import axios from "axios";
 import { URL } from "../../connection";
 import { useParams } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import FooterDetails from "../footerDetails";
 import BookingModal from "../../molecules/bookingModal";
+import OnlineBookingModal from "../../molecules/onlineBookingModal";
 
 export default function TeamDetails() {
   const [selectedOption, setSelectedOption] = useState("All");
@@ -51,7 +52,7 @@ export default function TeamDetails() {
       {" "}
       <div className="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
         <div className="container">
-          <NavBar />
+          <NavBarTop />
         </div>
       </div>
       {/* <!-- top-bar-section-->
@@ -121,6 +122,7 @@ export default function TeamDetails() {
                 </figure>
               </div>
               <BookingModal doctorDetails={doctorDetails} />
+              <OnlineBookingModal doctorDetails={doctorDetails} />
             </div>
           </div>
         </div>
