@@ -256,29 +256,37 @@ const getActiveDoctorsCount = async (req, res) => {
 };
 
 const bookAppointment = async (req, res) => {
-  const { patientEmail, doctorEmail, day, date } = req.body;
+  const { patientEmail, doctorEmail, day, date, mode } = req.body;
   // console.log(encodePass)
   const appointmentDetails = {
     patientEmail: patientEmail,
     doctorEmail: doctorEmail,
     day: day,
     date: date,
+    mode: mode,
   };
 
   try {
-    // const emailChecking = await doctorDetailsModel.find({ email });
-    // //console.log(emailChecking[0].email, email);
-    // if (emailChecking[0]?.email === email) {
-    //   return res.status(200).json({
-    //     msg: `${email} already exist`,
-    //   });
-    // } else {
-    let data = await appointment(appointmentDetails).save();
-    // console.log(userObj);
-    return res.status(200).json({
-      msg: `Appointment Booked successfully`,
-    });
-    //}
+    const appointmentCheck = patientEmail + doctorEmail + day + date + mode;
+    const result = await appointment.findOne(appointmentDetails);
+    const resultAppointment =
+      result?.patientEmail +
+      result?.doctorEmail +
+      result?.day +
+      result?.date +
+      result?.mode;
+    console.log(resultAppointment, appointmentCheck);
+    if (resultAppointment === appointmentCheck) {
+      return res.status(200).json({
+        msg: `Appointment already booked for selected date`,
+      });
+    } else {
+      let data = await appointment(appointmentDetails).save();
+      // console.log(userObj);
+      return res.status(200).json({
+        msg: `Appointment Booked successfully`,
+      });
+    }
   } catch (error) {
     return res.status(400).json({
       msg: `${error}`,
