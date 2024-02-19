@@ -55,7 +55,7 @@ export default function FooterDetails() {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-2 col-md-4 col-sm-4 col-6">
+                <div className="col-lg-3 col-md-4 col-sm-4 col-6">
                   <div className="weight-footer-content">
                     <h5>Important Link</h5>
                     <ul className="list-unstyled mb-0">
@@ -104,7 +104,7 @@ export default function FooterDetails() {
                     </ul>
                   </div>
                 </div>
-                <div className="col-lg-3 col-md-5 col-sm-5 col-12">
+                <div className="col-lg-2 col-md-5 col-sm-5 col-12">
                   <div className="weight-footer-content">
                     <h5>Get in Touch</h5>
                     <ul className="list-unstyled mb-0">

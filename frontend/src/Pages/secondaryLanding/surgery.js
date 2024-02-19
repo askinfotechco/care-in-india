@@ -31,6 +31,57 @@ import paymentImg3 from "../../assets/image/payment-img3.png";
 import paymentImg4 from "../../assets/image/payment-img4.png";
 import FooterDetails from "../footerDetails";
 
+const posts = [
+  {
+    id: 1,
+    title: "Comprehensive Surgical Care",
+    href: "#",
+    description:
+      "Our Surgery Services cover a broad spectrum of surgical specialties, including but not limited to - General Surgery, Orthopedic Surgery, Cardiovascular Surgery, Neurosurgery, Minimally Invasive Surgery.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Surgery", href: "#" },
+  },
+  {
+    id: 2,
+    title: "Expert Surgical Team",
+    href: "#",
+    description:
+      "Our team of board-certified surgeons are leaders in their respective fields, with extensive training, experience, and expertise in performing a wide range of surgical procedures. With a commitment to excellence and patient-centered care, our surgeons collaborate closely with multidisciplinary teams to develop individualized treatment plans tailored to each patient's needs.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Surgery", href: "#" },
+  },
+  {
+    id: 3,
+    title: "State-of-the-Art Facilities",
+    href: "#",
+    description:
+      "We operate in modern, state-of-the-art surgical facilities equipped with the latest technology and equipment to ensure the highest standard of care and safety for our patients. Our operating rooms are designed to provide a sterile environment, optimal surgical conditions, and advanced monitoring capabilities to support successful surgical outcomes.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Surgery", href: "#" },
+  },
+  {
+    id: 4,
+    title: "Compassionate Patient Care",
+    href: "#",
+    description:
+      "We understand that undergoing surgery can be a daunting experience for many patients. That's why we prioritize compassionate, patient-centered care, providing support, reassurance, and guidance throughout every step of the surgical process. From pre-operative education and preparation to post-operative recovery and follow-up care, our dedicated staff are here to address your concerns, answer your questions, and ensure your comfort and well-being.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Surgery", href: "#" },
+  },
+];
+
 export default function Surgery() {
   return (
     <div>
@@ -63,245 +114,57 @@ export default function Surgery() {
       </div>
       {/* <!-- header-and-banner-section -->
 
-      <!-- service-box --> */}
-      {/* <section>
-        <div className="w-100 float-left service-box-con">
-          <div className="container">
-            <div className="service-box-inner-con">
-              <div className="row ml-0 mr-0">
-                <ServiceCards
-                  img={serviceBoxIcon1}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Radiology Services"}
-                  description={
-                    "We provide advanced imaging techniques to diagnose and treat medical conditions through non-invasive visualization of internal structures."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon2}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Surgery"}
-                  description={
-                    "Discover expert surgical care tailored to your unique needs, ensuring precise and compassionate interventions for optimal health outcomes."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon3}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Dental Care"}
-                  description={
-                    "Elevate your oral health with our comprehensive dental services, delivering personalized care for a confident and radiant smile."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon4}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Physiotherapy"}
-                  description={
-                    "Experience transformative physiotherapy services focused on restoring mobility, alleviating pain, and enhancing overall well-being for a healthier, active life."
-                  }
-                />
-              </div>
-            </div> */}
-      {/* <div className="service-box-img">
-              <figure className="mb-0">
-                <img src={serviceBoxBannerImg} alt="" className="img-fluid" />
-              </figure>
-            </div> */}
-      {/* <div className="service-box-inner-con">
-              <div className="row ml-0 mr-0">
-                <ServiceCards
-                  img={serviceBoxIcon5}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Dermatology"}
-                  description={
-                    "Rejuvenate your skin, hairs and confidence with our dermatology services, offering expert care for a radiant complexion and the treatment of various skin and hair conditions."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon6}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Health Packages in Same Day"}
-                  description={
-                    "Explore comprehensive health packages designed for proactive wellness, offering thorough assessments and screenings to optimize your overall health and prevent potential issues."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon7}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Sexual Wellness / IVF"}
-                  description={
-                    "Nurture your reproductive health with our comprehensive Sexual Wellness and IVF services, providing compassionate care and advanced solutions on your journey to parenthood."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon8}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Mediclaim"}
-                  description={
-                    "Secure your peace of mind with our mediclaim services, offering tailored insurance solutions to safeguard your health and financial well-being."
-                  }
-                />
-              </div>
-            </div>
-            <div className="service-box-inner-con">
-              <div className="row ml-0 mr-0">
-                <ServiceCards
-                  img={serviceBoxIcon9}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"CII Health Buddy Plan"}
-                  rowclassName={"col-6 mx-auto"}
-                  description={
-                    "Embrace a healthier future with our comprehensive Health Plans, designed to provide personalized coverage and support for your well-being journey."
-                  }
-                /> */}
-      {/* <ServiceCards
-                  img={serviceBoxIcon2}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Surgery"}
-                  description={
-                    "Discover expert surgical care tailored to your unique needs, ensuring precise and compassionate interventions for optimal health outcomes."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon3}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Dental Care"}
-                  description={
-                    "Elevate your oral health with our comprehensive dental services, delivering personalized care for a confident and radiant smile."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon4}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Physiotherapy"}
-                  description={
-                    "Experience transformative physiotherapy services focused on restoring mobility, alleviating pain, and enhancing overall well-being for a healthier, active life."
-                  }
-                /> */}
-      {/* </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/* <!-- service-box -->
-            <!-- core-vaule-section --> */}
+      <!-- core-vaule-section --> */}
       <section>
-        <div className="w-100 float-left core-vaule-con service-page-vaule-con">
+        <div className="w-100 float-left core-vaule-con service-page-vaule-con bg-white">
           <div className="container">
             <div className="row">
-              {/* <div className="col-lg-6 col-md-6 d-md-flex align-items-md-end order-xl-0 order-lg-0 order-md-0 order-2">
-                <div className="form-left-con core-vaule-left-con position-relative text-center overlay-img">
-                 
-                </div>
-              </div> */}
               <div className="col-lg-12 col-md-12">
-                <div className="core-vaule-right-con text-xl-left text-lg-left text-md-left text-center">
-                  <div className="core-vaule-title">
+                <div className="core-vaule-right-con text-xl-left text-lg-left text-md-left">
+                  <div className="core-vaule-title text-center">
                     <h2>{"Key Features of Our Surgery Services"}</h2>
-                    {/* <p>
-                      {
-                        "At CII, we are dedicated to providing exceptional Radiology Services aimed at diagnosing and treating a wide range of medical conditions through advanced imaging technology. Our team of skilled radiologists and technologists utilize state-of-the-art equipment and techniques to deliver accurate and timely results, ensuring the highest standard of care for our patients."
-                      }
-                    </p> */}
                   </div>
                   <div className="core-vaule-box-con">
-                    <div className="core-vaule-box-item position-relative">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon1}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>{"Comprehensive Surgical Care"}</h5>
-                        {/* <span className="d-block">
-                          Nullam dictum felis eu pede mollis pretium. Integer
-                          <br /> tinciduntras dapibus vivamus elementum.
-                        </span> */}
-                        <p>
-                          {
-                            "Our Surgery Services cover a broad spectrum of surgical specialties, including but not limited to - General Surgery, Orthopedic Surgery, Cardiovascular Surgery, Neurosurgery, Minimally Invasive Surgery"
-                          }
-                        </p>
-                      </div>
-                    </div>
-                    <div className="core-vaule-box-item position-relative">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon2}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>{"Expert Surgical Team"}</h5>
-                        {/* <span className="d-block">
-                          Cras dapibus vivamus elementum semper nisi enean
-                          <br /> vulputate eleifend am eget duieget dui.
-                        </span> */}
-                        <p>
-                          {
-                            "Our team of board-certified surgeons are leaders in their respective fields, with extensive training, experience, and expertise in performing a wide range of surgical procedures. With a commitment to excellence and patient-centered care, our surgeons collaborate closely with multidisciplinary teams to develop individualized treatment plans tailored to each patient's needs."
-                          }
-                        </p>
-                      </div>
-                    </div>
-                    <div className="core-vaule-box-item position-relative mb-0">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon3}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>{"State-of-the-Art Facilities"}</h5>
-                        {/* <span className="d-block">
-                          Quisque rutrum aenean imperdiet etiam ultricies nisi{" "}
-                          <br />
-                          vel augue curabitur ullamcorper ultricies nisi.
-                        </span> */}
-                        <p>
-                          {
-                            "We operate in modern, state-of-the-art surgical facilities equipped with the latest technology and equipment to ensure the highest standard of care and safety for our patients. Our operating rooms are designed to provide a sterile environment, optimal surgical conditions, and advanced monitoring capabilities to support successful surgical outcomes."
-                          }
-                        </p>
-                      </div>
-                    </div>
-                    <div className="core-vaule-box-item position-relative mb-0">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon3}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>{"Compassionate Patient Care"}</h5>
-                        {/* <span className="d-block">
-                          Quisque rutrum aenean imperdiet etiam ultricies nisi{" "}
-                          <br />
-                          vel augue curabitur ullamcorper ultricies nisi.
-                        </span> */}
-                        <p>
-                          {
-                            "We understand that undergoing surgery can be a daunting experience for many patients. That's why we prioritize compassionate, patient-centered care, providing support, reassurance, and guidance throughout every step of the surgical process. From pre-operative education and preparation to post-operative recovery and follow-up care, our dedicated staff are here to address your concerns, answer your questions, and ensure your comfort and well-being."
-                          }
-                        </p>
+                    <div className="bg-white py-6 sm:py-15">
+                      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                          {posts.map((post) => (
+                            <article
+                              key={post.id}
+                              className="flex flex-col items-start justify-between"
+                            >
+                              <div className="relative w-full">
+                                <img
+                                  src={post.imageUrl}
+                                  alt=""
+                                  className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                                />
+                                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                              </div>
+                              <div className="max-w-xl">
+                                <div className="mt-2 flex items-center gap-x-4 text-xs">
+                                  <a
+                                    href={post.category.href}
+                                    className="relative z-10 rounded-full bg-gray-50 font-medium text-gray-600 hover:bg-gray-100"
+                                  >
+                                    {post.category.title}
+                                  </a>
+                                </div>
+                                <div className="group relative">
+                                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                                    <a href={post.href}>
+                                      <span className="absolute inset-0" />
+                                      {post.title}
+                                    </a>
+                                  </h3>
+                                  <p className="mt-2 line-clamp-4 text-sm leading-6 text-gray-600">
+                                    {post.description}
+                                  </p>
+                                </div>
+                              </div>
+                            </article>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -312,8 +175,9 @@ export default function Surgery() {
         </div>
       </section>
       {/* <!-- core-vaule-section -->
+
       <!-- news-letter-section --> */}
-      <section>
+      {/* <section>
         <div className="w-100 float-left news-letter-con">
           <div className="container">
             <div className="news-letter-inner-con banner-overlay-img">
@@ -341,10 +205,10 @@ export default function Surgery() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!-- news-letter-section -->
       <!-- logo-section --> */}
-      <div className="w-100 float-left logo-con">
+      <div className="mt-10 w-100 float-left logo-con">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">

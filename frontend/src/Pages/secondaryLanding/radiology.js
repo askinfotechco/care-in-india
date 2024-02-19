@@ -31,6 +31,69 @@ import paymentImg3 from "../../assets/image/payment-img3.png";
 import paymentImg4 from "../../assets/image/payment-img4.png";
 import FooterDetails from "../footerDetails";
 
+const posts = [
+  {
+    id: 1,
+    title: "X-Ray",
+    href: "#",
+    description:
+      "We are proud to offer comprehensive X-ray Services designed to provide accurate and timely diagnostic imaging for a wide range of medical conditions. With state-of-the-art equipment and experienced radiology professionals, we are committed to delivering exceptional care and precise results to our patients.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Radiology", href: "#" },
+  },
+  {
+    id: 2,
+    title: "CT / MRI / Dexa / Mammogram Scan",
+    href: "#",
+    description:
+      "We take pride in offering a comprehensive suite of cutting-edge imaging services, including CT scans, MRI, Dexa scans, and Mammograms. Our state-of-the-art facilities and expert team of radiologists and technologists are dedicated to providing precise and detailed imaging studies, ensuring accurate diagnoses and personalized care for our valued patients.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Radiology", href: "#" },
+  },
+  {
+    id: 3,
+    title: "Ultrasound",
+    href: "#",
+    description:
+      "We offer comprehensive Ultrasound Services for Abdomen, Prostate, Transvaginal Sonography (TVS), and Breast, providing patients with advanced imaging solutions for accurate diagnosis and personalized care. Our experienced team of sonographers and radiologists utilize state-of-the-art ultrasound technology to deliver high-quality imaging results, guiding effective treatment plans and promoting overall health and well-being.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Radiology", href: "#" },
+  },
+  {
+    id: 4,
+    title: "Pet Scan",
+    href: "#",
+    description:
+      "We offer state-of-the-art Positron Emission Tomography (PET) Scan Services, providing invaluable insights into the molecular and metabolic activity within the body. Our advanced PET imaging technology, coupled with a team of skilled professionals, ensures accurate and comprehensive diagnostic information to guide personalized patient care.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Radiology", href: "#" },
+  },
+  {
+    id: 5,
+    title: "Stress Thallium",
+    href: "#",
+    description:
+      "We offer state-of-the-art Stress Thallium Services, a specialized diagnostic procedure designed to assess cardiac function and detect potential issues related to blood flow to the heart. Our dedicated team of cardiovascular experts utilizes advanced technology and a patient-centered approach to deliver accurate and comprehensive assessments for individuals concerned about their heart health.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Radiology", href: "#" },
+  },
+];
+
 export default function Radiology() {
   return (
     <div>
@@ -63,267 +126,58 @@ export default function Radiology() {
       </div>
       {/* <!-- header-and-banner-section -->
 
-      <!-- service-box --> */}
-      {/* <section>
-        <div className="w-100 float-left service-box-con">
-          <div className="container">
-            <div className="service-box-inner-con">
-              <div className="row ml-0 mr-0">
-                <ServiceCards
-                  img={serviceBoxIcon1}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Radiology Services"}
-                  description={
-                    "We provide advanced imaging techniques to diagnose and treat medical conditions through non-invasive visualization of internal structures."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon2}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Surgery"}
-                  description={
-                    "Discover expert surgical care tailored to your unique needs, ensuring precise and compassionate interventions for optimal health outcomes."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon3}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Dental Care"}
-                  description={
-                    "Elevate your oral health with our comprehensive dental services, delivering personalized care for a confident and radiant smile."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon4}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Physiotherapy"}
-                  description={
-                    "Experience transformative physiotherapy services focused on restoring mobility, alleviating pain, and enhancing overall well-being for a healthier, active life."
-                  }
-                />
-              </div>
-            </div> */}
-      {/* <div className="service-box-img">
-              <figure className="mb-0">
-                <img src={serviceBoxBannerImg} alt="" className="img-fluid" />
-              </figure>
-            </div> */}
-      {/* <div className="service-box-inner-con">
-              <div className="row ml-0 mr-0">
-                <ServiceCards
-                  img={serviceBoxIcon5}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Dermatology"}
-                  description={
-                    "Rejuvenate your skin, hairs and confidence with our dermatology services, offering expert care for a radiant complexion and the treatment of various skin and hair conditions."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon6}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Health Packages in Same Day"}
-                  description={
-                    "Explore comprehensive health packages designed for proactive wellness, offering thorough assessments and screenings to optimize your overall health and prevent potential issues."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon7}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Sexual Wellness / IVF"}
-                  description={
-                    "Nurture your reproductive health with our comprehensive Sexual Wellness and IVF services, providing compassionate care and advanced solutions on your journey to parenthood."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon8}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Mediclaim"}
-                  description={
-                    "Secure your peace of mind with our mediclaim services, offering tailored insurance solutions to safeguard your health and financial well-being."
-                  }
-                />
-              </div>
-            </div>
-            <div className="service-box-inner-con">
-              <div className="row ml-0 mr-0">
-                <ServiceCards
-                  img={serviceBoxIcon9}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"CII Health Buddy Plan"}
-                  rowclassName={"col-6 mx-auto"}
-                  description={
-                    "Embrace a healthier future with our comprehensive Health Plans, designed to provide personalized coverage and support for your well-being journey."
-                  }
-                /> */}
-      {/* <ServiceCards
-                  img={serviceBoxIcon2}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Surgery"}
-                  description={
-                    "Discover expert surgical care tailored to your unique needs, ensuring precise and compassionate interventions for optimal health outcomes."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon3}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Dental Care"}
-                  description={
-                    "Elevate your oral health with our comprehensive dental services, delivering personalized care for a confident and radiant smile."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon4}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Physiotherapy"}
-                  description={
-                    "Experience transformative physiotherapy services focused on restoring mobility, alleviating pain, and enhancing overall well-being for a healthier, active life."
-                  }
-                /> */}
-      {/* </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/* <!-- service-box -->
-            <!-- core-vaule-section --> */}
+      
+      <!-- core-vaule-section --> */}
       <section>
-        <div className="w-100 float-left core-vaule-con service-page-vaule-con">
+        <div className="w-100 float-left core-vaule-con service-page-vaule-con bg-white">
           <div className="container">
             <div className="row">
-              {/* <div className="col-lg-6 col-md-6 d-md-flex align-items-md-end order-xl-0 order-lg-0 order-md-0 order-2">
-                <div className="form-left-con core-vaule-left-con position-relative text-center overlay-img">
-                 
-                </div>
-              </div> */}
               <div className="col-lg-12 col-md-12">
-                <div className="core-vaule-right-con text-xl-left text-lg-left text-md-left text-center">
-                  <div className="core-vaule-title">
+                <div className="core-vaule-right-con text-xl-left text-lg-left text-md-left">
+                  <div className="core-vaule-title text-center">
                     <h2>{"Our Offering Services"}</h2>
-                    {/* <p>
-                      {
-                        "At CII, we are dedicated to providing exceptional Radiology Services aimed at diagnosing and treating a wide range of medical conditions through advanced imaging technology. Our team of skilled radiologists and technologists utilize state-of-the-art equipment and techniques to deliver accurate and timely results, ensuring the highest standard of care for our patients."
-                      }
-                    </p> */}
                   </div>
                   <div className="core-vaule-box-con">
-                    <div className="core-vaule-box-item position-relative">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon1}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>Xray</h5>
-                        {/* <span className="d-block">
-                          Nullam dictum felis eu pede mollis pretium. Integer
-                          <br /> tinciduntras dapibus vivamus elementum.
-                        </span> */}
-                        <p>
-                          {
-                            "We are proud to offer comprehensive X-ray Services designed to provide accurate and timely diagnostic imaging for a wide range of medical conditions. With state-of-the-art equipment and experienced radiology professionals, we are committed to delivering exceptional care and precise results to our patients."
-                          }
-                        </p>
-                      </div>
-                    </div>
-                    <div className="core-vaule-box-item position-relative">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon2}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>CT / MRI / Dexa / Mammogram Scan</h5>
-                        {/* <span className="d-block">
-                          Cras dapibus vivamus elementum semper nisi enean
-                          <br /> vulputate eleifend am eget duieget dui.
-                        </span> */}
-                        <p>
-                          {
-                            "We take pride in offering a comprehensive suite of cutting-edge imaging services, including CT scans, MRI, Dexa scans, and Mammograms. Our state-of-the-art facilities and expert team of radiologists and technologists are dedicated to providing precise and detailed imaging studies, ensuring accurate diagnoses and personalized care for our valued patients."
-                          }
-                        </p>
-                      </div>
-                    </div>
-                    <div className="core-vaule-box-item position-relative mb-0">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon3}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>Ultrasound</h5>
-                        {/* <span className="d-block">
-                          Quisque rutrum aenean imperdiet etiam ultricies nisi{" "}
-                          <br />
-                          vel augue curabitur ullamcorper ultricies nisi.
-                        </span> */}
-                        <p>
-                          {
-                            "We offer comprehensive Ultrasound Services for Abdomen, Prostate, Transvaginal Sonography (TVS), and Breast, providing patients with advanced imaging solutions for accurate diagnosis and personalized care. Our experienced team of sonographers and radiologists utilize state-of-the-art ultrasound technology to deliver high-quality imaging results, guiding effective treatment plans and promoting overall health and well-being."
-                          }
-                        </p>
-                      </div>
-                    </div>
-                    <div className="core-vaule-box-item position-relative mb-0">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon3}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>Pet Scan</h5>
-                        {/* <span className="d-block">
-                          Quisque rutrum aenean imperdiet etiam ultricies nisi{" "}
-                          <br />
-                          vel augue curabitur ullamcorper ultricies nisi.
-                        </span> */}
-                        <p>
-                          {
-                            "We offer state-of-the-art Positron Emission Tomography (PET) Scan Services, providing invaluable insights into the molecular and metabolic activity within the body. Our advanced PET imaging technology, coupled with a team of skilled professionals, ensures accurate and comprehensive diagnostic information to guide personalized patient care"
-                          }
-                        </p>
-                      </div>
-                    </div>
-                    <div className="core-vaule-box-item position-relative mb-0">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon3}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>Stress Thallium </h5>
-                        {/* <span className="d-block">
-                          Quisque rutrum aenean imperdiet etiam ultricies nisi{" "}
-                          <br />
-                          vel augue curabitur ullamcorper ultricies nisi.
-                        </span> */}
-                        <p>
-                          {
-                            "We offer state-of-the-art Stress Thallium Services, a specialized diagnostic procedure designed to assess cardiac function and detect potential issues related to blood flow to the heart. Our dedicated team of cardiovascular experts utilizes advanced technology and a patient-centered approach to deliver accurate and comprehensive assessments for individuals concerned about their heart health."
-                          }
-                        </p>
+                    <div className="bg-white py-6 sm:py-15">
+                      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                          {posts.map((post) => (
+                            <article
+                              key={post.id}
+                              className="flex flex-col items-start justify-between"
+                            >
+                              <div className="relative w-full">
+                                <img
+                                  src={post.imageUrl}
+                                  alt=""
+                                  className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                                />
+                                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                              </div>
+                              <div className="max-w-xl">
+                                <div className="mt-2 flex items-center gap-x-4 text-xs">
+                                  <a
+                                    href={post.category.href}
+                                    className="relative z-10 rounded-full bg-gray-50 font-medium text-gray-600 hover:bg-gray-100"
+                                  >
+                                    {post.category.title}
+                                  </a>
+                                </div>
+                                <div className="group relative">
+                                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                                    <a href={post.href}>
+                                      <span className="absolute inset-0" />
+                                      {post.title}
+                                    </a>
+                                  </h3>
+                                  <p className="mt-2 line-clamp-5 text-sm leading-6 text-gray-600">
+                                    {post.description}
+                                  </p>
+                                </div>
+                              </div>
+                            </article>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -335,8 +189,8 @@ export default function Radiology() {
       </section>
       {/* <!-- core-vaule-section -->
       <!-- news-letter-section --> */}
-      <section>
-        <div className="w-100 float-left news-letter-con">
+      {/* <section>
+        <div className="mt-5 w-100 float-left news-letter-con">
           <div className="container">
             <div className="news-letter-inner-con banner-overlay-img">
               <div className="row overlay-img align-items-center">
@@ -365,10 +219,10 @@ export default function Radiology() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!-- news-letter-section -->
       <!-- logo-section --> */}
-      <div className="w-100 float-left logo-con">
+      <div className="mt-10 w-100 float-left logo-con">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">
