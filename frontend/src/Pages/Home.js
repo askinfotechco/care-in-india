@@ -59,25 +59,11 @@ function Home() {
                   <div className="row">
                     <div className="col-lg-6 order-xl-0 order-lg-0 order-2">
                       <div className="banner-left-con">
-                        <figure className="mb-0 left-curve-img wow slideInLeft">
-                          <img
-                            src={smallLeftCurveImg}
-                            alt="smallLeftCurveImg"
-                            className="img-fluid"
-                          />
-                        </figure>
                         <figure className="mb-0">
                           <img
                             src={banner}
                             alt="banner-left-img"
                             className="img-fluid banner-left-img"
-                          />
-                        </figure>
-                        <figure className="mb-0 right-curve-img wow slideInRight">
-                          <img
-                            src={smallRightCurveImg}
-                            alt="smallRightCurveImg"
-                            className="img-fluid"
                           />
                         </figure>
                       </div>
@@ -86,11 +72,6 @@ function Home() {
                       <div className="banner-right-content text-white">
                         <h5>Healthy. Everyday.</h5>
                         <h1>We are Providing Best and Affordable Healthcare</h1>
-                        <p className="text-white col-lg-10 col-md-9 ml-xl-0 mr-xl-0 ml-lg-0 mr-lg-0 ml-auto mr-auto pl-0 pr-0">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua.
-                        </p>
                         <a href="#contact-form" className="appointment-btn ">
                           Make Appointment
                         </a>
@@ -287,21 +268,11 @@ function Home() {
               </div>
               <div className="col-lg-6 col-md-6">
                 <div className="quality-system-right-con position-relative text-center">
-                  <figure className="mb-0 left-curve-img wow slideInLeft">
-                    <img src={smallLeftCurveImg} alt="" className="img-fluid" />
-                  </figure>
                   <figure className="mb-0">
                     <img
                       src={qualitySystemImg}
                       alt="quality-system-img"
                       className="img-fluid human-img"
-                    />
-                  </figure>
-                  <figure className="mb-0 right-curve-img wow slideInRight">
-                    <img
-                      src={smallRightCurveImg}
-                      alt=""
-                      className="img-fluid"
                     />
                   </figure>
                 </div>
@@ -361,9 +332,7 @@ function Home() {
               <div className="col-lg-6">
                 <div className="fun-facts-content">
                   <p className=" mb-0">
-                    Seram ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eius mod tempor incididunt aenean leo ligula, porttitor
-                    eu consequat vitae eleifend ac enim aliqu am{" "}
+                    Let the power of healing touch soothe your soul 🌿✨ #HealingTouch #InnerPeace #Wellness{" "}
                   </p>
                 </div>
               </div>
@@ -465,20 +434,12 @@ function Home() {
               <div className="col-lg-6 order-xl-0 order-lg-0 order-2">
                 <div className="form-left-con position-relative text-center">
                   <figure className="mb-0 left-curve-img wow slideInLeft">
-                    <img src={smallLeftCurveImg} alt="" className="img-fluid" />
                   </figure>
                   <figure className="mb-0">
                     <img
                       src={formLeftImg}
                       alt="form-left-img"
                       className="img-fluid human-img form-left-img"
-                    />
-                  </figure>
-                  <figure className="mb-0 right-curve-img wow slideInRight">
-                    <img
-                      src={smallRightCurveImg}
-                      alt=""
-                      className="img-fluid"
                     />
                   </figure>
                 </div>
@@ -571,7 +532,7 @@ function Home() {
       </section>
       {/* <!-- form-section -->
       <!-- slider-section --> */}
-      <section>
+      {/* <section>
         <div className="w-100 float-left slider-con text-lg-left text-center">
           <div className="container">
             <div className="slider-inner-con banner-overlay-img">
@@ -698,7 +659,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!-- slider-section -->
       <!-- blog section --> */}
       <section>

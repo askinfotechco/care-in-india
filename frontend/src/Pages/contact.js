@@ -270,40 +270,7 @@ export default function Contact() {
         </div>
       </div>
       {/* <!-- map-section-->
-<!-- news-letter-section --> */}
-      <section>
-        <div className="w-100 float-left news-letter-con">
-          <div className="container">
-            <div className="news-letter-inner-con banner-overlay-img">
-              <div className="row overlay-img align-items-center">
-                <div className="col-lg-6 col-md-5">
-                  <div className="news-letter-title">
-                    <h2 className="text-white mb-0">
-                      Subscribe to our Newsletter
-                    </h2>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-md-7">
-                  <div className="news-letter-input-con position-relative">
-                    <div className="news-letter-input-feild">
-                      <input
-                        type="email"
-                        placeholder="Enter Your Email:"
-                        className="w-100"
-                      />
-                    </div>
-                    <button>
-                      <i className="far fa-envelope"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <!-- news-letter-section -->
-<!-- logo-section --> */}
+      <!-- logo-section --> */}
       <div className="w-100 float-left logo-con">
         <div className="container">
           <div className="logo-inner-con">

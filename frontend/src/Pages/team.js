@@ -66,10 +66,12 @@ export default function Team() {
                 <div className="container">
                   <div className="generic-banner-content text-white text-center">
                     <h1>Our Team</h1>
-                    <p className="text-white mb-0">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor
-                      <br /> incididunt ut labore et dolore magna aliqua.
+                    <p>
+                      We’re a dynamic group of individuals who are passionate
+                      about what
+                      <br />
+                      we do and dedicated to delivering the best results for our
+                      clients.
                     </p>
                   </div>
                 </div>
@@ -84,16 +86,6 @@ export default function Team() {
       <section>
         <div className="w-100 float-left professional-con">
           <div className="container">
-            <div className="professional-title text-center">
-              <h2>Meet Our Professionals</h2>
-              <p>
-                Seram ipsum dolor sit amet, consectetur adipiscing elit sed
-                lorem ipsum dolor sit amet, consectetur
-                <br />
-                adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
-                pulvinar dapibus leo.
-              </p>
-            </div>
             <div className="professional-box">
               <div className="row">
                 {doctorDetails.map((ele) => {
@@ -121,21 +113,11 @@ export default function Team() {
             <div className="row">
               <div className="col-lg-6 order-xl-0 order-lg-0 order-2">
                 <div className="form-left-con position-relative text-center">
-                  <figure className="mb-0 left-curve-img wow slideInLeft">
-                    <img src={smallLeftCurveImg} alt="" className="img-fluid" />
-                  </figure>
                   <figure className="mb-0">
                     <img
                       src={formLeftImg}
                       alt="form-left-img"
                       className="mb-0 img-fluid human-img"
-                    />
-                  </figure>
-                  <figure className="mb-0 right-curve-img wow slideInRight">
-                    <img
-                      src={smallRightCurveImg}
-                      alt=""
-                      className="img-fluid"
                     />
                   </figure>
                 </div>
@@ -227,41 +209,8 @@ export default function Team() {
         </div>
       </section>
       {/* <!-- form-section -->
-      <!-- news-letter-section --> */}
-      <section>
-        <div className="w-100 float-left news-letter-con">
-          <div className="container">
-            <div className="news-letter-inner-con banner-overlay-img">
-              <div className="row overlay-img align-items-center">
-                <div className="col-lg-6 col-md-5">
-                  <div className="news-letter-title">
-                    <h2 className="text-white mb-0">
-                      Subscribe to our Newsletter
-                    </h2>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-md-7">
-                  <div className="news-letter-input-con position-relative">
-                    <div className="news-letter-input-feild">
-                      <input
-                        type="email"
-                        placeholder="Enter Your Email:"
-                        className="w-100"
-                      />
-                    </div>
-                    <button>
-                      <i className="far fa-envelope"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <!-- news-letter-section -->
       <!-- logo-section --> */}
-      <div className="w-100 float-left logo-con">
+      <div className="w-100 float-left logo-con mt-5">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">

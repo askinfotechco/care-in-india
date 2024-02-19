@@ -25,9 +25,7 @@ export default function FooterDetails() {
                       />
                     </figure>
                     <p className="col-lg-11 col-md-7 pl-0 pr-0 ml-lg-0 mr-lg-0 ml-md-auto mr-md-auto">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elitsed
-                      do eiusmod tempororem ipsum dolor sit am econsect
-                      ametconsectetetur adipiscing.
+                      Healthy. Everyday. We are Providing Best and Affordable Healthcare.
                     </p>
                     <div className="weight-social-list">
                       <ul className="list-unstyled mb-0">
@@ -115,8 +113,8 @@ export default function FooterDetails() {
                         <span>Phone: </span>+91-9971007292
                       </li>
                       <li className="mb-0">
-                        <span className="pr-2">Address: </span>FCA 3165, Street
-                        4, Block A, SGM Nagar Faridabad, New Delhi - 121001
+                        <span className="pr-2">Address: </span>
+                        <p>FCA 3165, Street 4, Block A, SGM Nagar Faridabad, New Delhi - 121001</p>
                       </li>
                     </ul>
                   </div>
