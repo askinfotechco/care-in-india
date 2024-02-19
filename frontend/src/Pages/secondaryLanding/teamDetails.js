@@ -1,4 +1,3 @@
-import FooterDetails from "../footerDetails";
 import React, { useState, useEffect } from "react";
 import NavBarTop from "../../molecules/navBar";
 import axios from "axios";
