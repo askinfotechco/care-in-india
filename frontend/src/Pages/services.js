@@ -35,47 +35,6 @@ import FooterDetails from "./footerDetails";
 export default function Services() {
   return (
     <div>
-      {/* <div className="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 col-md-6 col-12">
-              <div className="top-bar-left-con ">
-                <i className="fas fa-map-marker-alt"></i>
-                <span>King Street Melbourne, 3000, Australia</span>
-              </div>
-            </div>
-            <div className="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-center">
-              <div className="top-bar-right-con d-flex">
-                <span>Get Social:</span>
-                <ul className="list-unstyled mb-0">
-                  <li className="float-left">
-                    <a href="https://www.facebook.com/" className="text-white">
-                      <i className="fab fa-facebook-square"></i>
-                    </a>
-                  </li>
-                  <li className="float-left">
-                    <a href="https://twitter.com/?lang=en" className="text-white">
-                      <i className="fab fa-twitter-square"></i>
-                    </a>
-                  </li>
-                  <li className="float-left">
-                    <a href="https://www.pinterest.com/" className="text-white">
-                      <i className="fab fa-pinterest-square"></i>
-                    </a>
-                  </li>
-                  <li className="float-left">
-                    <a href="https://www.youtube.com/" className="text-white">
-                      <i className="fab fa-youtube-square"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* <!-- top-bar-section-->
-      <!-- header-and-banner-section --> */}
       <div className="w-100 float-left header-and-banner-con banner-overlay-img">
         <div className="container">
           <div className="overlay-img">
@@ -151,11 +110,6 @@ export default function Services() {
                 />
               </div>
             </div>
-            {/* <div class="service-box-img">
-              <figure class="mb-0">
-                <img src={serviceBoxBannerImg} alt="" class="img-fluid" />
-              </figure>
-            </div> */}
             <div className="service-box-inner-con">
               <div className="row ml-0 mr-0">
                 <ServiceCards
@@ -208,75 +162,24 @@ export default function Services() {
                     "Embrace a healthier future with our comprehensive Health Plans, designed to provide personalized coverage and support for your well-being journey."
                   }
                 />
-                {/* <ServiceCards
-                  img={serviceBoxIcon2}
-                  alt={"service-box-icon"}
-                  class={"img-fluid"}
-                  name={"Surgery"}
-                  description={
-                    "Discover expert surgical care tailored to your unique needs, ensuring precise and compassionate interventions for optimal health outcomes."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon3}
-                  alt={"service-box-icon"}
-                  class={"img-fluid"}
-                  name={"Dental Care"}
-                  description={
-                    "Elevate your oral health with our comprehensive dental services, delivering personalized care for a confident and radiant smile."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon4}
-                  alt={"service-box-icon"}
-                  class={"img-fluid"}
-                  name={"Physiotherapy"}
-                  description={
-                    "Experience transformative physiotherapy services focused on restoring mobility, alleviating pain, and enhancing overall well-being for a healthier, active life."
-                  }
-                /> */}
               </div>
             </div>
           </div>
-          {/* </div> */}
-          {/* </div> */}
         </div>
       </section>
       {/* <!-- service-box -->
-            <!-- core-vaule-section --> */}
+      <!-- core-vaule-section --> */}
       <section>
         <div className="w-100 float-left core-vaule-con service-page-vaule-con">
           <div className="container">
             <div className="row">
               <div className="col-lg-6 col-md-6 d-md-flex align-items-md-end order-xl-0 order-lg-0 order-md-0 order-2">
                 <div className="form-left-con core-vaule-left-con position-relative text-center overlay-img">
-                  <figure
-                    className="mb-0 left-curve-img wow slideInLeft"
-                    style={{
-                      visibility: "visible",
-                      animationName: "slideInLeft",
-                    }}
-                  >
-                    <img src={smallLeftCurveImg} alt="" className="img-fluid" />
-                  </figure>
                   <figure className="mb-0">
                     <img
                       src={coreValueLeftImg}
                       alt="form-left-img"
                       className="mb-0 img-fluid human-img"
-                    />
-                  </figure>
-                  <figure
-                    className="mb-0 right-curve-img wow slideInRight"
-                    style={{
-                      visibility: "visible",
-                      animationName: "slideInRight",
-                    }}
-                  >
-                    <img
-                      src={smallRightCurveImg}
-                      alt=""
-                      className="img-fluid"
                     />
                   </figure>
                 </div>
@@ -348,41 +251,8 @@ export default function Services() {
         </div>
       </section>
       {/* <!-- core-vaule-section -->
-      <!-- news-letter-section --> */}
-      <section>
-        <div className="w-100 float-left news-letter-con">
-          <div className="container">
-            <div className="news-letter-inner-con banner-overlay-img">
-              <div className="row overlay-img align-items-center">
-                <div className="col-lg-6 col-md-5">
-                  <div className="news-letter-title">
-                    <h2 className="text-white mb-0">
-                      Subscribe to our Newsletter
-                    </h2>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-md-7">
-                  <div className="news-letter-input-con position-relative">
-                    <div className="news-letter-input-feild">
-                      <input
-                        type="email"
-                        placeholder="Enter Your Email:"
-                        className="w-100"
-                      />
-                    </div>
-                    <button>
-                      <i className="far fa-envelope"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <!-- news-letter-section -->
       <!-- logo-section --> */}
-      <div className="w-100 float-left logo-con">
+      <div className="w-100 float-left logo-con mt-10">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">

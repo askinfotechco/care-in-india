@@ -144,25 +144,11 @@ export default function About() {
               </div>
               <div className="col-lg-6 col-md-6 d-md-flex align-items-md-end">
                 <div className="quality-system-right-con position-relative text-center overlay-img">
-                  <figure className="mb-0 left-curve-img wow slideInLeft">
-                    <img
-                      src={smallLeftCurveImg}
-                      alt=""
-                      className="img-fluid"
-                    />
-                  </figure>
                   <figure className="mb-0">
                     <img
                       src={professionalDoctorImg}
                       alt="professional-doctor-img"
                       className="img-fluid human-img"
-                    />
-                  </figure>
-                  <figure className="mb-0 right-curve-img wow slideInRight">
-                    <img
-                      src={smallRightCurveImg}
-                      alt=""
-                      className="img-fluid"
                     />
                   </figure>
                 </div>
@@ -179,37 +165,11 @@ export default function About() {
             <div className="row">
               <div className="col-lg-6 col-md-6 d-md-flex align-items-md-end order-xl-0 order-lg-0 order-md-0 order-2">
                 <div className="form-left-con core-vaule-left-con position-relative text-center">
-                  <figure
-                    className="mb-0 left-curve-img wow slideInLeft"
-                    style={{
-                      visibility: "visible",
-                      animationName: "slideInLeft",
-                    }}
-                  >
-                    <img
-                      src={smallLeftCurveImg}
-                      alt=""
-                      className="img-fluid"
-                    />
-                  </figure>
                   <figure className="mb-0">
                     <img
                       src={coreValueLeftImg}
                       alt="form-left-img"
                       className="mb-0 img-fluid human-img"
-                    />
-                  </figure>
-                  <figure
-                    className="mb-0 right-curve-img wow slideInRight"
-                    style={{
-                      visibility: "visible",
-                      animationName: "slideInRight",
-                    }}
-                  >
-                    <img
-                      src={smallRightCurveImg}
-                      alt=""
-                      className="img-fluid"
                     />
                   </figure>
                 </div>
@@ -374,160 +334,10 @@ export default function About() {
         </div>
       </section>
       {/* <!-- fun-facts-section-->
-      <!-- professional-section--> */}
-      <section>
-        <div className="w-100 float-left professional-con">
-          <div className="container">
-            <div className="professional-title text-center">
-              <h2>Meet Our Professionals</h2>
-              <p>
-                Seram ipsum dolor sit amet, consectetur adipiscing elit sed
-                lorem ipsum dolor sit amet, consectetur
-                <br />
-                adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
-                pulvinar dapibus leo.
-              </p>
-            </div>
-            <div className="professional-box">
-              <div className="row">
-                <div className="col-lg-4 col-md-4">
-                  <a href="team-detail.html">
-                    <div className="professional-box-item text-center">
-                      <figure className="mb-0">
-                        <img
-                          src={professionalBoxImg1}
-                          alt="professional-box-img"
-                          className="img-fluid"
-                        />
-                      </figure>
-                      <h5>Dr. Richard Muldoon</h5>
-                      <small className="d-block">Doctor of Medicine</small>
-                      <span className="d-block">
-                        Lorem ipsum dolor sit ametc onsectetur adipiscing
-                        elitsed do eiusmod
-                      </span>
-                      <div className="professional-box-social-list">
-                        <ul className="list-unstyled mb-0">
-                          <li className="d-inline-block">
-                            <a href="https://www.facebook.com/">
-                              <i className="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li className="d-inline-block">
-                            <a href="https://twitter.com/?lang=en">
-                              <i className="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li className="d-inline-block">
-                            <a href="https://www.linkedin.com/signup">
-                              <i className="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li className="d-inline-block">
-                            <a href="https://www.pinterest.com/">
-                              <i className="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div className="col-lg-4 col-lg-4 col-md-4">
-                  <a href="team-detail.html">
-                    <div className="professional-box-item text-center">
-                      <figure className="mb-0">
-                        <img
-                          src={professionalBoxImg2}
-                          alt="professional-box-img"
-                          className="img-fluid"
-                        />
-                      </figure>
-                      <h5>Dr. Maria Andaloro</h5>
-                      <small className="d-block">Dental Medicine</small>
-                      <span className="d-block">
-                        Lorem ipsum dolor sit ametc onsectetur adipiscing
-                        elitsed do eiusmod
-                      </span>
-                      <div className="professional-box-social-list">
-                        <ul className="list-unstyled mb-0">
-                          <li className="d-inline-block">
-                            <a href="https://www.facebook.com/">
-                              <i className="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li className="d-inline-block">
-                            <a href="https://twitter.com/?lang=en">
-                              <i className="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li className="d-inline-block">
-                            <a href="https://www.linkedin.com/signup">
-                              <i className="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li className="d-inline-block">
-                            <a href="https://www.pinterest.com/">
-                              <i className="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div className="col-lg-4 col-lg-4 col-md-4">
-                  <a href="team-detail.html">
-                    <div className="professional-box-item text-center mb-0">
-                      <figure className="mb-0">
-                        <img
-                          src={professionalBoxImg3}
-                          alt="professional-box-img"
-                          className="img-fluid"
-                        />
-                      </figure>
-                      <h5>Dr. Michael Brian</h5>
-                      <small className="d-block">Family Physician</small>
-                      <span className="d-block">
-                        Lorem ipsum dolor sit ametc onsectetur adipiscing
-                        elitsed do eiusmod
-                      </span>
-                      <div className="professional-box-social-list">
-                        <ul className="list-unstyled mb-0">
-                          <li className="d-inline-block">
-                            <a href="https://www.facebook.com/">
-                              <i className="fab fa-facebook-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li className="d-inline-block">
-                            <a href="https://twitter.com/?lang=en">
-                              <i className="fab fa-twitter-square d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li className="d-inline-block">
-                            <a href="https://www.linkedin.com/signup">
-                              <i className="fab fa-linkedin d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                          <li className="d-inline-block">
-                            <a href="https://www.pinterest.com/">
-                              <i className="fab fa-pinterest-square mr-0 d-flex align-items-center justify-content-center text-white pr-0"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <!-- professional-section-->
+
       <!-- form-section --> */}
       <section>
-        <div className="w-100 float-left form-main-con">
+        <div className="w-100 float-left form-main-con" style={{marginTop: "100px"}}>
           <div className="container">
             <div className="text-center">
               <h2>Book An Appointment</h2>
@@ -541,25 +351,11 @@ export default function About() {
             <div className="row">
               <div className="col-lg-6 order-xl-0 order-lg-0 order-2">
                 <div className="form-left-con position-relative text-center">
-                  <figure className="mb-0 left-curve-img wow slideInLeft">
-                    <img
-                      src={smallLeftCurveImg}
-                      alt=""
-                      className="img-fluid"
-                    />
-                  </figure>
                   <figure className="mb-0">
                     <img
                       src={formLeftImg}
                       alt="form-left-img"
                       className="mb-0 img-fluid human-img"
-                    />
-                  </figure>
-                  <figure className="mb-0 right-curve-img wow slideInRight">
-                    <img
-                      src={smallRightCurveImg}
-                      alt=""
-                      className="img-fluid"
                     />
                   </figure>
                 </div>
