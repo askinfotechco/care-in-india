@@ -32,6 +32,69 @@ import paymentImg4 from "../../assets/image/payment-img4.png";
 import { Link } from "react-router-dom";
 import FooterDetails from "../footerDetails";
 
+const posts = [
+  {
+    id: 1,
+    title: "Routine Dental Exams and Cleanings",
+    href: "#",
+    description:
+      "Regular check-ups and cleanings essential for maintaining good oral health and preventing dental problems such as cavities, gum disease, and tooth decay.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Dental", href: "#" },
+  },
+  {
+    id: 2,
+    title: "Restorative Dentistry",
+    href: "#",
+    description:
+      "Whether you need a filling for a cavity, a crown to restore a damaged tooth, or a dental implant to replace a missing tooth, our restorative dental treatments can help you regain a healthy, functional smile.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Dental", href: "#" },
+  },
+  {
+    id: 3,
+    title: "Cosmetic Dentistry",
+    href: "#",
+    description:
+      "Enhance the appearance of your smile with our cosmetic dental services, including teeth whitening, porcelain veneers, and Invisalign clear aligners. Achieve the smile of your dreams and boost your confidence with our personalized cosmetic treatments.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Dental", href: "#" },
+  },
+  {
+    id: 4,
+    title: "Oral Surgery",
+    href: "#",
+    description:
+      "From wisdom teeth extractions to dental implant placement, our oral surgery services are performed with precision and care to ensure optimal outcomes for our patients.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Dental", href: "#" },
+  },
+  {
+    id: 5,
+    title: "Orthodontics, Periodontal Care, Emergency Dental Care and many more...",
+    href: "#",
+    description:
+      "",
+    imageUrl:
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { title: "Dental", href: "#" },
+  },
+];
+
 export default function Dental() {
   return (
     <div>
@@ -64,273 +127,59 @@ export default function Dental() {
       </div>
       {/* <!-- header-and-banner-section -->
 
-      <!-- service-box --> */}
-      {/* <section>
-        <div className="w-100 float-left service-box-con">
-          <div className="container">
-            <div className="service-box-inner-con">
-              <div className="row ml-0 mr-0">
-                <ServiceCards
-                  img={serviceBoxIcon1}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Radiology Services"}
-                  description={
-                    "We provide advanced imaging techniques to diagnose and treat medical conditions through non-invasive visualization of internal structures."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon2}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Surgery"}
-                  description={
-                    "Discover expert surgical care tailored to your unique needs, ensuring precise and compassionate interventions for optimal health outcomes."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon3}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Dental Care"}
-                  description={
-                    "Elevate your oral health with our comprehensive dental services, delivering personalized care for a confident and radiant smile."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon4}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Physiotherapy"}
-                  description={
-                    "Experience transformative physiotherapy services focused on restoring mobility, alleviating pain, and enhancing overall well-being for a healthier, active life."
-                  }
-                />
-              </div>
-            </div> */}
-      {/* <div className="service-box-img">
-              <figure className="mb-0">
-                <img src={serviceBoxBannerImg} alt="" className="img-fluid" />
-              </figure>
-            </div> */}
-      {/* <div className="service-box-inner-con">
-              <div className="row ml-0 mr-0">
-                <ServiceCards
-                  img={serviceBoxIcon5}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Dermatology"}
-                  description={
-                    "Rejuvenate your skin, hairs and confidence with our dermatology services, offering expert care for a radiant complexion and the treatment of various skin and hair conditions."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon6}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Health Packages in Same Day"}
-                  description={
-                    "Explore comprehensive health packages designed for proactive wellness, offering thorough assessments and screenings to optimize your overall health and prevent potential issues."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon7}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Sexual Wellness / IVF"}
-                  description={
-                    "Nurture your reproductive health with our comprehensive Sexual Wellness and IVF services, providing compassionate care and advanced solutions on your journey to parenthood."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon8}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Mediclaim"}
-                  description={
-                    "Secure your peace of mind with our mediclaim services, offering tailored insurance solutions to safeguard your health and financial well-being."
-                  }
-                />
-              </div>
-            </div>
-            <div className="service-box-inner-con">
-              <div className="row ml-0 mr-0">
-                <ServiceCards
-                  img={serviceBoxIcon9}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"CII Health Buddy Plan"}
-                  rowclassName={"col-6 mx-auto"}
-                  description={
-                    "Embrace a healthier future with our comprehensive Health Plans, designed to provide personalized coverage and support for your well-being journey."
-                  }
-                /> */}
-      {/* <ServiceCards
-                  img={serviceBoxIcon2}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Surgery"}
-                  description={
-                    "Discover expert surgical care tailored to your unique needs, ensuring precise and compassionate interventions for optimal health outcomes."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon3}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Dental Care"}
-                  description={
-                    "Elevate your oral health with our comprehensive dental services, delivering personalized care for a confident and radiant smile."
-                  }
-                />
-                <ServiceCards
-                  img={serviceBoxIcon4}
-                  alt={"service-box-icon"}
-                  className={"img-fluid"}
-                  name={"Physiotherapy"}
-                  description={
-                    "Experience transformative physiotherapy services focused on restoring mobility, alleviating pain, and enhancing overall well-being for a healthier, active life."
-                  }
-                /> */}
-      {/* </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/* <!-- service-box -->
-            <!-- core-vaule-section --> */}
+      <!-- core-vaule-section --> */}
       <section>
-        <div className="w-100 float-left core-vaule-con service-page-vaule-con">
+        <div className="w-100 float-left core-vaule-con service-page-vaule-con bg-white">
           <div className="container">
             <div className="row">
-              {/* <div className="col-lg-6 col-md-6 d-md-flex align-items-md-end order-xl-0 order-lg-0 order-md-0 order-2">
-                <div className="form-left-con core-vaule-left-con position-relative text-center overlay-img">
-                 
-                </div>
-              </div> */}
               <div className="col-lg-12 col-md-12">
-                <div className="core-vaule-right-con text-xl-left text-lg-left text-md-left text-center">
-                  <div className="core-vaule-title">
+                <div className="core-vaule-right-con text-xl-left text-lg-left text-md-left">
+                  <div className="core-vaule-title text-center">
                     <h2>
                       {"Our comprehensive range of dental services includes"}
                     </h2>
-                    {/* <p>
-                      {
-                        "At CII, we are dedicated to providing exceptional Radiology Services aimed at diagnosing and treating a wide range of medical conditions through advanced imaging technology. Our team of skilled radiologists and technologists utilize state-of-the-art equipment and techniques to deliver accurate and timely results, ensuring the highest standard of care for our patients."
-                      }
-                    </p> */}
                   </div>
                   <div className="core-vaule-box-con">
-                    <div className="core-vaule-box-item position-relative">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon1}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>{"Routine Dental Exams and Cleanings"}</h5>
-                        {/* <span className="d-block">
-                          Nullam dictum felis eu pede mollis pretium. Integer
-                          <br /> tinciduntras dapibus vivamus elementum.
-                        </span> */}
-                        <p>
-                          {
-                            "Regular check-ups and cleanings essential for maintaining good oral health and preventing dental problems such as cavities, gum disease, and tooth decay."
-                          }
-                        </p>
-                      </div>
-                    </div>
-                    <div className="core-vaule-box-item position-relative">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon2}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>{"Restorative Dentistry"}</h5>
-                        {/* <span className="d-block">
-                          Cras dapibus vivamus elementum semper nisi enean
-                          <br /> vulputate eleifend am eget duieget dui.
-                        </span> */}
-                        <p>
-                          {
-                            "Whether you need a filling for a cavity, a crown to restore a damaged tooth, or a dental implant to replace a missing tooth, our restorative dental treatments can help you regain a healthy, functional smile."
-                          }
-                        </p>
-                      </div>
-                    </div>
-                    <div className="core-vaule-box-item position-relative mb-0">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon3}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>{"Cosmetic Dentistry"}</h5>
-                        {/* <span className="d-block">
-                          Quisque rutrum aenean imperdiet etiam ultricies nisi{" "}
-                          <br />
-                          vel augue curabitur ullamcorper ultricies nisi.
-                        </span> */}
-                        <p>
-                          {
-                            "Enhance the appearance of your smile with our cosmetic dental services, including teeth whitening, porcelain veneers, and Invisalign clear aligners. Achieve the smile of your dreams and boost your confidence with our personalized cosmetic treatments."
-                          }
-                        </p>
-                      </div>
-                    </div>
-                    <div className="core-vaule-box-item position-relative mb-0">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon3}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>{"Oral Surgery"}</h5>
-                        {/* <span className="d-block">
-                          Quisque rutrum aenean imperdiet etiam ultricies nisi{" "}
-                          <br />
-                          vel augue curabitur ullamcorper ultricies nisi.
-                        </span> */}
-                        <p>
-                          {
-                            "From wisdom teeth extractions to dental implant placement, our oral surgery services are performed with precision and care to ensure optimal outcomes for our patients."
-                          }
-                        </p>
-                      </div>
-                    </div>
-                    <div className="core-vaule-box-item position-relative mb-0">
-                      {/* <figure className="mb-0">
-                        <img
-                          src={coreValueBoxIcon3}
-                          alt="core-vaule-box-icon"
-                          className="img-fluid"
-                        />
-                      </figure> */}
-                      <div className="core-vaule-box-title">
-                        <h5>
-                          {
-                            "Orthodontics, Periodontal Care, Emergency Dental Care and many more..."
-                          }
-                        </h5>
-                        {/* <span className="d-block">
-                          Quisque rutrum aenean imperdiet etiam ultricies nisi{" "}
-                          <br />
-                          vel augue curabitur ullamcorper ultricies nisi.
-                        </span> */}
-                        {/* <p>
-                          {
-                            "From wisdom teeth extractions to dental implant placement, our oral surgery services are performed with precision and care to ensure optimal outcomes for our patients."
-                          }
-                        </p> */}
+                  <div className="bg-white py-6 sm:py-15">
+                      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                          {posts.map((post) => (
+                            <article
+                              key={post.id}
+                              className="flex flex-col items-start justify-between"
+                            >
+                              <div className="relative w-full">
+                                <img
+                                  src={post.imageUrl}
+                                  alt=""
+                                  className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                                />
+                                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                              </div>
+                              <div className="max-w-xl">
+                                <div className="mt-2 flex items-center gap-x-4 text-xs">
+                                  <a
+                                    href={post.category.href}
+                                    className="relative z-10 rounded-full bg-gray-50 font-medium text-gray-600 hover:bg-gray-100"
+                                  >
+                                    {post.category.title}
+                                  </a>
+                                </div>
+                                <div className="group relative">
+                                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                                    <a href={post.href}>
+                                      <span className="absolute inset-0" />
+                                      {post.title}
+                                    </a>
+                                  </h3>
+                                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">
+                                    {post.description}
+                                  </p>
+                                </div>
+                              </div>
+                            </article>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -342,27 +191,12 @@ export default function Dental() {
       </section>
       {/* <!-- core-vaule-section -->
       <!-- news-letter-section --> */}
-      <section
-        style={{ display: "flex", marginTop: "20px", marginBottom: "150px" }}
+      {/* <section
+        style={{ display: "flex", marginTop: "50px", marginBottom: "150px" }}
       >
-        {/* <div className="w-100 float-left news-letter-con">
-          <div className="container">
-            <div className="news-letter-inner-con banner-overlay-img">
-              <div className="row overlay-img align-items-center"> */}
-        {/* <div className="col-lg-6 col-md-5">
-                  <div className="news-letter-title">
-                    <h3 className="text-white mb-0">{"Book An Appointment Now"}</h3>
-                  </div>
-                </div> */}
         <div className="col-lg-3 col-md-4">
           <div className="news-letter-input-con position-relative">
-            {/* <div className="news-letter-input-feild">
-                      <input
-                        type="email"
-                        placeholder="Or Enter Your Email:"
-                        className="w-100"
-                      />
-                    </div> */}
+           
             <Link to={"/team"}>
               <button>
                 <i className="far fa-envelope">{"Schedule a Visit"}</i>
@@ -372,13 +206,7 @@ export default function Dental() {
         </div>
         <div className="col-lg-3 col-md-4">
           <div className="news-letter-input-con position-relative">
-            {/* <div className="news-letter-input-feild">
-                      <input
-                        type="email"
-                        placeholder="Or Enter Your Email:"
-                        className="w-100"
-                      />
-                    </div> */}
+           
             <Link to={"/team"}>
               <button>
                 <i className="far fa-envelope">{"Book Online Consulting"}</i>
@@ -386,14 +214,10 @@ export default function Dental() {
             </Link>
           </div>
         </div>
-        {/* </div>
-            </div>
-          </div>
-        </div> */}
-      </section>
+      </section> */}
       {/* <!-- news-letter-section -->
       <!-- logo-section --> */}
-      <div className="w-100 float-left logo-con">
+      <div className="mt-10 w-100 float-left logo-con">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">
