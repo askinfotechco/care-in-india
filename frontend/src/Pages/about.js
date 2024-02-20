@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../molecules/navBar";
+import NavBar from "../molecules/navBar_bkp";
 import smallLeftCurveImg from "../assets/image/small-left-curve-img.png";
 import smallRightCurveImg from "../assets/image/small-right-curve-img.png";
 import funFactsIcon1 from "../assets/image/fun-facts-icon1.png";
@@ -23,6 +23,7 @@ import professionalBoxImg1 from "../assets/image/professional-box-img1.png";
 import professionalBoxImg2 from "../assets/image/professional-box-img2.png";
 import professionalBoxImg3 from "../assets/image/professional-box-img3.png";
 import FooterDetails from "./footerDetails";
+import NavBarTop from "../molecules/navBar";
 
 export default function About() {
   return (
@@ -72,7 +73,7 @@ export default function About() {
         <div className="container">
           <div className="overlay-img">
             {/* <!-- navbar-start --> */}
-            <NavBar />
+            <NavBarTop />
             {/* <!-- navbar-end -->
                <!-- banner-start --> */}
             <section>
