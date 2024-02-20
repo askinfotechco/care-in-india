@@ -1,34 +1,16 @@
 import React from "react";
 import NavBarTop from "../../molecules/navBar";
-import ServiceCards from "../../molecules/serviceCards";
-import serviceBoxIcon1 from "../../assets/image/service-box-icon9.png";
-import serviceBoxIcon2 from "../../assets/image/service-box-icon10.png";
-import serviceBoxIcon3 from "../../assets/image/service-box-icon3.png";
-import serviceBoxIcon4 from "../../assets/image/service-box-icon11.png";
-import serviceBoxIcon5 from "../../assets/image/service-box-icon12.png";
-import serviceBoxIcon6 from "../../assets/image/service-box-icon13.png";
-import serviceBoxIcon7 from "../../assets/image/service-box-icon14.png";
-import serviceBoxIcon8 from "../../assets/image/service-box-icon15.png";
-import serviceBoxIcon9 from "../../assets/image/service-box-icon16.png";
-//import serviceBoxBannerImg from "../assets/image/.service-box-banner-img.jpg";
-
-import smallLeftCurveImg from "../../assets/image/small-left-curve-img.png";
-import smallRightCurveImg from "../../assets/image/small-right-curve-img.png";
-import coreValueLeftImg from "../../assets/image/core-value-left-img.png";
-import coreValueBoxIcon1 from "../../assets/image/core-vaule-box-icon1.png";
-import coreValueBoxIcon2 from "../../assets/image/core-vaule-box-icon2.png";
-import coreValueBoxIcon3 from "../../assets/image/core-vaule-box-icon3.png";
 import clientLogoImg1 from "../../assets/image/client-logo-img1.png";
 import clientLogoImg2 from "../../assets/image/client-logo-img2.png";
 import clientLogoImg3 from "../../assets/image/client-logo-img3.png";
 import clientLogoImg4 from "../../assets/image/client-logo-img4.png";
 import clientLogoImg5 from "../../assets/image/client-logo-img5.png";
 import clientLogoImg6 from "../../assets/image/client-logo-img6.png";
-import footerLogo from "../../assets/image/footer-logo.png";
-import paymentImg1 from "../../assets/image/payment-img1.png";
-import paymentImg2 from "../../assets/image/payment-img2.png";
-import paymentImg3 from "../../assets/image/payment-img3.png";
-import paymentImg4 from "../../assets/image/payment-img4.png";
+import xray from "../../assets/image/xray.png";
+import mri from "../../assets/image/ct_mri_scan.png";
+import ultrasound from "../../assets/image/ultrasound.png";
+import petscan from "../../assets/image/pet_scan.png";
+
 import FooterDetails from "../footerDetails";
 
 const posts = [
@@ -38,8 +20,7 @@ const posts = [
     href: "#",
     description:
       "We are proud to offer comprehensive X-ray Services designed to provide accurate and timely diagnostic imaging for a wide range of medical conditions. With state-of-the-art equipment and experienced radiology professionals, we are committed to delivering exceptional care and precise results to our patients.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    imageUrl: `${xray}`,
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     category: { title: "Radiology", href: "#" },
@@ -50,8 +31,7 @@ const posts = [
     href: "#",
     description:
       "We take pride in offering a comprehensive suite of cutting-edge imaging services, including CT scans, MRI, Dexa scans, and Mammograms. Our state-of-the-art facilities and expert team of radiologists and technologists are dedicated to providing precise and detailed imaging studies, ensuring accurate diagnoses and personalized care for our valued patients.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    imageUrl: `${mri}`,
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     category: { title: "Radiology", href: "#" },
@@ -62,8 +42,7 @@ const posts = [
     href: "#",
     description:
       "We offer comprehensive Ultrasound Services for Abdomen, Prostate, Transvaginal Sonography (TVS), and Breast, providing patients with advanced imaging solutions for accurate diagnosis and personalized care. Our experienced team of sonographers and radiologists utilize state-of-the-art ultrasound technology to deliver high-quality imaging results, guiding effective treatment plans and promoting overall health and well-being.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    imageUrl: `${ultrasound}`,
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     category: { title: "Radiology", href: "#" },
@@ -74,8 +53,7 @@ const posts = [
     href: "#",
     description:
       "We offer state-of-the-art Positron Emission Tomography (PET) Scan Services, providing invaluable insights into the molecular and metabolic activity within the body. Our advanced PET imaging technology, coupled with a team of skilled professionals, ensures accurate and comprehensive diagnostic information to guide personalized patient care.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    imageUrl: `${petscan}`,
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     category: { title: "Radiology", href: "#" },
@@ -158,14 +136,14 @@ export default function Radiology() {
                                 <div className="mt-2 flex items-center gap-x-4 text-xs">
                                   <a
                                     href={post.category.href}
-                                    className="relative z-10 rounded-full bg-gray-50 font-medium text-gray-600 hover:bg-gray-100"
+                                    className="relative z-10 rounded-full bg-gray-50 font-medium text-gray-600 hover:bg-gray-100 no-underline"
                                   >
                                     {post.category.title}
                                   </a>
                                 </div>
                                 <div className="group relative">
                                   <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                                    <a href={post.href}>
+                                    <a href={post.href} className="no-underline">
                                       <span className="absolute inset-0" />
                                       {post.title}
                                     </a>

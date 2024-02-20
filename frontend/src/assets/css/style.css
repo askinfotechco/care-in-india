@@ -1019,7 +1019,8 @@ body {
 	border: 1px solid #bababa;
 }
 .service-box-item{
-	padding: 54px 47px 50px 47px;
+	padding: 3px 30px 10px 30px;
+	margin-top: 15px;
 	transform: scale(1);
     transition: all 0.6111s ease;
 }

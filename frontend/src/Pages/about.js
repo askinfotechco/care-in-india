@@ -337,7 +337,7 @@ export default function About() {
       {/* <!-- fun-facts-section-->
 
       <!-- form-section --> */}
-      <section>
+      {/* <section>
         <div className="w-100 float-left form-main-con" style={{marginTop: "100px"}}>
           <div className="container">
             <div className="text-center">
@@ -443,7 +443,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!-- form-section -->
       <!-- news-letter-section --> */}
       <section>

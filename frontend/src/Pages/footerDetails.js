@@ -24,7 +24,7 @@ export default function FooterDetails() {
                         width={150}
                       />
                     </figure>
-                    <p className="col-lg-11 col-md-7 pl-0 pr-0 ml-lg-0 mr-lg-0 ml-md-auto mr-md-auto">
+                    <p className="col-lg-9 col-md-7 pl-0 pr-0 ml-lg-0 mr-lg-0 ml-md-auto mr-md-auto">
                       Healthy. Everyday. We are Providing Best and Affordable Healthcare.
                     </p>
                     <div className="weight-social-list">
@@ -53,29 +53,34 @@ export default function FooterDetails() {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-3 col-md-4 col-sm-4 col-6">
+                <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                   <div className="weight-footer-content">
                     <h5>Important Link</h5>
                     <ul className="list-unstyled mb-0">
                       <li>
-                        <i className="fas fa-caret-right"></i>Talk to Doctor/
-                        Doctor Slots
+                        {/* <i className="fas fa-caret-right"></i> */}
+                        Talk to Doctor/ Doctor Slots
                       </li>
                       <li>
-                        <i className="fas fa-caret-right"></i>Radiology Service
+                      {/* <i className="fas fa-caret-right"></i> */}
+                      Radiology Service                        
                       </li>
                       <li>
-                        <i className="fas fa-caret-right"></i>Health Packages
+                        {/* <i className="fas fa-caret-right"></i> */}
+                        Health Packages
                       </li>
                       <li>
-                        <i className="fas fa-caret-right"></i>CII Health Buddy
+                        {/* <i className="fas fa-caret-right"></i> */}
+                        CII Health Buddy
                         Plan
                       </li>
                       <li>
-                        <i className="fas fa-caret-right"></i>Home Care Services
+                        {/* <i className="fas fa-caret-right"></i> */}
+                        Home Care Services
                       </li>
                       <li className="mb-0">
-                        <i className="fas fa-caret-right"></i>Medical Records
+                        {/* <i className="fas fa-caret-right"></i> */}
+                        Medical Records
                       </li>
                     </ul>
                   </div>
@@ -85,24 +90,29 @@ export default function FooterDetails() {
                     <h5>Support</h5>
                     <ul className="list-unstyled mb-0">
                       <li>
-                        <i className="fas fa-caret-right"></i>Contact Us
+                        {/* <i className="fas fa-caret-right"></i> */}
+                        Contact Us
                       </li>
                       <li>
-                        <i className="fas fa-caret-right"></i>Knowledge Base
+                        {/* <i className="fas fa-caret-right"></i> */}
+                        Knowledge Base
                       </li>
                       <li>
-                        <i className="fas fa-caret-right"></i>About Us
+                        {/* <i className="fas fa-caret-right"></i> */}
+                        About Us
                       </li>
                       <li>
-                        <i className="fas fa-caret-right"></i>Faq
+                        {/* <i className="fas fa-caret-right"></i> */}
+                        Faq
                       </li>
                       <li className="mb-0">
-                        <i className="fas fa-caret-right"></i>Partnerships
+                        {/* <i className="fas fa-caret-right"></i> */}
+                        Partnerships
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="col-lg-2 col-md-5 col-sm-5 col-12">
+                <div className="col-lg-3 col-md-5 col-sm-5 col-12">
                   <div className="weight-footer-content">
                     <h5>Get in Touch</h5>
                     <ul className="list-unstyled mb-0">

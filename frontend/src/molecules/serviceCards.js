@@ -9,13 +9,13 @@ export default function ServiceCards(props) {
   return (
     <div
       className={
-        props.rowClass || "col-lg-3 col-md-3 col-sm-6 pl-0 pr-0 border-right-0"
+        props.rowClass || "col-lg-3 col-md-2 col-sm-6 pl-0 pr-0 border-right-0"
       }
       onClick={handleClick}
     >
       <div className="service-box-item text-center">
         <figure>
-          <img src={props.img} alt={props.alt} className={props.class} />
+          <img src={props.img} alt={props.alt} className={props.class} style={{margin: "0 auto"}}/>
         </figure>
         <h5>{props.name}</h5>
         <span className="d-block">{props.description}</span>

@@ -160,14 +160,14 @@ export default function Dental() {
                                 <div className="mt-2 flex items-center gap-x-4 text-xs">
                                   <a
                                     href={post.category.href}
-                                    className="relative z-10 rounded-full bg-gray-50 font-medium text-gray-600 hover:bg-gray-100"
+                                    className="relative z-10 rounded-full bg-gray-50 font-medium text-gray-600 hover:bg-gray-100 no-underline"
                                   >
                                     {post.category.title}
                                   </a>
                                 </div>
                                 <div className="group relative">
                                   <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                                    <a href={post.href}>
+                                    <a href={post.href} className="no-underline">
                                       <span className="absolute inset-0" />
                                       {post.title}
                                     </a>
