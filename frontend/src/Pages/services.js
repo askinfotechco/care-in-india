@@ -10,10 +10,6 @@ import serviceBoxIcon6 from "../assets/image/service-box-icon13.png";
 import serviceBoxIcon7 from "../assets/image/service-box-icon14.png";
 import serviceBoxIcon8 from "../assets/image/service-box-icon15.png";
 import serviceBoxIcon9 from "../assets/image/service-box-icon16.png";
-//import serviceBoxBannerImg from "../assets/image/.service-box-banner-img.jpg";
-
-import smallLeftCurveImg from "../assets/image/small-left-curve-img.png";
-import smallRightCurveImg from "../assets/image/small-right-curve-img.png";
 import coreValueLeftImg from "../assets/image/core-value-left-img.png";
 import coreValueBoxIcon1 from "../assets/image/core-vaule-box-icon1.png";
 import coreValueBoxIcon2 from "../assets/image/core-vaule-box-icon2.png";
@@ -24,11 +20,6 @@ import clientLogoImg3 from "../assets/image/client-logo-img3.png";
 import clientLogoImg4 from "../assets/image/client-logo-img4.png";
 import clientLogoImg5 from "../assets/image/client-logo-img5.png";
 import clientLogoImg6 from "../assets/image/client-logo-img6.png";
-import footerLogo from "../assets/image/footer-logo.png";
-import paymentImg1 from "../assets/image/payment-img1.png";
-import paymentImg2 from "../assets/image/payment-img2.png";
-import paymentImg3 from "../assets/image/payment-img3.png";
-import paymentImg4 from "../assets/image/payment-img4.png";
 import { Link } from "react-router-dom";
 import FooterDetails from "./footerDetails";
 
@@ -170,7 +161,7 @@ export default function Services() {
       {/* <!-- service-box -->
       <!-- core-vaule-section --> */}
       <section>
-        <div className="w-100 float-left core-vaule-con service-page-vaule-con">
+        <div className="w-100 float-left core-vaule-con service-page-vaule-con bg-white">
           <div className="container">
             <div className="row">
               <div className="col-lg-6 col-md-6 d-md-flex align-items-md-end order-xl-0 order-lg-0 order-md-0 order-2">

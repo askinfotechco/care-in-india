@@ -44,6 +44,7 @@ import "../assets/css/style.css";
 import "../assets/css/super-classes.css";
 import NavBarTop from "../molecules/navBar";
 import FooterDetails from "./footerDetails";
+import Blog from "./blog";
 //import { Link } from "react-router-dom";
 
 function Home() {
@@ -72,7 +73,7 @@ function Home() {
                       <div className="banner-right-content text-white">
                         <h5>Healthy. Everyday.</h5>
                         <h1>We are Providing Best and Affordable Healthcare</h1>
-                        <a href="#contact-form" className="appointment-btn ">
+                        <a href="/team" className="appointment-btn ">
                           Make Appointment
                         </a>
                       </div>
@@ -98,6 +99,7 @@ function Home() {
                       src={featureBoxIcon1}
                       alt="feature-box-icon"
                       className="img-fluid"
+                      style={{ margin: "0 auto" }}
                     />
                   </figure>
                   <h5>Doctors</h5>
@@ -113,6 +115,7 @@ function Home() {
                       src={featureBoxIcon2}
                       alt="feature-box-icon"
                       className="img-fluid"
+                      style={{ margin: "0 auto" }}
                     />
                   </figure>
                   <h5>Hospitals</h5>
@@ -128,6 +131,7 @@ function Home() {
                       src={featureBoxIcon3}
                       alt="feature-box-icon"
                       className="img-fluid"
+                      style={{ margin: "0 auto" }}
                     />
                   </figure>
                   <h5>General Medicine</h5>
@@ -143,6 +147,7 @@ function Home() {
                       src={featureBoxIcon4}
                       alt="feature-box-icon"
                       className="img-fluid"
+                      style={{ margin: "0 auto" }}
                     />
                   </figure>
                   <h5>Hospice Care</h5>
@@ -160,6 +165,7 @@ function Home() {
                       src={featureBoxIcon5}
                       alt="feature-box-icon"
                       className="img-fluid"
+                      style={{ margin: "0 auto" }}
                     />
                   </figure>
                   <h5>Rehab</h5>
@@ -175,6 +181,7 @@ function Home() {
                       src={featureBoxIcon6}
                       alt="feature-box-icon"
                       className="img-fluid"
+                      style={{ margin: "0 auto" }}
                     />
                   </figure>
                   <h5>Dialysis Facilities</h5>
@@ -190,6 +197,7 @@ function Home() {
                       src={featureBoxIcon7}
                       alt="feature-box-icon"
                       className="img-fluid"
+                      style={{ margin: "0 auto" }}
                     />
                   </figure>
                   <h5>Health Schedule</h5>
@@ -205,6 +213,7 @@ function Home() {
                       src={featureBoxIcon8}
                       alt="feature-box-icon"
                       className="img-fluid"
+                      style={{ margin: "0 auto" }}
                     />
                   </figure>
                   <h5>Ambulance Call</h5>
@@ -261,7 +270,7 @@ function Home() {
                       </li>
                     </ul>
                   </div>
-                  <a href="#contact-form" className="appointment-btn">
+                  <a href="/team" className="appointment-btn">
                     Make Appointment
                   </a>
                 </div>
@@ -299,10 +308,6 @@ function Home() {
                 </div>
                 <div className="col-lg-6 col-md-6 col-12">
                   <div className="offer-right-con overlay-img">
-                    {/* <h2 className="text-white">Protective Gears<br>
-                              for <span>Covid</span> Protection<br>
-                              Don’t miss it!
-                           </h2> */}
                     <a href="contact.html" className="shope-btn">
                       Shop Now
                     </a>
@@ -332,7 +337,8 @@ function Home() {
               <div className="col-lg-6">
                 <div className="fun-facts-content">
                   <p className=" mb-0">
-                    Let the power of healing touch soothe your soul 🌿✨ #HealingTouch #InnerPeace #Wellness{" "}
+                    Let the power of healing touch soothe your soul 🌿✨
+                    #HealingTouch #InnerPeace #Wellness{" "}
                   </p>
                 </div>
               </div>
@@ -418,7 +424,7 @@ function Home() {
       </section>
       {/* <!-- fun-facts-section-->
       <!-- form-section --> */}
-      <section>
+      {/* <section>
         <div className="w-100 float-left form-main-con" id="contact-form">
           <div className="container">
             <div className="text-center">
@@ -529,278 +535,15 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
-      {/* <!-- form-section -->
-      <!-- slider-section --> */}
-      {/* <section>
-        <div className="w-100 float-left slider-con text-lg-left text-center">
-          <div className="container">
-            <div className="slider-inner-con banner-overlay-img">
-              <div className="row overlay-img">
-                <div className="col-lg-6 d-flex align-items-center">
-                  <div className="slider-left-con">
-                    <h2 className="text-white">
-                      What Our <br />
-                      Patients Say About Our Services
-                    </h2>
-                    <p className="mb-0">
-                      4.8 Overall Rating, Based
-                      <br />
-                      on 2500+ Reviews.
-                    </p>
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div
-                    id="carouselExampleControls"
-                    className="carousel slide"
-                    data-ride="carousel"
-                  >
-                    <div className="carousel-inner">
-                      <div className="carousel-item active">
-                        <div className="auther-con w-100 d-inline-block">
-                          <figure className="mb-0 d-inline-block">
-                            <img
-                              src={autherImg}
-                              alt="auther-img"
-                              className="img-fluid"
-                            />
-                          </figure>
-                          <div className="auther-title d-inline-block">
-                            <h4 className="text-white">Victoria Sullivan</h4>
-                            <p className="mb-0">Dental Patient</p>
-                          </div>
-                        </div>
-                        <p className="text-white mb-0">
-                          Seram ipsum dolor sit amet consectetur adipiscing elit
-                          sed do eius mod tempor incididunt aenean leo ligula
-                          portti tor eu consequat vitae eleifend tac phasellus
-                          viverra nulla utm etus varius laoreetuisque
-                          rutrumenean imperdiet tiam ultri cies nisi vel augues
-                          mod tempor in.
-                        </p>
-                      </div>
-                      <div className="carousel-item">
-                        <div className="auther-con w-100 d-inline-block">
-                          <figure className="mb-0 d-inline-block">
-                            <img
-                              src={autherImg}
-                              alt="auther-img"
-                              className="img-fluid"
-                            />
-                          </figure>
-                          <div className="auther-title d-inline-block">
-                            <h4 className="text-white">Victoria Sullivan</h4>
-                            <p className="mb-0">Dental Patient</p>
-                          </div>
-                        </div>
-                        <p className="text-white mb-0">
-                          Seram ipsum dolor sit amet consectetur adipiscing elit
-                          sed do eius mod tempor incididunt aenean leo ligula
-                          portti tor eu consequat vitae eleifend tac phasellus
-                          viverra nulla utm etus varius laoreetuisque
-                          rutrumenean imperdiet tiam ultri cies nisi vel augues
-                          mod tempor in.
-                        </p>
-                      </div>
-                      <div className="carousel-item">
-                        <div className="auther-con w-100 d-inline-block">
-                          <figure className="mb-0 d-inline-block">
-                            <img
-                              src={autherImg}
-                              alt="auther-img"
-                              className="img-fluid"
-                            />
-                          </figure>
-                          <div className="auther-title d-inline-block">
-                            <h4 className="text-white">Victoria Sullivan</h4>
-                            <p className="mb-0">Dental Patient</p>
-                          </div>
-                        </div>
-                        <p className="text-white mb-0">
-                          Seram ipsum dolor sit amet consectetur adipiscing elit
-                          sed do eius mod tempor incididunt aenean leo ligula
-                          portti tor eu consequat vitae eleifend tac phasellus
-                          viverra nulla utm etus varius laoreetuisque
-                          rutrumenean imperdiet tiam ultri cies nisi vel augues
-                          mod tempor in.
-                        </p>
-                      </div>
-                    </div>
-                    <a
-                      className="carousel-control-prev"
-                      href="#carouselExampleControls"
-                      role="button"
-                      data-slide="prev"
-                    >
-                      <span
-                        className="carousel-control-prev-icon"
-                        aria-hidden="true"
-                      ></span>
-                      <i className="fas fa-arrow-left"></i>
-                      <span className="sr-only">Previous</span>
-                    </a>
-                    <a
-                      className="carousel-control-next"
-                      href="#carouselExampleControls"
-                      role="button"
-                      data-slide="next"
-                    >
-                      <span
-                        className="carousel-control-next-icon"
-                        aria-hidden="true"
-                      ></span>
-                      <i className="fas fa-arrow-right"></i>
-                      <span className="sr-only">Next</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section> */}
-      {/* <!-- slider-section -->
+      {/* <!-- form-section -->
+      
       <!-- blog section --> */}
       <section>
-        <div className="w-100 float-left blog-con">
-          <div className="container">
-            <div className="text-center">
-              <h2>Our Latest News</h2>
-              <p>
-                Seram ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eius mod tempor incididunt aenean
-                <br />
-                leo ligula porttitor eu consequat vitae eleifend tac.
-              </p>
-            </div>
-            <div className="row">
-              <div className="col-lg-4 col-md-4">
-                <a href="single-post.html">
-                  <div className="blog-item">
-                    <figure className="mb-0">
-                      <img
-                        src={blogImg1}
-                        alt="blog-img"
-                        className="img-fluid"
-                      />
-                    </figure>
-                    <div className="blog-item-content">
-                      <div className="blog-item-auther-name">
-                        <span>By David William</span>
-                        <span>Dec 1, 2022</span>
-                      </div>
-                      <h4>Quis autem vea eum iure reprehenderit</h4>
-                      <p className="mb-0">
-                        Dolor repellendus temporibus aute quibu sdam officiis
-                        debitis rerum
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-4 col-md-4">
-                <a href="single-post.html">
-                  <div className="blog-item">
-                    <figure className="mb-0">
-                      <img
-                        src={blogImg2}
-                        alt="blog-img"
-                        className="img-fluid"
-                      />
-                    </figure>
-                    <div className="blog-item-content">
-                      <div className="blog-item-auther-name">
-                        <span>By David William</span>
-                        <span>Dec 1, 2022</span>
-                      </div>
-                      <h4>Quis autem vea eum iure reprehenderit</h4>
-                      <p className="mb-0">
-                        Dolor repellendus temporibus aute quibu sdam officiis
-                        debitis rerum
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-4 col-md-4">
-                <a href="single-post.html">
-                  <div className="blog-item mb-0">
-                    <figure className="mb-0">
-                      <img
-                        src={blogImg3}
-                        alt="blog-img"
-                        className="img-fluid"
-                      />
-                    </figure>
-                    <div className="blog-item-content">
-                      <div className="blog-item-auther-name">
-                        <span>By David William</span>
-                        <span>Dec 1, 2022</span>
-                      </div>
-                      <h4>Quis autem vea eum iure reprehenderit</h4>
-                      <p className="mb-0">
-                        Dolor repellendus temporibus aute quibu sdam officiis
-                        debitis rerum
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Blog />
       </section>
       {/* <!-- blog section -->
-      <!-- mobile-app-section --> */}
-      {/* <section>
-        <div className="w-100 float-left mobile-app-con">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-6 col-md-6 order-xl-0 order-lg-0 order-md-0 order-2">
-                <div className="mobile-app-left-con position-relative text-center">
-                  <figure className="mb-0">
-                    <img
-                      src={mobileImg}
-                      alt="mobile-img"
-                      className="img-fluid human-img"
-                    />
-                  </figure>
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-6 text-xl-left text-lg-left text-md-left text-center">
-                <div className="mobile-app-right-con">
-                  <h2>Download the medtexh Mobile App</h2>
-                  <p>
-                    Seram ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eius mod tempor incididunt enean leo ligula porttitor.
-                  </p>
-                  <p>
-                    Eu consequat vitae eleifend ac enim aliqu am lorem ante
-                    dapibus in viverra quis feugiata tellus.
-                  </p>
-                  <div className="mobile-app-btn">
-                    <a
-                      href="https://play.google.com/store/apps"
-                      className="appointment-btn"
-                    >
-                      <i className="fab fa-google-play text-white"></i>Goolge
-                      Play
-                    </a>
-                    <a
-                      href="https://www.apple.com/app-store/"
-                      className="appointment-btn"
-                    >
-                      <i className="fab fa-app-store text-white"></i>App Store
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/* <!-- mobile-app-section -->
+
       <!-- news-letter-section --> */}
       {/* <section>
         <div className="w-100 float-left news-letter-con">

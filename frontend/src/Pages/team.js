@@ -86,6 +86,13 @@ export default function Team() {
       <section>
         <div className="w-100 float-left professional-con">
           <div className="container">
+          <div className="mx-auto max-w-2xl sm:text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-black-900 sm:text-4xl">Meet our Doctors</h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the
+            best healthcare facilities.
+          </p>
+        </div>
             <div className="professional-box">
               <div className="row">
                 {doctorDetails.map((ele) => {
@@ -98,7 +105,7 @@ export default function Team() {
       </section>
       {/* <!-- professional-section-->
       <!-- form-section --> */}
-      <section>
+      {/* <section>
         <div className="w-100 float-left form-main-con">
           <div className="container">
             <div className="text-center">
@@ -207,7 +214,7 @@ export default function Team() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!-- form-section -->
       <!-- logo-section --> */}
       <div className="w-100 float-left logo-con mt-5">

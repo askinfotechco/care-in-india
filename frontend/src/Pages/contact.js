@@ -84,7 +84,7 @@ export default function Contact() {
       {/* <!-- header-and-banner-section -->
 <!-- Schedule-section --> */}
       <section>
-        <div className="w-100 float-left Schedule-con">
+        <div className="w-100 float-left Schedule-con bg-white">
           <div className="wrapper">
             <div className="Schedule-heading text-center">
               <h2>
@@ -101,9 +101,10 @@ export default function Contact() {
                         src={scheduleIcon1}
                         alt="Schedule-icon"
                         className="img-fluid"
+                        style={{margin: "0 auto"}}
                       />
                     </figure>
-                    <div className="Schedule-box-title float-md-left overlay-img">
+                    <div className="Schedule-box-title float-md-left overlay-img mt-3">
                       <h5>Email</h5>
                       <span className="d-block">pawan@careinindia.co.in</span>
                       <span className="d-block">help@careinindia.co.in</span>
@@ -117,9 +118,10 @@ export default function Contact() {
                         src={scheduleIcon2}
                         alt="Schedule-icon"
                         className="img-fluid"
+                        style={{margin: "0 auto"}}
                       />
                     </figure>
-                    <div className="Schedule-box-title float-md-left overlay-img">
+                    <div className="Schedule-box-title float-md-left overlay-img mt-3">
                       <h5>Location</h5>
                       <span className="d-block">
                         FCA 3165, Street 4, Block A, SGM Nagar
@@ -136,9 +138,10 @@ export default function Contact() {
                         src={scheduleIcon3}
                         alt="Schedule-icon"
                         className="img-fluid"
+                        style={{margin: "0 auto"}}
                       />
                     </figure>
-                    <div className="Schedule-box-title float-md-left overlay-img">
+                    <div className="Schedule-box-title float-md-left overlay-img mt-3">
                       <h5>Book your Appointment</h5>
                       <span className="d-block">+91-9971007292</span>
                       <span className="d-block">+91-9971007292</span>
@@ -152,9 +155,10 @@ export default function Contact() {
                         src={scheduleIcon4}
                         alt="Schedule-icon"
                         className="img-fluid"
+                        style={{margin: "0 auto"}}
                       />
                     </figure>
-                    <div className="Schedule-box-title float-md-left overlay-img">
+                    <div className="Schedule-box-title float-md-left overlay-img mt-3">
                       <h5>Working Hours</h5>
                       <span className="d-block">
                         Monday - Friday: 8AM - 9PM
