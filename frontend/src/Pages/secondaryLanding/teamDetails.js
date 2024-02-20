@@ -61,7 +61,16 @@ export default function TeamDetails() {
       <section>
         <div className="team-detail-con text-lg-left text-center w-100 float-left">
           <div className="container">
-            <div className="row">
+            <div
+              className="row"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
               <div className="col-lg-7 order-lg-0 order-2">
                 <div
                   className="team-member-detail wow slideInLeft"

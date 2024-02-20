@@ -7,6 +7,8 @@ import axios from "axios";
 import { URL } from "../connection";
 import VideoCall from "../Pages/videoCall";
 import { Navigate, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function OnlineBookingModal(props) {
   const [show, setShow] = useState(false);
@@ -43,6 +45,7 @@ function OnlineBookingModal(props) {
       doctorEmail: props.doctorDetails.email,
       day: getDayName(new Date(formData.selectedDate)),
       date: formData.selectedDate,
+      mode: "online",
     };
     const formDataToSend = await JSON.stringify(dataToSend);
     console.log(formDataToSend);
@@ -61,7 +64,15 @@ function OnlineBookingModal(props) {
         }
       );
       console.log(response.data);
+      toast.success(response.data?.msg, {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
     } catch (err) {
+      toast.error("Some error please contact admin", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
       console.log("request not wokring", err);
     } finally {
       setLoading(false);
