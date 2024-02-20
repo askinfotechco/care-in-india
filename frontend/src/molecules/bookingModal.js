@@ -5,6 +5,8 @@ import TimeSelector from "./timeSelector";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { URL } from "../connection";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function BookingModal(props) {
   const [show, setShow] = useState(false);
@@ -40,6 +42,7 @@ function BookingModal(props) {
       doctorEmail: props.doctorDetails.email,
       day: getDayName(new Date(formData.selectedDate)),
       date: formData.selectedDate,
+      mode: "offline",
     };
     const formDataToSend = await JSON.stringify(dataToSend);
     console.log(formDataToSend);
@@ -58,7 +61,15 @@ function BookingModal(props) {
         }
       );
       console.log(response.data);
+      toast.success(response.data?.msg, {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
     } catch (err) {
+      toast.error("Some error please contact admin", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
       console.log("request not wokring", err);
     } finally {
       setLoading(false);
@@ -212,7 +223,7 @@ function BookingModal(props) {
     <div>
       {/* Button to toggle modal */}
       <Button variant="primary" onClick={handleShow}>
-        Book Now
+        Schedule a visit
       </Button>
 
       {/* Modal */}
