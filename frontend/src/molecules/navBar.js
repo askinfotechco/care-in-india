@@ -103,7 +103,7 @@ export default function NavBarTop() {
                     <div className="flex-shrink-0 mr-5">
                       <button
                         type="button"
-                        className="relative inline-flex items-center gap-x-1.5 rounded-md bg-blue-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-900"
+                        className="relative inline-flex items-center gap-x-1.5 rounded-md bg-blue-900 px-3 py-2 text-lg font-semibold text-white shadow-sm hover:bg-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-900"
                       >
                         <LoginIcon
                           className="-ml-0.5 h-5 w-5"
@@ -115,7 +115,7 @@ export default function NavBarTop() {
                     <div className="flex-shrink-0">
                       <button
                         type="button"
-                        className="relative inline-flex items-center gap-x-1.5 rounded-md bg-blue-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-900"
+                        className="relative inline-flex items-center gap-x-1.5 rounded-md bg-blue-900 px-3 py-2 text-lg font-semibold text-white shadow-sm hover:bg-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-900"
                       >
                         <LogoutIcon
                           className="-ml-0.5 h-5 w-5"
