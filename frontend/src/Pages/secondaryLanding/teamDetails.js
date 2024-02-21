@@ -7,6 +7,7 @@ import { useCookies } from "react-cookie";
 import FooterDetails from "../footerDetails";
 import BookingModal from "../../molecules/bookingModal";
 import OnlineBookingModal from "../../molecules/onlineBookingModal";
+import HTMLReactParser from "html-react-parser";
 
 export default function TeamDetails() {
   const [selectedOption, setSelectedOption] = useState("All");
@@ -94,7 +95,7 @@ export default function TeamDetails() {
                 >
                   <h5>{doctorDetails.specialization}</h5>
                   <h2>{`Dr ${doctorDetails.firstname} ${doctorDetails.lastname}`}</h2>
-                  <p>{doctorDetails.about}</p>
+                  {HTMLReactParser(`${doctorDetails.about}`)}
                   {/* <p>
                     Repellendus temporibus autem quibusdam et aut officiis
                     debitis aut rerum necessitatibus saepe eveniet ut et voluta

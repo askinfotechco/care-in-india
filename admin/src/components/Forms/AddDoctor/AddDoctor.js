@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import axios from "axios";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -45,6 +45,8 @@ import {
   randomId,
   randomArrayItem,
 } from "@mui/x-data-grid-generator";
+import JoditEditor from "jodit-react";
+import HTMLReactParser from "html-react-parser";
 
 const day = [
   "Monday",
@@ -166,6 +168,11 @@ const AddDoctor = (props) => {
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
   const [rows, setRows] = useState(initialRows);
   const [rowModesModel, setRowModesModel] = useState({});
+  const editor = useRef(null);
+  const [content, setContent] = useState("");
+  const config = {
+		placeholder: 'Start typing...',
+	};
   // const [doctorSlots, setDoctorSlots] = useState([]);
   // var doctorSlots = [];
 
@@ -199,10 +206,11 @@ const AddDoctor = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    formData.about=content;
+    // setFormData({...formData, about: content});
     try {
       const formDataToSend = await JSON.stringify(formData);
-      console.log(formDataToSend);
+      // console.log(formDataToSend);
       await axios.post(`${URL}/api/doctor/add`, formDataToSend, {
         headers: {
           Authorization: "Bearer " + cookies.jwt,
@@ -219,15 +227,15 @@ const AddDoctor = (props) => {
 
   const processDoctorSlotArray = (slotArray) => {
     var doctorSlots = {
-        day: slotArray.day,
-        status: slotArray.status == "Active" ? true : false,
-        availableTiming: {
-          fromHour: slotArray.fromHour,
-          fromMinute: slotArray.fromMinute,
-          toHour: slotArray.toHour,
-          toMinute: slotArray.toMinute,
-        }
-      };
+      day: slotArray.day,
+      status: slotArray.status == "Active" ? true : false,
+      availableTiming: {
+        fromHour: slotArray.fromHour,
+        fromMinute: slotArray.fromMinute,
+        toHour: slotArray.toHour,
+        toMinute: slotArray.toMinute,
+      },
+    };
     formData.doctorSlotArray.push(doctorSlots);
   };
 
@@ -494,8 +502,8 @@ const AddDoctor = (props) => {
               </Box>
             </Stack>
             <Stack>
-              <Box display={"flex"} gap={5}>
-                <TextField
+              <Box display={"flex"} gap={5} marginTop={5}>
+                {/* <TextField
                   sx={{ marginTop: "30px", width: "690px" }}
                   label="About Me"
                   multiline
@@ -504,6 +512,13 @@ const AddDoctor = (props) => {
                   variant="outlined"
                   value={formData.about}
                   onChange={handleChange}
+                /> */}
+                <JoditEditor
+                  ref={editor}
+                  value={content}
+                  config={config}
+                  onBlur={newContent => setContent(newContent)}
+                  onChange={newContent => {}}
                 />
               </Box>
             </Stack>
