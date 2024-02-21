@@ -256,7 +256,7 @@ const getActiveDoctorsCount = async (req, res) => {
 };
 
 const bookAppointment = async (req, res) => {
-  const { patientEmail, doctorEmail, day, date, mode } = req.body;
+  const { patientEmail, doctorEmail, day, date, mode, message } = req.body;
   // console.log(encodePass)
   const appointmentDetails = {
     patientEmail: patientEmail,
@@ -264,6 +264,7 @@ const bookAppointment = async (req, res) => {
     day: day,
     date: date,
     mode: mode,
+    message: message,
   };
 
   try {

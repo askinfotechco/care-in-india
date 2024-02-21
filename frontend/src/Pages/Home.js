@@ -93,20 +93,22 @@ function Home() {
           <div className="container">
             <div className="row bg-white">
               <div className="col-lg-3 col-md-3 col-sm-6  pl-0 pr-0">
-                <div className="feature-box-item ">
-                  <figure>
-                    <img
-                      src={featureBoxIcon1}
-                      alt="feature-box-icon"
-                      className="img-fluid"
-                      style={{ margin: "0 auto" }}
-                    />
-                  </figure>
-                  <h5>Doctors</h5>
-                  <p className="mb-0">
-                    Lorem ipsum dolor sit amet consectetuer adipi.
-                  </p>
-                </div>
+                <a style={{ textDecoration: "none" }} href={"/team"}>
+                  <div className="feature-box-item">
+                    <figure>
+                      <img
+                        src={featureBoxIcon1}
+                        alt="feature-box-icon"
+                        className="img-fluid"
+                        style={{ margin: "0 auto" }}
+                      />
+                    </figure>
+                    <h5>Doctors</h5>
+                    <p className="mb-0">
+                      Lorem ipsum dolor sit amet consectetuer adipi.
+                    </p>
+                  </div>
+                </a>
               </div>
               <div className="col-lg-3 col-md-3 col-sm-6 pl-0 pr-0">
                 <div className="feature-box-item ">
@@ -309,7 +311,7 @@ function Home() {
                 <div className="col-lg-6 col-md-6 col-12">
                   <div className="offer-right-con overlay-img">
                     <a href="contact.html" className="shope-btn">
-                      Shop Now
+                      Book Your Health Checkup
                     </a>
                   </div>
                 </div>
