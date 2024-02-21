@@ -1,5 +1,6 @@
 const doctorDetailsModel = require("../models/doctorDetails.model");
 const appointment = require("../models/appointment.model");
+const userModel = require("../models/user.model");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -29,7 +30,7 @@ const addDoctor = async (req, res) => {
   } = req.body;
   const encodePass = await bcrypt.hash(password, 10);
   // console.log(encodePass)
-  const userObj = {
+  const docObj = {
     firstname: firstname,
     lastname: lastname,
     gender: gender,
@@ -49,6 +50,20 @@ const addDoctor = async (req, res) => {
     doctorSlotArray: doctorSlotArray,
   };
 
+  const userObj = {
+    firstname: firstname,
+    lastname: lastname,
+    gender: gender,
+    password: encodePass,
+    email: email,
+    address: address,
+    country: country,
+    city: city,
+    pincode: pincode,
+    phone: phone,
+    role: "doctor",
+  };
+
   try {
     const emailChecking = await doctorDetailsModel.find({ email });
     //console.log(emailChecking[0].email, email);
@@ -57,7 +72,8 @@ const addDoctor = async (req, res) => {
         msg: `${email} already exist`,
       });
     } else {
-      let data = await doctorDetailsModel(userObj).save();
+      let docData = await doctorDetailsModel(docObj).save();
+      let userData = await userModel(userObj).save();
       // console.log(userObj);
       return res.status(200).json({
         msg: `${email} is registerd successfully`,

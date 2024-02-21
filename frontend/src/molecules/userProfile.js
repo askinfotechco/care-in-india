@@ -15,7 +15,7 @@ const UserProfile = (props) => {
   };
 
   useEffect(() => {
-    setName(sessionStorage.getItem("name"));
+    setName(sessionStorage.getItem("fullName"));
     setEmail(sessionStorage.getItem("email"));
   });
 

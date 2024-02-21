@@ -86,6 +86,7 @@ const userLogin = async (req, res) => {
           token: token,
           username: data.email,
           role: data.role,
+          name: `${data.firstname} ${data.lastname}`,
         });
       }
       return res.json({
@@ -246,7 +247,7 @@ const updateUserDetails = async (req, res) => {
 
   session.withTransaction(async () => {
     try {
-      const userProfile = await userModel.find({email: req.body.email});
+      const userProfile = await userModel.find({ email: req.body.email });
       if (userProfile) {
         userProfile.firstname = firstname;
         userProfile.lastname = lastname;
@@ -261,9 +262,7 @@ const updateUserDetails = async (req, res) => {
 
         var userDetails = new userModel(userProfile);
         await userDetails.save();
-        res
-          .status(201)
-          .json({ message: "User details updated successfully" });
+        res.status(201).json({ message: "User details updated successfully" });
       } else {
         res.status(404).send({
           message: "User details Not Found!",

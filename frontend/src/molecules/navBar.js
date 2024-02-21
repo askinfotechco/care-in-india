@@ -41,6 +41,9 @@ export default function NavBarTop() {
 
   useEffect(() => {
     setUserEmail(sessionStorage.getItem("email"));
+    // if(sessionStorage.getItem("role") === "doctor"){
+    //   navigation = [...navigation, {name: "Appointment", href: "/contact", current: false}]
+    // }
   }, [sessionStorage]);
 
   const handleLogout = () => {
@@ -49,6 +52,8 @@ export default function NavBarTop() {
     sessionStorage.removeItem("jwt");
     sessionStorage.removeItem("email");
     sessionStorage.removeItem("name");
+    sessionStorage.removeItem("fullName");
+    sessionStorage.removeItem("role");
     setUserEmail(sessionStorage.getItem("email"));
     console.log("Logging out...");
   };
@@ -109,7 +114,12 @@ export default function NavBarTop() {
                           className="-ml-0.5 h-5 w-5"
                           aria-hidden="true"
                         />
-                        <Link to={"/signin"} className="text-base: no-underline text-white">{"Login"}</Link>
+                        <Link
+                          to={"/signin"}
+                          className="text-base: no-underline text-white"
+                        >
+                          {"Login"}
+                        </Link>
                       </button>
                     </div>
                     <div className="flex-shrink-0">
@@ -121,7 +131,12 @@ export default function NavBarTop() {
                           className="-ml-0.5 h-5 w-5"
                           aria-hidden="true"
                         />
-                        <Link to={"/signup"} className="text-base: no-underline text-white">{"Register"}</Link>
+                        <Link
+                          to={"/signup"}
+                          className="text-base: no-underline text-white"
+                        >
+                          {"Register"}
+                        </Link>
                       </button>
                     </div>
                   </>
