@@ -43,6 +43,7 @@ function BookingModal(props) {
       day: getDayName(new Date(formData.selectedDate)),
       date: formData.selectedDate,
       mode: "offline",
+      message: formData.message,
     };
     const formDataToSend = await JSON.stringify(dataToSend);
     console.log(formDataToSend);
@@ -110,8 +111,22 @@ function BookingModal(props) {
       const dateString = date.toISOString().split("T")[0];
       console.log(props);
 
+      const dateDisabled =
+        props.doctorDetails.doctorSlotArray[
+          findIndexByProperty(
+            props.doctorDetails.doctorSlotArray,
+            "day",
+            getDayName(new Date(dateString))
+          )
+        ]?.status;
+
+      // console.log(dateDisbaled);
       options.push(
-        <option key={dateString} value={dateString} disabled={date <= today}>
+        <option
+          key={dateString}
+          value={dateString}
+          disabled={date <= today || !dateDisabled}
+        >
           {dateString}
         </option>
       );
@@ -177,12 +192,18 @@ function BookingModal(props) {
                 {disablePastDays()}
               </Form.Control>
             </Form.Group>
-            <div>{`${formData.selectedDate} - ${getDayName(
-              new Date(formData.selectedDate)
-            )}`}</div>
-            <div>{`Available Timing - ${getSlotArray(
-              formData.selectedDate
-            )}`}</div>
+            <div>
+              {formData.selectedDate
+                ? `${formData.selectedDate} - ${getDayName(
+                    new Date(formData.selectedDate)
+                  )}`
+                : ""}
+            </div>
+            <div>
+              {formData.selectedDate
+                ? `Available Timing - ${getSlotArray(formData.selectedDate)}`
+                : ""}
+            </div>
             {/* <Form.Group>
               <div>
                 <label htmlFor="date">Select a date:</label>
@@ -202,7 +223,7 @@ function BookingModal(props) {
         return (
           <>
             <Form.Group controlId="formMessage">
-              <Form.Label>Message</Form.Label>
+              <Form.Label>Describe more on your issue</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={3}

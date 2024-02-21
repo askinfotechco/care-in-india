@@ -52,6 +52,22 @@ export default function TeamDetails() {
       <div className="w-100 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
         <div className="container">
           <NavBarTop />
+          <section>
+            <div className="w-100 float-left generic-banner-con text-xl-left text-lg-left text-center">
+              <div className="container">
+                <div className="generic-banner-content text-white text-center">
+                  <h1>Our Team</h1>
+                  <p>
+                    We’re a dynamic group of individuals who are passionate
+                    about what
+                    <br />
+                    we do and dedicated to delivering the best results for our
+                    clients.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
       {/* <!-- top-bar-section-->
