@@ -47,6 +47,8 @@ export default function Example() {
             sessionStorage.setItem("jwt", response.data.token);
             sessionStorage.setItem("email", userDetails.email);
             sessionStorage.setItem("name", response.data.username);
+            sessionStorage.setItem("role", response.data.role);
+            sessionStorage.setItem("fullName", response.data.name);
             // onLogin();
             console.log(response.data);
             navigate("/", { replace: true });
