@@ -46,7 +46,6 @@ import {
   randomArrayItem,
 } from "@mui/x-data-grid-generator";
 import JoditEditor from "jodit-react";
-import HTMLReactParser from "html-react-parser";
 
 const day = [
   "Monday",
@@ -74,7 +73,6 @@ const hour = [
 ];
 const minute = ["0", "30"];
 const status = ["Active", "Inactive"];
-const doctorSlots = [];
 
 const initialRows = [
   {
@@ -190,6 +188,8 @@ const AddDoctor = (props) => {
     regId: "",
     about: "",
     doctorSlotArray: [],
+    salutation: "",
+    title: "",
   });
 
   const handleChange = (e) => {
@@ -407,6 +407,29 @@ const AddDoctor = (props) => {
           <Box>
             <Stack>
               <Box display={"flex"} gap={5}>
+                <FormControl sx={{ width: "84px" }}>
+                  <FormLabel sx={{ fontSize: "12px" }}>Salutation</FormLabel>
+                  <Select
+                    variant="outlined"
+                    placeholder="salutation"
+                    value={formData.salutation}
+                    label="Salutation"
+                    onChange={handleChange}
+                    name="salutation"
+                  >
+                    <MenuItem value={"mr"}>Mr</MenuItem>
+                    <MenuItem value={"mrs"}>Mrs</MenuItem>
+                    <MenuItem value={"miss"}>Miss</MenuItem>
+                  </Select>
+                </FormControl>
+                <TextField
+                  sx={{ marginTop: "15px", width: "210px" }}
+                  label="Registration ID"
+                  name="regId"
+                  variant="outlined"
+                  value={formData.regId}
+                  onChange={handleChange}
+                />
                 <TextField
                   sx={{ marginTop: "15px", width: "330px" }}
                   label="Firstname"
@@ -427,7 +450,65 @@ const AddDoctor = (props) => {
                   value={formData.lastname}
                   onChange={handleChange}
                 />
-                <FormControl>
+              </Box>
+            </Stack>
+            <Stack>
+              <Box display={"flex"} gap={5}>
+                {/* <FormControl>
+                  <FormLabel sx={{ fontSize: "12px" }}>Role</FormLabel>
+                  <Select
+                    variant="outlined"
+                    placeholder="Role"
+                    value={formData.role}
+                    label="Type Of Role"
+                    onChange={handleChange}
+                    name="role"
+                    defaultValue="doctor"
+                    disabled="true"
+                  >
+                    <MenuItem value={"doctor"}>Doctor</MenuItem>
+                  </Select>
+                </FormControl> */}
+                <TextField
+                  sx={{ marginTop: "30px", width: "330px" }}
+                  label="Designation"
+                  name="title"
+                  variant="outlined"
+                  value={formData.title}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "30px", width: "330px" }}
+                  label="Email Address"
+                  name="email"
+                  variant="outlined"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+                <TextField
+                  sx={{ marginTop: "30px", width: "300px" }}
+                  label="Password"
+                  type="password"
+                  name="password"
+                  variant="outlined"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
+              </Box>
+            </Stack>
+            <Stack>
+              <Box>              
+                <TextField
+                  sx={{ marginTop: "30px", width: "330px" }}
+                  label="Specialization"
+                  multiline
+                  maxRows={Infinity}
+                  name="specialization"
+                  variant="outlined"
+                  value={formData.specialization}
+                  onChange={handleChange}
+                />
+                <FormControl sx={{ marginTop: "30px", marginLeft: "45px" }}>
                   <FormLabel id="demo-row-radio-buttons-group-label">
                     Gender
                   </FormLabel>
@@ -458,50 +539,6 @@ const AddDoctor = (props) => {
               </Box>
             </Stack>
             <Stack>
-              <Box display={"flex"} gap={5}>
-                {/* <FormControl>
-                  <FormLabel sx={{ fontSize: "12px" }}>Role</FormLabel>
-                  <Select
-                    variant="outlined"
-                    placeholder="Role"
-                    value={formData.role}
-                    label="Type Of Role"
-                    onChange={handleChange}
-                    name="role"
-                    defaultValue="doctor"
-                    disabled="true"
-                  >
-                    <MenuItem value={"doctor"}>Doctor</MenuItem>
-                  </Select>
-                </FormControl> */}
-                <TextField
-                  sx={{ marginTop: "30px", width: "330px" }}
-                  label="Registration ID"
-                  name="regId"
-                  variant="outlined"
-                  value={formData.regId}
-                  onChange={handleChange}
-                />
-                <TextField
-                  sx={{ marginTop: "30px", width: "330px" }}
-                  label="Email Address"
-                  name="email"
-                  variant="outlined"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-                <TextField
-                  sx={{ marginTop: "30px", width: "300px" }}
-                  label="Password"
-                  type="password"
-                  name="password"
-                  variant="outlined"
-                  value={formData.password}
-                  onChange={handleChange}
-                />
-              </Box>
-            </Stack>
-            <Stack>
               <Box display={"flex"} gap={5} marginTop={5}>
                 {/* <TextField
                   sx={{ marginTop: "30px", width: "690px" }}
@@ -524,16 +561,7 @@ const AddDoctor = (props) => {
             </Stack>
             <Stack>
               <Box display={"flex"} gap={5}>
-                <TextField
-                  sx={{ marginTop: "30px", width: "330px" }}
-                  label="Specialization"
-                  multiline
-                  maxRows={Infinity}
-                  name="specialization"
-                  variant="outlined"
-                  value={formData.specialization}
-                  onChange={handleChange}
-                />
+                
                 <TextField
                   sx={{ marginTop: "30px", width: "330px" }}
                   label="Languages Known"
@@ -602,6 +630,7 @@ const AddDoctor = (props) => {
                   "& .textPrimary": {
                     color: "text.primary",
                   },
+                  marginTop: "30px",
                 }}
               >
                 <DataGrid

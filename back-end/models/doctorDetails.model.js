@@ -110,6 +110,14 @@ const DoctorDetailsSchema = new Schema(
       required: false,
     },
     doctorSlotArray: [doctorSlot],
+    salutation: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    }
   },
   {
     timestamps: true,
