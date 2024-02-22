@@ -27,6 +27,8 @@ const addDoctor = async (req, res) => {
     regId,
     about,
     doctorSlotArray,
+    salutation,
+    title,
   } = req.body;
   const encodePass = await bcrypt.hash(password, 10);
   // console.log(encodePass)
@@ -48,6 +50,8 @@ const addDoctor = async (req, res) => {
     regId: regId,
     about: about,
     doctorSlotArray: doctorSlotArray,
+    salutation: salutation,
+    title: title,
   };
 
   const userObj = {
