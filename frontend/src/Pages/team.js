@@ -1,25 +1,11 @@
 import React, { useEffect, useState } from "react";
 import NavBarTop from "../molecules/navBar";
-import professionalBoxImg1 from "../assets/image/professional-box-img1.png";
-import professionalBoxImg2 from "../assets/image/professional-box-img2.png";
-import professionalBoxImg3 from "../assets/image/professional-box-img3.png";
-import professionalBoxImg4 from "../assets/image/professional-box-img4.png";
-import professionalBoxImg5 from "../assets/image/professional-box-img5.png";
-import professionalBoxImg6 from "../assets/image/professional-box-img6.png";
-import smallLeftCurveImg from "../assets/image/small-left-curve-img.png";
-import smallRightCurveImg from "../assets/image/small-right-curve-img.png";
-import formLeftImg from "../assets/image/form-left-img.png";
 import clientLogoImg1 from "../assets/image/client-logo-img1.png";
 import clientLogoImg2 from "../assets/image/client-logo-img2.png";
 import clientLogoImg3 from "../assets/image/client-logo-img3.png";
 import clientLogoImg4 from "../assets/image/client-logo-img4.png";
 import clientLogoImg5 from "../assets/image/client-logo-img5.png";
 import clientLogoImg6 from "../assets/image/client-logo-img6.png";
-import footerLogo from "../assets/image/footer-logo.png";
-import paymentImg1 from "../assets/image/payment-img1.png";
-import paymentImg2 from "../assets/image/payment-img2.png";
-import paymentImg3 from "../assets/image/payment-img3.png";
-import paymentImg4 from "../assets/image/payment-img4.png";
 import axios from "axios";
 import { URL } from "../connection";
 import DoctorsCard from "../molecules/doctorsCard";
@@ -85,11 +71,11 @@ export default function Team() {
             {/* <!-- navbar-end -->
                <!-- banner-start --> */}
             <section>
-              <div className="w-100 float-left generic-banner-con text-xl-left text-lg-left text-center">
+              <div className="w-100 float-left text-xl-left text-lg-left text-center mt-24">
                 <div className="container">
-                  <div className="generic-banner-content text-white text-center">
-                    <h1>Our Team</h1>
-                    <p>
+                  <div className="text-white text-center">
+                    <h1>Find Doctors</h1>
+                    <p className="text-black">
                       We’re a dynamic group of individuals who are passionate
                       about what
                       <br />
@@ -109,19 +95,10 @@ export default function Team() {
       <section>
         <div className="w-100 float-left professional-con">
           <div className="container">
-            <div className="mx-auto max-w-2xl sm:text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-black-900 sm:text-4xl">
-                Meet our Doctors
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                We’re a dynamic group of individuals who are passionate about
-                what we do and dedicated to delivering the best healthcare
-                facilities.
-              </p>
-            </div>
             <ButtonGroup
               color="primary"
               aria-label="outlined primary button group"
+              style={{display: "flex", justifyContent: "center"}}
             >
               <Button
                 onClick={() => handlePillSelect("all")}
@@ -163,7 +140,7 @@ export default function Team() {
               </Button>
               {/* Add more buttons for other categories */}
             </ButtonGroup>
-            <div className="professional-box">
+            <div className="professional-box mt-10">
               <div className="row">
                 {filteredCards?.map((ele) => {
                   return <DoctorsCard data={ele} />;
