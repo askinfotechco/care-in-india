@@ -24,6 +24,13 @@ import axios from "axios";
 import { URL } from "../connection";
 import DoctorsCard from "../molecules/doctorsCard";
 import FooterDetails from "./footerDetails";
+import {
+  Button,
+  ButtonGroup,
+  Card,
+  CardContent,
+  Typography,
+} from "@material-ui/core";
 
 export default function Team() {
   const [selectedOption, setSelectedOption] = useState("All");
@@ -31,6 +38,8 @@ export default function Team() {
   const [doctorDetails, setDoctorDetails] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedPill, setSelectedPill] = useState("all");
+  const [filteredCards, setFilteredCards] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,6 +48,7 @@ export default function Team() {
         const response = await axios.get(`${URL}/api/doctor/`);
         console.log(response.data);
         setDoctorDetails(response.data.allUser);
+        setFilteredCards(response.data.allUser);
       } catch (err) {
         console.log("request not wokring", err);
       } finally {
@@ -49,6 +59,19 @@ export default function Team() {
   }, []);
 
   console.log(doctorDetails);
+  console.log(filteredCards);
+
+  const handlePillSelect = (pill) => {
+    setSelectedPill(pill);
+    if (pill === "all") {
+      setFilteredCards(doctorDetails);
+    } else {
+      const filtered = doctorDetails.filter(
+        (card) => card.specialization === pill
+      );
+      setFilteredCards(filtered);
+    }
+  };
 
   return (
     <div>
@@ -86,16 +109,63 @@ export default function Team() {
       <section>
         <div className="w-100 float-left professional-con">
           <div className="container">
-          <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-black-900 sm:text-4xl">Meet our Doctors</h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the
-            best healthcare facilities.
-          </p>
-        </div>
+            <div className="mx-auto max-w-2xl sm:text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-black-900 sm:text-4xl">
+                Meet our Doctors
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                We’re a dynamic group of individuals who are passionate about
+                what we do and dedicated to delivering the best healthcare
+                facilities.
+              </p>
+            </div>
+            <ButtonGroup
+              color="primary"
+              aria-label="outlined primary button group"
+            >
+              <Button
+                onClick={() => handlePillSelect("all")}
+                variant={selectedPill === "all" ? "contained" : "outlined"}
+              >
+                All
+              </Button>
+              <Button
+                onClick={() => handlePillSelect("Cardiologist")}
+                variant={
+                  selectedPill === "Cardiologist" ? "contained" : "outlined"
+                }
+              >
+                Cardiologist
+              </Button>
+              <Button
+                onClick={() => handlePillSelect("Dentist")}
+                variant={selectedPill === "Dentist" ? "contained" : "outlined"}
+              >
+                Dentist
+              </Button>
+              <Button
+                onClick={() => handlePillSelect("Dermatologist")}
+                variant={
+                  selectedPill === "Dermatologist" ? "contained" : "outlined"
+                }
+              >
+                Dermatologist
+              </Button>
+              <Button
+                onClick={() => handlePillSelect("General Physician")}
+                variant={
+                  selectedPill === "General Physician"
+                    ? "contained"
+                    : "outlined"
+                }
+              >
+                General Physician
+              </Button>
+              {/* Add more buttons for other categories */}
+            </ButtonGroup>
             <div className="professional-box">
               <div className="row">
-                {doctorDetails.map((ele) => {
+                {filteredCards?.map((ele) => {
                   return <DoctorsCard data={ele} />;
                 })}
               </div>
