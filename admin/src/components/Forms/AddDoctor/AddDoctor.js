@@ -46,6 +46,8 @@ import {
   randomArrayItem,
 } from "@mui/x-data-grid-generator";
 import JoditEditor from "jodit-react";
+import { styled } from "@mui/material/styles";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 const day = [
   "Monday",
@@ -161,6 +163,18 @@ function EditToolbar(props) {
   );
 }
 
+const VisuallyHiddenInput = styled("input")({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
+  height: 1,
+  overflow: "hidden",
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  whiteSpace: "nowrap",
+  width: 1,
+});
+
 const AddDoctor = (props) => {
   //cookies
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
@@ -169,8 +183,12 @@ const AddDoctor = (props) => {
   const editor = useRef(null);
   const [content, setContent] = useState("");
   const config = {
-		placeholder: 'Start typing...',
-	};
+    placeholder: "Start typing...",
+  };
+  const [file, setFile] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState("");
+
   // const [doctorSlots, setDoctorSlots] = useState([]);
   // var doctorSlots = [];
 
@@ -190,6 +208,7 @@ const AddDoctor = (props) => {
     doctorSlotArray: [],
     salutation: "",
     title: "",
+    image: "",
   });
 
   const handleChange = (e) => {
@@ -204,13 +223,38 @@ const AddDoctor = (props) => {
     props.setOpenDialog(false);
   };
 
+  const uploadImage = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "ciiimages");
+    setLoading(true);
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/doqitu61m/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const file = await res.json();    
+    setImage(file.secure_url);
+    setLoading(false);
+
+    setFormData({
+      ...formData,
+      image: image,
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    formData.about=content;
-    // setFormData({...formData, about: content});
+    formData.about = content;
+    formData.image = image;
+
     try {
       const formDataToSend = await JSON.stringify(formData);
-      // console.log(formDataToSend);
+      console.log(formDataToSend);
       await axios.post(`${URL}/api/doctor/add`, formDataToSend, {
         headers: {
           Authorization: "Bearer " + cookies.jwt,
@@ -454,21 +498,6 @@ const AddDoctor = (props) => {
             </Stack>
             <Stack>
               <Box display={"flex"} gap={5}>
-                {/* <FormControl>
-                  <FormLabel sx={{ fontSize: "12px" }}>Role</FormLabel>
-                  <Select
-                    variant="outlined"
-                    placeholder="Role"
-                    value={formData.role}
-                    label="Type Of Role"
-                    onChange={handleChange}
-                    name="role"
-                    defaultValue="doctor"
-                    disabled="true"
-                  >
-                    <MenuItem value={"doctor"}>Doctor</MenuItem>
-                  </Select>
-                </FormControl> */}
                 <TextField
                   sx={{ marginTop: "30px", width: "330px" }}
                   label="Designation"
@@ -497,7 +526,7 @@ const AddDoctor = (props) => {
               </Box>
             </Stack>
             <Stack>
-              <Box>              
+              <Box>
                 <TextField
                   sx={{ marginTop: "30px", width: "330px" }}
                   label="Specialization"
@@ -536,32 +565,30 @@ const AddDoctor = (props) => {
                     />
                   </RadioGroup>
                 </FormControl>
+                <Box sx={{marginTop: "30px"}}>
+                  <input
+                    type="file"
+                    name="image"
+                    placeholder="Upload Image"
+                    onChange={uploadImage}
+                  />
+                </Box>
               </Box>
             </Stack>
             <Stack>
               <Box display={"flex"} gap={5} marginTop={5}>
-                {/* <TextField
-                  sx={{ marginTop: "30px", width: "690px" }}
-                  label="About Me"
-                  multiline
-                  rows={6}
-                  name="about"
-                  variant="outlined"
-                  value={formData.about}
-                  onChange={handleChange}
-                /> */}
                 <JoditEditor
                   ref={editor}
+                  name="about"
                   value={content}
                   config={config}
-                  onBlur={newContent => setContent(newContent)}
-                  onChange={newContent => {}}
+                  onBlur={(newContent) => setContent(newContent)}
+                  onChange={(newContent) => {}}
                 />
               </Box>
             </Stack>
             <Stack>
               <Box display={"flex"} gap={5}>
-                
                 <TextField
                   sx={{ marginTop: "30px", width: "330px" }}
                   label="Languages Known"

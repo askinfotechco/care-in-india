@@ -10,6 +10,10 @@ const orderRoutes = require("./routes/order.router");
 const categoryRoutes = require("./routes/category.router");
 const doctorDetailsRoutes = require("./routes/doctorDetails.router");
 require("dotenv").config();
+const upload = require("./multer");
+const cloudinary = require("./cloudinary");
+const fs = require("fs");
+const { url } = require("inspector");
 
 // middleware
 app.use(express.json());
@@ -41,6 +45,28 @@ app.use("/api/category/", categoryRoutes);
 app.use("/api/order/", orderRoutes);
 app.use("/api/slider/", sliderRoutes);
 app.use("/api/doctor/", doctorDetailsRoutes)
+
+app.use("/upload-images", upload.array("image"), async(req, res) => {
+  const uploader = async (path) => await cloudinary.uploads(path, 'Images');
+  if (req.method === 'POST') {
+    const urls = []
+    const files = req.files
+    for (const file of files) {
+      const { path } = file;
+      urls.push(newPath);
+      fs.unlinkSync(path);
+    }
+
+    res.status(200).json({
+      message: "Images Uploaded Successfully",
+      data: urls
+    })
+  }else {
+    res.status(405).json({
+      err: "Images not uploaded successfully"
+    })
+  }
+})
 
 const port = process.env.PORT || 8000;
 
