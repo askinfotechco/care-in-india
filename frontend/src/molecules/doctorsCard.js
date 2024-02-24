@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Doc1 from "../static/images/anurag_aggarwal.png"
 
 export default function DoctorsCard(props) {
   const navigate = useNavigate();
