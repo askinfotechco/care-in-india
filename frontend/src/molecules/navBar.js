@@ -50,7 +50,7 @@ export default function NavBarTop() {
         { name: "Home", href: "/", current: false },
         { name: "About", href: "/aboutUs", current: false },
         { name: "Services", href: "/services", current: false },
-        { name: "Team", href: "/team", current: false },
+        { name: "Find a Doctor", href: "/team", current: false },
         { name: "Contact", href: "/contact", current: false },
         { name: "Appointment", href: "/contact", current: false },
       ]);
@@ -59,7 +59,7 @@ export default function NavBarTop() {
         { name: "Home", href: "/", current: false },
         { name: "About", href: "/aboutUs", current: false },
         { name: "Services", href: "/services", current: false },
-        { name: "Team", href: "/team", current: false },
+        { name: "Find a Doctor", href: "/team", current: false },
         { name: "Contact", href: "/contact", current: false },
       ]);
     }

@@ -74,7 +74,7 @@ export default function Team() {
               <div className="w-100 float-left text-xl-left text-lg-left text-center mt-24">
                 <div className="container">
                   <div className="text-white text-center">
-                    <h1>Find Doctors</h1>
+                    <h1>Find a Doctor</h1>
                     <p className="text-black">
                       We’re a dynamic group of individuals who are passionate
                       about what
