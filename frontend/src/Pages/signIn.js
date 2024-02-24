@@ -11,7 +11,7 @@ import LoadingSpinner from "../molecules/loadingSpinner";
 import NavBarTop from "../molecules/navBar";
 import companyLogo from "../assets/image/CIILogo.png";
 
-export default function Example() {
+export default function Example(props) {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
   const email = useRef("null");
@@ -22,7 +22,7 @@ export default function Example() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // navigate("/", { replace: true });
+    navigate("/signin", { replace: true });
     sessionStorage.removeItem("jwt");
     sessionStorage.removeItem("email");
   }, [sessionStorage.getItem("jwt"), sessionStorage.getItem("email")]);

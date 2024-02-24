@@ -52,7 +52,7 @@ export default function NavBarTop() {
         { name: "Services", href: "/services", current: false },
         { name: "Find a Doctor", href: "/team", current: false },
         { name: "Contact", href: "/contact", current: false },
-        { name: "Appointment", href: "/contact", current: false },
+        { name: "Appointment", href: "/appointment", current: false },
       ]);
     } else {
       setNavigation([

@@ -317,10 +317,25 @@ const bookAppointment = async (req, res) => {
 
 const getAllSpecializations = async (req, res) => {
   try {
-    const allSpecializations = await doctorDetailsModel.distinct("specialization");
+    const allSpecializations = await doctorDetailsModel.distinct(
+      "specialization"
+    );
     return res.status(200).json({ allSpecializations });
   } catch (error) {
     return res.status(400).json({ msg: `${error}` });
+  }
+};
+
+const getAllAppointment = async (req, res) => {
+  const { email } = req.body;
+  console.log(email);
+  try {
+    const userCount = await appointment.find({ doctorEmail: email });
+    res.send(userCount);
+  } catch (error) {
+    console.log("Error:", error);
+    // console.log(error);
+    res.status(400).json({ message: "Server error" });
   }
 };
 
@@ -338,4 +353,5 @@ module.exports = {
   getUserByRegId,
   bookAppointment,
   getAllSpecializations,
+  getAllAppointment,
 };
