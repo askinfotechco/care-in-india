@@ -315,6 +315,15 @@ const bookAppointment = async (req, res) => {
   }
 };
 
+const getAllSpecializations = async (req, res) => {
+  try {
+    const allSpecializations = await doctorDetailsModel.distinct("specialization");
+    return res.status(200).json({ allSpecializations });
+  } catch (error) {
+    return res.status(400).json({ msg: `${error}` });
+  }
+};
+
 module.exports = {
   addDoctor,
   getAllDoctors,
@@ -328,4 +337,5 @@ module.exports = {
   getActiveDoctorsCount,
   getUserByRegId,
   bookAppointment,
+  getAllSpecializations,
 };

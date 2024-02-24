@@ -40,7 +40,7 @@ export default function NavBarTop() {
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
   const [navigation, setNavigation] = useState();
   const [role, setRole] = useState(sessionStorage.getItem("role"));
-  console.log(role);
+  // console.log(role);
 
   useEffect(() => {
     setUserEmail(sessionStorage.getItem("email"));
