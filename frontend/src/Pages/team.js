@@ -26,15 +26,19 @@ export default function Team() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedPill, setSelectedPill] = useState("all");
   const [filteredCards, setFilteredCards] = useState();
+  const [specialization, setSpecialization] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
         const response = await axios.get(`${URL}/api/doctor/`);
-        console.log(response.data);
+        const responseSpec = await axios.get(`${URL}/api/doctor/getallspecializations`);
+        // console.log(response.data);
+        // console.log(responseSpec.data);
         setDoctorDetails(response.data.allUser);
         setFilteredCards(response.data.allUser);
+        setSpecialization(responseSpec.data.allSpecializations);
       } catch (err) {
         console.log("request not wokring", err);
       } finally {
@@ -43,9 +47,6 @@ export default function Team() {
     };
     fetchData();
   }, []);
-
-  console.log(doctorDetails);
-  console.log(filteredCards);
 
   const handlePillSelect = (pill) => {
     setSelectedPill(pill);
@@ -98,7 +99,7 @@ export default function Team() {
             <ButtonGroup
               color="primary"
               aria-label="outlined primary button group"
-              style={{display: "flex", justifyContent: "center"}}
+              style={{ display: "flex", justifyContent: "center" }}
             >
               <Button
                 onClick={() => handlePillSelect("all")}
@@ -106,7 +107,17 @@ export default function Team() {
               >
                 All
               </Button>
-              <Button
+              {specialization?.map((spec) => {
+                return <Button
+                  onClick={() => handlePillSelect(spec)}
+                  variant={
+                    selectedPill === spec ? "contained" : "outlined"
+                  }
+                >
+                  {spec}
+                </Button>;
+              })}
+              {/* <Button
                 onClick={() => handlePillSelect("Cardiologist")}
                 variant={
                   selectedPill === "Cardiologist" ? "contained" : "outlined"
@@ -137,7 +148,7 @@ export default function Team() {
                 }
               >
                 General Physician
-              </Button>
+              </Button> */}
               {/* Add more buttons for other categories */}
             </ButtonGroup>
             <div className="professional-box mt-10">
