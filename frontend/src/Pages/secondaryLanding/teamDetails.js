@@ -120,30 +120,31 @@ export default function TeamDetails() {
           <div class="container mx-auto py-8">
             <div class="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
               <div class="col-span-4 sm:col-span-3 mt-10">
-                <div class="bg-white shadow rounded-lg p-6">
+                <div class="bg-white shadow rounded-lg p-3">
                   <div class="flex flex-col items-center">
                     <img
-                      src="https://randomuser.me/api/portraits/men/94.jpg"
-                      class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0"
+                      src={doctorDetails.image}
+                      class="w-39 h-36 bg-gray-300 rounded-full mb-4 shrink-0"
                     ></img>
                     <h1 class="text-xl font-bold">{`${doctorDetails.firstname} ${doctorDetails.lastname}`}</h1>
-                    <p class="text-gray-700">{doctorDetails.specialization}</p>
-                    <div class="mt-6 flex flex-wrap gap-4 justify-center">
+                    <p class="text-gray-700 text-sm text-center">{doctorDetails.title}</p>
+                    {/* <p class="text-gray-700 text-sm">{doctorDetails.specialization}</p> */}
+                    <div class="mt-6 flex flex-wrap gap-3 justify-center">
                       <a
                         href="#"
-                        class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+                        class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded no-underline "
                       >
-                        Contact
+                        Book a Video Consultation
                       </a>
                       <a
                         href="#"
-                        class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded"
+                        class="bg-gray-200 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded no-underline"
                       >
-                        Resume
+                        Book a Physical Consultation
                       </a>
                     </div>
                   </div>
-                  <hr class="my-6 border-t border-gray-300" />
+                  {/* <hr class="my-6 border-t border-gray-300" />
                   <div class="flex flex-col">
                     <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">
                       Skills
@@ -155,7 +156,7 @@ export default function TeamDetails() {
                       <li class="mb-2">HTML/CSS</li>
                       <li class="mb-2">Tailwind Css</li>
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div class="col-span-4 sm:col-span-9 mt-10">
