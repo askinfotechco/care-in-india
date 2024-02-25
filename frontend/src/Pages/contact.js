@@ -11,49 +11,15 @@ import scheduleIcon2 from "../assets/image/Schedule-icon2.png";
 import scheduleIcon3 from "../assets/image/Schedule-icon3.png";
 import scheduleIcon4 from "../assets/image/Schedule-icon4.png";
 import FooterDetails from "./footerDetails";
+import {
+  OfficeBuildingIcon,
+  MailIcon,
+  PhoneIcon,
+} from "@heroicons/react/outline";
 
 export default function Contact() {
   return (
     <div>
-      {/* <div className="w-100 h-10 float-left top-bar-main-con text-white text-xl-left text-lg-left text-md-left text-center">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 col-md-6 col-12">
-              <div className="top-bar-left-con ">
-                <i className="fas fa-map-marker-alt"></i>
-                <span>King Street Melbourne, 3000, Australia</span>
-              </div>
-            </div>
-            <div className="col-lg-6 col-md-6 col-12 d-flex justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-center">
-              <div className="top-bar-right-con d-flex">
-                <span>Get Social:</span>
-                <ul className="list-unstyled mb-0">
-                  <li className="float-left">
-                    <a href="https://www.facebook.com/" className="text-white">
-                      <i className="fab fa-facebook-square"></i>
-                    </a>
-                  </li>
-                  <li className="float-left">
-                    <a href="https://twitter.com/?lang=en" className="text-white">
-                      <i className="fab fa-twitter-square"></i>
-                    </a>
-                  </li>
-                  <li className="float-left">
-                    <a href="https://www.pinterest.com/" className="text-white">
-                      <i className="fab fa-pinterest-square"></i>
-                    </a>
-                  </li>
-                  <li className="float-left">
-                    <a href="https://www.youtube.com/" className="text-white">
-                      <i className="fab fa-youtube-square"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
       {/* <!-- top-bar-section-->
 <!-- header-and-banner-section --> */}
       <div className="w-100 float-left header-and-banner-con banner-overlay-img">
@@ -64,14 +30,12 @@ export default function Contact() {
             {/* <!-- navbar-end -->
         <!-- banner-start --> */}
             <section>
-              <div className="w-100 float-left generic-banner-con text-xl-left text-lg-left text-center">
+              <div className="w-100 float-left generic-banner-con text-xl-left text-lg-left text-center mt-20 mb-3">
                 <div className="container">
-                  <div className="generic-banner-content text-white text-center">
+                  <div className="text-white text-center">
                     <h1>Contact Us</h1>
                     <p className="text-white mb-0">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor
-                      <br /> incididunt ut labore et dolore magna aliqua.
+                      Make Schedule Easier and Simpler for Patients
                     </p>
                   </div>
                 </div>
@@ -86,12 +50,6 @@ export default function Contact() {
       <section>
         <div className="w-100 float-left Schedule-con bg-white">
           <div className="wrapper">
-            <div className="Schedule-heading text-center">
-              <h2>
-                Make Schedule Easier and <br />
-                Simpler for Patients
-              </h2>
-            </div>
             <div className="Schedule-box text-md-left text-center">
               <div className="row">
                 <div className="col-lg-6 col-md-6">
@@ -101,7 +59,7 @@ export default function Contact() {
                         src={scheduleIcon1}
                         alt="Schedule-icon"
                         className="img-fluid"
-                        style={{margin: "0 auto"}}
+                        style={{ margin: "0 auto" }}
                       />
                     </figure>
                     <div className="Schedule-box-title float-md-left overlay-img mt-3">
@@ -118,7 +76,7 @@ export default function Contact() {
                         src={scheduleIcon2}
                         alt="Schedule-icon"
                         className="img-fluid"
-                        style={{margin: "0 auto"}}
+                        style={{ margin: "0 auto" }}
                       />
                     </figure>
                     <div className="Schedule-box-title float-md-left overlay-img mt-3">
@@ -138,7 +96,7 @@ export default function Contact() {
                         src={scheduleIcon3}
                         alt="Schedule-icon"
                         className="img-fluid"
-                        style={{margin: "0 auto"}}
+                        style={{ margin: "0 auto" }}
                       />
                     </figure>
                     <div className="Schedule-box-title float-md-left overlay-img mt-3">
@@ -155,7 +113,7 @@ export default function Contact() {
                         src={scheduleIcon4}
                         alt="Schedule-icon"
                         className="img-fluid"
-                        style={{margin: "0 auto"}}
+                        style={{ margin: "0 auto" }}
                       />
                     </figure>
                     <div className="Schedule-box-title float-md-left overlay-img mt-3">
@@ -175,89 +133,114 @@ export default function Contact() {
       {/* <!-- Schedule-section -->
 <!-- contact-page-form --> */}
       <section>
-        <div className="w-100 float-left contact-page-form-con">
+        <div className="w-100 float-left">
           <div className="wrapper">
             <div className="contact-page-form-txt text-center">
               <h2>
-                Contact Our Friendly Reception
-                <br />
-                Staff with any Enquiry
+                Contact Our Reception with any Enquiry
               </h2>
             </div>
             <div id="form_result"></div>
             <form
-              className="contact-form-plan-box"
-              id="contactpage"
+              action="#"
               method="POST"
             >
-              <div className="form-row">
-                <div className="col-lg-6 col-md-6">
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Your Name:"
-                      name="name"
-                      id="name"
-                    />
+              <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+                <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="first-name"
+                      className="block text-sm font-semibold leading-6 text-black-900"
+                    >
+                      First name
+                    </label>
+                    <div className="mt-2.5">
+                      <input
+                        type="text"
+                        name="first-name"
+                        id="first-name"
+                        autoComplete="given-name"
+                        className="block w-full rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="last-name"
+                      className="block text-sm font-semibold leading-6 text-black-900"
+                    >
+                      Last name
+                    </label>
+                    <div className="mt-2.5">
+                      <input
+                        type="text"
+                        name="last-name"
+                        id="last-name"
+                        autoComplete="family-name"
+                        className="block w-full rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-semibold leading-6 text-black-900"
+                    >
+                      Email
+                    </label>
+                    <div className="mt-2.5">
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        autoComplete="email"
+                        className="block w-full rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label
+                      htmlFor="phone-number"
+                      className="block text-sm font-semibold leading-6 text-black-900"
+                    >
+                      Phone number
+                    </label>
+                    <div className="mt-2.5">
+                      <input
+                        type="tel"
+                        name="phone-number"
+                        id="phone-number"
+                        autoComplete="tel"
+                        className="block w-full rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-semibold leading-6 text-black-900"
+                    >
+                      Message
+                    </label>
+                    <div className="mt-2.5">
+                      <textarea
+                        name="message"
+                        id="message"
+                        rows={4}
+                        className="block w-full rounded-md border-2 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        defaultValue={""}
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className="col-lg-6 col-lg-6 col-md-6">
-                  <div className="form-group">
-                    <input
-                      type="email"
-                      className="form-control"
-                      placeholder="Your Email:"
-                      name="email"
-                      id="email"
-                    />
-                  </div>
+                <div className="mt-8 flex justify-end">
+                  <button
+                    type="submit"
+                    className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    Send message
+                  </button>
                 </div>
-              </div>
-              <div className="form-row">
-                <div className="col-lg-6 col-lg-6 col-md-6">
-                  <div className="form-group">
-                    <input
-                      type="tel"
-                      className="form-control"
-                      placeholder="Phone:"
-                      name="phone"
-                      id="phone"
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-6 col-lg-6 col-md-6">
-                  <div className="form-group">
-                    <select className="form-control select-form position-relative">
-                      <option>Subject:</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                    <i className="fas fa-angle-down down-icon"></i>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="textarea form-group">
-                  <textarea
-                    className="form-control"
-                    placeholder="Message:"
-                    rows="3"
-                    name="comments"
-                    id="comments"
-                  ></textarea>
-                </div>
-              </div>
-              <div className="submitform-button">
-                <button
-                  type="submit"
-                  id="submit"
-                  className="submitform-btn appointment-btn ml-auto mr-auto d-block"
-                >
-                  Send Message
-                </button>
               </div>
             </form>
           </div>
@@ -265,7 +248,7 @@ export default function Contact() {
       </section>
       {/* <!-- contact-page-form -->
 <!-- map-section--> */}
-      <div className="w-100 float-left map-con">
+      <div className="w-100 float-left map-con mt-20">
         <div className="container">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51641910.033771195!2d109.09423828124999!3d-37.814123701604444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2s!4v1640952396499!5m2!1sen!2s"

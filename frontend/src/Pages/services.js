@@ -32,11 +32,11 @@ export default function Services() {
             {/* <!-- navbar-start --> */}
             <NavBarTop />
             {/* <!-- navbar-end -->
-               <!-- banner-start --> */}
+            <!-- banner-start --> */}
             <section>
-              <div className="w-100 float-left generic-banner-con text-xl-left text-lg-left text-center">
+              <div className="w-100 float-left generic-banner-con text-xl-left text-lg-left text-center mb-3 mt-20">
                 <div className="container">
-                  <div className="generic-banner-content text-white text-center">
+                  <div className="text-white text-center">
                     <h1>Our Services</h1>
                     <p className="text-white mb-0">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
