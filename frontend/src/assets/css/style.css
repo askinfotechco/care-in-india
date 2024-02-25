@@ -272,7 +272,7 @@ body {
 /*quality-system-con*/
 /*offer-con*/
 .offer-inner-con {
-	background: var(--secondary--color);
+	background: var(--white--color);
 	height: 384px;
 }
 .shope-btn {

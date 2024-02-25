@@ -1,25 +1,15 @@
 import React from "react";
-// import "../App.css";
 import "bootstrap/dist/css/bootstrap.css";
-import banner from "../assets/image/banner-left-img.png";
-import smallLeftCurveImg from "../assets/image/small-left-curve-img.png";
-import smallRightCurveImg from "../assets/image/small-right-curve-img.png";
 import funFactsIcon1 from "../assets/image/fun-facts-icon1.png";
 import funFactsIcon2 from "../assets/image/fun-facts-icon2.png";
 import funFactsIcon3 from "../assets/image/fun-facts-icon3.png";
 import funFactsIcon4 from "../assets/image/fun-facts-icon4.png";
-import formLeftImg from "../assets/image/form-left-img.png";
 import clientLogoImg1 from "../assets/image/client-logo-img1.png";
 import clientLogoImg2 from "../assets/image/client-logo-img2.png";
 import clientLogoImg3 from "../assets/image/client-logo-img3.png";
 import clientLogoImg4 from "../assets/image/client-logo-img4.png";
 import clientLogoImg5 from "../assets/image/client-logo-img5.png";
 import clientLogoImg6 from "../assets/image/client-logo-img6.png";
-import footerLogo from "../assets/image/footer-logo.png";
-import paymentImg1 from "../assets/image/payment-img1.png";
-import paymentImg2 from "../assets/image/payment-img2.png";
-import paymentImg3 from "../assets/image/payment-img3.png";
-import paymentImg4 from "../assets/image/payment-img4.png";
 
 import featureBoxIcon1 from "../assets/image/feature-box-icon1.png";
 import featureBoxIcon2 from "../assets/image/feature-box-icon2.png";
@@ -29,13 +19,9 @@ import featureBoxIcon5 from "../assets/image/feature-box-icon5.png";
 import featureBoxIcon6 from "../assets/image/feature-box-icon6.png";
 import featureBoxIcon7 from "../assets/image/feature-box-icon7.png";
 import featureBoxIcon8 from "../assets/image/feature-box-icon8.png";
-import qualitySystemImg from "../assets/image/quality-system-img.png";
-import offerSectionImg from "../assets/image/offer-section-img.png";
-import autherImg from "../assets/image/auther-img.png";
-import blogImg1 from "../assets/image/blog-img1.jpg";
-import blogImg2 from "../assets/image/blog-img2.jpg";
-import blogImg3 from "../assets/image/blog-img3.jpg";
-import mobileImg from "../assets/image/mobile-img.png";
+
+import homeBanner from "../static/images/headerBanner-1.png";
+import qualityMedicine from "../static/images/qualityImage.png"
 
 import "../assets/css/animate.css";
 import "../assets/css/custom-style.css";
@@ -59,11 +45,11 @@ function Home() {
                 <div className="container">
                   <div className="row">
                     <div className="col-lg-6 order-xl-0 order-lg-0 order-2">
-                      <div className="banner-left-con">
-                        <figure className="mb-0">
+                      <div>
+                        <figure style={{marginTop: "-50px"}}>
                           <img
-                            src={banner}
-                            alt="banner-left-img"
+                            src={homeBanner}
+                            alt="Banner-Image"
                             className="img-fluid banner-left-img"
                           />
                         </figure>
@@ -73,7 +59,7 @@ function Home() {
                       <div className="banner-right-content text-white">
                         <h5>Healthy. Everyday.</h5>
                         <h1>We are Providing Best and Affordable Healthcare</h1>
-                        <a href="/team" className="appointment-btn ">
+                        <a href="/team" className="appointment-btn">
                           Make Appointment
                         </a>
                       </div>
@@ -281,45 +267,13 @@ function Home() {
                 <div className="quality-system-right-con position-relative text-center">
                   <figure className="mb-0">
                     <img
-                      src={qualitySystemImg}
+                      src={qualityMedicine}
                       alt="quality-system-img"
                       className="img-fluid human-img"
+                      // width={"1000px"}
                     />
                   </figure>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="w-100 float-left offer-con">
-          <div className="container">
-            <div className="offer-inner-con banner-overlay-img">
-              <div className="row">
-                <div className="col-lg-6 col-md-6 col-12 order-xl-0 order-lg-0 order-md-0 order-2">
-                  <div className="offer-left-con position-relative overlay-img">
-                    <figure className="mb-0">
-                      <img
-                        src={offerSectionImg}
-                        alt="offer-section-img"
-                        className="img-fluid"
-                      />
-                    </figure>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-md-6 col-12">
-                  <div className="offer-right-con overlay-img">
-                    <a href="contact.html" className="shope-btn">
-                      Book Your Health Checkup
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="offer-note">
-                <h4 className="text-white mb-0">
-                  25% <span className="d-block">OFF</span>
-                </h4>
               </div>
             </div>
           </div>
@@ -423,162 +377,14 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
-      {/* <!-- fun-facts-section-->
-      <!-- form-section --> */}
-      {/* <section>
-        <div className="w-100 float-left form-main-con" id="contact-form">
-          <div className="container">
-            <div className="text-center">
-              <h2>Book An Appointment</h2>
-              <p>
-                Seram ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eius mod tempor incididunt aenean
-                <br />
-                leo ligula porttitor eu consequat vitae eleifend tac.
-              </p>
-            </div>
-            <div className="row">
-              <div className="col-lg-6 order-xl-0 order-lg-0 order-2">
-                <div className="form-left-con position-relative text-center">
-                  <figure className="mb-0 left-curve-img wow slideInLeft">
-                  </figure>
-                  <figure className="mb-0">
-                    <img
-                      src={formLeftImg}
-                      alt="form-left-img"
-                      className="img-fluid human-img form-left-img"
-                    />
-                  </figure>
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <form className="contact-form">
-                  <div className="form-group">
-                    <label
-                      for="exampleFormControlSelect1"
-                      className="text-white"
-                    >
-                      Department
-                    </label>
-                    <select
-                      className="form-control position-relative"
-                      id="exampleFormControlSelect1"
-                    >
-                      <option>General Health Checkup</option>
-                      <option>General Health Checkup</option>
-                      <option>General Health Checkup</option>
-                      <option>General Health Checkup</option>
-                      <option>General Health Checkup</option>
-                    </select>
-                    <i className="fas fa-angle-down"></i>
-                  </div>
-                  <div className="row">
-                    <div className="col-lg-6 col-md-6">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Name:"
-                          name="name"
-                          id="name"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6">
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          className="form-control"
-                          placeholder="Email:"
-                        />
-                        <small
-                          id="emailHelp"
-                          className="form-text text-muted"
-                        ></small>
-                      </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6">
-                      <div className="form-group">
-                        <input type="time" className="form-control" />
-                      </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6">
-                      <div className="form-group">
-                        <select className="form-control position-relative">
-                          <option>Choose Doctor </option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                        <i className="fas fa-angle-down down-icon"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-lg-12">
-                      <div className="textarea form-group W-100">
-                        <textarea
-                          className="form-control "
-                          placeholder="Message:"
-                          rows="3"
-                          name="comments"
-                          id="comments"
-                        ></textarea>
-                      </div>
-                    </div>
-                  </div>
-                  <button type="submit" className="btn  appointment-btn">
-                    Make Appointment
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/* <!-- form-section -->
+      </section>      
       
-      <!-- blog section --> */}
+      {/*<!-- blog section --> */}
       <section>
         <Blog />
       </section>
       {/* <!-- blog section -->
 
-      <!-- news-letter-section --> */}
-      {/* <section>
-        <div className="w-100 float-left news-letter-con">
-          <div className="container">
-            <div className="news-letter-inner-con banner-overlay-img">
-              <div className="row overlay-img align-items-center">
-                <div className="col-lg-6 col-md-5">
-                  <div className="news-letter-title">
-                    <h2 className="text-white mb-0">
-                      Subscribe to our Newsletter
-                    </h2>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-md-7">
-                  <div className="news-letter-input-con position-relative">
-                    <div className="news-letter-input-feild">
-                      <input
-                        type="email"
-                        placeholder="Enter Your Email:"
-                        className="w-100"
-                      />
-                    </div>
-                    <button>
-                      <i className="far fa-envelope"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/* <!-- news-letter-section -->
       <!-- logo-section --> */}
       <div className="w-100 float-left logo-con">
         <div className="container">
