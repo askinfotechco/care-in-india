@@ -98,7 +98,7 @@ export default function Appointment() {
       return {
         id: index,
         name: ele.patientName,
-        email: ele.patientEmail,
+        email: role === "doctor" ? ele.patientEmail : ele.doctorEmail,
         date: ele.date,
         day: ele.day,
       };
