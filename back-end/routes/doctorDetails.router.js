@@ -16,6 +16,7 @@ const {
   getUserByRegId,
   bookAppointment,
   getAllSpecializations,
+  getAllAppointment,
 } = require("../controllers/doctorDetails.controller");
 
 doctorDetailsRouter.get("/", getAllDoctors);
@@ -35,5 +36,10 @@ doctorDetailsRouter.post(
   bookAppointment
 );
 doctorDetailsRouter.get("/getallspecializations", getAllSpecializations);
+doctorDetailsRouter.post(
+  "/appointment",
+  authorizationHeader,
+  getAllAppointment
+);
 
 module.exports = doctorDetailsRouter;
