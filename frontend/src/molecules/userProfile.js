@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import userInfo from "../assets/image/userInfo.png";
+import { Link } from "react-router-dom";
 
 const UserProfile = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,15 +75,17 @@ const UserProfile = (props) => {
               margin: 0,
             }}
           >
-            <li
-              style={{
-                padding: "8px",
-                cursor: "pointer",
-                borderBottom: "1px solid #ccc",
-              }}
-            >
-              Profile
-            </li>
+            <Link to="/user">
+              <li
+                style={{
+                  padding: "8px",
+                  cursor: "pointer",
+                  borderBottom: "1px solid #ccc",
+                }}
+              >
+                Profile
+              </li>
+            </Link>
             <li
               style={{
                 padding: "8px",

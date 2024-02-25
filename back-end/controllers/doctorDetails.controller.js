@@ -276,10 +276,12 @@ const getActiveDoctorsCount = async (req, res) => {
 };
 
 const bookAppointment = async (req, res) => {
-  const { patientEmail, doctorEmail, day, date, mode, message } = req.body;
+  const { patientEmail, patientName, doctorEmail, day, date, mode, message } =
+    req.body;
   // console.log(encodePass)
   const appointmentDetails = {
     patientEmail: patientEmail,
+    patientName: patientName,
     doctorEmail: doctorEmail,
     day: day,
     date: date,
@@ -326,9 +328,20 @@ const getAllSpecializations = async (req, res) => {
   }
 };
 
+const getAllUserAppointment = async (req, res) => {
+  const { email } = req.body;
+  try {
+    const userCount = await appointment.find({ patientEmail: email });
+    res.send(userCount);
+  } catch (error) {
+    console.log("Error:", error);
+    // console.log(error);
+    res.status(400).json({ message: "Server error" });
+  }
+};
+
 const getAllAppointment = async (req, res) => {
   const { email } = req.body;
-  console.log(email);
   try {
     const userCount = await appointment.find({ doctorEmail: email });
     res.send(userCount);
@@ -354,4 +367,5 @@ module.exports = {
   bookAppointment,
   getAllSpecializations,
   getAllAppointment,
+  getAllUserAppointment,
 };

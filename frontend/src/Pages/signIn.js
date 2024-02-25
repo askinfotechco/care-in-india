@@ -22,7 +22,7 @@ export default function Example(props) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    navigate("/signin", { replace: true });
+    // navigate("/signin", { replace: true });
     sessionStorage.removeItem("jwt");
     sessionStorage.removeItem("email");
   }, [sessionStorage.getItem("jwt"), sessionStorage.getItem("email")]);
@@ -114,6 +114,15 @@ export default function Example(props) {
                   className="font-semibold text-indigo-600 hover:text-indigo-500"
                 >
                   Sign Up
+                </a>
+                <span></span>
+              </p>
+              <p className="mt-2 text-sm leading-6">
+                <a
+                  href="/"
+                  className="font-semibold text-indigo-600 hover:text-indigo-500"
+                >
+                  Go to Home Page
                 </a>
               </p>
             </div>

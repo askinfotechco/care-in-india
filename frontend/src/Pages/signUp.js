@@ -217,6 +217,14 @@ const SignUp = () => {
               "Embark on your journey to wellness - Sign up today and prioritize your health with us"
             }
           </Label>
+          <p className="mt-2 text-sm leading-6">
+            <a
+              href="/"
+              className="font-semibold text-indigo-600 hover:text-indigo-500"
+            >
+              Go to Home Page
+            </a>
+          </p>
           <Wrapper onSubmit={handleSubmit}>
             <Label>Signup to book your first appointment</Label>
             <Input
@@ -303,7 +311,7 @@ const SignUp = () => {
                 textAlign: "center",
                 fontSize: "15px",
                 color: "rgba(0, 0, 0, 0.8)",
-                marginTop: "20px"
+                marginTop: "20px",
               }}
             >
               {"Already have an account? "}{" "}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavBarTop from "../molecules/navBar";
+import { useNavigate } from "react-router-dom";
 import professionalBoxImg1 from "../assets/image/professional-box-img1.png";
 import professionalBoxImg2 from "../assets/image/professional-box-img2.png";
 import professionalBoxImg3 from "../assets/image/professional-box-img3.png";
@@ -45,44 +46,68 @@ export default function Appointment() {
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
   const [email, setEmail] = useState(sessionStorage.getItem("email"));
   const [appointments, setAppointments] = useState([]);
+  const [data, setData] = useState([]);
+  const navigate = useNavigate();
+  const [role, setRole] = useState(sessionStorage.getItem("role"));
 
-  const data = [
-    { id: 1, name: "John Doe", email: "john@example.com" },
-    { id: 2, name: "Jane Smith", email: "jane@example.com" },
-    // Add more data objects as needed
-  ];
+  // const data = [
+  //   { id: 1, name: "John Doe", email: "john@example.com" },
+  //   { id: 2, name: "Jane Smith", email: "jane@example.com" },
+  //   // Add more data objects as needed
+  // ];
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const formDataToSend = await JSON.stringify({ email: email });
-  //     console.log(formDataToSend);
-  //     try {
-  //       setLoading(true);
-  //       const response = await axios.post(
-  //         `${URL}/api/doctor/appointment`,
-  //         formDataToSend,
-  //         {
-  //           headers: {
-  //             Authorization: "Bearer " + cookies.jwt,
-  //             Accept: "application/json",
-  //             "Content-Type": "application/json",
-  //             "Access-Control-Allow-Origin": "*",
-  //           },
-  //         }
-  //       );
-  //       console.log(response.data);
-  //       setAppointments(response.data.user);
-  //     } catch (err) {
-  //       console.log("request not wokring", err);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-  //   // fetchData();
-  // }, []);
+  useEffect(() => {
+    //console.log(sessionStorage.getItem("role"));
+    if (role === null) {
+      navigate("/signin", { replace: true });
+    }
+  }, [role]);
+
+  useEffect(() => {
+    const fetchUrl =
+      role === "doctor"
+        ? `${URL}/api/doctor/appointment`
+        : `${URL}/api/doctor/userAppointment`;
+    const fetchData = async () => {
+      const formDataToSend = await JSON.stringify({ email: email });
+      console.log(formDataToSend);
+      try {
+        setLoading(true);
+        const response = await axios.post(fetchUrl, formDataToSend, {
+          headers: {
+            Authorization: "Bearer " + cookies.jwt,
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        });
+        console.log(response.data);
+        setAppointments(response.data);
+      } catch (err) {
+        console.log("request not wokring", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const dataArray = appointments?.map((ele, index) => {
+      console.log(index, ele.patientName, ele.patientEmail);
+      return {
+        id: index,
+        name: ele.patientName,
+        email: ele.patientEmail,
+        date: ele.date,
+        day: ele.day,
+      };
+    });
+    setData(dataArray);
+  }, [appointments]);
 
   // console.log(doctorDetails);
-  //console.log(filteredCards);
+  // console.log(data);
 
   const handlePillSelect = (pill) => {
     setSelectedPill(pill);
@@ -131,12 +156,12 @@ export default function Appointment() {
           <div className="container">
             <div className="mx-auto max-w-2xl sm:text-center">
               <h2 className="text-3xl font-bold tracking-tight text-black-900 sm:text-4xl">
-                Meet our Doctors
+                Your Appointment Details
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                We’re a dynamic group of individuals who are passionate about
-                what we do and dedicated to delivering the best healthcare
-                facilities.
+                {role === "doctor"
+                  ? "Hello Doctor! Please see your patient details"
+                  : "Please see your Appointments"}
               </p>
             </div>
             <div className="professional-box">
@@ -147,15 +172,19 @@ export default function Appointment() {
                       <TableCell>ID</TableCell>
                       <TableCell>Name</TableCell>
                       <TableCell>Email</TableCell>
+                      <TableCell>Date</TableCell>
+                      <TableCell>Day</TableCell>
                       {/* Add more table headers as needed */}
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {data.map((row) => (
+                    {data?.map((row) => (
                       <TableRow key={row.id}>
                         <TableCell>{row.id}</TableCell>
                         <TableCell>{row.name}</TableCell>
                         <TableCell>{row.email}</TableCell>
+                        <TableCell>{row.date}</TableCell>
+                        <TableCell>{row.day}</TableCell>
                         {/* Add more table cells for additional data */}
                       </TableRow>
                     ))}

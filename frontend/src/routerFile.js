@@ -18,23 +18,27 @@ import Dental from "./Pages/secondaryLanding/dental";
 import TeamDetails from "./Pages/secondaryLanding/teamDetails";
 import VideoCall from "./Pages/videoCall";
 import Appointment from "./Pages/appointment";
+import UserDetailsPage from "./Pages/userDetailsPage";
 
 // Example authentication logic
-const isAuthenticated = () => {
-  // Check if the user is authenticated (e.g., by verifying authentication token)
-  // Return true if authenticated, false otherwise
-  return localStorage.getItem("role") === "doctor";
-};
+// const isAuthenticated = () => {
+//   // Check if the user is authenticated (e.g., by verifying authentication token)
+//   // Return true if authenticated, false otherwise
+//   console.log(localStorage.getItem("role"));
+//   return localStorage.getItem("role") === "doctor";
+// };
+
+// console.log(localStorage.getItem("role"));
 
 // PrivateRoute component for authorized routes
 // PrivateRoute component for authorized routes
-const PrivateRoute = (props) => {
-  if (isAuthenticated()) {
-    return <Route path={props.path} render={props.render} />;
-  } else {
-    <Navigate to="/signin" replace />;
-  }
-};
+// const PrivateRoute = (props) => {
+//   if (isAuthenticated()) {
+//     return <Route path={props.path} render={props.render} />;
+//   } else {
+//     <Navigate to="/signin" replace />;
+//   }
+// };
 
 function RouterFile() {
   return (
@@ -43,15 +47,11 @@ function RouterFile() {
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/user" element={<UserDetailsPage />} />
         <Route path="/aboutUs" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
-        <Route
-          path="/appointment"
-          element={
-            isAuthenticated() ? <Appointment /> : <SignIn nonAuth={true} />
-          }
-        />
+        <Route path="/appointment" element={<Appointment />} />
         <Route path="/services/radiology" element={<Radiology />} />
         <Route path="/services/surgery" element={<Surgery />} />
         <Route path="/services/dental" element={<Dental />} />

@@ -6,6 +6,10 @@ const AppointmentSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    patientName: {
+      type: String,
+      required: true,
+    },
     doctorEmail: {
       type: String,
       required: true,
@@ -25,6 +29,10 @@ const AppointmentSchema = new mongoose.Schema(
     message: {
       type: String,
       required: false,
+    },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
     },
   },
   {

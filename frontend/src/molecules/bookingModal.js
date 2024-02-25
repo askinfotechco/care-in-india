@@ -39,6 +39,7 @@ function BookingModal(props) {
   const bookAppointment = async () => {
     const dataToSend = {
       patientEmail: sessionStorage.getItem("email"),
+      patientName: sessionStorage.getItem("fullName"),
       doctorEmail: props.doctorDetails.email,
       day: getDayName(new Date(formData.selectedDate)),
       date: formData.selectedDate,

@@ -26,7 +26,7 @@ const user = {
 //   { name: "Contact", href: "/contact", current: false },
 // ];
 const userNavigation = [
-  { name: "Your Profile", href: "#" },
+  { name: "Your Profile", href: "/user" },
   { name: "Settings", href: "#" },
   { name: "Sign out", href: "#" },
 ];
@@ -44,7 +44,8 @@ export default function NavBarTop() {
 
   useEffect(() => {
     setUserEmail(sessionStorage.getItem("email"));
-    if (role === "doctor") {
+    console.log(role);
+    if (role !== null) {
       // navigation = [...navigation, {name: "Appointment", href: "/contact", current: false}]
       setNavigation([
         { name: "Home", href: "/", current: false },
