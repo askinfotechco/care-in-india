@@ -39,6 +39,12 @@ const configDb = async () => {
 };
 
 configDb();
+
+//root route
+app.get("/", (req, res) => {
+  res.send("App launched successfully!");
+});
+
 app.use("/auth/user/", userRoutes);
 app.use("/api/products/", productRoutes);
 app.use("/api/category/", categoryRoutes);
