@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TimeSelector from "./timeSelector";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { URL } from "../connection";
@@ -11,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 function BookingModal(props) {
   const [show, setShow] = useState(false);
   const [step, setStep] = useState(1);
-  const [selectedDate, setSelectedDate] = useState("");
+  // const [selectedDate, setSelectedDate] = useState("");
   const [loading, setLoading] = useState();
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
   const [formData, setFormData] = useState({

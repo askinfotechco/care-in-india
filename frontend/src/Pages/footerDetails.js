@@ -1,5 +1,4 @@
 import { React } from "react";
-import footerLogo from "../assets/image/footer-logo.png";
 import companyLogo from "../assets/image/CIILogo.png";
 import paymentImg1 from "../assets/image/payment-img1.png";
 import paymentImg2 from "../assets/image/payment-img2.png";

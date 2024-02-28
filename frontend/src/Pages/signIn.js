@@ -8,16 +8,16 @@ import { useCookies } from "react-cookie";
 import LoginvalidationSchema from "../components/validations/LoginValidation";
 import { URL } from "../connection";
 import LoadingSpinner from "../molecules/loadingSpinner";
-import NavBarTop from "../molecules/navBar";
+// import NavBarTop from "../molecules/navBar";
 import companyLogo from "../assets/image/CIILogo.png";
 
 export default function Example(props) {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
-  const email = useRef("null");
-  const password = useRef("null");
-  const firstname = useRef("null");
-  const lastname = useRef("null");
+  // const email = useRef("null");
+  // const password = useRef("null");
+  // const firstname = useRef("null");
+  // const lastname = useRef("null");
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
 

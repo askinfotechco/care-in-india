@@ -1,6 +1,5 @@
 // SignUp.js
 import React, { useState, useRef, useEffect } from "react";
-import ExternalLink from "../atoms/externalLink";
 import InternalLink from "../atoms/internalLink";
 import styled from "styled-components";
 import PrimaryButton from "../atoms/primaryButton";
@@ -130,10 +129,10 @@ const Error = styled.div`
 const SignUp = () => {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
-  const email = useRef("null");
-  const password = useRef("null");
-  const firstname = useRef("null");
-  const lastname = useRef("null");
+  // const email = useRef("null");
+  // const password = useRef("null");
+  // const firstname = useRef("null");
+  // const lastname = useRef("null");
   const [err, setErr] = useState("");
 
   useEffect(() => {

@@ -20,7 +20,6 @@ import clientLogoImg3 from "../assets/image/client-logo-img3.png";
 import clientLogoImg4 from "../assets/image/client-logo-img4.png";
 import clientLogoImg5 from "../assets/image/client-logo-img5.png";
 import clientLogoImg6 from "../assets/image/client-logo-img6.png";
-import { Link } from "react-router-dom";
 import FooterDetails from "./footerDetails";
 
 export default function Services() {
