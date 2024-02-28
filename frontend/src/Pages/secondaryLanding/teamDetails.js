@@ -11,10 +11,8 @@ import { URL } from "../../connection";
 import { useParams } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import FooterDetails from "../footerDetails";
-import BookingModal from "../../molecules/bookingModal";
-import OnlineBookingModal from "../../molecules/onlineBookingModal";
 import HTMLReactParser from "html-react-parser";
-import { ChevronRightIcon, HomeIcon } from "@heroicons/react/solid";
+import { HomeIcon } from "@heroicons/react/outline";
 
 const pages = [
   { name: "Team", href: "/team", current: false },
@@ -22,11 +20,8 @@ const pages = [
 ];
 
 export default function TeamDetails() {
-  const [selectedOption, setSelectedOption] = useState("All");
   const [loading, setLoading] = useState(false);
   const [doctorDetails, setDoctorDetails] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
 
   const { regId } = useParams();

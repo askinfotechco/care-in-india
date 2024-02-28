@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { FaSuitcaseMedical } from "react-icons/fa6";
 import { FaTruckMedical } from "react-icons/fa6";
 import { FaHospitalAlt } from "react-icons/fa";
 

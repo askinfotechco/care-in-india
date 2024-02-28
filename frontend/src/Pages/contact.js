@@ -11,11 +11,6 @@ import scheduleIcon2 from "../assets/image/Schedule-icon2.png";
 import scheduleIcon3 from "../assets/image/Schedule-icon3.png";
 import scheduleIcon4 from "../assets/image/Schedule-icon4.png";
 import FooterDetails from "./footerDetails";
-import {
-  OfficeBuildingIcon,
-  MailIcon,
-  PhoneIcon,
-} from "@heroicons/react/outline";
 
 export default function Contact() {
   return (

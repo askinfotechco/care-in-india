@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TimeSelector from "./timeSelector";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { URL } from "../connection";
-import VideoCall from "../Pages/videoCall";
 import { Navigate, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 function OnlineBookingModal(props) {
   const [show, setShow] = useState(false);
   const [step, setStep] = useState(1);
-  const [selectedDate, setSelectedDate] = useState("");
+  // const [selectedDate, setSelectedDate] = useState("");
   const [loading, setLoading] = useState();
   const [cookies, setCookie, removeCookie] = useCookies("jwt");
   const [formData, setFormData] = useState({

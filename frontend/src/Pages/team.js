@@ -12,18 +12,15 @@ import DoctorsCard from "../molecules/doctorsCard";
 import FooterDetails from "./footerDetails";
 import {
   Button,
-  ButtonGroup,
-  Card,
-  CardContent,
-  Typography,
+  ButtonGroup
 } from "@mui/material";
 
 export default function Team() {
-  const [selectedOption, setSelectedOption] = useState("All");
+  // const [selectedOption, setSelectedOption] = useState("All");
   const [loading, setLoading] = useState(false);
   const [doctorDetails, setDoctorDetails] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
+  // const [filteredData, setFilteredData] = useState([]);
+  // const [searchQuery, setSearchQuery] = useState("");
   const [selectedPill, setSelectedPill] = useState("all");
   const [filteredCards, setFilteredCards] = useState();
   const [specialization, setSpecialization] = useState([]);

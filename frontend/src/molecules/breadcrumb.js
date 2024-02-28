@@ -2,9 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaChevronRight } from "react-icons/fa"; // You can use any icon library you prefer
 import styled from "styled-components";
-import { GoChevronRight } from "react-icons/go";
 
 const ListItems = styled.li`
   list-style: none;
