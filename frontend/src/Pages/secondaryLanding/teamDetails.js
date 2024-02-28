@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import FooterDetails from "../footerDetails";
 import HTMLReactParser from "html-react-parser";
+import { HomeIcon } from "@heroicons/react/outline";
 
 const pages = [
   { name: "Team", href: "/team", current: false },
