@@ -244,7 +244,7 @@ function BookingModal(props) {
     <div>
       {/* Button to toggle modal */}
       <Button variant="primary" onClick={handleShow}>
-        Schedule a visit
+        Book a Physical Consultation
       </Button>
 
       {/* Modal */}

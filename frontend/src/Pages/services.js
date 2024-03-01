@@ -242,7 +242,7 @@ export default function Services() {
       </section>
       {/* <!-- core-vaule-section -->
       <!-- logo-section --> */}
-      <div className="w-100 float-left logo-con mt-10">
+      {/* <div className="w-100 float-left logo-con mt-10">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">
@@ -303,7 +303,7 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- logo-section -->
       <!-- weight-footer-section --> */}
       <FooterDetails />

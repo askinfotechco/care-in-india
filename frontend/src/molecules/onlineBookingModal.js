@@ -246,7 +246,7 @@ function OnlineBookingModal(props) {
     <div>
       {/* Button to toggle modal */}
       <Button variant="primary" onClick={handleShow}>
-        Book Online
+        Book a Video Consultation
       </Button>
 
       {/* Modal */}

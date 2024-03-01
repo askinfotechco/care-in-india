@@ -113,7 +113,7 @@ export default function About() {
                     <img
                       src={aboutImage}
                       alt="professional-doctor-img"
-                      className="img-fluid human-img"                      
+                      className="img-fluid human-img"
                     />
                   </figure>
                 </div>
@@ -446,7 +446,7 @@ export default function About() {
       {/* <!-- fun-facts-section-->
 
       <!-- logo-section --> */}
-      <div className="w-100 float-left logo-con mt-5">
+      {/* <div className="w-100 float-left logo-con mt-5">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">
@@ -507,7 +507,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- logo-section -->
         <!-- footer-section --> */}
       <FooterDetails />

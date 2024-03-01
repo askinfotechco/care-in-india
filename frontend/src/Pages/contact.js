@@ -131,15 +131,10 @@ export default function Contact() {
         <div className="w-100 float-left">
           <div className="wrapper">
             <div className="contact-page-form-txt text-center">
-              <h2>
-                Contact Our Reception with any Enquiry
-              </h2>
+              <h2>Contact Our Reception with any Enquiry</h2>
             </div>
             <div id="form_result"></div>
-            <form
-              action="#"
-              method="POST"
-            >
+            <form action="#" method="POST">
               <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                   <div>
@@ -253,7 +248,7 @@ export default function Contact() {
       </div>
       {/* <!-- map-section-->
       <!-- logo-section --> */}
-      <div className="w-100 float-left logo-con">
+      {/* <div className="w-100 float-left logo-con">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">
@@ -314,7 +309,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- logo-section -->
       <!-- weight-footer-section --> */}
       <FooterDetails />
