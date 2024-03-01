@@ -21,7 +21,7 @@ import featureBoxIcon7 from "../assets/image/feature-box-icon7.png";
 import featureBoxIcon8 from "../assets/image/feature-box-icon8.png";
 
 import homeBanner from "../static/images/headerBanner-1.png";
-import qualityMedicine from "../static/images/qualityImage.png"
+import qualityMedicine from "../static/images/qualityImage.png";
 
 import "../assets/css/animate.css";
 import "../assets/css/custom-style.css";
@@ -46,7 +46,7 @@ function Home() {
                   <div className="row">
                     <div className="col-lg-6 order-xl-0 order-lg-0 order-2">
                       <div>
-                        <figure style={{marginTop: "-50px"}}>
+                        <figure style={{ marginTop: "-50px" }}>
                           <img
                             src={homeBanner}
                             alt="Banner-Image"
@@ -377,8 +377,8 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>      
-      
+      </section>
+
       {/*<!-- blog section --> */}
       <section>
         <Blog />
@@ -386,7 +386,7 @@ function Home() {
       {/* <!-- blog section -->
 
       <!-- logo-section --> */}
-      <div className="w-100 float-left logo-con">
+      {/* <div className="w-100 float-left logo-con">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">
@@ -447,7 +447,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- logo-section -->
       <!-- weight-footer-section --> */}
       <FooterDetails />

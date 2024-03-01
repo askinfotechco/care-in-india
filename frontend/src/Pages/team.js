@@ -30,7 +30,9 @@ export default function Team() {
       try {
         setLoading(true);
         const response = await axios.get(`${URL}/api/doctor/`);
-        const responseSpec = await axios.get(`${URL}/api/doctor/getallspecializations`);
+        const responseSpec = await axios.get(
+          `${URL}/api/doctor/getallspecializations`
+        );
         // console.log(response.data);
         // console.log(responseSpec.data);
         setDoctorDetails(response.data.allUser);
@@ -76,7 +78,8 @@ export default function Team() {
                     <p className="text-white">
                       Book An Appointment at CII.
                       <br />
-                      Book an appointment with your doctor who is the perfect match for your medical needs.
+                      Book an appointment with your doctor who is the perfect
+                      match for your medical needs.
                     </p>
                   </div>
                 </div>
@@ -103,14 +106,14 @@ export default function Team() {
                 All
               </Button>
               {specialization?.map((spec) => {
-                return <Button
-                  onClick={() => handlePillSelect(spec)}
-                  variant={
-                    selectedPill === spec ? "contained" : "outlined"
-                  }
-                >
-                  {spec}
-                </Button>;
+                return (
+                  <Button
+                    onClick={() => handlePillSelect(spec)}
+                    variant={selectedPill === spec ? "contained" : "outlined"}
+                  >
+                    {spec}
+                  </Button>
+                );
               })}
             </ButtonGroup>
             <div className="professional-box mt-10">
@@ -125,7 +128,7 @@ export default function Team() {
       </section>
       {/* <!-- professional-section-->
       <!-- logo-section --> */}
-      <div className="w-100 float-left logo-con mt-5">
+      {/* <div className="w-100 float-left logo-con mt-5">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">
@@ -186,7 +189,7 @@ export default function Team() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- logo-section -->
       <!-- weight-footer-section --> */}
       <FooterDetails />

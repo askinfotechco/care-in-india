@@ -86,6 +86,7 @@ export default function Appointment() {
         email: role === "doctor" ? ele.patientEmail : ele.doctorEmail,
         date: ele.date,
         day: ele.day,
+        mode: ele.mode,
       };
     });
     setData(dataArray);
@@ -94,16 +95,8 @@ export default function Appointment() {
   // console.log(doctorDetails);
   // console.log(data);
 
-  const handlePillSelect = (pill) => {
-    setSelectedPill(pill);
-    if (pill === "all") {
-      setFilteredCards(doctorDetails);
-    } else {
-      const filtered = doctorDetails.filter(
-        (card) => card.specialization === pill
-      );
-      setFilteredCards(filtered);
-    }
+  const handleClick = () => {
+    navigate("/videoCall", { replace: true });
   };
 
   return (
@@ -158,7 +151,8 @@ export default function Appointment() {
                       <TableCell>Name</TableCell>
                       <TableCell>Email</TableCell>
                       <TableCell>Date</TableCell>
-                      <TableCell>Day</TableCell>
+                      <TableCell>Mode</TableCell>
+                      <TableCell></TableCell>
                       {/* Add more table headers as needed */}
                     </TableRow>
                   </TableHead>
@@ -168,8 +162,18 @@ export default function Appointment() {
                         <TableCell>{row.id}</TableCell>
                         <TableCell>{row.name}</TableCell>
                         <TableCell>{row.email}</TableCell>
-                        <TableCell>{row.date}</TableCell>
-                        <TableCell>{row.day}</TableCell>
+                        <TableCell>{`${row.date} - ${row.day}`}</TableCell>
+                        <TableCell>{row.mode}</TableCell>
+                        <TableCell>
+                          {row.mode === "online" && (
+                            <button
+                              onClick={handleClick}
+                              className="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+                            >
+                              {"Join"}
+                            </button>
+                          )}
+                        </TableCell>
                         {/* Add more table cells for additional data */}
                       </TableRow>
                     ))}
@@ -294,7 +298,7 @@ export default function Appointment() {
       </section> */}
       {/* <!-- form-section -->
       <!-- logo-section --> */}
-      <div className="w-100 float-left logo-con mt-5">
+      {/* <div className="w-100 float-left logo-con mt-5">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">
@@ -355,7 +359,7 @@ export default function Appointment() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- logo-section -->
       <!-- weight-footer-section --> */}
       <FooterDetails />

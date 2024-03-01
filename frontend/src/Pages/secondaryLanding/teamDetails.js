@@ -13,6 +13,9 @@ import { useCookies } from "react-cookie";
 import FooterDetails from "../footerDetails";
 import HTMLReactParser from "html-react-parser";
 import { HomeIcon } from "@heroicons/react/outline";
+import { ChevronRightIcon, HomeIcon } from "@heroicons/react/solid";
+import OnlineBookingModal from "../../molecules/onlineBookingModal";
+import BookingModal from "../../molecules/bookingModal";
 
 const pages = [
   { name: "Team", href: "/team", current: false },
@@ -122,20 +125,22 @@ export default function TeamDetails() {
                       class="w-39 h-36 bg-gray-300 rounded-full mb-4 shrink-0"
                     ></img>
                     <h1 class="text-xl font-bold">{`${doctorDetails.firstname} ${doctorDetails.lastname}`}</h1>
-                    <p class="text-gray-700 text-sm text-center">{doctorDetails.title}</p>
+                    <p class="text-gray-700 text-sm text-center">
+                      {doctorDetails.title}
+                    </p>
                     {/* <p class="text-gray-700 text-sm">{doctorDetails.specialization}</p> */}
                     <div class="mt-6 flex flex-wrap gap-3 justify-center">
                       <a
                         href="#"
                         class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded no-underline "
                       >
-                        Book a Video Consultation
+                        <OnlineBookingModal doctorDetails={doctorDetails} />
                       </a>
                       <a
                         href="#"
                         class="bg-gray-200 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded no-underline"
                       >
-                        Book a Physical Consultation
+                        <BookingModal doctorDetails={doctorDetails} />
                       </a>
                     </div>
                   </div>
@@ -167,7 +172,7 @@ export default function TeamDetails() {
         </div>
       </section>
       {/*<!-- logo-section --> */}
-      <div className="w-100 float-left logo-con mt-20">
+      {/* <div className="w-100 float-left logo-con mt-20">
         <div className="container">
           <div className="logo-inner-con">
             <div className="row">
@@ -228,7 +233,7 @@ export default function TeamDetails() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- logo-section -->
       <!-- weight-footer-section --> */}
       <FooterDetails />
