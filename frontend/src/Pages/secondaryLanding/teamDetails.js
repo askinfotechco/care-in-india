@@ -13,7 +13,7 @@ import { useCookies } from "react-cookie";
 import FooterDetails from "../footerDetails";
 import HTMLReactParser from "html-react-parser";
 import { HomeIcon } from "@heroicons/react/outline";
-import { ChevronRightIcon, HomeIcon } from "@heroicons/react/solid";
+//import { ChevronRightIcon, HomeIcon } from "@heroicons/react/solid";
 import OnlineBookingModal from "../../molecules/onlineBookingModal";
 import BookingModal from "../../molecules/bookingModal";
 
